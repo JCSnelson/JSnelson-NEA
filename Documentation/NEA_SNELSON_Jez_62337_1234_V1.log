@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.23)  6 MAY 2024 20:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.23)  7 MAY 2024 11:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -187,23 +187,27 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count289
 \l__pdf_internal_box=\box55
-) (./NEA_SNELSON_Jez_62337_1234_V1.aux)
+) (./NEA_SNELSON_Jez_62337_1234_V1.aux
+
+LaTeX Warning: Label `fig:ie_0' multiply defined.
+
+)
 \openout1 = `NEA_SNELSON_Jez_62337_1234_V1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -231,19 +235,19 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: <default>
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(108.405pt, 397.485pt, 108.405pt)
-* v-part:(T,H,B)=(108.405pt, 578.15999pt, 108.405pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=397.485pt
-* \textheight=578.15999pt
-* \oddsidemargin=36.13501pt
-* \evensidemargin=36.13501pt
-* \topmargin=-0.86499pt
+* h-part:(L,W,R)=(85.35826pt, 426.79134pt, 85.35828pt)
+* v-part:(T,H,B)=(99.01556pt, 597.50787pt, 148.5234pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79134pt
+* \textheight=597.50787pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-10.25443pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -268,39 +272,50 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 \openout3 = `NEA_SNELSON_Jez_62337_1234_V1.toc'.
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
+<images/research/Pedit5_gameplay.png, id=13, 233.37187pt x 241.65282pt>
+File: images/research/Pedit5_gameplay.png Graphic file (type png)
+<use images/research/Pedit5_gameplay.png>
+Package pdftex.def Info: images/research/Pedit5_gameplay.png  used on input line 54.
+(pdftex.def)             Requested size: 140.02419pt x 144.9928pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--36
+Underfull \hbox (badness 10000) in paragraph at lines 49--60
 
  []
 
-[1]
-<images/research/BOI_Capture.PNG, id=16, 1302.36563pt x 633.86812pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+[1 <./images/research/Pedit5_gameplay.png (PNG copy)>]
+<images/research/BOI_Capture.PNG, id=17, 1302.36563pt x 633.86812pt>
 File: images/research/BOI_Capture.PNG Graphic file (type png)
 <use images/research/BOI_Capture.PNG>
-Package pdftex.def Info: images/research/BOI_Capture.PNG  used on input line 48.
+Package pdftex.def Info: images/research/BOI_Capture.PNG  used on input line 76.
 (pdftex.def)             Requested size: 325.5906pt x 158.46664pt.
 
-Overfull \hbox (0.76028pt too wide) in paragraph at lines 39--52
-\OT1/cmr/m/n/10 re-leased it on Steam (https://store.steampowered.com/app/113200/The[]Binding[]of[]Isaac/). 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 39--52
+Underfull \hbox (badness 10000) in paragraph at lines 67--80
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--52
+Underfull \hbox (badness 10000) in paragraph at lines 67--80
 
  []
 
 [2 <./images/research/BOI_Capture.PNG>]
 
-Package caption Warning: Unused \captionsetup[sub] on input line 7.
+Package caption Warning: Unused \captionsetup[sub] on input line 23.
 See the caption package documentation for explanation.
 
 [3] (./NEA_SNELSON_Jez_62337_1234_V1.aux)
@@ -308,20 +323,24 @@ See the caption package documentation for explanation.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 5590 strings out of 474136
- 89715 string characters out of 5748496
+ 5597 strings out of 474136
+ 90008 string characters out of 5748496
  1932190 words of memory out of 5000000
- 27909 multiletter control sequences out of 15000+600000
+ 27916 multiletter control sequences out of 15000+600000
  563759 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,11n,79p,681b,309s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on NEA_SNELSON_Jez_62337_1234_V1.pdf (5 pages, 188085 bytes).
+Output written on NEA_SNELSON_Jez_62337_1234_V1.pdf (5 pages, 215498 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
+ 44 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
