@@ -21,9 +21,12 @@
 \usepackage{listings}
 \usepackage{subcaption}
 \usepackage{graphicx}
+\usepackage{multirow, pgfplotstable}
 \usepackage[a4paper, total={150mm, 210mm}]{geometry}
 %command for creating spaces
 \newcommand\tab[1][0.5cm]{\hspace*{#1}}
+
+\newcommand{\mr}[2]{\multirow{2}{#1}{#2}}
 \title{\textbf{NEA}}
 \author{Name: Jez Snelson\\
         Candidate Number: 1209\\
@@ -58,9 +61,47 @@
         \\
         Most dungeon crawlers have a fixed map that is the same every time which can lead to little replay value as it can be boring to replay the same map over and over.\\
         \subsection{The Problem}
-        Dungeon Crawler style games can be boring and repetitive, this means they can have little to none replay value. Additionaly alot of Dungeon crawlers have a steep learning curve that makes it hard for new or casual players to fully enjoy them.\\
-        \subsection{Client Request}
-        The client has requested a Dungeon Crawler style game that has very good replay value whilst also being easy to learn and play casually.\\
+        Dungeon Crawler style games can be boring and repetitive, this means they can have little to none replay value. Additionaly alot of Dungeon crawlers have a steep learning curve that makes it hard for new or casual players to fully enjoy them. These games are also very complex often demanding lots of time for a simple playthrough.\\
+        \subsection{Stakeholders}
+        \subsubsection{About}
+        \begin{tabular}{|c|c|c|}
+                \hline
+                Name & Description & How they will use my product\\
+                \hline
+                \mr{3cm}{Samuel Vanderstelt-Hook} & \mr{6cm}{18 year old Male Sixth Form Computer Science Student, Casual Gamer who enjoys a wide range of games.} & \mr{5cm}{Sam will use my solution for casual gaming for fun as a break from his studies. I aim to meet his need for a game that is both easy to pick up and replayable.}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{3cm}{Daniel Olde Scheper} & \mr{6cm}{18 year old Male A Level Computer Science Student} & \mr{5cm}{Daniel will use my solution as a way to relax from his A-Level Studies.}\\
+                &&\\
+                &&\\
+                \hline
+                \mr{3cm}{Peter Dunn} & \mr{6cm}{17 year old Sixth Form Student and aspiring hobbyist game developer.}& \mr{5cm}{Peter will use my solution as a form of entertainment}\\
+                &&\\
+                &&\\
+                \hline
+                \mr{3cm}{Sadiya} & \mr{6cm}{17 year old Female Student and Public Speaker} & \mr{5cm}{Sadiya will use my solution as a form of entertainment}\\
+                &&\\
+                &&\\
+                \hline
+                \mr{3cm}{Mr Holmes} & \mr{6cm}{age }&\mr{5cm}{}\\
+                &&\\
+                &&\\
+                \hline
+        \end{tabular}
+        \\
+        \subsubsection{Survey}
+        I chose a set of questions in order to survey my stakeholders and help me find success criteria for the project to fulfill their needs.\\
+        1. How often would you say you play video games on a scale of 1-10? (1 being never 10 being multiple hours every day)\\
+        2. Would you say you have the time to commit to learning a complex or unintuitive game?\\
+        3. How long would you say is your average gaming session?\\
+        4. Which different ways do you play video games?\\
+        5. What is your prefered way to play video games?\\
+        6. Are you a fan of Dungeon Crawler style games?\\
+        7. Do you find yourself getting bored once you complete a game due to a lack of replayability?\\
+        8. Would you enjoy and use a game which is unique every time you play through it due to some form of random generation of levels?\\
         \newpage
         \subsection{Research}
         \subsubsection{Existing Solutions}
@@ -68,7 +109,7 @@
         Edmund McMillen created the popular dungeon crawler roguelike The Binding of Isaac and released it on Steam (https://store.steampowered.com/app/113200/The\_Binding\_of\_Isaac/).\\
         This game was relatively unique as it had procedurally generated dungeons \\using a system of rooms that tesalate with each other.\\
         \\
-        The procedurally generated dungeons consist of different shaped square based rooms that tesalate and are generated next to each other in a psuedo random fashion whilst obeying a set of rules. The mobs that spawn in each room can vary but there is usually only one or two enemy types per room and as you go up levels the amount of enemies and difficulty the pose increases. This system allows for every playthrough of the game to be different to the next with the same reccuring theme/difficulty which allows for lots of replay oppurtunity.\\
+        The procedurally generated dungeons consist of different shaped square based rooms that tesalate and are generated next to each other in a psuedo random fashion whilst obeying a set of rules. The mobs that spawn in each room can vary but there is usually only one or two enemy types per room and as you go up levels the amount of enemies and difficulty the pose increases. This system allows for every playthrough of the game to be different to the next with the same reccuring theme/difficulty which allows for lots of replay oppurtunity. This would be an appropiate way for me to fix the replayabilty issue.\\
         \\
         However, the game has a couple issues that mean that it does not completely solve our problem. First is the steep learning curve that the game presents which, although to some is a welcome challenge, can put off new or less experienced players especially due to its roguelike nature meaning when you die you start from scratch. The game also has an unintuitive movement and fighting system as there is only really quad directional projectiles and a simple walking design which when combined contributes to the steep learning curve.\\
         \begin{figure}[h]
