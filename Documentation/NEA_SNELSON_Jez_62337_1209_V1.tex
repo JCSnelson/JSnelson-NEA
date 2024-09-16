@@ -25,7 +25,7 @@
 %command for creating spaces
 \newcommand\tab[1][0.5cm]{\hspace*{#1}}
 
-\newcommand{\mr}[2]{\multirow{2}{#1}{#2}}
+\newcommand{\mr}[3]{\multirow{#1}{#2}{#3}}
 \title{\textbf{NEA}}
 \author{Name: Jez Snelson\\
         Candidate Number: 1209\\
@@ -50,59 +50,92 @@
         \subsection{Dungeon Crawlers}
         A dungeon crawl is a scenario in role playing games in which the main character navigates a dungeon environment often solving traps or fighting monsters to progress through the level. A video game or board game made up of predominantly dungeon crawls is considered to be a dungeon crawler.\\
         \\
-        The first dungeon crawler computer game was pedit5 which was devolped in 1975 by Rusty Rutherford. This genre continued to develop throughout the 1980s with titles such as Rogue, Dungeon Master and Telengard. Some dungeon crawlers also employ action rpg combat and other complex systems around combat, enemy behaviour and loot systems The Binding of Isaac and Enter the Gungeon are examples of this.\\
-        \begin{figure}[h]
-                \centering
-                \includegraphics[scale=0.6]{images/research/Pedit5_gameplay.png}
-                \caption{A screenshot of pedit5}
-                \label{fig:ie_0}
-        \end{figure}
-        \\
         Most dungeon crawlers have a fixed map that is the same every time which can lead to little replay value as it can be boring to replay the same map over and over.\\
         \subsection{The Problem}
         Dungeon Crawler style games can be boring and repetitive, this means they can have little to none replay value. Additionaly alot of Dungeon crawlers have a steep learning curve that makes it hard for new or casual players to fully enjoy them. These games are also very complex often demanding lots of time for a simple playthrough.\\
-        \subsection{Computational Methods}
-        
         \subsection{Stakeholders}
-        \subsubsection{About}
+        \subsubsection{Survey}
+        I chose a set of questions in order to survey my stakeholders and help me find success criteria for the project to fulfill their needs.\\
+        1. How often would you say you play video games on a scale of 1-10 (1 being every other week 10 being every day)\\
+        2. Do you have any specific or requirements for this computer game?\\
+        3. How would you use this game?\\
+        4. Would you say you have the time to commit to learning a complex or unintuitive game?(yes,probably not,no)\\
+        5. How long would you say is your average gaming session?(1-5 hours)\\
+        6. Which different ways do you play video games?(multiple choice: controller, wasd, arrows)\\
+        7. Have you played any Dungeon Crawler games(e.g. Legend of Zelda, Binding of Isaac, Dead Cells, Hades)?\\
+        8. If not would you want to try a Dungeon Crawler Game?\\
+        9. Rank the features of classic dungeon crawlers you dislike the most(Lack of Replayability, Long Unskippable Cinematics, High length of time required for a playing session, The Learning Curve, The Difficulty)\\
+        10. Rank the features you think are most essential for the game to be enjoyable for you(Procedurally Generated Dungeons, Loot to Collect and utilise, Some Sort of skill tree, Co-Op mode, Puzzles, Hidden Areas)\\
+        \newpage
+        \subsubsection{Survey Results}
+        Time available:\\
+        On average my stakeholders session length is around 2 hours for a single game. On average they play videogames almost every day however there is one that plays infrequently. Because of this I will have to try and make it easy to pick up without much you have to remember about previous sessions.\\
+        Most of my stakeholders do not have time to commit to learning a complex or unintuitive game and so I will have to make the game easy to pick up but still have complexities for those who want a challenge.\\
+        All controlling mechanisms where popular but WASD was the most so I will prioritise that.\\
+        50\% of my stakeholders have played dungeon crawlers and so may be experienced with it but 50\% have not so I should aim to make it a good introduction to the dungeon crawler genre.\\
+        \\
+        Disliked Features (Ranked most to least disliked):\\
+        1. Lack of replayability.\\
+        2. High length of time required for a playing session.\\
+        3. The Learning Curve.\\
+        4. Long Unskippable Cinematics.\\
+        5. The Difficulty.\\
+        Due to this I will focus on replayability through the use of procedural generation whilst still aiming to exclude the more disliked features.\\
+        \\
+        Liked Features (Ranked from most to least liked):\\
+        1. Some sort of skill tree.\\
+        2. Hidden Areas\\
+        3. Procedurally Generated Dungeons.\\
+        4. Loot to collect and utilise (e.g. weapons).\\
+        5. Puzzles.\\
+        6. Co-Op Mode.\\
+        Because of this I will prioritise getting the more liked features done and exclude some of the less liked features from my success criteria.\\
+        \subsubsection{About Stakeholders}
         \begin{tabular}{|c|c|c|}
                 \hline
                 Name & Description & How they will use my product\\
                 \hline
-                \mr{3cm}{Samuel Vanderstelt-Hook} & \mr{6cm}{18 year old Male Sixth Form Computer Science Student, Casual Gamer who enjoys a wide range of games.} & \mr{5cm}{Sam will use my solution for casual gaming for fun as a break from his studies. I aim to meet his need for a game that is both easy to pick up and replayable.}\\
+                \mr{2}{3cm}{Samuel Vanderstelt-Hook} & \mr{2}{6cm}{18 year old Male Sixth Form Computer Science Student, Casual Gamer who enjoys a wide range of games.} & \mr{2}{5cm}{Sam will use my solution for casual gaming for fun as a break from his studies. He has stated needs for a game that is replayable and gives him a reason to come back to it.}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3cm}{Daniel Olde Scheper} & \mr{2}{6cm}{18 year old Male A Level Computer Science Student} & \mr{2}{5cm}{Daniel will use my solution as a way to relax from his A-Level Studies. He has stated needs for a fun, replayable and easy to pick up game.}\\
                 &&\\
                 &&\\
                 &&\\
                 &&\\
                 \hline
-                \mr{3cm}{Daniel Olde Scheper} & \mr{6cm}{18 year old Male A Level Computer Science Student} & \mr{5cm}{Daniel will use my solution as a way to relax from his A-Level Studies.}\\
+                \mr{2}{3cm}{Peter Dunn} & \mr{2}{6cm}{17 year old Male Sixth Form Student and aspiring hobbyist game developer.}& \mr{2}{5cm}{Peter will use my solution as a form of entertainment after studies and as he loves Dungeon Crawl Style games. He needs a replayable game with an intuitive combat system.}\\
                 &&\\
                 &&\\
-                \hline
-                \mr{3cm}{Peter Dunn} & \mr{6cm}{17 year old Sixth Form Student and aspiring hobbyist game developer.}& \mr{5cm}{Peter will use my solution as a form of entertainment}\\
                 &&\\
-                &&\\
-                \hline
-                \mr{3cm}{Sadiya} & \mr{6cm}{17 year old Female Student and Public Speaker} & \mr{5cm}{Sadiya will use my solution as a form of entertainment}\\
                 &&\\
                 &&\\
                 \hline
-                \mr{3cm}{Mr Holmes} & \mr{6cm}{age }&\mr{5cm}{}\\
+                \mr{2}{3cm}{Sadiya Shorkar} & \mr{2}{6cm}{17 year old Female Student and Casual Video Game Enjoyer} & \mr{2}{5cm}{Sadiya will use my solution as a form of  casual entertainment for short sessions. Sadiya has seizures and so needs accessibility options like volume control and options for less vibrancy.}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3cm}{Penelope Castiau} & \mr{2}{6cm}{18 year old Female Sixth Form Student, Avid Computer Gaming Enjoyer and Hobbyist Streamer.} & \mr{2}{5cm}{Penny will use my product for entertainment purposes and to play on stream. Because of this Penny needs subtitles to make the game easy to follow for viewers.}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3cm}{Steff} & \mr{2}{6cm}{17 year old Female College Student and Game Developer} & \mr{2}{5cm}{Steff will use my product to relax from studies. Steff needs a replayable game but also want it to be engaging.}\\
+                &&\\
                 &&\\
                 &&\\
                 \hline
         \end{tabular}
-        \\
-        \subsubsection{Survey}
-        I chose a set of questions in order to survey my stakeholders and help me find success criteria for the project to fulfill their needs.\\
-        1. How often would you say you play video games on a scale of 1-10? (1 being never 10 being multiple hours every day)\\
-        2. Would you say you have the time to commit to learning a complex or unintuitive game?\\
-        3. How long would you say is your average gaming session?\\
-        4. Which different ways do you play video games?\\
-        5. What is your prefered way to play video games?\\
-        6. Are you a fan of Dungeon Crawler style games?\\
-        7. Do you find yourself getting bored once you complete a game due to a lack of replayability?\\
-        8. Would you enjoy and use a game which is unique every time you play through it due to some form of random generation of levels?\\
         \newpage
         \subsection{Research}
         \subsubsection{Existing Solutions}
@@ -112,16 +145,277 @@
         \\
         The procedurally generated dungeons consist of different shaped square based rooms that tesalate and are generated next to each other in a psuedo random fashion whilst obeying a set of rules. The mobs that spawn in each room can vary but there is usually only one or two enemy types per room and as you go up levels the amount of enemies and difficulty the pose increases. This system allows for every playthrough of the game to be different to the next with the same reccuring theme/difficulty which allows for lots of replay oppurtunity. This would be an appropiate way for me to fix the replayabilty issue.\\
         \\
+        I like the games simple UI design as it clearly indicates all the necessary parts. The Map also shows the basic stucture of the level without revealing too much.\\
+        \\
         However, the game has a couple issues that mean that it does not completely solve our problem. First is the steep learning curve that the game presents which, although to some is a welcome challenge, can put off new or less experienced players especially due to its roguelike nature meaning when you die you start from scratch. The game also has an unintuitive movement and fighting system as there is only really quad directional projectiles and a simple walking design which when combined contributes to the steep learning curve.\\
         \begin{figure}[h]
                 \centering
                 \includegraphics[scale=0.25]{images/research/BOI_Capture.PNG}
-                \caption{A screenshot of The Binding of Isaac}
+                \caption{A screenshot of The Binding of Isaac UI and Map}
                 \label{fig:ie_0}
         \end{figure}
-\subsection{Features and Limitations}
-\subsection{Success Criteria}
+        \newpage
+        \[\]
+        \textbf{Motion Twin's Dead Cells}\\
+        Motion Twin created the roguelike dungeon crawler and metroidvania Dead Cells which is released on steam (https://store.steampowered.com/app/588650/Dead\_Cells/). This game is known for its permadeath system and its procedurally generated dungeons.\\
+        \\
+        The way Dead Cells uses procedural generation interests me as it allows for there to be some fixed attributes to the level whilst still allowing elements of randomness. The developers talk about how they do this in a video devlog (https://www.youtube.com/watch?v\=tyMrRW\-Li\_I), here the dev talks about his system of having a fixed structure for each level almost like a skeleton. This skeleton will include stuff like important rooms along the way and how much distance of rooms has to be between them. It then fills in all the spaces for rooms with one of the many handmade rooms made by the developers. After one room has been chosen for a spot this leaves less choice for the other spots as the rooms need to join and flow into each other properly and so as it chooses more of them the structure of the level is determined similar to the wave function collapse algorithm (https://robertheaton.com/2018/12/17/wavefunction\-collapse\-algorithm/).\\
+        \\
+        This style of generation allows for a unique experience each time whilst keeping a hand crafted and natural feel to the levels that is often lost in other techniques.\\
+        \\
+        However due to the game being aimed at more hardcore gamers with it being part of the rouguelike genre it can often appear complex and offputting to newer players who dont like the idea of taking multiple runs just to have very little to show for it and not much forward progress in the game. Although the game is a side on game I think that I will use the idea of its procedural generation as inspiration in my product.\\
+        \\
+        
+
+        \subsection{Limitations and Requirements}
+        \begin{tabular}{|c|c|c|}
+                \hline
+                Requirement&Description&Justification\\
+                \hline
+                \mr{2}{3cm}{Hardware}&\mr{3}{7cm}{PC or laptop with a Keyboard or Game Controller, minimum of 4GB RAM.\\For Windows/Linux: x86\_32 CPU with SSE2 instructions, any x86\_64 CPU, ARMv8 CPU.\\For Macos: x86\_64 or ARM CPU.\\Integrated graphics with full OpenGL 3.3 support}&\mr{3}{5cm}{These are the requirements for running an executable from Godot. The keyboard(WASD) or controller is needed as the input for the game.}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3cm}{Software}&\mr{2}{7cm}{I will be using the Godot Game Engine and GDScript to program my game.}&\mr{3}{5cm}{I will be using Godot as it is a good 2D game designer that is Free and Open-Source it changes less often than alternatives such as Unity. Ontop of this I have prior experience in Godot and GDScript.}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3cm}{OS Limitations}&\mr{3}{7cm}{For Native Exports:  Windows 7 or newer, macOS 10.13 or newer, Linux distribution released after 2016\\For Web: Firefox 79, Chrome 68, Edge 79, Safari 15.2, Opera 64}&\mr{3}{5cm}{Godot can export easily to any of these platforms and more accessibility is good and I can also export a HTML5 version to be hosted in a website such as https://www.itch.io.}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3cm}{General System Limitations}&\mr{3}{7cm}{A visually or auditory excellent experience}&\mr{3}{5cm}{I do not have the experience with shaders or music and sound effects to add these features to the game in this time and it would make the game requirements higher.}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+        \end{tabular}
+        \subsection{Features}
+        \subsubsection{Essential Features}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Feature\#&Feature&Description&Justification\\
+                \hline
+                1&\mr{2}{3cm}{Player Movement and Controls}&\mr{2}{5cm}{The player will control movement using the WASD keys for up, left, down and right respectively. Alternatively they will use the left control stick of a controller.}&\mr{2}{5cm}{This will be used tp navigate around the Dungeon environment and WASD was the most popular control mechanism for the stakeholders with controller close behind. I will also include mouse buttons as a non-mandatory addition.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                2&\mr{2}{3cm}{A Basic Combat System}&\mr{2}{5cm}{The combat system will consist of a primary weapon (melee, magic or ranged) on mouse-1/1 key/X button and a sheild or secondary weapon on mouse-2/2 key/Y button. I will have to implement projectiles and hitboxes for both the player and enemies.}&\mr{2}{5cm}{A basic combat system is essential as it will provide the main difficulty and entertainment within the game.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                3&\mr{2}{3cm}{Dungeon Environment}&\mr{2}{5cm}{The Dungeon Environment will consist of different shaped rooms with different purposes(e.g. boss room, chest room and shop room.) with hallways connecting inbetween them and a starting room for the player.}&\mr{2}{5cm}{A Dungeon Environment is essential as it is the environment the player will play in.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                4&\mr{2}{3cm}{Different Enemies}&\mr{2}{5cm}{The Enemies will consist of a variety of enemies that attack the player with different patterns and have different looks and animations.}&\mr{2}{5cm}{This is essential as it will add variety to the gameplay and each enemy will provide a challenge to the player.}\\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                5&\mr{2}{3cm}{Appearance and Animations of the Player}&\mr{2}{5cm}{The Player will have a recognisable appearance aswell as animations for all its actions such as walking and fighting}&\mr{2}{5cm}{This is essential as it lets you know where your character is on screen aswell as giving life to the actions the player is performing.}\\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                6&\mr{2}{3cm}{Login System}&\mr{2}{5cm}{Users will be able to login in order to save and reload their progress. The login system will use a username and password with the details being encrypted and stored in an external database. Their will be options for signing in or creating a new account.}&\mr{2}{5cm}{This is an essential feature as saving progress is essential for making the game replayable.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                10&\mr{2}{3cm}{User Interface}&\mr{2}{5cm}{A Simple UI that shows status indicators like health, stamina and magic points.}&\mr{2}{5cm}{This would allow the player to be aware of the characters health and give them the necessary information.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \subsubsection{Desireable Features}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Feature\#&Feature&Description&Justification\\
+                \hline
+                7&\mr{2}{3cm}{Weapons and a more Advanced Combat System.}&\mr{2}{5cm}{A system of weapons where you can get them from boss drops and potentially shops and a combat system with normal, charged (based on how long you hold down) and special attacks (using a special key).}&\mr{2}{5cm}{Different weapons will allow each player to have a playstyle more customized to them and will allow for the player getting stronger as they progress more. An advanced combat system will allow for a more smooth and enjoyable fighting experience.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                8&\mr{2}{3cm}{Skill Tree}&\mr{2}{5cm}{A skill tree to unlock unique skills/abilities and get better at using existing skills/weapons. You would gain points from playing the game and can then put them into different areas in order to create a customized character build}&\mr{2}{5cm}{This would further allow the player to choose their own play style and add an element of replayability where you can try going for a different build each time you play. This was also requested by the stakeholders.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                9&\mr{2}{3cm}{Procedurally Generated Dungeons}&\mr{2}{5cm}{The Dungeons would be procedurally generated whilst keeping some amount of structure (e.g. the same amount of distance between posses and key rooms). This would happen through many similar small room sections that can be slotted together in order to make a full dungeon.}&\mr{2}{5cm}{This would create a more engaging game which is different each time you play it and therefore increase replayability exponentially as the different combinations of room increases. This was also requested by the stakeholders.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                10&\mr{2}{3cm}{Hidden Areas}&\mr{2}{5cm}{Secret areas that can be unlocked through wasy such as progressing further in the game and coming back or through puzzles/fake walls. Could have secret loot or bosses.}&\mr{2}{5cm}{This feature was highly requested by the stakeholders and would allow for more time spent having fun in the game through finding these areas.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                10&\mr{2}{3cm}{Inventory Sysetm}&\mr{2}{5cm}{An Inventory to be opened with the E key or the + button through which you will manage equipped weapons, key items, skills and more.}&\mr{2}{5cm}{An Inventory System is an essential feature if we want to add more weapons/weapon types and a skill tree.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                10&\mr{2}{3cm}{Settings and Volume Control}&\mr{2}{5cm}{A settings page to control the volume of noises aswell as the vibrancy of colours.}&\mr{2}{5cm}{One of the Stakeholders has requested this as a feature to help the game be more accessible to them.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                
+        \end{tabular}
+        \newpage
+        \subsection{Success Criteria}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Criteria \# & Abstraction & Success Criteria & Justification\\
+                \hline
+                1&\mr{2}{3cm}{players to be able to control and move the player using both the WASD keys and a controller.}&\mr{2}{5cm}{1.1 W key - Forward\\1.2 A key - Left\\1.3 S key - Backward\\1.4 D key- Right\\1.5 Left Control Stick directional movement corresponds to player movement.}&\mr{2}{4cm}{These Criteria need to be met for the character to be controllable by the player. These specific controls where preffered by the stakeholders.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                2&\mr{2}{3cm}{Players to be able to have different weapons and attack with them.}&\mr{2}{5cm}{2.1 mouse-1/1 key/X button - Primary Attack\\2.2 mouse-2/2 key/Y button - Secondary Attack\\2.3 Add a basic melee sword\\2.4 Add a basic ranged bow and projectiles\\2.5 Add a basic magic staff and projectiles\\2.6 Add a basic magic staff with area of effect attacks\\2.7 Add a hitbox for the player\\2.8 Add a health bar for the player}&\mr{2}{4cm}{These criteria need to be met for a basic combat system to create the main difficulty and entertainment throughout the game}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                3&\mr{2}{3cm}{A Dungeon environment for the character to walk around and different rooms}&\mr{2}{5cm}{3.1 Walls that you cannot walk through\\3.2 Floor of the Dungeon\\3.3 Interactive chests for loot\\3.4 Seperate Boss, Chest, Monster and Shop Rooms\\3.5 A room Door that only opens on a certain condition\\3.6 A Dungeon Environment built out of the rooms and corridors}&\mr{2}{4cm}{These Criteria will provide the environment within which the game is played.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                4&\mr{2}{3cm}{Different Enemies for the player to face including bosses}&\mr{2}{5cm}{4.1\\}&\mr{2}{4cm}{}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                2&\mr{2}{3cm}{}&\mr{2}{4cm}{}&\mr{2}{4cm}{}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                2&\mr{2}{3cm}{}&\mr{2}{4cm}{}&\mr{2}{4cm}{}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                2&\mr{2}{3cm}{}&\mr{2}{4cm}{}&\mr{2}{4cm}{}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                2&\mr{2}{3cm}{}&\mr{2}{4cm}{}&\mr{2}{4cm}{}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \newpage
+        \subsection{Computational Methods}
 \newpage
 \pagestyle{plain}
 \section{References}
+\begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        REF$\#$ &Date&Topic/Abstract&Type&URL or BOOK reference&How I used this\\
+        \hline
+        1&1/6/24&\mr{2}{3cm}{Research/ Existing Solutions}&\mr{2}{2cm}{video games store, online}& \mr{2}{4cm}{https://store.steampowered\\.com/app/113200/\\The\_Binding\_of\_Isaac}&\mr{2}{3cm}{One of the exisiting solutions I researched.}\\
+        &&&&&\\
+        &&&&&\\
+        \hline
+        2&15/6/24&\mr{2}{3cm}{Research/ Existing Solutions}&\mr{2}{2cm}{video games store, online}& \mr{2}{4cm}{https://store.steampowered\\.com/app/588650/\\Dead\_Cells}&\mr{2}{3cm}{One of the existing solutions I researched}\\
+        &&&&&\\
+        &&&&&\\
+        \hline
+        2&15/6/24&\mr{2}{3cm}{Research/ Existing Solutions}&\mr{2}{2cm}{youtube video, online}&\mr{2}{4cm}{https://www.youtube.com\\/watch?v\=tyMrRW\-Li\_I}&\mr{2}{3cm}{A dev log for an existing solution.}\\
+        &&&&&\\
+        &&&&&\\
+        \hline
+\end{tabular}
+
 \end{document}
