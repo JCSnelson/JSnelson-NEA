@@ -52,7 +52,7 @@
         \\
         Most dungeon crawlers have a fixed map that is the same every time which can lead to little replay value as it can be boring to replay the same map over and over.\\
         \subsection{The Problem}
-        Dungeon Crawler style games can be boring and repetitive, this means they can have little to none replay value. Additionaly alot of Dungeon crawlers have a steep learning curve that makes it hard for new or casual players to fully enjoy them. These games are also very complex often demanding lots of time for a simple playthrough.\\
+        Dungeon Crawler style games can be boring and repetitive, this means they can have little to none replay value. Additionaly alot of Dungeon crawlers have a steep learning curve that makes it hard for new or casual players to fully enjoy them. These games are also very complex often demanding lots of time for a simple playthrough. In addition, Non-Computational Methods are inconvenient as they can take up alot of space, take a long time to set up and you cannot save your game state to pick it up later easily.\\
         \subsection{Stakeholders}
         \subsubsection{Survey}
         I chose a set of questions in order to survey my stakeholders and help me find success criteria for the project to fulfill their needs.\\
@@ -72,7 +72,7 @@
         On average my stakeholders session length is around 2 hours for a single game. On average they play videogames almost every day however there is one that plays infrequently. Because of this I will have to try and make it easy to pick up without much you have to remember about previous sessions.\\
         Most of my stakeholders do not have time to commit to learning a complex or unintuitive game and so I will have to make the game easy to pick up but still have complexities for those who want a challenge.\\
         All controlling mechanisms where popular but WASD was the most so I will prioritise that.\\
-        50\% of my stakeholders have played dungeon crawlers and so may be experienced with it but 50\% have not so I should aim to make it a good introduction to the dungeon crawler genre.\\
+        50\% of my stakeholders have played dungeon crawlers and so may be experienced with it but 50\% have not so I should aim to make it a good introduction to the dungeon crawler genre with the potential of adding optional difficulty for those more experienced.\\
         \\
         Disliked Features (Ranked most to least disliked):\\
         1. Lack of replayability.\\
@@ -165,7 +165,19 @@
         \\
         However due to the game being aimed at more hardcore gamers with it being part of the rouguelike genre it can often appear complex and offputting to newer players who dont like the idea of taking multiple runs just to have very little to show for it and not much forward progress in the game. Although the game is a side on game I think that I will use the idea of its procedural generation as inspiration in my product.\\
         \\
-        
+        \newpage
+        \[\]
+        \textbf{Nintendo's Legend Of Zelda Breath of the Wild}\\
+        Nintendo created the open-world dungeon crawler which is released on the Nintendo Wii U and the Nintendo Switch (https://store.nintendo.co.uk/en/the-legend-of-zelda-breath-of-the-wild-70010000000023). This game is known for its open world approach to dungeon crawlers as well as its easy to pick up nature for first time players.\\
+        \\
+        The game starts with a tutorial that teaches players the mechanics of the game (combat, exploration, and resource gathering). This tutorial helps players into the world without overwhelming them, offering opportunities to learn at their own pace which helps reduce the steep learning curve of other games in the genre. The open-world nature of the game also adds to its replayability, allowing the player to take many different routes to complete the game. However, while the game’s size and allows for alot of replayabilty, the volume of content and time required to explore everything can reduce its effectiveness as a game that can be picked up easily for shorter sessions. Its 3D world and complex systems are features that would be too tricky to implement within the scope of an A-level computer science project. It also does not fully fit the dungeon-crawler genre, particularly as it is less dungeon-focused.\\ 
+        \\
+        I want to take inspiration from the open-world nature of the game to increase replayability aswell as its approach to tutorials in order to make the learning curve steeper. Ontop of this another feature I would like to take inspiration from is the intuitiveness of the combat system which is easy to learn but hard to master in particular its feature of being able to lock onto enemies.\\
+        \\
+        Some features I will not be including are the 3D nature and the overall content heaviness aswell as the focus less on dungeon crawling as I believe these would be unnecesary features which would drive up the complexity of the solution both to make and run.\\
+        \\
+        \newpage
+        \[\]   
 
         \subsection{Limitations and Requirements}
         \begin{tabular}{|c|c|c|}
@@ -251,7 +263,8 @@
                 &&&\\
                 &&&\\
                 \hline
-                6&\mr{2}{3cm}{Login System}&\mr{2}{5cm}{Users will be able to login in order to save and reload their progress. The login system will use a username and password with the details being encrypted and stored in an external database. Their will be options for signing in or creating a new account.}&\mr{2}{5cm}{This is an essential feature as saving progress is essential for making the game replayable.}\\
+                6&\mr{2}{3cm}{Login System}&\mr{2}{5cm}{Users will be able to login in order to save and reload their progress. The login system will use a username and password with the details being encrypted and stored in an external database. Their will be options for signing in or creating a new account aswell as resetting your password.}&\mr{2}{5cm}{This is an essential feature as saving progress is essential for making the game replayable.}\\
+                &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -261,7 +274,7 @@
                 &&&\\
                 &&&\\
                 \hline
-                10&\mr{2}{3cm}{User Interface}&\mr{2}{5cm}{A Simple UI that shows status indicators like health, stamina and magic points.}&\mr{2}{5cm}{This would allow the player to be aware of the characters health and give them the necessary information.}\\
+                7&\mr{2}{3cm}{User Interface}&\mr{2}{5cm}{A Simple UI that shows status indicators like health, weapons being used, enemy health and magic points.}&\mr{2}{5cm}{This would allow the player to be aware of the characters health and give them the necessary information.}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -272,7 +285,7 @@
                 \hline
                 Feature\#&Feature&Description&Justification\\
                 \hline
-                7&\mr{2}{3cm}{Weapons and a more Advanced Combat System.}&\mr{2}{5cm}{A system of weapons where you can get them from boss drops and potentially shops and a combat system with normal, charged (based on how long you hold down) and special attacks (using a special key).}&\mr{2}{5cm}{Different weapons will allow each player to have a playstyle more customized to them and will allow for the player getting stronger as they progress more. An advanced combat system will allow for a more smooth and enjoyable fighting experience.}\\
+                8&\mr{2}{3cm}{Weapons and a more Advanced Combat System.}&\mr{2}{5cm}{A system of weapons where you can get them from boss drops and potentially shops and a combat system with normal, charged (based on how long you hold down) and special attacks (using a special key).}&\mr{2}{5cm}{Different weapons will allow each player to have a playstyle more customized to them and will allow for the player getting stronger as they progress more. An advanced combat system will allow for a more smooth and enjoyable fighting experience.}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -282,7 +295,7 @@
                 &&&\\
                 &&&\\
                 \hline
-                8&\mr{2}{3cm}{Skill Tree}&\mr{2}{5cm}{A skill tree to unlock unique skills/abilities and get better at using existing skills/weapons. You would gain points from playing the game and can then put them into different areas in order to create a customized character build}&\mr{2}{5cm}{This would further allow the player to choose their own play style and add an element of replayability where you can try going for a different build each time you play. This was also requested by the stakeholders.}\\
+                9&\mr{2}{3cm}{Skill Tree}&\mr{2}{5cm}{A skill tree to unlock unique skills/abilities and get better at using existing skills/weapons. You would gain points from playing the game and can then put them into different areas in order to create a customized character build}&\mr{2}{5cm}{This would further allow the player to choose their own play style and add an element of replayability where you can try going for a different build each time you play. This was also requested by the stakeholders.}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -291,7 +304,7 @@
                 &&&\\
                 &&&\\
                 \hline
-                9&\mr{2}{3cm}{Procedurally Generated Dungeons}&\mr{2}{5cm}{The Dungeons would be procedurally generated whilst keeping some amount of structure (e.g. the same amount of distance between posses and key rooms). This would happen through many similar small room sections that can be slotted together in order to make a full dungeon.}&\mr{2}{5cm}{This would create a more engaging game which is different each time you play it and therefore increase replayability exponentially as the different combinations of room increases. This was also requested by the stakeholders.}\\
+                10&\mr{2}{3cm}{Procedurally Generated Dungeons}&\mr{2}{5cm}{The Dungeons would be procedurally generated whilst keeping some amount of structure (e.g. the same amount of distance between posses and key rooms). This would happen through many similar small room sections that can be slotted together in order to make a full dungeon.}&\mr{2}{5cm}{This would create a more engaging game which is different each time you play it and therefore increase replayability exponentially as the different combinations of room increases. This was also requested by the stakeholders.}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -302,25 +315,32 @@
                 &&&\\
                 &&&\\
                 \hline
-                10&\mr{2}{3cm}{Hidden Areas}&\mr{2}{5cm}{Secret areas that can be unlocked through wasy such as progressing further in the game and coming back or through puzzles/fake walls. Could have secret loot or bosses.}&\mr{2}{5cm}{This feature was highly requested by the stakeholders and would allow for more time spent having fun in the game through finding these areas.}\\
+                11&\mr{2}{3cm}{Hidden Areas}&\mr{2}{5cm}{Secret areas that can be unlocked through wasy such as progressing further in the game and coming back or through puzzles/fake walls. Could have secret loot or bosses.}&\mr{2}{5cm}{This feature was highly requested by the stakeholders and would allow for more time spent having fun in the game through finding these areas.}\\
                 &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
                 \hline
-                10&\mr{2}{3cm}{Inventory Sysetm}&\mr{2}{5cm}{An Inventory to be opened with the E key or the + button through which you will manage equipped weapons, key items, skills and more.}&\mr{2}{5cm}{An Inventory System is an essential feature if we want to add more weapons/weapon types and a skill tree.}\\
+                12&\mr{2}{3cm}{Inventory Sysetm}&\mr{2}{5cm}{An Inventory to be opened with the E key or the + button through which you will manage equipped weapons, key items, skills and more.}&\mr{2}{5cm}{An Inventory System is an essential feature if we want to add more weapons/weapon types and a skill tree.}\\
                 &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
                 \hline
-                10&\mr{2}{3cm}{Settings and Volume Control}&\mr{2}{5cm}{A settings page to control the volume of noises aswell as the vibrancy of colours.}&\mr{2}{5cm}{One of the Stakeholders has requested this as a feature to help the game be more accessible to them.}\\
+                13&\mr{2}{3cm}{Settings and Volume Control}&\mr{2}{5cm}{A settings page to control the volume of noises aswell as the vibrancy of colours.}&\mr{2}{5cm}{One of the Stakeholders has requested this as a feature to help the game be more accessible to them.}\\
                 &&&\\
                 &&&\\
                 &&&\\
                 \hline
-                
+                14&\mr{2}{3cm}{Difficulty Levels and Hardcore Mode}&\mr{2}{5cm}{A Difficulty level selector which allows the user to up the difficulty(damage the enemies do etc) and a Hardcore Mode which switches the game to a roguelike format with seperate save state to the normal game.}&\mr{2}{5cm}{50\% of the stakeholders are experienced with Dungeon Crawlers so in order to help the game still be reasonably challening for them I will add a difficulty toggle.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
         \end{tabular}
         \newpage
         \subsection{Success Criteria}
@@ -328,21 +348,7 @@
                 \hline
                 Criteria \# & Abstraction & Success Criteria & Justification\\
                 \hline
-                1&\mr{2}{3cm}{players to be able to control and move the player using both the WASD keys and a controller.}&\mr{2}{5cm}{1.1 W key - Forward\\1.2 A key - Left\\1.3 S key - Backward\\1.4 D key- Right\\1.5 Left Control Stick directional movement corresponds to player movement.}&\mr{2}{4cm}{These Criteria need to be met for the character to be controllable by the player. These specific controls where preffered by the stakeholders.}\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                \hline
-                2&\mr{2}{3cm}{Players to be able to have different weapons and attack with them.}&\mr{2}{5cm}{2.1 mouse-1/1 key/X button - Primary Attack\\2.2 mouse-2/2 key/Y button - Secondary Attack\\2.3 Add a basic melee sword\\2.4 Add a basic ranged bow and projectiles\\2.5 Add a basic magic staff and projectiles\\2.6 Add a basic magic staff with area of effect attacks\\2.7 Add a hitbox for the player\\2.8 Add a health bar for the player}&\mr{2}{4cm}{These criteria need to be met for a basic combat system to create the main difficulty and entertainment throughout the game}\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
+                1&\mr{2}{2cm}{Players to be able to control and move the player using both the WASD keys and a controller.}&\mr{2}{6cm}{1.1 W key - Forward\\1.2 A key - Left\\1.3 S key - Backward\\1.4 D key- Right\\1.5 Left Control Stick directional movement corresponds to player movement.}&\mr{2}{4cm}{These Criteria need to be met for the character to be controllable by the player. These specific controls where preffered by the stakeholders.}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -352,7 +358,13 @@
                 &&&\\
                 &&&\\
                 \hline
-                3&\mr{2}{3cm}{A Dungeon environment for the character to walk around and different rooms}&\mr{2}{5cm}{3.1 Walls that you cannot walk through\\3.2 Floor of the Dungeon\\3.3 Interactive chests for loot\\3.4 Seperate Boss, Chest, Monster and Shop Rooms\\3.5 A room Door that only opens on a certain condition\\3.6 A Dungeon Environment built out of the rooms and corridors}&\mr{2}{4cm}{These Criteria will provide the environment within which the game is played.}\\
+                2&\mr{2}{2cm}{Players to be able to have different weapons and attack with them.}&\mr{2}{6cm}{2.1 mouse-1/1 key/X button - Primary Attack\\2.2 mouse-2/2 key/Y button - Secondary Attack\\2.3 Add a basic melee sword\\2.4 Add a basic ranged bow and projectiles\\2.5 Add a basic magic staff and projectiles\\2.6 Add a basic magic staff with area of effect attacks\\2.7 Add a hitbox for the player\\2.8 Add a health bar for the player\\2.9 Add the ability to lock facing an enemy\\2.10 Make sure all attacks go in the correct direction}&\mr{2}{4cm}{These criteria need to be met for a basic combat system to create the main difficulty and entertainment throughout the game}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -364,31 +376,148 @@
                 &&&\\
                 &&&\\
                 \hline
-                4&\mr{2}{3cm}{Different Enemies for the player to face including bosses}&\mr{2}{5cm}{4.1\\}&\mr{2}{4cm}{}\\
+                3&\mr{2}{2cm}{A Dungeon environment for the character to walk around and different rooms}&\mr{2}{6cm}{3.1 Walls that you cannot walk through\\3.2 Floor of the Dungeon\\3.3 Interactive chests for loot\\3.4 Seperate Boss, Chest, Monster and Shop Rooms\\3.5 A room Door that only opens on a certain condition\\3.6 A Dungeon Environment built out of the rooms and corridors}&\mr{2}{4cm}{These Criteria will provide the environment within which the game is played.}\\
                 &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
-                \hline
-                2&\mr{2}{3cm}{}&\mr{2}{4cm}{}&\mr{2}{4cm}{}\\
                 &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                \hline
-                2&\mr{2}{3cm}{}&\mr{2}{4cm}{}&\mr{2}{4cm}{}\\
                 &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
                 \hline
-                2&\mr{2}{3cm}{}&\mr{2}{4cm}{}&\mr{2}{4cm}{}\\
+                4&\mr{2}{2cm}{Different Enemies for the player to face including bosses}&\mr{2}{6cm}{4.1 Enemy Sprites\\4.2 Enemy Pathfinding Abilities\\4.3 Enemy sight range\\4.4 Enemy hitbox\\4.5 Enemy health tracking\\4.6 Melee Enemies\\4.7 Projectile Enemies\\4.8 Boss Enemies with different attack combinations}&\mr{2}{4cm}{These Criterie need to be met in order to provide enemies in order to provide the challenge throughout the game.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
                 \hline
-                2&\mr{2}{3cm}{}&\mr{2}{4cm}{}&\mr{2}{4cm}{}\\
+        \end{tabular}
+        \newpage
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                \mr{2}{0.6cm}{}5\mr{2}{0.6cm}{}&\mr{2}{2cm}{Appearance and Animations of the Player}&\mr{2}{6cm}{5.1 Player Sprite\\5.2 Walking Animation\\5.3 Player sprite turns to face the direction of movement\\5.4 Melee Animation\\5.5 Magic Animation\\5.6 Bow Animation}&\mr{2}{4cm}{These Criteria will provide the visual animations so the player knows where they are attacking and moving}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                6&\mr{2}{2cm}{Login System}&\mr{2}{6cm}{6.1 Password Hashing Algorithm\\6.2 SQL Table to store username and hashed password pairs\\6.3 Ability to create a new account with unique username\\6.4 Validation of Usernames (1$\le$chars$<$15)\\6.5 Validation of passwords (One Special Character, One Number, At least 8 Characters, One upper and lower case character)\\6.6 Input Sanitisation (Removing any escape chars for SQL before sending the command)\\6.7 Ability to log in with an exisiting account and correct password\\6.8 Ability to reset password (Device Locked)\\6.9 A general login form which links the other forms}&\mr{2}{4cm}{These Criteria will provide a Login system in order to allow multiple users to login whilst keeping user data secure and accessible by that user.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                7&\mr{2}{2cm}{User Interface}&\mr{2}{6cm}{7.1 Health Bar\\7.2 Magic Points Bar\\7.3 Display of the weapon being used\\7.4 Popup display with enemy health over their head when they get damaged\\7.5 ability to switch between weapons}&\mr{2}{4cm}{These Criteria allow the key information to be displayed to the user aswell as the user being able to change what weapon they have equipped}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \newpage
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                \mr{2}{0.6cm}{}8\mr{2}{0.6cm}{}&\mr{2}{2cm}{Weapons And a More Advanced Combat System}&\mr{2}{6cm}{8.1 Different Styles of melee, magic and ranged weapons\\8.2 Item pick up\\8.3 Boss Drops\\8.4 Shop System that appears throughout levels\\8.5 Charged Attacks (based on how long you hold down)\\8.6 Special attacks}&\mr{2}{4cm}{These Criteria would allow for a more complex combat system to increase differences in the way you play}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                9&\mr{2}{2cm}{Skill Tree}&\mr{2}{6cm}{9.1 UI Menu for the skill tree (Some skills required before others unlocked).\\9.2 Different Branches (Melee, Ranged, Magic, Defense)\\ 9.3 Experience system.\\\tab 9.3.1 Experience gained after \tab killing enemies/bosses\\ \tab 9.3.2 Different experience amounts \tab required for different skills\\9.4 Ability to unlock skills\\9.5 Ability to reset your skill tree}&\mr{2}{4cm}{These Criteria will fulfill a stakeholder desire and will allow the game to have more complexity and replayability}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                10&\mr{2}{2cm}{Procedurally Generated Dungeons}&\mr{2}{6cm}{10.1 Creating requirements for each level to satisfy\\10.2 Creating differnt room sections/rooms to peice together\\10.3 Creating the algorithm to generate which room sections are slotted together where.\\10.4 Create an algorithm to peice the sections together to create a fully playable level.\\\tab 10.4.1 Level's generated satisfy \tab length requirements\\\tab 10.4.2 Level's generated contain all \tab the special rooms needed (chest \tab room, secret rooms, etc.)}&\mr{2}{4cm}{These criteria will help to add a ton of replayability to the game aswell as being requested by stakeholders}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                11&\mr{2}{2cm}{Hidden Areas}&\mr{2}{6cm}{11.1 Add mechanics to get into the secret rooms (breakable walls, climbing vines, keys, etc.)\\\tab 11.1.1 Add a hammer to break \tab walls with\\\tab 11.1.2 Add climbing gloves which \tab you need in order to climb vines\\11.2 Add secret Boss and Treasure rooms for behind these obstacles.}&\mr{2}{4cm}{These Criteria will make the game more engaging as well as being requested by the stakeholders}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                12&\mr{2}{2cm}{Inventory System}&\mr{2}{6cm}{12.1 UI for Inventory\\12.2 Storage of Extra weapons and key items (keys, armour, charms, etc)\\12.3 E key to open up the inventory\\12.4 Ability to switch out what Weapons, Armour and charms are equipped.\\}&\mr{2}{4cm}{These criteria will allow for more complexity in the game and more customized and diverse playthrough options which allows for more replayability}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \newpage
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                \mr{2}{0.6cm}{}13\mr{2}{0.6cm}{}&\mr{2}{2cm}{Settings and Volume Control}&\mr{2}{6cm}{13.1 Settings UI with buttons for each setting\\13.2 Ability to control the volume\\13.3 Ability to control the vibrancy of colours in the game.}&\mr{2}{4cm}{These criteria have been requested by stakeholders as a way to increase the accessibility of the game to them}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                14&\mr{2}{2cm}{Difficulty Levels and Hardcore Mode}&\mr{2}{6cm}{14.1 A slider for difficulty in the settings menu\\14.2 Increasing difficulty based on the slider\\\tab 14.2.1 Increasing enemy health\\\tab 14.2.2 Decreasing player health\\\tab 14.2.3 Increasing number of \tab enemies\\14.3 A Hardcore mode at maximum difficulty with a seperate save state to the normal game.\\\tab 14.3.1 roguelike features \tab (permadeath, resource \tab management, etc)}&\mr{2}{4cm}{These criteria will allow those of the stakeholders who have more experience in dungeon crawlers aswell as those that have played the game more to up the difficulty and it increases the replayabilty through different challenges.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
                 &&&\\
                 &&&\\
                 &&&\\

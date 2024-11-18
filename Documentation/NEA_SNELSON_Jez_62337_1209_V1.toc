@@ -7,10 +7,10 @@
 \contentsline {subsubsection}{\numberline {1.3.3}About Stakeholders}{3}{}%
 \contentsline {subsection}{\numberline {1.4}Research}{4}{}%
 \contentsline {subsubsection}{\numberline {1.4.1}Existing Solutions}{4}{}%
-\contentsline {subsection}{\numberline {1.5}Limitations and Requirements}{6}{}%
-\contentsline {subsection}{\numberline {1.6}Features}{7}{}%
-\contentsline {subsubsection}{\numberline {1.6.1}Essential Features}{7}{}%
-\contentsline {subsubsection}{\numberline {1.6.2}Desireable Features}{8}{}%
-\contentsline {subsection}{\numberline {1.7}Success Criteria}{9}{}%
-\contentsline {subsection}{\numberline {1.8}Computational Methods}{10}{}%
-\contentsline {section}{\numberline {2}References}{11}{}%
+\contentsline {subsection}{\numberline {1.5}Limitations and Requirements}{7}{}%
+\contentsline {subsection}{\numberline {1.6}Features}{8}{}%
+\contentsline {subsubsection}{\numberline {1.6.1}Essential Features}{8}{}%
+\contentsline {subsubsection}{\numberline {1.6.2}Desireable Features}{9}{}%
+\contentsline {subsection}{\numberline {1.7}Success Criteria}{10}{}%
+\contentsline {subsection}{\numberline {1.8}Computational Methods}{14}{}%
+\contentsline {section}{\numberline {2}References}{15}{}%
