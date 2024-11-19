@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.23)  19 NOV 2024 12:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.23)  19 NOV 2024 13:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1060,61 +1060,69 @@ File: images/design/Database_Design.pdf Graphic file (type pdf)
 <use images/design/Database_Design.pdf>
 Package pdftex.def Info: images/design/Database_Design.pdf  used on input line 536.
 (pdftex.def)             Requested size: 426.79134pt x 131.77716pt.
+<images/design/Login_System.pdf, id=66, 896.59969pt x 520.19344pt>
+File: images/design/Login_System.pdf Graphic file (type pdf)
+<use images/design/Login_System.pdf>
+Package pdftex.def Info: images/design/Login_System.pdf  used on input line 538.
+(pdftex.def)             Requested size: 426.79134pt x 247.61832pt.
 
-Overfull \hbox (6.96698pt too wide) in paragraph at lines 543--543
+Overfull \hbox (6.96698pt too wide) in paragraph at lines 544--544
 []|\OT1/cmr/m/n/10 https://store.steampowered  
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 543
+Overfull \vbox (12.0pt too high) detected at line 544
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 543
+Overfull \vbox (12.0pt too high) detected at line 544
  []
 
 
-Overfull \hbox (6.96698pt too wide) in paragraph at lines 547--547
+Overfull \hbox (6.96698pt too wide) in paragraph at lines 548--548
 []|\OT1/cmr/m/n/10 https://store.steampowered  
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 547
+Overfull \vbox (12.0pt too high) detected at line 548
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 547
+Overfull \vbox (12.0pt too high) detected at line 548
  []
 
 
-Overfull \hbox (1.80035pt too wide) in paragraph at lines 551--551
+Overfull \hbox (1.80035pt too wide) in paragraph at lines 552--552
 []|\OT1/cmr/m/n/10 https://www.youtube.com  
  []
 
 
-Overfull \hbox (53.46971pt too wide) in paragraph at lines 539--556
+Overfull \hbox (53.46971pt too wide) in paragraph at lines 540--557
 [] 
  []
 
-[15 <./images/design/Database_Design.pdf>] (./NEA_SNELSON_Jez_62337_1209_V1.aux)
+[15 <./images/design/Database_Design.pdf> <./images/design/Login_System.pdf
+
+pdfTeX warning: pdflatex.exe (file ./images/design/Login_System.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] [16] (./NEA_SNELSON_Jez_62337_1209_V1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 27839 strings out of 474136
- 699489 string characters out of 5748496
+ 27846 strings out of 474136
+ 699771 string characters out of 5748496
  1959190 words of memory out of 5000000
- 49747 multiletter control sequences out of 15000+600000
+ 49754 multiletter control sequences out of 15000+600000
  563759 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  114i,11n,121p,1111b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on NEA_SNELSON_Jez_62337_1209_V1.pdf (17 pages, 272634 bytes).
+Output written on NEA_SNELSON_Jez_62337_1209_V1.pdf (18 pages, 315569 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 234 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
