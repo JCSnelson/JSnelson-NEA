@@ -1,0 +1,84 @@
+%% Creator: Inkscape 1.4 (86a8ad7, 2024-10-11), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Database_Design_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{488.25bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.30875576)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{Database_Design_svg-tex.pdf}}%
+    \put(0.22273425,0.26420891){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{Users}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{Database_Design_svg-tex.pdf}}%
+    \put(0.02304147,0.21812596){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{PK}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{Database_Design_svg-tex.pdf}}%
+    \put(0.05837174,0.21812596){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{user_id(Autoincrement)}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{Database_Design_svg-tex.pdf}}%
+    \put(0.05837174,0.17204301){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}username: varchar(50) unique not null\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{Database_Design_svg-tex.pdf}}%
+    \put(0.05837174,0.12596006){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}hashedPassword: varchar(255) - hashed\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{Database_Design_svg-tex.pdf}}%
+    \put(0.05837174,0.07987711){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}admin: bool\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{Database_Design_svg-tex.pdf}}%
+    \put(0.77572965,0.27956989){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{SaveData}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{Database_Design_svg-tex.pdf}}%
+    \put(0.57603687,0.21812596){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{PK...}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{Database_Design_svg-tex.pdf}}%
+    \put(0.61136713,0.21812596){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{save_id...}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{Database_Design_svg-tex.pdf}}%
+    \put(0.61136713,0.15668203){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}difficulty: integer\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{Database_Design_svg-tex.pdf}}%
+    \put(0.61136713,0.11059908){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}hardcore: bool\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{Database_Design_svg-tex.pdf}}%
+    \put(0.61136713,0.06451613){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}level: integer\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{Database_Design_svg-tex.pdf}}%
+    \put(0.61136713,0.01843318){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}inventory: blob\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{Database_Design_svg-tex.pdf}}%
+  \end{picture}%
+\endgroup%
