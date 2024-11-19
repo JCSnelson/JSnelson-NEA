@@ -13,4 +13,6 @@
 \contentsline {subsubsection}{\numberline {1.6.2}Desireable Features}{9}{}%
 \contentsline {subsection}{\numberline {1.7}Success Criteria}{10}{}%
 \contentsline {subsection}{\numberline {1.8}Computational Methods}{14}{}%
-\contentsline {section}{\numberline {2}References}{15}{}%
+\contentsline {section}{\numberline {2}Design}{15}{}%
+\contentsline {subsection}{\numberline {2.1}Database Design (ERD)}{15}{}%
+\contentsline {section}{\numberline {3}References}{15}{}%
