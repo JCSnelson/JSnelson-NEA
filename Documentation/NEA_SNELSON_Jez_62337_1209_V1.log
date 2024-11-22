@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.23)  22 NOV 2024 12:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.23)  22 NOV 2024 12:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1064,44 +1064,44 @@ File: images/design/Database_Design.pdf Graphic file (type pdf)
 <use images/design/Database_Design.pdf>
 Package pdftex.def Info: images/design/Database_Design.pdf  used on input line 537.
 (pdftex.def)             Requested size: 426.79134pt x 131.77716pt.
-<images/design/Login_System.pdf, id=66, 836.3747pt x 520.19344pt>
+<images/design/Login_System.pdf, id=66, 798.73407pt x 497.60907pt>
 File: images/design/Login_System.pdf Graphic file (type pdf)
 <use images/design/Login_System.pdf>
-Package pdftex.def Info: images/design/Login_System.pdf  used on input line 540.
-(pdftex.def)             Requested size: 426.79134pt x 265.45389pt.
+Package pdftex.def Info: images/design/Login_System.pdf  used on input line 545.
+(pdftex.def)             Requested size: 426.79134pt x 265.88792pt.
 
-Overfull \hbox (6.96698pt too wide) in paragraph at lines 546--546
+Overfull \hbox (6.96698pt too wide) in paragraph at lines 551--551
 []|\OT1/cmr/m/n/10 https://store.steampowered  
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 546
+Overfull \vbox (12.0pt too high) detected at line 551
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 546
+Overfull \vbox (12.0pt too high) detected at line 551
  []
 
 
-Overfull \hbox (6.96698pt too wide) in paragraph at lines 550--550
+Overfull \hbox (6.96698pt too wide) in paragraph at lines 555--555
 []|\OT1/cmr/m/n/10 https://store.steampowered  
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 550
+Overfull \vbox (12.0pt too high) detected at line 555
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 550
+Overfull \vbox (12.0pt too high) detected at line 555
  []
 
 
-Overfull \hbox (1.80035pt too wide) in paragraph at lines 554--554
+Overfull \hbox (1.80035pt too wide) in paragraph at lines 559--559
 []|\OT1/cmr/m/n/10 https://www.youtube.com  
  []
 
 
-Overfull \hbox (53.46971pt too wide) in paragraph at lines 542--559
+Overfull \hbox (53.46971pt too wide) in paragraph at lines 547--564
 [] 
  []
 
@@ -1123,7 +1123,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  114i,11n,121p,1111b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on NEA_SNELSON_Jez_62337_1209_V1.pdf (18 pages, 365024 bytes).
+Output written on NEA_SNELSON_Jez_62337_1209_V1.pdf (18 pages, 365172 bytes).
 PDF statistics:
  336 PDF objects out of 1000 (max. 8388607)
  182 compressed objects within 2 object streams
