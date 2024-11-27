@@ -539,7 +539,13 @@
         I have to write Queries for each of the actions I want to do.\\
         \begin{tabular}{|c|c|c|}
                 \hline
-                Name&Description&SQL\\  
+                Name&Description/Justification&SQL\\
+                \hline
+                \mr{2}{2cm}{createTableUsers}&\mr{2}{3cm}{Create's a table for Users if it does not exist.}&\mr{2}{8cm}{\texttt{CREATE TABLE IF NOT EXISTS Users (\\user\_id INTEGER PRIMARY KEY AUTOINCREMENT\\username VARCHAR(50)}}\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
         \end{tabular}
         \subsection{Login System (Activity Diagram)}
         \includegraphics[width=\textwidth]{images/design/Login_System.pdf}
