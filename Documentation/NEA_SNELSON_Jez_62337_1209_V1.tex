@@ -19,7 +19,7 @@
 \usepackage{fancyhdr}
 \usepackage{listings}
 \usepackage{subcaption}
-\usepackage{graphicx}
+\usepackage{graphicx, float}
 \usepackage{multirow, pgfplotstable}
 \usepackage{svg}
 \svgsetup{
@@ -534,21 +534,65 @@
         \subsection{Database Design}
         I will be using an SQL Database in order to store the data about my users.\\
         \subsubsection{ERD}
-        \includegraphics[width=\textwidth]{images/design/Database_Design.pdf}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width=\textwidth, trim = 0 500 0 100, clip]{images/design/Database_Design.pdf}
+                \caption{Initial Database Design}
+                \label{fig:ie_1}
+        \end{figure}
+
+        \subsection{Database Naming Conventions}
+        The naming conventions I will adopt for the database is as follows.\\
+        \begin{tabular}[pos]{|c|c|c|c|}
+                \hline
+                Abstract&Convention&Examples&Justification\\
+                \hline\
+                &&&\\
+                Tables&Plural snake\_case&users,save\_data&\mr{7}{4cm}{SQL is case insensitive so with CamelCase it cann't tell the difference between undervalue and underValue}\\
+                &&&\\
+                \cline{1-3}
+                &&&\\
+                Fields&Singular snake\_case&inventory\_content, username&\\
+                &&&\\
+                \cline{1-3}
+                &&&\\
+                Keys& singular snake\_case\_table\_id&user\_id, save\_data\_id&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        
         \subsubsection{SQL Queries}
         I have to write Queries for each of the actions I want to do.\\
         \begin{tabular}{|c|c|c|}
                 \hline
                 Name&Description/Justification&SQL\\
                 \hline
-                \mr{2}{2cm}{createTableUsers}&\mr{2}{3cm}{Create's a table for Users if it does not exist.}&\mr{2}{8cm}{\texttt{CREATE TABLE IF NOT EXISTS Users (\\user\_id INTEGER PRIMARY KEY AUTOINCREMENT\\username VARCHAR(50)}}\\
+                \mr{2}{3cm}{createTableUsers}&\mr{2}{3cm}{Create's a table for Users if it does not exist.}&\mr{2}{8.5cm}{\texttt{CREATE TABLE IF NOT EXISTS users (\\\tab user\_id INTEGER PRIMARY KEY AUTOINCREMENT,\\\tab username VARCHAR(15) NOT NULL,\\\tab password VARCHAR(64) NOT NULL,\\\tab salt VARCHAR(64) NOT NULL,\\\tab answer VARCHAR(64) NOT NULL\\);}}\\
                 &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3cm}{getUserData}&\mr{2}{3cm}{Returns the user data assuming it exists. If it doesnt it will return null.}&\mr{4}{8.5cm}{\texttt{SELECT * FROM users\\WHERE username = \%s;}}\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3cm}{addNewUser}&\mr{2}{3cm}{Insets a new user into users with username, password, challenge question answer and }&\mr{2}{8.5cm}{\texttt{}}\\
                 &&\\
                 &&\\
                 \hline
         \end{tabular}
         \subsection{Login System (Activity Diagram)}
-        \includegraphics[width=\textwidth]{images/design/Login_System.pdf}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width=\textwidth, trim = 0 50 0 0, clip]{images/design/Login_System.pdf}
+                \caption{Activity Diagram for login forms}
+                \label{fig:ie_2}
+        \end{figure}
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
         \hline
