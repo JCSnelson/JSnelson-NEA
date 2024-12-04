@@ -144,7 +144,7 @@
         \subsection{Research}
         \subsubsection{Existing Solutions}
         \textbf{Edmund McMillen's The Binding of Isaac}\\
-        Edmund McMillen created the popular dungeon crawler roguelike The Binding of Isaac and released it on Steam (https://store.steampowered.com/app/113200/The\_Binding\_of\_Isaac/).\\
+        Edmund McMillen created the popular dungeon crawler roguelike The Binding of Isaac and released it on Steam$_{(1)}$.
         This game was relatively unique as it had procedurally generated dungeons \\using a system of rooms that tesalate with each other.\\
         \\
         The procedurally generated dungeons consist of different shaped square based rooms that tesalate and are generated next to each other in a psuedo random fashion whilst obeying a set of rules. The mobs that spawn in each room can vary but there is usually only one or two enemy types per room and as you go up levels the amount of enemies and difficulty the pose increases. This system allows for every playthrough of the game to be different to the next with the same reccuring theme/difficulty which allows for lots of replay oppurtunity. This would be an appropiate way for me to fix the replayabilty issue.\\
@@ -161,9 +161,9 @@
         \newpage
         \[\]
         \textbf{Motion Twin's Dead Cells}\\
-        Motion Twin created the roguelike dungeon crawler and metroidvania Dead Cells which is released on steam (https://store.steampowered.com/app/588650/Dead\_Cells/). This game is known for its permadeath system and its procedurally generated dungeons.\\
+        Motion Twin created the roguelike dungeon crawler and metroidvania Dead Cells which is released on steam$_{(2)}$. This game is known for its permadeath system and its procedurally generated dungeons.\\
         \\
-        The way Dead Cells uses procedural generation interests me as it allows for there to be some fixed attributes to the level whilst still allowing elements of randomness. The developers talk about how they do this in a video devlog (https://www.youtube.com/watch?v\=tyMrRW\-Li\_I), here the dev talks about his system of having a fixed structure for each level almost like a skeleton. This skeleton will include stuff like important rooms along the way and how much distance of rooms has to be between them. It then fills in all the spaces for rooms with one of the many handmade rooms made by the developers. After one room has been chosen for a spot this leaves less choice for the other spots as the rooms need to join and flow into each other properly and so as it chooses more of them the structure of the level is determined similar to the wave function collapse algorithm (https://robertheaton.com/2018/12/17/wavefunction\-collapse\-algorithm/).\\
+        The way Dead Cells uses procedural generation interests me as it allows for there to be some fixed attributes to the level whilst still allowing elements of randomness. The developers talk about how they do this in a video devlog$_{(3)}$, here the dev talks about his system of having a fixed structure for each level almost like a skeleton. This skeleton will include stuff like important rooms along the way and how much distance of rooms has to be between them. It then fills in all the spaces for rooms with one of the many handmade rooms made by the developers. After one room has been chosen for a spot this leaves less choice for the other spots as the rooms need to join and flow into each other properly and so as it chooses more of them the structure of the level is determined similar to the wave function collapse algorithm$_{(4)}$.\\
         \\
         This style of generation allows for a unique experience each time whilst keeping a hand crafted and natural feel to the levels that is often lost in other techniques.\\
         \\
@@ -172,7 +172,7 @@
         \newpage
         \[\]
         \textbf{Nintendo's Legend Of Zelda Breath of the Wild}\\
-        Nintendo created the open-world dungeon crawler which is released on the Nintendo Wii U and the Nintendo Switch (https://store.nintendo.co.uk/en/the-legend-of-zelda-breath-of-the-wild-70010000000023). This game is known for its open world approach to dungeon crawlers as well as its easy to pick up nature for first time players.\\
+        Nintendo created the open-world dungeon crawler which is released on the Nintendo Wii U and the Nintendo Switch$_{(5)}$. This game is known for its open world approach to dungeon crawlers as well as its easy to pick up nature for first time players.\\
         \\
         The game starts with a tutorial that teaches players the mechanics of the game (combat, exploration, and resource gathering). This tutorial helps players into the world without overwhelming them, offering opportunities to learn at their own pace which helps reduce the steep learning curve of other games in the genre. The open-world nature of the game also adds to its replayability, allowing the player to take many different routes to complete the game. However, while the game’s size and allows for alot of replayabilty, the volume of content and time required to explore everything can reduce its effectiveness as a game that can be picked up easily for shorter sessions. Its 3D world and complex systems are features that would be too tricky to implement within the scope of an A-level computer science project. It also does not fully fit the dungeon-crawler genre, particularly as it is less dungeon-focused.\\ 
         \\
@@ -536,7 +536,7 @@
         \subsubsection{ERD}
         \begin{figure}[H]
                 \centering
-                \includegraphics[width=\textwidth, trim = 0 500 0 100, clip]{images/design/Database_Design.pdf}
+                \includegraphics[width=\textwidth, trim = 0 575 0 25, clip]{images/design/Database_Design.pdf}
                 \caption{Initial Database Design}
                 \label{fig:ie_1}
         \end{figure}
@@ -567,7 +567,7 @@
                 \hline
                 Name&Description/Justification&SQL\\
                 \hline
-                \mr{2}{3cm}{createTableUsers}&\mr{2}{3cm}{Create's a table for Users if it does not exist.}&\mr{2}{8.5cm}{\texttt{CREATE TABLE IF NOT EXISTS users (\\\tab user\_id INTEGER PRIMARY KEY AUTOINCREMENT,\\\tab username VARCHAR(15) NOT NULL,\\\tab password VARCHAR(64) NOT NULL,\\\tab salt VARCHAR(64) NOT NULL,\\\tab answer VARCHAR(64) NOT NULL\\);}}\\
+                \mr{2}{3.5cm}{createTableUsers}&\mr{2}{3cm}{Create's a table for Users if it does not exist.}&\mr{2}{8.5cm}{\texttt{CREATE TABLE IF NOT EXISTS users (\\\tab user\_id INTEGER PRIMARY KEY AUTOINCREMENT,\\\tab username VARCHAR(15) NOT NULL,\\\tab password VARCHAR(64) UNIQUE NOT NULL,\\\tab salt VARCHAR(64) NOT NULL,\\\tab answer VARCHAR(64) NOT NULL\\);}}\\
                 &&\\
                 &&\\
                 &&\\
@@ -576,12 +576,50 @@
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3cm}{getUserData}&\mr{2}{3cm}{Returns the user data assuming it exists. If it doesnt it will return null.}&\mr{4}{8.5cm}{\texttt{SELECT * FROM users\\WHERE username = \%s;}}\\
+                \mr{2}{3.5cm}{getUserData}&\mr{2}{3cm}{Returns the user data assuming it exists. If it doesnt it will return null.}&\mr{2}{8.5cm}{\texttt{SELECT * FROM users\\WHERE username = ?;}}\\
                 &&\\
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3cm}{addNewUser}&\mr{2}{3cm}{Insets a new user into users with username, password, challenge question answer and }&\mr{2}{8.5cm}{\texttt{}}\\
+                \mr{2}{3.5cm}{addNewUser}&\mr{1}{3cm}{Inserts a new user into users with username, password, challenge question answer and salt}&\mr{2}{8.5cm}{\texttt{--Assume hashed password and answer\\INSERT INTO\\users(username,password,answer,salt)\\VALUES (?,?,?,?);}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3.5cm}{resetPassword}&\mr{2}{3cm}{Changes a users password}&\mr{2}{8.5cm}{\texttt{--Assume hashed password and answer\\UPDATE TABLE users\\SET invalidCount = 0\\WHERE username = ?}}\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{3}{3.5cm}{createTableSave\_Data}&\mr{2}{3cm}{Create's a table for save\_data if it does not exist.}&\mr{2}{8.5cm}{\texttt{CREATE TABLE IF NOT EXISTS save\_data (\\\tab save\_id INTEGER AUTOINCREMENT,\\\tab user\_id INTEGER,\\\tab difficulty INTEGER,\\\tab hardcore INTEGER,\\\tab level INTEGER,\\\tab inventory BLOB DEFAULT x'7b7d'\\);\\--x'7b7d' is the representation of '{}'}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3.5cm}{addNewSave\_Data}&\mr{2}{3cm}{Add's new save data for a user.}&\mr{2}{8.5cm}{\texttt{INSERT INTO\\save\_data(user\_id,difficulty,hardcore,level)\\VALUES (?,?,?,?)}}\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3.5cm}{getSave\_Data}&\mr{2}{3cm}{Get's the save data with a specific user\_id and save\_id}&\mr{2}{8.5cm}{\texttt{SELECT * FROM users\\WHERE user\_id = ?\\AND save\_id = ?}}\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3.5cm}{userSave\_Data}&\mr{2}{3cm}{Get's the save data for all entries with a specific user\_id}&\mr{2}{8.5cm}{\texttt{SELECT * FROM users\\WHERE user\_id = ?}}\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3.5cm}{updateSave\_Data}&\mr{2}{3cm}{updateSave}&\mr{2}{8.5cm}{\texttt{UPDATE save\_data\\SET\\\tab inventory = ?,\\\tab level = ?\\WHERE\\\tab user\_id = ?\\AND save\_id = ?}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
                 &&\\
                 &&\\
                 \hline
@@ -606,7 +644,16 @@
         &&&&&\\
         &&&&&\\
         \hline
-        2&15/6/24&\mr{2}{3cm}{Research/ Existing Solutions}&\mr{2}{2cm}{youtube video, online}&\mr{2}{4cm}{https://www.youtube.com\\/watch?v\=tyMrRW\-Li\_I}&\mr{2}{3cm}{A dev log for an existing solution.}\\
+        3&15/6/24&\mr{2}{3cm}{Research/ Existing Solutions}&\mr{2}{2cm}{youtube video, online}&\mr{2}{4cm}{https://www.youtube.com\\/watch?v\=tyMrRW\-Li\_I}&\mr{2}{3cm}{A dev log for an existing solution.}\\
+        &&&&&\\
+        &&&&&\\
+        \hline
+        4&15/6/24&\mr{2}{3cm}{Research/ Existing Solutions}&\mr{2}{2cm}{blog, online}&\mr{2}{4cm}{https://robertheaton.com\\/2018/12/17/wavefunction\-collapse\-algorithm/}&\mr{2}{3cm}{An existing algorithm I researched.}\\
+        &&&&&\\
+        &&&&&\\
+        \hline
+        5&25/11/24&\mr{3}{3cm}{Research/ Exisiting Solutions}&\mr{2}{2cm}{video games store, online}&\mr{2}{4cm}{https://store.nintendo.co\\.uk/en/the-legend-of-zelda-breath-of-the-wild-70010000000023}&\mr{2}{3cm}{One of the existing solutions I researched}\\
+        &&&&&\\
         &&&&&\\
         &&&&&\\
         \hline
