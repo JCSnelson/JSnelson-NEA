@@ -21,6 +21,7 @@
 \usepackage{subcaption}
 \usepackage{graphicx, float}
 \usepackage{multirow, pgfplotstable}
+\usepackage{multicol}
 \usepackage[a4paper, total={150mm, 210mm}]{geometry}
 %command for creating spaces
 \newcommand\tab[1][0.5cm]{\hspace*{#1}}
@@ -533,9 +534,12 @@
         \begin{figure}[H]
                 \centering
                 \includegraphics[width=\textwidth, trim = 0 575 0 25, clip]{images/design/Database_Design.pdf}
-                \caption{Initial Database Design}
+                \caption{Database Design}
                 \label{fig:ie_1}
         \end{figure}
+        Figure 2 shows the Database Design:\\
+        The users table will be the main table containing all the login details.\\
+        Each user will be able to have multiple save instances which will be stored in save data.\\
 
         \subsection{Database Naming Conventions}
         The naming conventions I will adopt for the database is as follows.\\
@@ -629,12 +633,26 @@
                 \label{fig:ie_2}
         \end{figure}
         \subsubsection{Mockup Forms}
-        \begin{figure}[H]
-                \centering
-                \includegraphics[width=\textwidth, width = 0.25\columnwidth, trim = 0 50 0 0, clip]{images/design/Login_Form.pdf}
-                \caption{Login Form}
-                \label{fig:ie_2}
-        \end{figure}
+        \begin{multicols}{3}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/design/Login_Form.pdf}
+                        \caption{Login Form}
+                        \label{fig:ie_3}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/design/Sign_Up_Form.pdf}
+                        \caption{New Account Form}
+                        \label{fig:ie_3}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/design/Reset_Password.pdf}
+                        \caption{Reset Password Form}
+                        \label{fig:ie_3}
+                \end{figure}
+        \end{multicols}
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
         \hline

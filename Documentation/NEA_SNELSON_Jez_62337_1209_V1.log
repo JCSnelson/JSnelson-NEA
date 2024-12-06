@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.23)  6 DEC 2024 13:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.23)  6 DEC 2024 13:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -425,66 +425,138 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \extratabsurround=\skip64
 \backup@length=\skip65
 \ar@cellbox=\box70
-)) (c:/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+)) (c:/texlive/2023/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
+\c@tracingmulticols=\count316
+\mult@box=\box71
+\multicol@leftmargin=\dimen287
+\c@unbalance=\count317
+\c@collectmore=\count318
+\doublecol@number=\count319
+\multicoltolerance=\count320
+\multicolpretolerance=\count321
+\full@width=\dimen288
+\page@free=\dimen289
+\premulticols=\dimen290
+\postmulticols=\dimen291
+\multicolsep=\skip66
+\multicolbaselineskip=\skip67
+\partial@page=\box72
+\last@line=\box73
+\mc@boxedresult=\box74
+\maxbalancingoverflow=\dimen292
+\mult@rightbox=\box75
+\mult@grightbox=\box76
+\mult@firstbox=\box77
+\mult@gfirstbox=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\c@minrows=\count322
+\c@columnbadness=\count323
+\c@finalcolumnbadness=\count324
+\last@try=\dimen293
+\multicolovershoot=\dimen294
+\multicolundershoot=\dimen295
+\mult@nat@firstbox=\box115
+\colbreak@box=\box116
+\mc@col@check@num=\count325
+) (c:/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (c:/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (c:/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count316
-\Gm@cntv=\count317
-\c@Gm@tempcnt=\count318
-\Gm@bindingoffset=\dimen287
-\Gm@wd@mp=\dimen288
-\Gm@odd@mp=\dimen289
-\Gm@even@mp=\dimen290
-\Gm@layoutwidth=\dimen291
-\Gm@layoutheight=\dimen292
-\Gm@layouthoffset=\dimen293
-\Gm@layoutvoffset=\dimen294
+\Gm@cnth=\count326
+\Gm@cntv=\count327
+\c@Gm@tempcnt=\count328
+\Gm@bindingoffset=\dimen296
+\Gm@wd@mp=\dimen297
+\Gm@odd@mp=\dimen298
+\Gm@even@mp=\dimen299
+\Gm@layoutwidth=\dimen300
+\Gm@layoutheight=\dimen301
+\Gm@layouthoffset=\dimen302
+\Gm@layoutvoffset=\dimen303
 \Gm@dimlist=\toks46
 ) (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count319
-\l__pdf_internal_box=\box71
+\l__color_backend_stack_int=\count329
+\l__pdf_internal_box=\box117
 ) (./NEA_SNELSON_Jez_62337_1209_V1.aux
 
-LaTeX Warning: Label `fig:ie_2' multiply defined.
+LaTeX Warning: Label `fig:ie_3' multiply defined.
+
+
+LaTeX Warning: Label `fig:ie_3' multiply defined.
 
 )
 \openout1 = `NEA_SNELSON_Jez_62337_1209_V1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-\c@lstlisting=\count320
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+\c@lstlisting=\count330
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count321
-\scratchdimen=\dimen295
-\scratchbox=\box72
-\nofMPsegments=\count322
-\nofMParguments=\count323
+\scratchcounter=\count331
+\scratchdimen=\dimen304
+\scratchbox=\box118
+\nofMPsegments=\count332
+\nofMParguments=\count333
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count324
-\MPscratchDim=\dimen296
-\MPnumerator=\count325
-\makeMPintoPDFobject=\count326
+\MPscratchCnt=\count334
+\MPscratchDim=\dimen305
+\MPnumerator=\count335
+\makeMPintoPDFobject=\count336
 \everyMPtoPDFconversion=\toks48
 ) (c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -494,7 +566,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 39.
+ on input line 40.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -537,79 +609,79 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 \openout4 = `NEA_SNELSON_Jez_62337_1209_V1.toc'.
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 51--54
+Underfull \hbox (badness 10000) in paragraph at lines 52--55
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--54
+Underfull \hbox (badness 10000) in paragraph at lines 52--55
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
 
 
-Overfull \hbox (13.86696pt too wide) in paragraph at lines 58--69
+Overfull \hbox (13.86696pt too wide) in paragraph at lines 59--70
 \OT1/cmr/m/n/10 4. Would you say you have the time to com-mit to learn-ing a com-plex or un-in-tu-itive game?(yes,probably
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--69
+Underfull \hbox (badness 10000) in paragraph at lines 59--70
 
  []
 
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 71--93
+Underfull \hbox (badness 10000) in paragraph at lines 72--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--93
+Underfull \hbox (badness 10000) in paragraph at lines 72--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--93
+Underfull \hbox (badness 10000) in paragraph at lines 72--94
 
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 98
+Overfull \vbox (12.0pt too high) detected at line 99
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 98
+Overfull \vbox (48.0pt too high) detected at line 99
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 105
+Overfull \vbox (36.0pt too high) detected at line 106
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 111
+Overfull \vbox (48.0pt too high) detected at line 112
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 118
+Overfull \vbox (60.0pt too high) detected at line 119
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 126
+Overfull \vbox (12.0pt too high) detected at line 127
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 126
+Overfull \vbox (48.0pt too high) detected at line 127
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 133
+Overfull \vbox (24.0pt too high) detected at line 134
  []
 
 
-Overfull \hbox (9.14725pt too wide) in paragraph at lines 94--139
+Overfull \hbox (9.14725pt too wide) in paragraph at lines 95--140
 [] 
  []
 
@@ -617,164 +689,164 @@ Overfull \hbox (9.14725pt too wide) in paragraph at lines 94--139
 <images/research/BOI_Capture.PNG, id=25, 1302.36563pt x 633.86812pt>
 File: images/research/BOI_Capture.PNG Graphic file (type png)
 <use images/research/BOI_Capture.PNG>
-Package pdftex.def Info: images/research/BOI_Capture.PNG  used on input line 153.
+Package pdftex.def Info: images/research/BOI_Capture.PNG  used on input line 154.
 (pdftex.def)             Requested size: 325.5906pt x 158.46664pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--157
+Underfull \hbox (badness 10000) in paragraph at lines 143--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--157
+Underfull \hbox (badness 10000) in paragraph at lines 143--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--157
+Underfull \hbox (badness 10000) in paragraph at lines 143--158
 
  []
 
 [4 <./images/research/BOI_Capture.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 158--168
+Underfull \hbox (badness 10000) in paragraph at lines 159--169
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--168
+Underfull \hbox (badness 10000) in paragraph at lines 159--169
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--168
+Underfull \hbox (badness 10000) in paragraph at lines 159--169
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--168
+Underfull \hbox (badness 10000) in paragraph at lines 159--169
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--168
+Underfull \hbox (badness 10000) in paragraph at lines 159--169
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 169--179
+Underfull \hbox (badness 10000) in paragraph at lines 170--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--179
+Underfull \hbox (badness 10000) in paragraph at lines 170--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--179
+Underfull \hbox (badness 10000) in paragraph at lines 170--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--179
+Underfull \hbox (badness 10000) in paragraph at lines 170--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--179
+Underfull \hbox (badness 10000) in paragraph at lines 170--180
 
  []
 
 [6]
-Overfull \vbox (48.0pt too high) detected at line 186
+Overfull \vbox (48.0pt too high) detected at line 187
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 186
+Overfull \vbox (24.0pt too high) detected at line 187
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 196
+Overfull \vbox (60.0pt too high) detected at line 197
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 205
+Overfull \vbox (24.0pt too high) detected at line 206
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 205
+Overfull \vbox (36.0pt too high) detected at line 206
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 212
+Overfull \vbox (36.0pt too high) detected at line 213
  []
 
 
-Overfull \hbox (37.6pt too wide) in paragraph at lines 182--220
+Overfull \hbox (37.6pt too wide) in paragraph at lines 183--221
 [] 
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 226
+Overfull \vbox (48.0pt too high) detected at line 227
  []
 
 
-Overfull \vbox (72.0pt too high) detected at line 226
+Overfull \vbox (72.0pt too high) detected at line 227
  []
 
 
-Overfull \vbox (84.0pt too high) detected at line 235
+Overfull \vbox (84.0pt too high) detected at line 236
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 235
+Overfull \vbox (24.0pt too high) detected at line 236
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 245
+Overfull \vbox (60.0pt too high) detected at line 246
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 245
+Overfull \vbox (12.0pt too high) detected at line 246
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 253
+Overfull \vbox (36.0pt too high) detected at line 254
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 253
+Overfull \vbox (24.0pt too high) detected at line 254
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 259
+Overfull \vbox (12.0pt too high) detected at line 260
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 259
+Overfull \vbox (24.0pt too high) detected at line 260
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 259
+Overfull \vbox (24.0pt too high) detected at line 260
  []
 
 
-Overfull \vbox (96.0pt too high) detected at line 264
+Overfull \vbox (96.0pt too high) detected at line 265
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 264
+Overfull \vbox (12.0pt too high) detected at line 265
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 275
+Overfull \vbox (24.0pt too high) detected at line 276
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 275
+Overfull \vbox (24.0pt too high) detected at line 276
  []
 
 
-Overfull \hbox (34.37238pt too wide) in paragraph at lines 222--281
+Overfull \hbox (34.37238pt too wide) in paragraph at lines 223--282
 [] 
  []
 
@@ -782,75 +854,75 @@ Overfull \hbox (34.37238pt too wide) in paragraph at lines 222--281
 Overfull \vbox (13.0087pt too high) has occurred while \output is active []
 
  [8]
-Overfull \vbox (12.0pt too high) detected at line 286
+Overfull \vbox (12.0pt too high) detected at line 287
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 286
+Overfull \vbox (60.0pt too high) detected at line 287
  []
 
 
-Overfull \vbox (84.0pt too high) detected at line 286
+Overfull \vbox (84.0pt too high) detected at line 287
  []
 
 
-Overfull \vbox (72.0pt too high) detected at line 296
+Overfull \vbox (72.0pt too high) detected at line 297
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 296
+Overfull \vbox (60.0pt too high) detected at line 297
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 305
+Overfull \vbox (12.0pt too high) detected at line 306
  []
 
 
-Overfull \vbox (96.0pt too high) detected at line 305
+Overfull \vbox (96.0pt too high) detected at line 306
  []
 
 
-Overfull \vbox (72.0pt too high) detected at line 305
+Overfull \vbox (72.0pt too high) detected at line 306
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 316
+Overfull \vbox (48.0pt too high) detected at line 317
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 316
+Overfull \vbox (36.0pt too high) detected at line 317
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 323
+Overfull \vbox (36.0pt too high) detected at line 324
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 323
+Overfull \vbox (24.0pt too high) detected at line 324
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 329
+Overfull \vbox (12.0pt too high) detected at line 330
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 329
+Overfull \vbox (24.0pt too high) detected at line 330
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 334
+Overfull \vbox (12.0pt too high) detected at line 335
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 334
+Overfull \vbox (60.0pt too high) detected at line 335
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 334
+Overfull \vbox (48.0pt too high) detected at line 335
  []
 
 
-Overfull \hbox (34.37238pt too wide) in paragraph at lines 282--343
+Overfull \hbox (34.37238pt too wide) in paragraph at lines 283--344
 [] 
  []
 
@@ -858,141 +930,141 @@ Overfull \hbox (34.37238pt too wide) in paragraph at lines 282--343
 Overfull \vbox (18.55038pt too high) has occurred while \output is active []
 
  [9]
-Overfull \vbox (84.0pt too high) detected at line 349
+Overfull \vbox (84.0pt too high) detected at line 350
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 349
+Overfull \vbox (60.0pt too high) detected at line 350
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 349
+Overfull \vbox (48.0pt too high) detected at line 350
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 359
+Overfull \vbox (48.0pt too high) detected at line 360
  []
 
 
-Overfull \vbox (180.0pt too high) detected at line 359
+Overfull \vbox (180.0pt too high) detected at line 360
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 359
+Overfull \vbox (48.0pt too high) detected at line 360
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 377
+Overfull \vbox (60.0pt too high) detected at line 378
  []
 
 
-Overfull \vbox (96.0pt too high) detected at line 377
+Overfull \vbox (96.0pt too high) detected at line 378
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 377
+Overfull \vbox (24.0pt too high) detected at line 378
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 388
+Overfull \vbox (48.0pt too high) detected at line 389
  []
 
 
-Overfull \vbox (84.0pt too high) detected at line 388
+Overfull \vbox (84.0pt too high) detected at line 389
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 388
+Overfull \vbox (36.0pt too high) detected at line 389
  []
 
 
-Overfull \hbox (10.25293pt too wide) in paragraph at lines 345--399
+Overfull \hbox (10.25293pt too wide) in paragraph at lines 346--400
 [] 
  []
 
 [10]
-Overfull \vbox (24.0pt too high) detected at line 402
+Overfull \vbox (24.0pt too high) detected at line 403
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 402
+Overfull \vbox (60.0pt too high) detected at line 403
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 402
+Overfull \vbox (36.0pt too high) detected at line 403
  []
 
 
-Overfull \vbox (216.0pt too high) detected at line 410
+Overfull \vbox (216.0pt too high) detected at line 411
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 410
+Overfull \vbox (60.0pt too high) detected at line 411
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 431
+Overfull \vbox (60.0pt too high) detected at line 432
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 431
+Overfull \vbox (60.0pt too high) detected at line 432
  []
 
 
-Overfull \hbox (18.7854pt too wide) in paragraph at lines 400--440
+Overfull \hbox (18.7854pt too wide) in paragraph at lines 401--441
 [][] 
  []
 
 [11]
-Overfull \vbox (36.0pt too high) detected at line 443
+Overfull \vbox (36.0pt too high) detected at line 444
  []
 
 
-Overfull \vbox (84.0pt too high) detected at line 443
+Overfull \vbox (84.0pt too high) detected at line 444
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 443
+Overfull \vbox (36.0pt too high) detected at line 444
  []
 
 
-Overfull \vbox (108.0pt too high) detected at line 453
+Overfull \vbox (108.0pt too high) detected at line 454
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 453
+Overfull \vbox (36.0pt too high) detected at line 454
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 465
+Overfull \vbox (12.0pt too high) detected at line 466
  []
 
 
-Overfull \vbox (156.0pt too high) detected at line 465
+Overfull \vbox (156.0pt too high) detected at line 466
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 465
+Overfull \vbox (36.0pt too high) detected at line 466
  []
 
 
-Overfull \vbox (84.0pt too high) detected at line 481
+Overfull \vbox (84.0pt too high) detected at line 482
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 481
+Overfull \vbox (24.0pt too high) detected at line 482
  []
 
 
-Overfull \vbox (72.0pt too high) detected at line 491
+Overfull \vbox (72.0pt too high) detected at line 492
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 491
+Overfull \vbox (60.0pt too high) detected at line 492
  []
 
 
-Overfull \hbox (18.7854pt too wide) in paragraph at lines 441--500
+Overfull \hbox (18.7854pt too wide) in paragraph at lines 442--501
 [][] 
  []
 
@@ -1000,36 +1072,36 @@ Overfull \hbox (18.7854pt too wide) in paragraph at lines 441--500
 Overfull \vbox (11.89209pt too high) has occurred while \output is active []
 
  [12]
-Overfull \vbox (12.0pt too high) detected at line 503
+Overfull \vbox (12.0pt too high) detected at line 504
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 503
+Overfull \vbox (36.0pt too high) detected at line 504
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 503
+Overfull \vbox (36.0pt too high) detected at line 504
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 509
+Overfull \vbox (24.0pt too high) detected at line 510
  []
 
 
-Overfull \vbox (144.0pt too high) detected at line 509
+Overfull \vbox (144.0pt too high) detected at line 510
  []
 
 
-Overfull \vbox (96.0pt too high) detected at line 509
+Overfull \vbox (96.0pt too high) detected at line 510
  []
 
 
-Overfull \hbox (23.78542pt too wide) in paragraph at lines 501--525
+Overfull \hbox (23.78542pt too wide) in paragraph at lines 502--526
 [][] 
  []
 
 [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 531--532
+Underfull \hbox (badness 10000) in paragraph at lines 532--533
 
  []
 
@@ -1039,51 +1111,48 @@ pdfTeX warning: pdflatex.exe (file ./images/design/Database_Design.pdf): PDF inc
 <images/design/Database_Design.pdf, id=66, 614.295pt x 794.97pt>
 File: images/design/Database_Design.pdf Graphic file (type pdf)
 <use images/design/Database_Design.pdf>
-Package pdftex.def Info: images/design/Database_Design.pdf  used on input line 535.
+Package pdftex.def Info: images/design/Database_Design.pdf  used on input line 536.
 (pdftex.def)             Requested size: 426.79134pt x 133.89635pt.
 
-Overfull \hbox (19.58691pt too wide) in paragraph at lines 541--559
+Underfull \hbox (badness 10000) in paragraph at lines 540--543
+
+ []
+
+
+Overfull \hbox (19.58691pt too wide) in paragraph at lines 545--563
 [] 
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 566
+Overfull \vbox (12.0pt too high) detected at line 570
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 566
+Overfull \vbox (60.0pt too high) detected at line 570
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 575
+Overfull \vbox (24.0pt too high) detected at line 579
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 580
+Overfull \vbox (60.0pt too high) detected at line 584
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 580
+Overfull \vbox (24.0pt too high) detected at line 584
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 587
+Overfull \vbox (24.0pt too high) detected at line 591
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 592
+Overfull \vbox (12.0pt too high) detected at line 596
  []
 
 
-Overfull \vbox (84.0pt too high) detected at line 592
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 602
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 606
+Overfull \vbox (84.0pt too high) detected at line 596
  []
 
 
@@ -1095,11 +1164,19 @@ Overfull \vbox (12.0pt too high) detected at line 610
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 614
+Overfull \vbox (12.0pt too high) detected at line 610
  []
 
 
-Overfull \hbox (60.7142pt too wide) in paragraph at lines 561--623
+Overfull \vbox (12.0pt too high) detected at line 614
+ []
+
+
+Overfull \vbox (60.0pt too high) detected at line 618
+ []
+
+
+Overfull \hbox (60.7142pt too wide) in paragraph at lines 565--627
 [] 
  []
 
@@ -1112,7 +1189,7 @@ pdfTeX warning: pdflatex.exe (file ./images/design/Login_System.pdf): PDF inclus
 <images/design/Login_System.pdf, id=90, 845.07718pt x 597.19106pt>
 File: images/design/Login_System.pdf Graphic file (type pdf)
 <use images/design/Login_System.pdf>
-Package pdftex.def Info: images/design/Login_System.pdf  used on input line 627.
+Package pdftex.def Info: images/design/Login_System.pdf  used on input line 631.
 (pdftex.def)             Requested size: 426.79134pt x 276.25542pt.
 
 
@@ -1120,66 +1197,82 @@ pdfTeX warning: pdflatex.exe (file ./images/design/Login_Form.pdf): PDF inclusio
 <images/design/Login_Form.pdf, id=92, 597.19106pt x 845.07718pt>
 File: images/design/Login_Form.pdf Graphic file (type pdf)
 <use images/design/Login_Form.pdf>
-Package pdftex.def Info: images/design/Login_Form.pdf  used on input line 634.
-(pdftex.def)             Requested size: 106.69783pt x 142.01872pt.
+Package pdftex.def Info: images/design/Login_Form.pdf  used on input line 639.
+(pdftex.def)             Requested size: 122.03656pt x 172.68745pt.
 
-Overfull \hbox (6.96698pt too wide) in paragraph at lines 643--643
+
+pdfTeX warning: pdflatex.exe (file ./images/design/Sign_Up_Form.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/design/Sign_Up_Form.pdf, id=93, 597.19106pt x 845.07718pt>
+File: images/design/Sign_Up_Form.pdf Graphic file (type pdf)
+<use images/design/Sign_Up_Form.pdf>
+Package pdftex.def Info: images/design/Sign_Up_Form.pdf  used on input line 645.
+(pdftex.def)             Requested size: 122.03656pt x 172.68745pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./images/design/Reset_Password.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/design/Reset_Password.pdf, id=94, 597.19106pt x 845.07718pt>
+File: images/design/Reset_Password.pdf Graphic file (type pdf)
+<use images/design/Reset_Password.pdf>
+Package pdftex.def Info: images/design/Reset_Password.pdf  used on input line 651.
+(pdftex.def)             Requested size: 122.03656pt x 172.68745pt.
+[17 <./images/design/Login_Form.pdf> <./images/design/Sign_Up_Form.pdf> <./images/design/Reset_Password.pdf> <./images/design/Login_System.pdf>]
+Overfull \hbox (6.96698pt too wide) in paragraph at lines 661--661
 []|\OT1/cmr/m/n/10 https://store.steampowered  
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 643
+Overfull \vbox (12.0pt too high) detected at line 661
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 643
+Overfull \vbox (12.0pt too high) detected at line 661
  []
 
 
-Overfull \hbox (6.96698pt too wide) in paragraph at lines 647--647
+Overfull \hbox (6.96698pt too wide) in paragraph at lines 665--665
 []|\OT1/cmr/m/n/10 https://store.steampowered  
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 647
+Overfull \vbox (12.0pt too high) detected at line 665
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 647
+Overfull \vbox (12.0pt too high) detected at line 665
  []
 
 
-Overfull \hbox (1.80035pt too wide) in paragraph at lines 651--651
+Overfull \hbox (1.80035pt too wide) in paragraph at lines 669--669
 []|\OT1/cmr/m/n/10 https://www.youtube.com  
  []
 
 
-Overfull \hbox (6.46706pt too wide) in paragraph at lines 655--655
+Overfull \hbox (6.46706pt too wide) in paragraph at lines 673--673
 []\OT1/cmr/m/n/10 /2018/12/17/wavefunction- 
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 655
+Overfull \vbox (12.0pt too high) detected at line 673
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 655
+Overfull \vbox (12.0pt too high) detected at line 673
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 659
+Overfull \vbox (24.0pt too high) detected at line 677
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 659
+Overfull \vbox (12.0pt too high) detected at line 677
  []
 
 
-Overfull \hbox (58.46973pt too wide) in paragraph at lines 639--665
+Overfull \hbox (58.46973pt too wide) in paragraph at lines 657--683
 [] 
  []
 
-[17 <./images/design/Login_System.pdf> <./images/design/Login_Form.pdf>] [18] (./NEA_SNELSON_Jez_62337_1209_V1.aux)
+[18] (./NEA_SNELSON_Jez_62337_1209_V1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1190,18 +1283,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 26746 strings out of 474136
- 675700 string characters out of 5748496
+ 26899 strings out of 474136
+ 678584 string characters out of 5748496
  1959190 words of memory out of 5000000
- 48695 multiletter control sequences out of 15000+600000
+ 48845 multiletter control sequences out of 15000+600000
  563927 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  114i,11n,121p,1078b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on NEA_SNELSON_Jez_62337_1209_V1.pdf (20 pages, 409247 bytes).
+Output written on NEA_SNELSON_Jez_62337_1209_V1.pdf (20 pages, 477641 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
+ 190 PDF objects out of 1000 (max. 8388607)
+ 123 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 55 words of extra memory for PDF output out of 10000 (max. 10000000)
 
