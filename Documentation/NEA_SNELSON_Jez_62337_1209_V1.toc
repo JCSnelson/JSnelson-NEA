@@ -18,5 +18,7 @@
 \contentsline {subsubsection}{\numberline {2.1.1}ERD}{15}{}%
 \contentsline {subsection}{\numberline {2.2}Database Naming Conventions}{15}{}%
 \contentsline {subsubsection}{\numberline {2.2.1}SQL Queries}{16}{}%
-\contentsline {subsection}{\numberline {2.3}Login System (Activity Diagram)}{17}{}%
-\contentsline {section}{\numberline {3}References}{17}{}%
+\contentsline {subsection}{\numberline {2.3}Login System}{17}{}%
+\contentsline {subsubsection}{\numberline {2.3.1}Activity Diagra}{17}{}%
+\contentsline {subsubsection}{\numberline {2.3.2}Mockup Forms}{17}{}%
+\contentsline {section}{\numberline {3}References}{18}{}%
