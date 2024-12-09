@@ -647,21 +647,27 @@
                         \centering
                         \includegraphics[width = 0.9\columnwidth]{images/design/Sign_Up_Form.pdf}
                         \caption{New Account Form}
-                        \label{fig:ie_3}
+                        \label{fig:ie_4}
                 \end{figure}
                 \begin{figure}[H]
                         \centering
                         \includegraphics[width = 0.9\columnwidth]{images/design/Reset_Password.pdf}
                         \caption{Reset Password Form}
-                        \label{fig:ie_3}
+                        \label{fig:ie_5}
                 \end{figure}
         \end{multicols}\[\]
         These forms would be used in order to create an account, reset your password and login.\\
         The Password and Challenge question entries would be starred for privacy.\\
         \subsection{Player Character}
         \subsubsection{Composition}
-        
-        The root node of the player which will contain all the child nodes will be Godot's CharacterBody2D
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.9\columnwidth, clip, trim = 0 450 0 0]{images/design/Player_Class_Diagram.pdf}
+                \caption{Player Class Diagram}
+                \label{fig:ie_5}
+        \end{figure}
+
+        The root node of the player which will contain all the child nodes will be Godot's CharacterBody2D as this will allow for a user controlled physics body. It will then have child nodes of CollisionShape2D(for Collision detection), AnimatedSprite2D(for an animated character sprite) and Camera2D(for the player's view window to be centered on).\\
 
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
