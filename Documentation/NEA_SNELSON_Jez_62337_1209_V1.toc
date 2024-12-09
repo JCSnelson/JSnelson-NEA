@@ -21,4 +21,6 @@
 \contentsline {subsection}{\numberline {2.3}Login System}{17}{}%
 \contentsline {subsubsection}{\numberline {2.3.1}Activity Diagram}{17}{}%
 \contentsline {subsubsection}{\numberline {2.3.2}Mockup Forms}{18}{}%
+\contentsline {subsection}{\numberline {2.4}Player Character}{18}{}%
+\contentsline {subsubsection}{\numberline {2.4.1}Composition}{18}{}%
 \contentsline {section}{\numberline {3}References}{18}{}%
