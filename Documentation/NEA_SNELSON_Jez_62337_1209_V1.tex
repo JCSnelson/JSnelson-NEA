@@ -672,7 +672,28 @@
                 \label{fig:ie_5}
         \end{figure}
         \subsection{Inventory Design}
-        The inventory will be stored
+        My inventory design will cover two main parts the equipped items and the item storage.\\
+        \subsubsection{Stored Items}
+        I will implement the stored items through a dictionary that stores the item resource and the quantity of it. I will implement add and remove item functions. I will also add a max inventory size.\\
+        \subsubsection{Equipped Items}
+        I will implement the equipped items through a dictionary where the keys are the slots and the values are what is equipped in that slot. I will also add a equip function to equip an item and an unequip function to unequip the item in a slot.\\
+        \subsubsection{Algorithms}
+        \textbf{add\_item():}\\
+        \begin{python}
+def add_item(item: Resource):
+        if len(stored_items) > max_inventory_size + 1:
+                return -1 #indicates that the inventory is full
+        else:
+                if item in stored_items and item.stackable:
+                        stored_items[item] += 1
+                else:
+                        stored_items[item] = 1
+        \end{python}
+        \textbf{remove\_item():}\\
+        \begin{python}
+def remove_item(slot: str):
+        
+        \end{python}
         \newpage
         \subsection{Player Character}
         This is my design for the physical player character and sprite.\\

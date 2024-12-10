@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.23)  10 DEC 2024 11:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.23)  10 DEC 2024 12:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1237,82 +1237,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 666--673
 
  []
 
-[19 <./images/design/Item_Class_Diagram.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 678--679
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 677--678
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 679--680
+
+ []
+
+[19 <./images/design/Item_Class_Diagram.pdf>] (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+)
+Underfull \hbox (badness 10000) in paragraph at lines 681--682
+
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 683.
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 694--695
 
  []
 
 
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Player_Class_Diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Player_Class_Diagram.pdf, id=174, 597.19106pt x 845.07718pt>
+<images/design/Player_Class_Diagram.pdf, id=179, 597.19106pt x 845.07718pt>
 File: images/design/Player_Class_Diagram.pdf Graphic file (type pdf)
 <use images/design/Player_Class_Diagram.pdf>
-Package pdftex.def Info: images/design/Player_Class_Diagram.pdf  used on input line 682.
+Package pdftex.def Info: images/design/Player_Class_Diagram.pdf  used on input line 698.
 (pdftex.def)             Requested size: 384.10959pt x 253.02237pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 686--688
-
- []
-
-(c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2024/02/21 1.10 listings language file
-)
-Underfull \hbox (badness 10000) in paragraph at lines 689--691
-
- []
-
-[20 <./images/design/Player_Class_Diagram.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 698--700
+Underfull \hbox (badness 10000) in paragraph at lines 702--704
 
  []
 
 
-Overfull \hbox (6.96698pt too wide) in paragraph at lines 707--707
+Underfull \hbox (badness 10000) in paragraph at lines 705--707
+
+ []
+
+[21 <./images/design/Player_Class_Diagram.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 714--716
+
+ []
+
+
+Overfull \hbox (6.96698pt too wide) in paragraph at lines 723--723
 []|\OT1/cmr/m/n/10 https://store.steampowered  
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 707
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 707
- []
-
-
-Overfull \hbox (6.96698pt too wide) in paragraph at lines 711--711
-[]|\OT1/cmr/m/n/10 https://store.steampowered  
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 711
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 711
- []
-
-
-Overfull \hbox (1.80035pt too wide) in paragraph at lines 715--715
-[]|\OT1/cmr/m/n/10 https://www.youtube.com  
- []
-
-
-Overfull \hbox (6.46706pt too wide) in paragraph at lines 719--719
-[]\OT1/cmr/m/n/10 /2018/12/17/wavefunction- 
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 719
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 719
- []
-
-
-Overfull \vbox (24.0pt too high) detected at line 723
  []
 
 
@@ -1320,11 +1299,54 @@ Overfull \vbox (12.0pt too high) detected at line 723
  []
 
 
-Overfull \hbox (58.46973pt too wide) in paragraph at lines 703--729
+Overfull \vbox (12.0pt too high) detected at line 723
+ []
+
+
+Overfull \hbox (6.96698pt too wide) in paragraph at lines 727--727
+[]|\OT1/cmr/m/n/10 https://store.steampowered  
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 727
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 727
+ []
+
+
+Overfull \hbox (1.80035pt too wide) in paragraph at lines 731--731
+[]|\OT1/cmr/m/n/10 https://www.youtube.com  
+ []
+
+
+Overfull \hbox (6.46706pt too wide) in paragraph at lines 735--735
+[]\OT1/cmr/m/n/10 /2018/12/17/wavefunction- 
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 735
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 735
+ []
+
+
+Overfull \vbox (24.0pt too high) detected at line 739
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 739
+ []
+
+
+Overfull \hbox (58.46973pt too wide) in paragraph at lines 719--745
 [] 
  []
 
-[21] (./NEA_SNELSON_Jez_62337_1209_V1.aux)
+[22] (./NEA_SNELSON_Jez_62337_1209_V1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1335,18 +1357,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27606 strings out of 474136
- 686749 string characters out of 5748496
- 1975190 words of memory out of 5000000
- 49543 multiletter control sequences out of 15000+600000
+ 27624 strings out of 474136
+ 686968 string characters out of 5748496
+ 1979190 words of memory out of 5000000
+ 49561 multiletter control sequences out of 15000+600000
  564264 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 114i,11n,121p,1078b,1629s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 114i,11n,121p,1078b,1626s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on NEA_SNELSON_Jez_62337_1209_V1.pdf (23 pages, 577640 bytes).
+Output written on NEA_SNELSON_Jez_62337_1209_V1.pdf (24 pages, 581521 bytes).
 PDF statistics:
- 241 PDF objects out of 1000 (max. 8388607)
- 155 compressed objects within 2 object streams
+ 244 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  77 words of extra memory for PDF output out of 10000 (max. 10000000)
 
