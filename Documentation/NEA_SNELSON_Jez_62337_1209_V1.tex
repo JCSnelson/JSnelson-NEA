@@ -22,6 +22,9 @@
 \usepackage{graphicx, float}
 \usepackage{multirow, pgfplotstable}
 \usepackage{multicol}
+\usepackage{listings}
+\usepackage{pythonhighlight}
+\usepackage{color}
 \usepackage[a4paper, total={150mm, 210mm}]{geometry}
 %command for creating spaces
 \newcommand\tab[1][0.5cm]{\hspace*{#1}}
@@ -541,7 +544,7 @@
         The users table will be the main table containing all the login details.\\
         Each user will be able to have multiple save instances which will be stored in save data.\\
 
-        \subsection{Database Naming Conventions}
+        \subsubsection{Database Naming Conventions}
         The naming conventions I will adopt for the database is as follows.\\
         \begin{tabular}[pos]{|c|c|c|c|}
                 \hline
@@ -658,7 +661,15 @@
         \end{multicols}\[\]
         These forms would be used in order to create an account, reset your password and login.\\
         The Password and Challenge question entries would be starred for privacy.\\
+        \newpage
+        \subsection{Item Design}
+        I will implement the different item types using Godot's resource system. This will allow me to define properties that all items of the same type will share and I can use inheritance to allow classes to derive from a parent class.\\
+        The types of items I will aim to implement will be different weapon types, charms/trinkets/amulets, armour and keys.\\
+        \subsection{Inventory Design}
+        The inventory will be stored
+        \newpage
         \subsection{Player Character}
+        This is my design for the physical player character and sprite.\\
         \subsubsection{Composition}
         \begin{figure}[H]
                 \centering
@@ -666,8 +677,21 @@
                 \caption{Player Class Diagram}
                 \label{fig:ie_5}
         \end{figure}
-
-        The root node of the player which will contain all the child nodes will be Godot's CharacterBody2D as this will allow for a user controlled physics body. It will then have child nodes of CollisionShape2D(for Collision detection), AnimatedSprite2D(for an animated character sprite) and Camera2D(for the player's view window to be centered on).\\
+        The root node of the player which will contain all the child nodes will be Godot's CharacterBody2D as this will allow for a user controlled physics body. It will then have child nodes of CollisionShape2D(for collision detection), AnimatedSprite2D(for an animated character sprite) and Camera2D(for the player's view window to be centered on).\\
+        I have chosen to store the speed and health variables within the player class as they will reset/ be recalculated based of the equipment equipped.\\
+        \subsubsection{Algorithms}
+        \textbf{\_ready():}\\
+        The \_ready() function gets called whenever the player is instantiated in a scene and so it will be used to setup variables and the environment based on existing stuff.\\
+        \begin{python}
+_ready():
+        #Inventory calculates the speed based on any modifiers equipped.
+        speed = Inventory.calc_speed() 
+        #Global Script calculates the health based on the player level and any modifiers equipped.
+        health = Global.calc_health()
+        \end{python}
+        \textbf{\_physics\_process(delta):}\\
+        The \_physics\_process(delta) function gets called every frame where delta is the time since the last fram and is usually used to deal with movement and physics processes.\\
+        
 
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}

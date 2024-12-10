@@ -16,11 +16,14 @@
 \contentsline {section}{\numberline {2}Design}{15}{}%
 \contentsline {subsection}{\numberline {2.1}Database Design}{15}{}%
 \contentsline {subsubsection}{\numberline {2.1.1}ERD}{15}{}%
-\contentsline {subsection}{\numberline {2.2}Database Naming Conventions}{15}{}%
-\contentsline {subsubsection}{\numberline {2.2.1}SQL Queries}{16}{}%
-\contentsline {subsection}{\numberline {2.3}Login System}{17}{}%
-\contentsline {subsubsection}{\numberline {2.3.1}Activity Diagram}{17}{}%
-\contentsline {subsubsection}{\numberline {2.3.2}Mockup Forms}{18}{}%
-\contentsline {subsection}{\numberline {2.4}Player Character}{19}{}%
-\contentsline {subsubsection}{\numberline {2.4.1}Composition}{19}{}%
-\contentsline {section}{\numberline {3}References}{20}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}Database Naming Conventions}{15}{}%
+\contentsline {subsubsection}{\numberline {2.1.3}SQL Queries}{16}{}%
+\contentsline {subsection}{\numberline {2.2}Login System}{17}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Activity Diagram}{17}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}Mockup Forms}{18}{}%
+\contentsline {subsection}{\numberline {2.3}Item Design}{19}{}%
+\contentsline {subsection}{\numberline {2.4}Inventory Design}{19}{}%
+\contentsline {subsection}{\numberline {2.5}Player Character}{20}{}%
+\contentsline {subsubsection}{\numberline {2.5.1}Composition}{20}{}%
+\contentsline {subsubsection}{\numberline {2.5.2}Algorithms}{20}{}%
+\contentsline {section}{\numberline {3}References}{21}{}%
