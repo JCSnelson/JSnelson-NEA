@@ -531,6 +531,14 @@
 \newpage
 \pagestyle{plain}
 \section{Design}
+        \subsection{Overview}
+        \subsubsection{Global Variables}
+        I have a couple of main global variable scripts Global, Inventory, etc.\\
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Source&Identifier&Data Type&Justification\\
+                \hline
+        \end{tabular}
         \subsection{Database Design}
         I will be using an SQL Database in order to store the data about my users.\\
         \subsubsection{ERD}
@@ -637,7 +645,26 @@
         \end{figure}
         The login form will allow users to create accounts aswell as login with an existing account and reset a password.\\
         Upon successful login the user will be redirected to the GAME system.\\
-        \newpage
+        \subsubsection{Algorithms}
+        \textbf{hash():}\\
+        \begin{python}
+def hash(password: str, salt: str):
+   hashedPassword = password
+   #Repeating a consistent but unpredicatble amount of times
+   for x in range(1,6*len(password)+1):
+      if x\%2 == 0:
+         hashedPassword = sha256(md5(salt[x:]+hashedPassword+salt[:x]))
+      else:
+         hashedPassword = md5(sha256(hashedPassword[:x]+salt+hashedPassword[x:]))
+        return hashedPassword
+        \end{python}
+        \textbf{removeForm():}\\
+        \begin{python}
+def changeForm(form1: scene,form2: scene):
+   self.remove_child(form1)
+   form  = form1.instantiate()
+   self.add_child(form)
+        \end{python}
         \subsubsection{Mockup Forms}
         \begin{multicols}{3}
                 \begin{figure}[H]
@@ -667,7 +694,7 @@
         The types of items I will aim to implement will be different weapon types, charms/trinkets/amulets, armour and keys.\\
         \begin{figure}[H]
                 \centering
-                \includegraphics[width = 0.9\columnwidth, clip, trim = 0 300 0 25]{images/design/Item_Class_Diagram.pdf}
+                \includegraphics[width = 0.9\columnwidth, clip, trim = 0 270 0 25]{images/design/Item_Class_Diagram.pdf}
                 \caption{Player Class Diagram}
                 \label{fig:ie_5}
         \end{figure}
@@ -681,18 +708,71 @@
         \textbf{add\_item():}\\
         \begin{python}
 def add_item(item: Resource):
-        if len(stored_items) > max_inventory_size + 1:
-                return -1 #indicates that the inventory is full
-        else:
-                if item in stored_items and item.stackable:
-                        stored_items[item] += 1
-                else:
-                        stored_items[item] = 1
+   if len(stored_items) > max_inventory_size + 1:
+      return null #Indicates that the inventory is full
+   else:
+      #Checks if you can stack the item and either adds a new entry or stacks it
+         if item in stored_items and item.stackable:
+            stored_items[item] += 1
+         else:
+            stored_items[item] = 1
+   return item #Indicates success
         \end{python}
         \textbf{remove\_item():}\\
         \begin{python}
-def remove_item(slot: str):
+def remove_item(item: Resource, quantity: int = 1):
+   if item in stored_items:
+      if stored_items[item] < quantity:
+         return null #Indicates that there is an item quantity error
+      stored_items[item] -= quantity #Removes the ammount of that item
+      if stored_items[item] == 0:
+         stored_items.erase(item)
+      return item #Indicates that it was successful
+   return null #Indicates that there is an item quantity error
         
+        \end{python}
+        \textbf{unequip\_item():}\\
+        \begin{python}
+def unequip_item(slot: str):
+   #Checks if there is a slot and item to unequip
+   if slot in equipped_items and equipped_items[slot] != null:
+      item = equipped_items[slot]
+      add_item(item) #Adds the item back to the stored_items
+      equipped_items[slot] = null #Sets the slot back to null
+      return True
+   return False
+        \end{python}
+        \newpage
+        \textbf{equip\_item():}\\
+        \begin{python}
+def equip_item(item: Resource):
+        #Checks if the item is Equipable
+        if not(item.is_class(Equipable)):
+                return False
+        #Gets the slot to equip it inot
+        if item.is_class(Armour):
+                slot = item.body_part
+        elif item.is_class(Weapon):
+                slot = "weapon"
+        else:
+                equipped = false
+                #Tries both charm slots
+                for slot in ["charm1","charm2"]:
+                        if equipped_items[slot] == null and not(equipped):
+                                equipped_items[slot] = item #Equips item
+                                remove_item(item) #Removes from stored_items
+                                equipped = True
+                if not(equipped):
+                        unequip_item(slot)
+                        equipped_items[slot] = item #Equips item
+                        remove_item(item) #Removes from stored_items
+                return True
+        if slot in equipped_items:
+                unequip_item(slot)
+                equipped_items[slot] = item #Equips item
+                remove_item(item) #Removes from stored_items
+                return True
+        return False      
         \end{python}
         \newpage
         \subsection{Player Character}
@@ -710,7 +790,7 @@ def remove_item(slot: str):
         \textbf{\_ready():}\\
         The \_ready() function gets called whenever the player is instantiated in a scene and so it will be used to setup variables and the environment based on existing stuff.\\
         \begin{python}
-_ready():
+def _ready():
         #Inventory calculates the speed based on any modifiers equipped.
         speed = Inventory.calc_speed() 
         #Global Script calculates the health based on the player level and any modifiers equipped.
@@ -718,6 +798,17 @@ _ready():
         \end{python}
         \textbf{\_physics\_process(delta):}\\
         The \_physics\_process(delta) function gets called every frame where delta is the time since the last fram and is usually used to deal with movement and physics processes.\\
+        \begin{python}
+def _physics_process(delta):
+   direction = Input.get_vector("left", "right", "up", "down")
+   velocity = direction * speed
+   move_and_slide()
+        \end{python}
+        \textbf{\_process(delta):}\\
+        \begin{python}
+def _process(delta):
+   
+        \end{python}
         
 
 \section{References}
