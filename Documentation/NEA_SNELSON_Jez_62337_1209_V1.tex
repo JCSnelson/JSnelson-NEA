@@ -692,12 +692,48 @@ def changeForm(form1: scene,form2: scene):
         \subsection{Item Design}
         I will implement the different item types using Godot's resource system. This will allow me to define properties that all items of the same type will share and I can use inheritance to allow classes to derive from a parent class.\\
         The types of items I will aim to implement will be different weapon types, charms/trinkets/amulets, armour and keys.\\
+        \subsubsection{Class Diagram}
         \begin{figure}[H]
                 \centering
                 \includegraphics[width = 0.9\columnwidth, clip, trim = 0 270 0 25]{images/design/Item_Class_Diagram.pdf}
                 \caption{Player Class Diagram}
                 \label{fig:ie_5}
         \end{figure}
+        \subsubsection{Algorithms}
+        \textbf{attack():}\\
+        I will have a number of different weapon types that will have different attacks.\\
+        I will implement the attack cooldown through the use of a CooldownTimer(timer node) attached to the player.\\
+        Melee:\\
+        I will implement the melee attack by creating a variable size hitbox(area2D) scene that can be instantiated as a child of the player in order to detect enemies that would be attacked in the range specified in the resource.\\
+        \begin{python}
+def attack(owner: node):
+   #Load the hitbox scene
+   hitbox_scene = load(hitbox_scene_path)
+   hitbox_instance = hitbox_scene.instantiate()
+   hitbox_instance.range = range
+   hitbox_instance.damage = damage
+
+   #Add child
+   owner.add_child(hitbox_instance)
+
+   #Hitbox lasts for half a second
+   sleep(0.5)
+   
+   hitbox_instance.queue_free()
+
+        \end{python}
+        Ranged:\\
+        My Bows and ranged magic weapons will shoot out projectiles.
+        \begin{python}
+def attack():
+   #Load the projectile scene
+   projectile_scene = load(projectile_scene_path)
+   projectile_instance = projectile_scene.instantiate()
+   projectile_instance.damage = damage
+
+   #Add Child
+   owner.add_child(projectile_instance)
+        \end{python}
         \subsection{Inventory Design}
         My inventory design will cover two main parts the equipped items and the item storage.\\
         \subsubsection{Stored Items}
@@ -804,10 +840,11 @@ def _physics_process(delta):
    velocity = direction * speed
    move_and_slide()
         \end{python}
-        \textbf{\_process(delta):}\\
+        \textbf{\_input(event):}\\
         \begin{python}
-def _process(delta):
-   
+def _input(event):
+   if event.is_action_pressed('attack'):
+      attack()
         \end{python}
         
 

@@ -25,11 +25,13 @@
 \contentsline {subsubsection}{\numberline {2.3.2}Algorithms}{17}{}%
 \contentsline {subsubsection}{\numberline {2.3.3}Mockup Forms}{18}{}%
 \contentsline {subsection}{\numberline {2.4}Item Design}{19}{}%
-\contentsline {subsection}{\numberline {2.5}Inventory Design}{19}{}%
-\contentsline {subsubsection}{\numberline {2.5.1}Stored Items}{19}{}%
+\contentsline {subsubsection}{\numberline {2.4.1}Class Diagram}{19}{}%
+\contentsline {subsubsection}{\numberline {2.4.2}Algorithms}{19}{}%
+\contentsline {subsection}{\numberline {2.5}Inventory Design}{20}{}%
+\contentsline {subsubsection}{\numberline {2.5.1}Stored Items}{20}{}%
 \contentsline {subsubsection}{\numberline {2.5.2}Equipped Items}{20}{}%
 \contentsline {subsubsection}{\numberline {2.5.3}Algorithms}{20}{}%
-\contentsline {subsection}{\numberline {2.6}Player Character}{22}{}%
-\contentsline {subsubsection}{\numberline {2.6.1}Composition}{22}{}%
-\contentsline {subsubsection}{\numberline {2.6.2}Algorithms}{22}{}%
-\contentsline {section}{\numberline {3}References}{23}{}%
+\contentsline {subsection}{\numberline {2.6}Player Character}{23}{}%
+\contentsline {subsubsection}{\numberline {2.6.1}Composition}{23}{}%
+\contentsline {subsubsection}{\numberline {2.6.2}Algorithms}{23}{}%
+\contentsline {section}{\numberline {3}References}{24}{}%

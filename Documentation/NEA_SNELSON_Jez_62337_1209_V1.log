@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.23)  17 DEC 2024 10:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.23)  29 DEC 2024 17:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1239,144 +1239,149 @@ Underfull \hbox (badness 10000) in paragraph at lines 688--691
  []
 
 [18 <./images/design/Login_Form.pdf> <./images/design/Sign_Up_Form.pdf> <./images/design/Reset_Password.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 693--695
+
+ []
+
+
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Item_Class_Diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <images/design/Item_Class_Diagram.pdf, id=156, 597.19106pt x 845.07718pt>
 File: images/design/Item_Class_Diagram.pdf Graphic file (type pdf)
 <use images/design/Item_Class_Diagram.pdf>
-Package pdftex.def Info: images/design/Item_Class_Diagram.pdf  used on input line 697.
+Package pdftex.def Info: images/design/Item_Class_Diagram.pdf  used on input line 698.
 (pdftex.def)             Requested size: 384.10959pt x 353.09044pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 693--700
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 702--703
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 704--705
+Underfull \hbox (badness 10000) in paragraph at lines 703--708
 
  []
 
 [19 <./images/design/Item_Class_Diagram.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 706--707
+Underfull \hbox (badness 10000) in paragraph at lines 738--739
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 708--709
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 721--722
+Underfull \hbox (badness 10000) in paragraph at lines 742--743
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 734--735
+Underfull \hbox (badness 10000) in paragraph at lines 744--745
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 746--747
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 770--771
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 779--780
+Underfull \hbox (badness 10000) in paragraph at lines 782--783
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 815--816
 
  []
 
 
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Player_Class_Diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Player_Class_Diagram.pdf, id=182, 597.19106pt x 845.07718pt>
+<images/design/Player_Class_Diagram.pdf, id=185, 597.19106pt x 845.07718pt>
 File: images/design/Player_Class_Diagram.pdf Graphic file (type pdf)
 <use images/design/Player_Class_Diagram.pdf>
-Package pdftex.def Info: images/design/Player_Class_Diagram.pdf  used on input line 783.
+Package pdftex.def Info: images/design/Player_Class_Diagram.pdf  used on input line 819.
 (pdftex.def)             Requested size: 384.10959pt x 253.02237pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 787--789
+Underfull \hbox (badness 10000) in paragraph at lines 823--825
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 790--792
+Underfull \hbox (badness 10000) in paragraph at lines 826--828
 
  []
 
-[22 <./images/design/Player_Class_Diagram.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 799--801
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 807--808
+[23 <./images/design/Player_Class_Diagram.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 835--837
 
  []
 
 
-Overfull \hbox (6.96698pt too wide) in paragraph at lines 819--819
+Underfull \hbox (badness 10000) in paragraph at lines 843--844
+
+ []
+
+
+Overfull \hbox (6.96698pt too wide) in paragraph at lines 856--856
 []|\OT1/cmr/m/n/10 https://store.steampowered  
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 819
+Overfull \vbox (12.0pt too high) detected at line 856
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 819
+Overfull \vbox (12.0pt too high) detected at line 856
  []
 
 
-Overfull \hbox (6.96698pt too wide) in paragraph at lines 823--823
+Overfull \hbox (6.96698pt too wide) in paragraph at lines 860--860
 []|\OT1/cmr/m/n/10 https://store.steampowered  
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 823
+Overfull \vbox (12.0pt too high) detected at line 860
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 823
+Overfull \vbox (12.0pt too high) detected at line 860
  []
 
 
-Overfull \hbox (1.80035pt too wide) in paragraph at lines 827--827
+Overfull \hbox (1.80035pt too wide) in paragraph at lines 864--864
 []|\OT1/cmr/m/n/10 https://www.youtube.com  
  []
 
 
-Overfull \hbox (6.46706pt too wide) in paragraph at lines 831--831
+Overfull \hbox (6.46706pt too wide) in paragraph at lines 868--868
 []\OT1/cmr/m/n/10 /2018/12/17/wavefunction- 
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 831
+Overfull \vbox (12.0pt too high) detected at line 868
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 831
+Overfull \vbox (12.0pt too high) detected at line 868
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 835
+Overfull \vbox (24.0pt too high) detected at line 872
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 835
+Overfull \vbox (12.0pt too high) detected at line 872
  []
 
 
-Overfull \hbox (58.46973pt too wide) in paragraph at lines 815--841
+Overfull \hbox (58.46973pt too wide) in paragraph at lines 852--878
 [] 
  []
 
-[23] (./NEA_SNELSON_Jez_62337_1209_V1.aux)
+[24] (./NEA_SNELSON_Jez_62337_1209_V1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1387,18 +1392,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27718 strings out of 474136
- 688083 string characters out of 5748496
- 2175190 words of memory out of 5000000
- 49655 multiletter control sequences out of 15000+600000
+ 27750 strings out of 474136
+ 688565 string characters out of 5748496
+ 2174190 words of memory out of 5000000
+ 49687 multiletter control sequences out of 15000+600000
  564264 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  114i,11n,121p,1078b,1817s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on NEA_SNELSON_Jez_62337_1209_V1.pdf (25 pages, 595311 bytes).
+Output written on NEA_SNELSON_Jez_62337_1209_V1.pdf (26 pages, 600066 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
+ 251 PDF objects out of 1000 (max. 8388607)
+ 162 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  77 words of extra memory for PDF output out of 10000 (max. 10000000)
 
