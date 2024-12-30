@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.23)  29 DEC 2024 17:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.23)  30 DEC 2024 16:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -515,6 +515,15 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layouthoffset=\dimen302
 \Gm@layoutvoffset=\dimen303
 \Gm@dimlist=\toks46
+
+
+Package geometry Warning: Over-specification in `h'-direction.
+    `width' (426.79134pt) is ignored.
+
+
+Package geometry Warning: Over-specification in `v'-direction.
+    `height' (597.50787pt) is ignored.
+
 ) (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count329
@@ -575,15 +584,15 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(85.35826pt, 426.79134pt, 85.35828pt)
-* v-part:(T,H,B)=(99.01556pt, 597.50787pt, 148.5234pt)
+* h-part:(L,W,R)=(60.0pt, 477.50787pt, 60.0pt)
+* v-part:(T,H,B)=(60.0pt, 725.04684pt, 60.0pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=426.79134pt
-* \textheight=597.50787pt
-* \oddsidemargin=13.08827pt
-* \evensidemargin=13.08827pt
-* \topmargin=-10.25443pt
+* \textwidth=477.50787pt
+* \textheight=725.04684pt
+* \oddsidemargin=-12.26999pt
+* \evensidemargin=-12.26999pt
+* \topmargin=-49.26999pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -620,11 +629,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--58
 
 Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
- []
-
-
-Overfull \hbox (13.86696pt too wide) in paragraph at lines 62--73
-\OT1/cmr/m/n/10 4. Would you say you have the time to com-mit to learn-ing a com-plex or un-in-tu-itive game?(yes,probably
  []
 
 
@@ -677,11 +681,6 @@ Overfull \vbox (48.0pt too high) detected at line 130
 
 
 Overfull \vbox (24.0pt too high) detected at line 137
- []
-
-
-Overfull \hbox (9.14725pt too wide) in paragraph at lines 98--143
-[] 
  []
 
 [2] [3]
@@ -780,11 +779,6 @@ Overfull \vbox (36.0pt too high) detected at line 216
  []
 
 
-Overfull \hbox (37.6pt too wide) in paragraph at lines 186--224
-[] 
- []
-
-
 Overfull \vbox (48.0pt too high) detected at line 230
  []
 
@@ -844,15 +838,7 @@ Overfull \vbox (24.0pt too high) detected at line 279
 Overfull \vbox (24.0pt too high) detected at line 279
  []
 
-
-Overfull \hbox (34.37238pt too wide) in paragraph at lines 226--285
-[] 
- []
-
 [7]
-Overfull \vbox (13.0087pt too high) has occurred while \output is active []
-
- [8]
 Overfull \vbox (12.0pt too high) detected at line 290
  []
 
@@ -920,15 +906,7 @@ Overfull \vbox (60.0pt too high) detected at line 338
 Overfull \vbox (48.0pt too high) detected at line 338
  []
 
-
-Overfull \hbox (34.37238pt too wide) in paragraph at lines 286--347
-[] 
- []
-
-
-Overfull \vbox (18.55038pt too high) has occurred while \output is active []
-
- [9]
+[8] [9]
 Overfull \vbox (84.0pt too high) detected at line 353
  []
 
@@ -976,11 +954,6 @@ Overfull \vbox (84.0pt too high) detected at line 392
 Overfull \vbox (36.0pt too high) detected at line 392
  []
 
-
-Overfull \hbox (10.25293pt too wide) in paragraph at lines 349--403
-[] 
- []
-
 [10]
 Overfull \vbox (24.0pt too high) detected at line 406
  []
@@ -1007,11 +980,6 @@ Overfull \vbox (60.0pt too high) detected at line 435
 
 
 Overfull \vbox (60.0pt too high) detected at line 435
- []
-
-
-Overfull \hbox (18.7854pt too wide) in paragraph at lines 404--444
-[][] 
  []
 
 [11]
@@ -1062,15 +1030,7 @@ Overfull \vbox (72.0pt too high) detected at line 495
 Overfull \vbox (60.0pt too high) detected at line 495
  []
 
-
-Overfull \hbox (18.7854pt too wide) in paragraph at lines 445--504
-[][] 
- []
-
-
-Overfull \vbox (11.89209pt too high) has occurred while \output is active []
-
- [12]
+[12]
 Overfull \vbox (12.0pt too high) detected at line 507
  []
 
@@ -1094,294 +1054,292 @@ Overfull \vbox (144.0pt too high) detected at line 513
 Overfull \vbox (96.0pt too high) detected at line 513
  []
 
+[13] [14]
+<images/design/File_System.PNG, id=66, 196.10765pt x 279.66985pt>
+File: images/design/File_System.PNG Graphic file (type png)
+<use images/design/File_System.PNG>
+Package pdftex.def Info: images/design/File_System.PNG  used on input line 545.
+(pdftex.def)             Requested size: 143.25381pt x 204.30663pt.
 
-Overfull \hbox (23.78542pt too wide) in paragraph at lines 505--529
-[][] 
+Underfull \hbox (badness 10000) in paragraph at lines 548--554
+
  []
 
-[13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 543--544
+[15 <./images/design/File_System.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 578--579
 
  []
 
 
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Database_Design.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Database_Design.pdf, id=66, 614.295pt x 794.97pt>
+<images/design/Database_Design.pdf, id=71, 614.295pt x 794.97pt>
 File: images/design/Database_Design.pdf Graphic file (type pdf)
 <use images/design/Database_Design.pdf>
-Package pdftex.def Info: images/design/Database_Design.pdf  used on input line 547.
-(pdftex.def)             Requested size: 426.79134pt x 133.89635pt.
+Package pdftex.def Info: images/design/Database_Design.pdf  used on input line 582.
+(pdftex.def)             Requested size: 477.50787pt x 149.80818pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 551--554
+Underfull \hbox (badness 10000) in paragraph at lines 586--589
 
  []
 
 
-Overfull \hbox (19.58691pt too wide) in paragraph at lines 556--574
+Overfull \vbox (12.0pt too high) detected at line 616
+ []
+
+
+Overfull \vbox (60.0pt too high) detected at line 616
+ []
+
+
+Overfull \vbox (24.0pt too high) detected at line 625
+ []
+
+
+Overfull \vbox (60.0pt too high) detected at line 630
+ []
+
+
+Overfull \vbox (24.0pt too high) detected at line 630
+ []
+
+
+Overfull \vbox (24.0pt too high) detected at line 637
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 642
+ []
+
+
+Overfull \vbox (84.0pt too high) detected at line 642
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 652
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 656
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 656
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 660
+ []
+
+
+Overfull \vbox (60.0pt too high) detected at line 664
+ []
+
+
+Overfull \hbox (9.99767pt too wide) in paragraph at lines 611--673
 [] 
  []
 
-
-Overfull \vbox (12.0pt too high) detected at line 581
- []
-
-
-Overfull \vbox (60.0pt too high) detected at line 581
- []
-
-
-Overfull \vbox (24.0pt too high) detected at line 590
- []
-
-
-Overfull \vbox (60.0pt too high) detected at line 595
- []
-
-
-Overfull \vbox (24.0pt too high) detected at line 595
- []
-
-
-Overfull \vbox (24.0pt too high) detected at line 602
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 607
- []
-
-
-Overfull \vbox (84.0pt too high) detected at line 607
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 617
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 621
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 621
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 625
- []
-
-
-Overfull \vbox (60.0pt too high) detected at line 629
- []
-
-
-Overfull \hbox (60.7142pt too wide) in paragraph at lines 576--638
-[] 
- []
-
-[15 <./images/design/Database_Design.pdf>]
-Overfull \vbox (9.29482pt too high) has occurred while \output is active []
-
- [16]
+[16 <./images/design/Database_Design.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Login_System.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Login_System.pdf, id=90, 845.07718pt x 597.19106pt>
+<images/design/Login_System.pdf, id=91, 845.07718pt x 597.19106pt>
 File: images/design/Login_System.pdf Graphic file (type pdf)
 <use images/design/Login_System.pdf>
-Package pdftex.def Info: images/design/Login_System.pdf  used on input line 642.
-(pdftex.def)             Requested size: 426.79134pt x 276.25542pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 646--648
+Package pdftex.def Info: images/design/Login_System.pdf  used on input line 677.
+(pdftex.def)             Requested size: 477.50787pt x 309.08255pt.
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 681--683
 
  []
 
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 649--650
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
 
  []
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 651.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 686.
 
-Underfull \hbox (badness 10000) in paragraph at lines 661--662
+Underfull \hbox (badness 10000) in paragraph at lines 696--697
 
  []
 
-[17 <./images/design/Login_System.pdf>]
+[18 <./images/design/Login_System.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Login_Form.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Login_Form.pdf, id=108, 597.19106pt x 845.07718pt>
+<images/design/Login_Form.pdf, id=113, 597.19106pt x 845.07718pt>
 File: images/design/Login_Form.pdf Graphic file (type pdf)
 <use images/design/Login_Form.pdf>
-Package pdftex.def Info: images/design/Login_Form.pdf  used on input line 672.
-(pdftex.def)             Requested size: 122.03656pt x 172.68745pt.
+Package pdftex.def Info: images/design/Login_Form.pdf  used on input line 707.
+(pdftex.def)             Requested size: 137.25142pt x 194.22182pt.
 
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Sign_Up_Form.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Sign_Up_Form.pdf, id=109, 597.19106pt x 845.07718pt>
+<images/design/Sign_Up_Form.pdf, id=114, 597.19106pt x 845.07718pt>
 File: images/design/Sign_Up_Form.pdf Graphic file (type pdf)
 <use images/design/Sign_Up_Form.pdf>
-Package pdftex.def Info: images/design/Sign_Up_Form.pdf  used on input line 678.
-(pdftex.def)             Requested size: 122.03656pt x 172.68745pt.
+Package pdftex.def Info: images/design/Sign_Up_Form.pdf  used on input line 713.
+(pdftex.def)             Requested size: 137.25142pt x 194.22182pt.
 
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Reset_Password.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Reset_Password.pdf, id=110, 597.19106pt x 845.07718pt>
+<images/design/Reset_Password.pdf, id=115, 597.19106pt x 845.07718pt>
 File: images/design/Reset_Password.pdf Graphic file (type pdf)
 <use images/design/Reset_Password.pdf>
-Package pdftex.def Info: images/design/Reset_Password.pdf  used on input line 684.
-(pdftex.def)             Requested size: 122.03656pt x 172.68745pt.
+Package pdftex.def Info: images/design/Reset_Password.pdf  used on input line 719.
+(pdftex.def)             Requested size: 137.25142pt x 194.22182pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 688--691
+Underfull \hbox (badness 10000) in paragraph at lines 723--726
 
  []
 
-[18 <./images/design/Login_Form.pdf> <./images/design/Sign_Up_Form.pdf> <./images/design/Reset_Password.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 693--695
+[19 <./images/design/Login_Form.pdf> <./images/design/Sign_Up_Form.pdf> <./images/design/Reset_Password.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 728--730
 
  []
 
 
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Item_Class_Diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Item_Class_Diagram.pdf, id=156, 597.19106pt x 845.07718pt>
+<images/design/Item_Class_Diagram.pdf, id=161, 597.19106pt x 845.07718pt>
 File: images/design/Item_Class_Diagram.pdf Graphic file (type pdf)
 <use images/design/Item_Class_Diagram.pdf>
-Package pdftex.def Info: images/design/Item_Class_Diagram.pdf  used on input line 698.
-(pdftex.def)             Requested size: 384.10959pt x 353.09044pt.
+Package pdftex.def Info: images/design/Item_Class_Diagram.pdf  used on input line 733.
+(pdftex.def)             Requested size: 429.75417pt x 395.04883pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 703--708
-
- []
-
-[19 <./images/design/Item_Class_Diagram.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 738--739
+Underfull \hbox (badness 10000) in paragraph at lines 738--743
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 740--741
+[20 <./images/design/Item_Class_Diagram.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 773--774
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 742--743
+Underfull \hbox (badness 10000) in paragraph at lines 775--776
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 744--745
-
- []
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 757--758
+Underfull \hbox (badness 10000) in paragraph at lines 777--778
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 770--771
+Underfull \hbox (badness 10000) in paragraph at lines 779--780
 
  []
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 782--783
+
+Underfull \hbox (badness 10000) in paragraph at lines 792--793
 
  []
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 815--816
+
+Underfull \hbox (badness 10000) in paragraph at lines 805--806
+
+ []
+
+[21] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 817--818
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 850--851
 
  []
 
 
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Player_Class_Diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Player_Class_Diagram.pdf, id=185, 597.19106pt x 845.07718pt>
+<images/design/Player_Class_Diagram.pdf, id=191, 597.19106pt x 845.07718pt>
 File: images/design/Player_Class_Diagram.pdf Graphic file (type pdf)
 <use images/design/Player_Class_Diagram.pdf>
-Package pdftex.def Info: images/design/Player_Class_Diagram.pdf  used on input line 819.
-(pdftex.def)             Requested size: 384.10959pt x 253.02237pt.
+Package pdftex.def Info: images/design/Player_Class_Diagram.pdf  used on input line 854.
+(pdftex.def)             Requested size: 429.75417pt x 283.0895pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 823--825
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 826--828
-
- []
-
-[23 <./images/design/Player_Class_Diagram.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 835--837
+Underfull \hbox (badness 10000) in paragraph at lines 858--860
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 843--844
+Underfull \hbox (badness 10000) in paragraph at lines 861--863
 
  []
 
 
-Overfull \hbox (6.96698pt too wide) in paragraph at lines 856--856
+Underfull \hbox (badness 10000) in paragraph at lines 870--872
+
+ []
+
+[24 <./images/design/Player_Class_Diagram.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 878--879
+
+ []
+
+
+Overfull \hbox (6.96698pt too wide) in paragraph at lines 891--891
 []|\OT1/cmr/m/n/10 https://store.steampowered  
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 856
+Overfull \vbox (12.0pt too high) detected at line 891
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 856
+Overfull \vbox (12.0pt too high) detected at line 891
  []
 
 
-Overfull \hbox (6.96698pt too wide) in paragraph at lines 860--860
+Overfull \hbox (6.96698pt too wide) in paragraph at lines 895--895
 []|\OT1/cmr/m/n/10 https://store.steampowered  
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 860
+Overfull \vbox (12.0pt too high) detected at line 895
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 860
+Overfull \vbox (12.0pt too high) detected at line 895
  []
 
 
-Overfull \hbox (1.80035pt too wide) in paragraph at lines 864--864
+Overfull \hbox (1.80035pt too wide) in paragraph at lines 899--899
 []|\OT1/cmr/m/n/10 https://www.youtube.com  
  []
 
 
-Overfull \hbox (6.46706pt too wide) in paragraph at lines 868--868
+Overfull \hbox (6.46706pt too wide) in paragraph at lines 903--903
 []\OT1/cmr/m/n/10 /2018/12/17/wavefunction- 
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 868
+Overfull \vbox (12.0pt too high) detected at line 903
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 868
+Overfull \vbox (12.0pt too high) detected at line 903
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 872
+Overfull \vbox (24.0pt too high) detected at line 907
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 872
+Overfull \vbox (12.0pt too high) detected at line 907
  []
 
 
-Overfull \hbox (58.46973pt too wide) in paragraph at lines 852--878
+Overfull \hbox (7.75319pt too wide) in paragraph at lines 887--913
 [] 
  []
 
-[24] (./NEA_SNELSON_Jez_62337_1209_V1.aux)
+[25] (./NEA_SNELSON_Jez_62337_1209_V1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1392,18 +1350,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27750 strings out of 474136
- 688565 string characters out of 5748496
- 2174190 words of memory out of 5000000
- 49687 multiletter control sequences out of 15000+600000
+ 27757 strings out of 474136
+ 688816 string characters out of 5748496
+ 2172190 words of memory out of 5000000
+ 49694 multiletter control sequences out of 15000+600000
  564264 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  114i,11n,121p,1078b,1817s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on NEA_SNELSON_Jez_62337_1209_V1.pdf (26 pages, 600066 bytes).
+Output written on NEA_SNELSON_Jez_62337_1209_V1.pdf (27 pages, 623952 bytes).
 PDF statistics:
- 251 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
+ 256 PDF objects out of 1000 (max. 8388607)
+ 164 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 77 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 82 words of extra memory for PDF output out of 10000 (max. 10000000)
 

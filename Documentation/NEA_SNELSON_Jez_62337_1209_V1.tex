@@ -25,7 +25,7 @@
 \usepackage{listings}
 \usepackage{pythonhighlight}
 \usepackage{color}
-\usepackage[a4paper, total={150mm, 210mm}]{geometry}
+\usepackage[a4paper, total={150mm, 210mm}, margin=60pt]{geometry}
 %command for creating spaces
 \newcommand\tab[1][0.5cm]{\hspace*{#1}}
 
@@ -533,12 +533,47 @@
 \section{Design}
         \subsection{Overview}
         \subsubsection{Global Variables}
-        I have a couple of main global variable scripts Global, Inventory, etc.\\
+        I have a couple of main global variable scripts Global, Inventory, Database etc.\\
         \begin{tabular}{|c|c|c|c|}
                 \hline
                 Source&Identifier&Data Type&Justification\\
                 \hline
         \end{tabular}
+        \subsubsection{Folder Structure}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.3\textwidth]{images/design/File_System.PNG}
+                \caption{Folder Structure}
+        \end{figure}
+        I chose this folder structure as it will allow me to clearly define where all the different parts of the game are aswell as easily being able to access the closely related parts.\\
+        The assets folder will contain all of the external assets, sprites, spritesheets and audio.\\
+        The resources folder will contain all of the items (weapons, armour, keys and charms) that I will make to be included in the game.\\
+        The scenes folder will contain all the scenes for the menu and the game sorted into their respective folders.\\
+        The src folder will contain all of the preloaded scripts for the game.\\
+        the utils folder will contain any testing or debugging scripts/scenes to help with the development process.\\
+        \subsubsection{Naming Convention}
+        For naming I conventions I will adopt the naming conventions already used in godot for ease of integration, readability and consistency with documentation.\\
+        The naming conventions are as follows.\\
+        \begin{tabular}{|c|c|c|}
+                \hline
+                Type&Convention&Info\\
+                \hline
+                File Names&snake\_case&yaml\_parsed.gd\\
+                \hline
+                Class Names&PascalCase&YAMLParser\\
+                \hline
+                Node Names&PascalCase&\\
+                \hline
+                Functions&snake\_case&\\
+                \hline
+                Variables&snake\_case&\\
+                \hline
+                Signals&snake\_case& Past tense "door\_opened"\\
+                \hline
+                Constants&CONSTANT\_CASE&\\
+                \hline
+        \end{tabular}
+        \newpage
         \subsection{Database Design}
         I will be using an SQL Database in order to store the data about my users.\\
         \subsubsection{ERD}
@@ -578,7 +613,7 @@
                 \hline
                 Name&Description/Justification&SQL\\
                 \hline
-                \mr{2}{3.5cm}{createTableUsers}&\mr{2}{3cm}{Create's a table for Users if it does not exist.}&\mr{2}{8.5cm}{\texttt{CREATE TABLE IF NOT EXISTS users (\\\tab user\_id INTEGER PRIMARY KEY AUTOINCREMENT,\\\tab username VARCHAR(15) NOT NULL,\\\tab password VARCHAR(64) UNIQUE NOT NULL,\\\tab salt VARCHAR(64) NOT NULL,\\\tab answer VARCHAR(64) NOT NULL\\);}}\\
+                \mr{2}{3.5cm}{create\_table\_users}&\mr{2}{3cm}{Create's a table for Users if it does not exist.}&\mr{2}{8.5cm}{\texttt{CREATE TABLE IF NOT EXISTS users (\\\tab user\_id INTEGER PRIMARY KEY AUTOINCREMENT,\\\tab username VARCHAR(15) NOT NULL,\\\tab password VARCHAR(64) UNIQUE NOT NULL,\\\tab salt VARCHAR(64) NOT NULL,\\\tab answer VARCHAR(64) NOT NULL\\);}}\\
                 &&\\
                 &&\\
                 &&\\
@@ -587,46 +622,46 @@
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{getUserData}&\mr{2}{3cm}{Returns the user data assuming it exists. If it doesnt it will return null.}&\mr{2}{8.5cm}{\texttt{SELECT * FROM users\\WHERE username = ?;}}\\
+                \mr{2}{3.5cm}{get\_user\_data}&\mr{2}{3cm}{Returns the user data assuming it exists. If it doesnt it will return null.}&\mr{2}{8.5cm}{\texttt{SELECT * FROM users\\WHERE username = ?;}}\\
                 &&\\
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{addNewUser}&\mr{1}{3cm}{Inserts a new user into users with username, password, challenge question answer and salt}&\mr{2}{8.5cm}{\texttt{--Assume hashed password and answer\\INSERT INTO\\users(username,password,answer,salt)\\VALUES (?,?,?,?);}}\\
-                &&\\
-                &&\\
-                &&\\
-                &&\\
-                &&\\
-                \hline
-                \mr{2}{3.5cm}{resetPassword}&\mr{2}{3cm}{Changes a users password}&\mr{2}{8.5cm}{\texttt{--Assume hashed password and answer\\UPDATE TABLE users\\SET invalidCount = 0\\WHERE username = ?}}\\
-                &&\\
-                &&\\
-                &&\\
-                \hline
-                \mr{3}{3.5cm}{createTableSave\_Data}&\mr{2}{3cm}{Create's a table for save\_data if it does not exist.}&\mr{2}{8.5cm}{\texttt{CREATE TABLE IF NOT EXISTS save\_data (\\\tab save\_id INTEGER AUTOINCREMENT,\\\tab user\_id INTEGER,\\\tab difficulty INTEGER,\\\tab hardcore INTEGER,\\\tab level INTEGER,\\\tab inventory BLOB DEFAULT x'7b7d'\\);\\--x'7b7d' is the representation of '{}'}}\\
-                &&\\
-                &&\\
-                &&\\
+                \mr{2}{3.5cm}{add\_new\_user}&\mr{1}{3cm}{Inserts a new user into users with username, password, challenge question answer and salt}&\mr{2}{8.5cm}{\texttt{--Assume hashed password and answer\\INSERT INTO\\users(username,password,answer,salt)\\VALUES (?,?,?,?);}}\\
                 &&\\
                 &&\\
                 &&\\
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{addNewSave\_Data}&\mr{2}{3cm}{Add's new save data for a user.}&\mr{2}{8.5cm}{\texttt{INSERT INTO\\save\_data(user\_id,difficulty,hardcore,level)\\VALUES (?,?,?,?)}}\\
+                \mr{2}{3.5cm}{reset\_password}&\mr{2}{3cm}{Changes a users password}&\mr{2}{8.5cm}{\texttt{--Assume hashed password and answer\\UPDATE TABLE users\\SET invalidCount = 0\\WHERE username = ?}}\\
                 &&\\
-                &&\\
-                \hline
-                \mr{2}{3.5cm}{getSave\_Data}&\mr{2}{3cm}{Get's the save data with a specific user\_id and save\_id}&\mr{2}{8.5cm}{\texttt{SELECT * FROM users\\WHERE user\_id = ?\\AND save\_id = ?}}\\
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{userSave\_Data}&\mr{2}{3cm}{Get's the save data for all entries with a specific user\_id}&\mr{2}{8.5cm}{\texttt{SELECT * FROM users\\WHERE user\_id = ?}}\\
+                \mr{3}{3.5cm}{create\_table\_save\_data}&\mr{2}{3cm}{Create's a table for save\_data if it does not exist.}&\mr{2}{8.5cm}{\texttt{CREATE TABLE IF NOT EXISTS save\_data (\\\tab save\_id INTEGER AUTOINCREMENT,\\\tab user\_id INTEGER,\\\tab difficulty INTEGER,\\\tab hardcore INTEGER,\\\tab level INTEGER,\\\tab inventory BLOB DEFAULT x'7b7d'\\);\\--x'7b7d' is the representation of '{}'}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{updateSave\_Data}&\mr{2}{3cm}{updateSave}&\mr{2}{8.5cm}{\texttt{UPDATE save\_data\\SET\\\tab inventory = ?,\\\tab level = ?\\WHERE\\\tab user\_id = ?\\AND save\_id = ?}}\\
+                \mr{2}{3.5cm}{add\_new\_save\_data}&\mr{2}{3cm}{Add's new save data for a user.}&\mr{2}{8.5cm}{\texttt{INSERT INTO\\save\_data(user\_id,difficulty,hardcore,level)\\VALUES (?,?,?,?)}}\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3.5cm}{get\_save\_data}&\mr{2}{3cm}{Get's the save data with a specific user\_id and save\_id}&\mr{2}{8.5cm}{\texttt{SELECT * FROM users\\WHERE user\_id = ?\\AND save\_id = ?}}\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3.5cm}{userSave\_data}&\mr{2}{3cm}{Get's the save data for all entries with a specific user\_id}&\mr{2}{8.5cm}{\texttt{SELECT * FROM users\\WHERE user\_id = ?}}\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3.5cm}{update\_save\_data}&\mr{2}{3cm}{updateSave}&\mr{2}{8.5cm}{\texttt{UPDATE save\_data\\SET\\\tab inventory = ?,\\\tab level = ?\\WHERE\\\tab user\_id = ?\\AND save\_id = ?}}\\
                 &&\\
                 &&\\
                 &&\\
@@ -846,8 +881,8 @@ def _input(event):
    if event.is_action_pressed('attack'):
       attack()
         \end{python}
-        
-
+\section{Development}
+\subsubsection{Database Development}
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
         \hline
