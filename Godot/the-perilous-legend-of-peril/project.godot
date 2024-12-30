@@ -13,6 +13,10 @@ config_version=5
 config/name="The Perilous Legend Of Peril"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 
+[autoload]
+
+Database="*res://src/database.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
