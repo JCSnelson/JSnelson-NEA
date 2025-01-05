@@ -2,50 +2,189 @@ extends Node
 
 var db = SQLite.new()
 
-var create_table_users = """
+#region Prepared Statements
+
+var _create_table_users = """
 CREATE TABLE IF NOT EXISTS users (
 	user_id INTEGER PRIMARY KEY AUTOINCREMENT,
-	username VARCHAR(15) NOT NULL,
+	username VARCHAR(15) UNIQUE NOT NULL,
 	password VARCHAR(64) NOT NULL,
 	salt VARCHAR(64) NOT NULL,
 	answer VARCHAR(64) NOT NULL
 );
 """
 
-var get_user_data = """
+var _get_user_data = """
 SELECT * FROM users
 WHERE username = ?;
 """
 
-var add_new_user = """
+var _add_new_user = """
 --Assume hashed password and answer
 INSERT INTO
 users(username,password,answer,salt)
 VALUES (?,?,?,?);
 """
 
-var reset_password = """
+var _reset_password = """
 --Assume hashed password and answer
 UPDATE TABLE users
 SET invalidCount = 0
 WHERE username = ?
 """
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+var _create_table_save_data = """
+CREATE TABLE IF NOT EXISTS save_data (
+save_id INTEGER PRIMARY KEY AUTOINCREMENT,
+user_id INTEGER,
+difficulty INTEGER,
+hardcore INTEGER,
+level INTEGER,
+head VARCHAR(32),
+chest VARCHAR(32),
+legs VARCHAR(32),
+charm_1 VARCHAR(32),
+charm_2 VARCHAR(32),
+FOREIGN KEY(user_id) REFERENCES users(user_id)
+);
+"""
+
+var _add_new_save_data = """
+INSERT INTO
+save_data(user_id,difficulty,hardcore,level)
+VALUES (?,?,?,?);
+"""
+
+var _get_save_data = """
+SELECT * FROM save_data
+WHERE user_id = ?
+AND save_id = ?;
+"""
+
+var _get_user_save_data = """
+SELECT level, hardcore, save_id FROM save_data
+WHERE user_id = ?;
+"""
+
+var _update_save_data = """
+UPDATE save_data
+SET
+head = ?,
+chest = ?,
+legs = ?,
+charm_1 = ?,
+charm_2 = ?,
+level = ?
+WHERE
+user_id = ?
+AND save_id = ?;
+"""
+
+var _create_table_stored_items = """
+CREATE TABLE IF NOT EXISTS stored_items (
+item_id INTEGER NOT NULL,
+save_id INTEGER NOT NULL,
+PRIMARY KEY(item_id,save_id),
+FOREIGN KEY(save_id) REFERENCES save_data(save_id)
+);
+"""
+
+var _update_stored_item_amount = """
+UPDATE stored_items
+SET amount = amount + ?
+WHERE item_id = ?
+AND save_id = ?;
+"""
+
+var _get_stored_item_amount = """
+SELECT amount FROM stored_items
+WHERE save_id = ?
+AND item_id = ?;
+"""
+
+var _add_stored_item = """
+INSERT INTO
+stored_items(save_id,item_id,amount)
+VALUES (?,?,?);
+"""
+
+
+#endregion
+
+
+
+#test
+func test() -> void:
 	
 	#Open or Create a database
 	db.path = "res://game_data.db"
 	db.open_db()
 	db.drop_table("users")
-	if db.query(create_table_users):
-		print("success")
+	if not db.query(_create_table_users):
+		print("Error: users table unable to be created")
+		return
+		
+		
 	
-	if db.query_with_bindings(add_new_user,["user","pass","ans","salt"]):
+	if db.query_with_bindings(_add_new_user,["user","pass","ans","salt"]):
 		print("success")
 		
-	db.query_with_bindings(get_user_data,["user"])
+	db.query_with_bindings(_get_user_data,["user"])
 	print(db.query_result)
 	db.close_db()
+
+#Function for generating salt
+func genSalt() -> String:
+	var salt = "string"
+	var x = randi_range(5,10)
+	for i in range(2**x):
+		var j = str(i)
+		salt = j_hash(salt,j)
+	return salt
+
+#Function for hashing a password or challenge answer
+func j_hash(string, salt):
+	var hashedString = string
+	#Repeating a consistent but unpredictable amount of times
+	for x in range(1,6*len(string)+1):
+		if x % 2 == 0:
+			hashedString = (salt.substr(x,hashedString.length()-x)+hashedString+salt.substr(0,x)).md5_text().sha256_text()
+		else:
+			hashedString = (hashedString.substr(0,x)+salt+hashedString.substr(x,hashedString.length()-x)).sha256_text().md5_text()
+	return hashedString
+
+#Function for creating a user
+func add_user(username, password, answer):
+	var salt = genSalt()
+	var hashedPassword = j_hash(password, salt)
+	var hashedAnswer = j_hash(answer, salt)
+	return db.query_with_bindings(_add_new_user,[username,hashedPassword,hashedAnswer,salt])
+
+
+func _ready() -> void:
 	
+	db.path = "res://game_data.db"
+	db.open_db()
+	db.drop_table("users")
+	db.drop_table("save_data")
+	db.drop_table("stored_items")
+	if not db.query(_create_table_users):
+		print("Error: users table unable to be created")
+		return
 	
+	if not db.query(_create_table_save_data):
+		print("Error: save_data table unable to be created")
+		return
+	
+	if not db.query(_create_table_stored_items):
+		print("Error: stored_items table unable to be created")
+		return
+	
+	if not add_user("Hyrule","password","oxford"):
+		print("non unique")
+		
+	print(db.query_result)
+	add_user("Hyrule","password","oxford")
+	print(db.query_result)
+	
+	db.close_db()

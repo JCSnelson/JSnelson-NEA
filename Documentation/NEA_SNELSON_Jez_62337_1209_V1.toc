@@ -20,22 +20,23 @@
 \contentsline {subsubsection}{\numberline {2.1.3}Naming Convention}{15}{}%
 \contentsline {subsection}{\numberline {2.2}Database Design}{16}{}%
 \contentsline {subsubsection}{\numberline {2.2.1}ERD}{16}{}%
-\contentsline {subsubsection}{\numberline {2.2.2}Database Naming Conventions}{16}{}%
-\contentsline {subsubsection}{\numberline {2.2.3}SQL Queries}{17}{}%
-\contentsline {subsection}{\numberline {2.3}Login System}{18}{}%
-\contentsline {subsubsection}{\numberline {2.3.1}Activity Diagram}{18}{}%
-\contentsline {subsubsection}{\numberline {2.3.2}Algorithms}{18}{}%
-\contentsline {subsubsection}{\numberline {2.3.3}Mockup Forms}{18}{}%
-\contentsline {subsection}{\numberline {2.4}Item Design}{20}{}%
-\contentsline {subsubsection}{\numberline {2.4.1}Class Diagram}{20}{}%
-\contentsline {subsubsection}{\numberline {2.4.2}Algorithms}{20}{}%
-\contentsline {subsection}{\numberline {2.5}Inventory Design}{21}{}%
-\contentsline {subsubsection}{\numberline {2.5.1}Stored Items}{21}{}%
-\contentsline {subsubsection}{\numberline {2.5.2}Equipped Items}{21}{}%
-\contentsline {subsubsection}{\numberline {2.5.3}Algorithms}{21}{}%
-\contentsline {subsection}{\numberline {2.6}Player Character}{24}{}%
-\contentsline {subsubsection}{\numberline {2.6.1}Composition}{24}{}%
-\contentsline {subsubsection}{\numberline {2.6.2}Algorithms}{24}{}%
-\contentsline {section}{\numberline {3}Development}{25}{}%
-\contentsline {subsubsection}{\numberline {3.0.1}Database Development}{25}{}%
-\contentsline {section}{\numberline {4}References}{25}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}Database Naming Conventions}{17}{}%
+\contentsline {subsubsection}{\numberline {2.2.3}SQL Queries}{18}{}%
+\contentsline {subsubsection}{\numberline {2.2.4}Algorithms}{20}{}%
+\contentsline {subsection}{\numberline {2.3}Login System}{20}{}%
+\contentsline {subsubsection}{\numberline {2.3.1}Activity Diagram}{20}{}%
+\contentsline {subsubsection}{\numberline {2.3.2}Algorithms}{20}{}%
+\contentsline {subsubsection}{\numberline {2.3.3}Mockup Forms}{21}{}%
+\contentsline {subsection}{\numberline {2.4}Item Design}{22}{}%
+\contentsline {subsubsection}{\numberline {2.4.1}Class Diagram}{22}{}%
+\contentsline {subsubsection}{\numberline {2.4.2}Algorithms}{22}{}%
+\contentsline {subsection}{\numberline {2.5}Inventory Design}{23}{}%
+\contentsline {subsubsection}{\numberline {2.5.1}Stored Items}{23}{}%
+\contentsline {subsubsection}{\numberline {2.5.2}Equipped Items}{23}{}%
+\contentsline {subsubsection}{\numberline {2.5.3}Algorithms}{23}{}%
+\contentsline {subsection}{\numberline {2.6}Player Character}{26}{}%
+\contentsline {subsubsection}{\numberline {2.6.1}Composition}{26}{}%
+\contentsline {subsubsection}{\numberline {2.6.2}Algorithms}{26}{}%
+\contentsline {section}{\numberline {3}Development}{27}{}%
+\contentsline {subsubsection}{\numberline {3.0.1}Database Development}{27}{}%
+\contentsline {section}{\numberline {4}References}{27}{}%

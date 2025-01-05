@@ -6,7 +6,7 @@
 %  15  Evalutation
 % =============================
 
-% ===== MY SCORE =====
+% ========= MY SCORE =========
 %  0   Analysis
 %  0   Documented Design
 %  0   Iterative Development
@@ -586,7 +586,12 @@
         Figure 2 shows the Database Design:\\
         The users table will be the main table containing all the login details.\\
         Each user will be able to have multiple save instances which will be stored in save data.\\
-        Upon designing the inventory I have decided that I will split the inventory into the stored items which I will use a seperate table to store all the equipped 
+        Upon designing the inventory I have decided that I will split the inventory into the stored items which I will use a seperate table to store with the item\_path as a primary composite key with the save \_id aswell as storing the equipped items in the save\_data table. I have also decided to split the composite key in the save\_data table and just have the save\_id as the primary key autoincrementing.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width=\textwidth, trim = 0 550 0 25, clip]{images/design/Database_Design_Second.pdf}
+                \caption{Database Design}
+        \end{figure}
         \subsubsection{Database Naming Conventions}
         The naming conventions I will adopt for the database is as follows.\\
         \begin{tabular}[pos]{|c|c|c|c|}
@@ -613,7 +618,7 @@
                 \hline
                 Name&Description/Justification&SQL\\
                 \hline
-                \mr{2}{3.5cm}{create\_table\_users}&\mr{2}{3cm}{Create's a table for Users if it does not exist.}&\mr{2}{8.5cm}{\texttt{CREATE TABLE IF NOT EXISTS users (\\\tab user\_id INTEGER PRIMARY KEY AUTOINCREMENT,\\\tab username VARCHAR(15) NOT NULL,\\\tab password VARCHAR(64) UNIQUE NOT NULL,\\\tab salt VARCHAR(64) NOT NULL,\\\tab answer VARCHAR(64) NOT NULL\\);}}\\
+                \mr{2}{3.5cm}{create\_table\_users}&\mr{2}{3cm}{Create's a table for users if it does not exist.}&\mr{2}{9.5cm}{\texttt{CREATE TABLE IF NOT EXISTS users (\\\tab user\_id INTEGER PRIMARY KEY AUTOINCREMENT,\\\tab username VARCHAR(15) NOT NULL,\\\tab password VARCHAR(64) UNIQUE NOT NULL,\\\tab salt VARCHAR(64) NOT NULL,\\\tab answer VARCHAR(64) NOT NULL\\);}}\\
                 &&\\
                 &&\\
                 &&\\
@@ -622,46 +627,53 @@
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{get\_user\_data}&\mr{2}{3cm}{Returns the user data assuming it exists. If it doesnt it will return null.}&\mr{2}{8.5cm}{\texttt{SELECT * FROM users\\WHERE username = ?;}}\\
+                \mr{2}{3.5cm}{get\_user\_data}&\mr{2}{3cm}{Returns the user data assuming it exists. If it doesnt it will return null.}&\mr{2}{9.5cm}{\texttt{SELECT * FROM users\\WHERE username = ?;}}\\
                 &&\\
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{add\_new\_user}&\mr{1}{3cm}{Inserts a new user into users with username, password, challenge question answer and salt}&\mr{2}{8.5cm}{\texttt{--Assume hashed password and answer\\INSERT INTO\\users(username,password,answer,salt)\\VALUES (?,?,?,?);}}\\
-                &&\\
-                &&\\
-                &&\\
-                &&\\
-                &&\\
-                \hline
-                \mr{2}{3.5cm}{reset\_password}&\mr{2}{3cm}{Changes a users password}&\mr{2}{8.5cm}{\texttt{--Assume hashed password and answer\\UPDATE TABLE users\\SET invalidCount = 0\\WHERE username = ?}}\\
-                &&\\
-                &&\\
-                &&\\
-                \hline
-                \mr{3}{3.5cm}{create\_table\_save\_data}&\mr{2}{3cm}{Create's a table for save\_data if it does not exist.}&\mr{2}{8.5cm}{\texttt{CREATE TABLE IF NOT EXISTS save\_data (\\\tab save\_id INTEGER AUTOINCREMENT,\\\tab user\_id INTEGER,\\\tab difficulty INTEGER,\\\tab hardcore INTEGER,\\\tab level INTEGER,\\\tab inventory BLOB DEFAULT x'7b7d'\\);\\--x'7b7d' is the representation of '{}'}}\\
-                &&\\
-                &&\\
-                &&\\
+                \mr{2}{3.5cm}{add\_new\_user}&\mr{1}{3cm}{Inserts a new user into users with username, password, challenge question answer and salt}&\mr{2}{9.5cm}{\texttt{--Assume hashed password and answer\\INSERT INTO\\users(username,password,answer,salt)\\VALUES (?,?,?,?);}}\\
                 &&\\
                 &&\\
                 &&\\
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{add\_new\_save\_data}&\mr{2}{3cm}{Add's new save data for a user.}&\mr{2}{8.5cm}{\texttt{INSERT INTO\\save\_data(user\_id,difficulty,hardcore,level)\\VALUES (?,?,?,?)}}\\
+                \mr{2}{3.5cm}{reset\_password}&\mr{2}{3cm}{Changes a users password}&\mr{2}{9.5cm}{\texttt{--Assume hashed password and answer\\UPDATE TABLE users\\SET invalidCount = 0\\WHERE username = ?}}\\
                 &&\\
-                &&\\
-                \hline
-                \mr{2}{3.5cm}{get\_save\_data}&\mr{2}{3cm}{Get's the save data with a specific user\_id and save\_id}&\mr{2}{8.5cm}{\texttt{SELECT * FROM users\\WHERE user\_id = ?\\AND save\_id = ?}}\\
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{userSave\_data}&\mr{2}{3cm}{Get's the save data for all entries with a specific user\_id}&\mr{2}{8.5cm}{\texttt{SELECT * FROM users\\WHERE user\_id = ?}}\\
+                \mr{3}{3.5cm}{create\_table\_save\_data}&\mr{2}{3cm}{Create's a table for save\_data if it does not exist.}&\mr{2}{9.5cm}{\texttt{CREATE TABLE IF NOT EXISTS save\_data (\\\tab save\_id INTEGER AUTOINCREMENT,\\\tab FOREIGN KEY (user\_id) REFERENCES users(user\_id),\\\tab difficulty INTEGER,\\\tab hardcore INTEGER,\\\tab level INTEGER,\\\tab head VARCHAR(32),\\\tab chest VARCHAR(32),\\\tab legs VARCHAR(32),\\\tab charm\_1 VARCHAR(32),\\\tab charm\_2 VARCHAR(32)\\);\\}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{update\_save\_data}&\mr{2}{3cm}{updateSave}&\mr{2}{8.5cm}{\texttt{UPDATE save\_data\\SET\\\tab inventory = ?,\\\tab level = ?\\WHERE\\\tab user\_id = ?\\AND save\_id = ?}}\\
+                \mr{2}{3.5cm}{add\_new\_save\_data}&\mr{2}{3cm}{Adds new save data for a user.}&\mr{2}{9.5cm}{\texttt{INSERT INTO\\save\_data(user\_id,difficulty,hardcore,level)\\VALUES (?,?,?,?);}}\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3.5cm}{get\_save\_data}&\mr{2}{3cm}{Get's the save data with a specific user\_id and save\_id}&\mr{2}{9.5cm}{\texttt{SELECT * FROM save\_data\\WHERE user\_id = ?\\AND save\_id = ?;}}\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3.5cm}{get\_user\_save\_data}&\mr{2}{3cm}{Get's the save data for all entries with a specific user\_id}&\mr{2}{9.5cm}{\texttt{SELECT level, hardcore FROM save\_data\\WHERE user\_id = ?;}}\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3.5cm}{update\_save\_data}&\mr{2}{3cm}{updateSave}&\mr{2}{9.5cm}{\texttt{UPDATE save\_data\\SET\\\tab head = ?,\\\tab chest = ?,\\\tab legs = ?,\\\tab charm\_1 = ?,\\\tab charm\_2 = ?,\\\tab level = ?\\WHERE\\\tab user\_id = ?\\AND save\_id = ?;}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
                 &&\\
                 &&\\
                 &&\\
@@ -670,6 +682,46 @@
                 &&\\
                 \hline
         \end{tabular}
+        \newpage
+        \[\]
+        \begin{tabular}{|c|c|c|}
+                \hline
+                Name&Description/Justification&SQL\\
+                \hline
+                \mr{2}{4.2cm}{create\_table\_stored\_items}&\mr{2}{2.5cm}{Create's a table for stored\_items if it does not exist.}&\mr{2}{9.3cm}{\texttt{CREATE TABLE IF NOT EXISTS stored\_items (\\item\_id INTEGER NOT NULL,\\save\_id INTEGER NOT NULL,\\PRIMARY KEY(item\_id,save\_id),\\FOREIGN KEY(save\_id) REFERENCES save\_data(save\_id)\\);}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{4.2cm}{update\_stored\_item\_amount}&\mr{2}{2.5cm}{Update's a specific person's stored items to increase the amount of something stored (assumes it is stored)}&\mr{2}{9.3cm}{\texttt{UPDATE stored\_items\\SET amount = amount + ?\\WHERE item\_id = ?\\AND save\_id = ?;\\}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{4.2cm}{get\_stored\_item\_amount}&\mr{2}{2.5cm}{Get's the amount of an item being stored}&\mr{2}{9.3cm}{\texttt{SELECT amount FROM stored\_items\\WHERE save\_id = ?\\AND item\_id = ?;}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{4.2cm}{add\_stored\_item}&\mr{2}{2.5cm}{Adds an item to the stored\_items}&\mr{2}{9.3cm}{\texttt{INSERT INTO\\stored\_items(save\_id,item\_id,amount)\\VALUES (?,?,?);}}\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{4.2cm}{}&\mr{2}{2.5cm}{}&\mr{2}{9.3cm}{\texttt{}}\\
+                &&\\
+                \hline
+                \mr{2}{4.2cm}{}&\mr{2}{2.5cm}{}&\mr{2}{9.3cm}{\texttt{}}\\
+                &&\\
+                \hline
+        \end{tabular}
+        \subsubsection{Algorithms}
         \subsection{Login System}
         \subsubsection{Activity Diagram}
         \begin{figure}[H]
@@ -681,6 +733,7 @@
         The login form will allow users to create accounts aswell as login with an existing account and reset a password.\\
         Upon successful login the user will be redirected to the GAME system.\\
         \subsubsection{Algorithms}
+
         \textbf{hash():}\\
         \begin{python}
 def hash(password: str, salt: str):
@@ -692,6 +745,16 @@ def hash(password: str, salt: str):
       else:
          hashedPassword = md5(sha256(hashedPassword[:x]+salt+hashedPassword[x:]))
         return hashedPassword
+        \end{python}
+        \textbf{genSalt():}\\
+        The genSalt function uses random processes to generate a salt string to be used in the hashing of the password and challenge question.\\
+        \begin{python}
+def genSalt():
+   salt = "string"
+   x = randint(5,10)
+   for i in range(2**x):
+      salt = hash(salt,sha256(str(i)))
+   return salt
         \end{python}
         \textbf{removeForm():}\\
         \begin{python}
