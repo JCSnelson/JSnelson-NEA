@@ -134,18 +134,19 @@ func test() -> void:
 	db.close_db()
 
 #Function for generating salt
-func genSalt() -> String:
+func gen_salt() -> String:
 	var salt = "string"
 	var x = randi_range(5,10)
 	for i in range(2**x):
-		var j = str(i)
-		salt = j_hash(salt,j)
+		salt = j_hash(salt,str(i*randi_range(1,10)))
 	return salt
 
 #Function for hashing a password or challenge answer
 func j_hash(string, salt):
 	var hashedString = string
 	#Repeating a consistent but unpredictable amount of times
+	#On even rounds the password is sandwidged on odd rounds the salt is sandwidged
+	#Alternating the use of sha256 and md5 but making sure to end on sha256 so the hash is a predictable length.
 	for x in range(1,6*len(string)+1):
 		if x % 2 == 0:
 			hashedString = (salt.substr(x,hashedString.length()-x)+hashedString+salt.substr(0,x)).md5_text().sha256_text()
@@ -155,33 +156,33 @@ func j_hash(string, salt):
 
 #Function for creating a user
 func add_user(username, password, answer):
-	var salt = genSalt()
+	var salt = gen_salt() #Generating new salt
 	var hashedPassword = j_hash(password, salt)
 	var hashedAnswer = j_hash(answer, salt)
-	if not db.query_with_bindings(_add_new_user,[username,hashedPassword,hashedAnswer,salt]):
-		return "InvalidUsernameError"
+	if not db.query_with_bindings(_add_new_user,[username,hashedPassword,hashedAnswer,salt]): #Tries to add user with hashed password and answer
+		return "InvalidUsernameError" #If user cannot be added then the username must be invalid
 	return true
 
 func login(username,password):
-	db.query_with_bindings(_get_user_data,[username])
-	if len(db.query_result) == 0:
+	db.query_with_bindings(_get_user_data,[username]) # Getting user data
+	if len(db.query_result) == 0: # If user doesnt exist
 		return "InvalidUsernameError"
 	var user_data = db.query_result[0]
 	var hashed_password = j_hash(password,user_data["salt"])
-	if hashed_password == user_data["password"]:
+	if hashed_password == user_data["password"]: # Checking password hash against stored hash
 		return true
-	return "IncorrectPasswordError"
+	return "IncorrectPasswordError" # If password doesnt match
 
 func reset_password(username, answer, password):
-	db.query_with_bindings(_get_user_data,[username])
-	if len(db.query_result) == 0:
+	db.query_with_bindings(_get_user_data,[username]) # Getting user data
+	if len(db.query_result) == 0: # If user doesnt exist
 		return "InvalidUsernameError"
 	var user_data = db.query_result[0]
 	var hashed_answer = j_hash(password,user_data["salt"])
-	if hashed_answer == user_data["answer"]:
+	if hashed_answer == user_data["answer"]: # Checking the answer hash against the stored hash
 		db.query_with_bindings(_reset_password,[password,username])
 		return true
-	return "IncorrectAnswerError"
+	return "IncorrectAnswerError" # If answer doesnt match
 
 func _ready() -> void:
 	

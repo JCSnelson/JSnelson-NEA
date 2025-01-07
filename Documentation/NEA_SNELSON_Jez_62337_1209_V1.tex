@@ -610,8 +610,7 @@
                 Keys& singular snake\_case\_table\_id&user\_id, save\_data\_id&\\
                 &&&\\
                 \hline
-        \end{tabular}
-        
+        \end{tabular}       
         \subsubsection{SQL Queries}
         I have to write Queries for each of the actions I want to do.\\
         \begin{tabular}{|c|c|c|}
@@ -736,23 +735,23 @@ def login(username,password):
         \textbf{add\_user():}\\
         \begin{python}
 def add_user(username, password, answer):
-   salt = gen_salt() #generating new salt
-   hashed_password = hash(password,salt) #hashing password
-   hashed_answer = hash(answer,salt) #hashing answer
-   if not add_new_user(username, hashed_password, hashed_answer, salt): #Tries to add user
+   salt = gen_salt() #Generating new salt
+   hashed_password = hash(password,salt)
+   hashed_answer = hash(answer,salt)
+   if not add_new_user(username, hashed_password, hashed_answer, salt): #Tries to add user with hashed password and answer
       return "InvalidUsernameError" #If user cannot be added then the username must be invalid
    return True
         \end{python}
         \textbf{reset\_password():}\\
         \begin{python}
 def reset_password(username, answer, password):
-   query_result = get_user_data(username)
-   if len(query_result) == 0:
+   query_result = get_user_data(username) #Getting user data
+   if len(query_result) == 0: #If user doesnt exist
       return "InvalidUsernameError"
-   if hash(answer) == query_result["answer"]:
+   if hash(answer) == query_result["answer"]: #Checking the answer hash against the stored hash
       reset_password(password,username)
       return True
-   return "IncorrectAnswerError"
+   return "IncorrectAnswerError" #If answer doesnt match
         \end{python}
         \subsection{Login System}
         \subsubsection{Activity Diagram}
@@ -771,6 +770,8 @@ def reset_password(username, answer, password):
 def hash(password: str, salt: str):
    hashedPassword = password
    #Repeating a consistent but unpredicatble amount of times
+   #On even rounds the password is sandwidged on odd rounds the salt is sandwidged
+   #Alternating the use of sha256 and md5 but making sure to end on sha256 so the hash is a predictable length.
    for x in range(1,6*len(password)+1):
       if x\%2 == 0:
          hashedPassword = sha256(md5(salt[x:]+hashedPassword+salt[:x]))
@@ -781,11 +782,11 @@ def hash(password: str, salt: str):
         \textbf{genSalt():}\\
         The genSalt function uses random processes to generate a salt string to be used in the hashing of the password and challenge question.\\
         \begin{python}
-def genSalt():
+def gen_salt():
    salt = "string"
    x = randint(5,10)
    for i in range(2**x):
-      salt = hash(salt,sha256(str(i)))
+      salt = hash(salt,sha256(str(i*randint(1,10))))
    return salt
         \end{python}
         \textbf{removeForm():}\\
@@ -977,7 +978,22 @@ def _input(event):
       attack()
         \end{python}
 \section{Development}
-\subsubsection{Database Development}
+        \subsection{Database Development}
+        I used a global autoloaded script database.gd in order to implement all of my functions for handling the database.\\
+        I added all the prepared queries with strings in order to use db.query\_with\_bindings to sanitise and substitute inputs aswell as run the queries. This function would output wether the query succeeded or failed.\\
+        I then could use db.query\_result in order to get the results of the query.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics{images/development/gen_salt.PNG}
+                \caption{gen\_salt}
+        \end{figure}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = \columnwidth]{images/development/hash.PNG}
+                \caption{hash}
+        \end{figure}
+        \[\]
+        The hash and gen\_salt functions implementation followed the pseudocode pretty faithfully apart from the fact I decided to not hash the number turned into a string as the salt doesnt have to be a certain length for the code to work.\\
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
         \hline
@@ -1005,5 +1021,4 @@ def _input(event):
         &&&&&\\
         \hline
 \end{tabular}
-
 \end{document}
