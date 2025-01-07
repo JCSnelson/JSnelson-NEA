@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8aeoduixuhyx"]
+
+[ext_resource type="Script" path="res://scenes/menu/login_form.gd" id="1_opgd2"]
+
+[node name="LoginForm" type="Node2D"]
+position = Vector2(768, 220)
+scale = Vector2(2, 2)
+script = ExtResource("1_opgd2")
+
+[node name="Labels" type="Node2D" parent="."]
+
+[node name="SignInLabel" type="Label" parent="Labels"]
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 23.0
+text = "Sign In"
+horizontal_alignment = 1
+
+[node name="UsernameLabel" type="Label" parent="Labels"]
+offset_left = 1.0
+offset_top = 40.0
+offset_right = 86.0
+offset_bottom = 63.0
+text = "Username:"
+
+[node name="PasswordLabel" type="Label" parent="Labels"]
+offset_top = 104.0
+offset_right = 79.0
+offset_bottom = 127.0
+text = "Password:"
+
+[node name="ErrorLabel" type="Label" parent="Labels"]
+offset_top = 168.0
+offset_right = 192.0
+offset_bottom = 191.0
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(0, 2)
+
+[node name="SignInButton" type="Button" parent="Buttons"]
+offset_top = 200.0
+offset_right = 88.0
+offset_bottom = 232.0
+text = "Sign In"
+
+[node name="CancelButton" type="Button" parent="Buttons"]
+offset_left = 104.0
+offset_top = 200.0
+offset_right = 192.0
+offset_bottom = 232.0
+text = "Quit"
+
+[node name="ForgotPasswordButton" type="Button" parent="Buttons"]
+offset_top = 241.0
+offset_right = 192.0
+offset_bottom = 272.0
+text = "Forgot Password?"
+
+[node name="CreateAccountButton" type="Button" parent="Buttons"]
+offset_top = 281.0
+offset_right = 192.0
+offset_bottom = 312.0
+text = "Create Account"
+
+[node name="Input" type="Node2D" parent="."]
+position = Vector2(2, 200)
+
+[node name="UsernameInput" type="LineEdit" parent="Input"]
+offset_left = -2.0
+offset_top = -136.0
+offset_right = 190.0
+offset_bottom = -105.0
+placeholder_text = "Username"
+
+[node name="PasswordInput" type="LineEdit" parent="Input"]
+offset_left = -2.0
+offset_top = -72.0
+offset_right = 190.0
+offset_bottom = -41.0
+placeholder_text = "Password"
+secret = true
+
+[connection signal="pressed" from="Buttons/SignInButton" to="." method="_on_sign_in_button_pressed"]
+[connection signal="pressed" from="Buttons/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="Buttons/ForgotPasswordButton" to="." method="_on_forgot_password_button_pressed"]
+[connection signal="pressed" from="Buttons/CreateAccountButton" to="." method="_on_create_account_button_pressed"]

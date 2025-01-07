@@ -29,7 +29,7 @@ VALUES (?,?,?,?);
 var _reset_password = """
 --Assume hashed password and answer
 UPDATE TABLE users
-SET invalidCount = 0
+SET password = ?
 WHERE username = ?
 """
 
@@ -158,8 +158,30 @@ func add_user(username, password, answer):
 	var salt = genSalt()
 	var hashedPassword = j_hash(password, salt)
 	var hashedAnswer = j_hash(answer, salt)
-	return db.query_with_bindings(_add_new_user,[username,hashedPassword,hashedAnswer,salt])
+	if not db.query_with_bindings(_add_new_user,[username,hashedPassword,hashedAnswer,salt]):
+		return "InvalidUsernameError"
+	return true
 
+func login(username,password):
+	db.query_with_bindings(_get_user_data,[username])
+	if len(db.query_result) == 0:
+		return "InvalidUsernameError"
+	var user_data = db.query_result[0]
+	var hashed_password = j_hash(password,user_data["salt"])
+	if hashed_password == user_data["password"]:
+		return true
+	return "IncorrectPasswordError"
+
+func reset_password(username, answer, password):
+	db.query_with_bindings(_get_user_data,[username])
+	if len(db.query_result) == 0:
+		return "InvalidUsernameError"
+	var user_data = db.query_result[0]
+	var hashed_answer = j_hash(password,user_data["salt"])
+	if hashed_answer == user_data["answer"]:
+		db.query_with_bindings(_reset_password,[password,username])
+		return true
+	return "IncorrectAnswerError"
 
 func _ready() -> void:
 	
@@ -179,7 +201,7 @@ func _ready() -> void:
 	if not db.query(_create_table_stored_items):
 		print("Error: stored_items table unable to be created")
 		return
-	
+	print("DONE")
 	if not add_user("Hyrule","password","oxford"):
 		print("non unique")
 		
@@ -187,4 +209,7 @@ func _ready() -> void:
 	add_user("Hyrule","password","oxford")
 	print(db.query_result)
 	
+	login("Hyrule","password")
+
+func quit():
 	db.close_db()

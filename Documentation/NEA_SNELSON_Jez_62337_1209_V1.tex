@@ -639,7 +639,7 @@
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{reset\_password}&\mr{2}{3cm}{Changes a users password}&\mr{2}{9.5cm}{\texttt{--Assume hashed password and answer\\UPDATE TABLE users\\SET invalidCount = 0\\WHERE username = ?}}\\
+                \mr{2}{3.5cm}{reset\_password}&\mr{2}{3cm}{Changes a users password}&\mr{2}{9.5cm}{\texttt{--Assume hashed password and answer\\UPDATE TABLE users\\SET password = ?\\WHERE username = ?}}\\
                 &&\\
                 &&\\
                 &&\\
@@ -721,7 +721,39 @@
                 &&\\
                 \hline
         \end{tabular}
+        I will use godot's $query\_with\_bindings()$ function in order to substitute in the bindings for the ?s in the queries. This is useful as it automatically performs input sanitisation so that the system isn't vulnerable to SQL injection.\\
         \subsubsection{Algorithms}
+        \textbf{login():}\\
+        \begin{python}
+def login(username,password):
+   query_result = get_user_data(username) #Getting user data
+   if len(query_result) == 0: #If user doesnt exist
+      return "InvalidUsernameError" 
+   if hash(password) == query_result["password"]: #Checking password hash against stored hash
+      return True
+   return "IncorrectPasswordError" #If password doesnt match
+        \end{python}
+        \textbf{add\_user():}\\
+        \begin{python}
+def add_user(username, password, answer):
+   salt = gen_salt() #generating new salt
+   hashed_password = hash(password,salt) #hashing password
+   hashed_answer = hash(answer,salt) #hashing answer
+   if not add_new_user(username, hashed_password, hashed_answer, salt): #Tries to add user
+      return "InvalidUsernameError" #If user cannot be added then the username must be invalid
+   return True
+        \end{python}
+        \textbf{reset\_password():}\\
+        \begin{python}
+def reset_password(username, answer, password):
+   query_result = get_user_data(username)
+   if len(query_result) == 0:
+      return "InvalidUsernameError"
+   if hash(answer) == query_result["answer"]:
+      reset_password(password,username)
+      return True
+   return "IncorrectAnswerError"
+        \end{python}
         \subsection{Login System}
         \subsubsection{Activity Diagram}
         \begin{figure}[H]
