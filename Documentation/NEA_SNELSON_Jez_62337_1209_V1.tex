@@ -786,7 +786,7 @@ def gen_salt():
    salt = "string"
    x = randint(5,10)
    for i in range(2**x):
-      salt = hash(salt,sha256(str(i*randint(1,10))))
+      salt = hash(salt,sha256(str(i)))
    return salt
         \end{python}
         \textbf{removeForm():}\\
@@ -982,6 +982,14 @@ def _input(event):
         I used a global autoloaded script database.gd in order to implement all of my functions for handling the database.\\
         I added all the prepared queries with strings in order to use db.query\_with\_bindings to sanitise and substitute inputs aswell as run the queries. This function would output wether the query succeeded or failed.\\
         I then could use db.query\_result in order to get the results of the query.\\
+        \subsubsection{\_ready()}
+        \begin{figure}[H]
+                \centering
+                \includegraphics{images/development/database_ready.PNG}
+                \caption{\_ready}
+        \end{figure}
+        In the database script db is declared using $SQLite.new()$ which is a wrapper class. I use the script to load the database and make sure all the necessary tables are present.\\
+        \subsubsection{Hashing}
         \begin{figure}[H]
                 \centering
                 \includegraphics{images/development/gen_salt.PNG}
@@ -993,7 +1001,94 @@ def _input(event):
                 \caption{hash}
         \end{figure}
         \[\]
-        The hash and gen\_salt functions implementation followed the pseudocode pretty faithfully apart from the fact I decided to not hash the number turned into a string as the salt doesnt have to be a certain length for the code to work.\\
+        The hash and gen\_salt functions implementation followed the pseudocode pretty faithfully apart from the fact I decided to not hash the number turned into a string as the salt doesnt have to be a certain length for the code to work. I also decided to times the number by a random integer to increase randomness and the number of possible salts.\\
+        \subsection{Login System Development}
+        I used godot's inbuilt label, button and line edit node's in order to construct my forms. To each form I added an extra label in order to display Errors to the user.\\
+        I linked the buttons pressed signals to a script in order to determine what happens when the button is pressed and used variables to fetch and store the data from the line edit nodes.\\
+        I used node2ds in order to create groups of the nodes for more organisation and I kept the form layout mostly the same without some of the fancier unnecesary design elements from the mockup forms.\\
+        \subsubsection{Login Form}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.5\columnwidth]{images/development/LoginForm_layout.PNG}
+                        \caption{Layout}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.6\columnwidth]{images/development/LoginForm_structure.PNG}
+                        \caption{Structure}
+                \end{figure}
+        \end{multicols}
+        \[\]
+        \begin{figure}[H]
+              \centering
+              \includegraphics{images/development/LoginForm_buttons.PNG}  
+              \caption{button\_pressed functions}
+        \end{figure}
+        These button functions are pretty simple as I only need to change scene or quit the game.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics{images/development/_on_sign_in_button_pressed.PNG}
+                \caption{\_on\_sign\_in\_button\_pressed}
+        \end{figure}
+        \[\]
+        This is the function for when the sign in button is pressed it fetches the data and tries to login, displaying any errors it gets. If the login is successful theen it switches the scene to the save\_menu scene.\\
+        \subsubsection{Reset Password Form}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.5\columnwidth]{images/development/ResetPasswordForm_layout.PNG}
+                        \caption{Layout}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.6\columnwidth]{images/development/ResetPasswordForm_structure.PNG}
+                        \caption{Structure}
+                \end{figure}
+        \end{multicols}
+        \[\]
+        \begin{figure}[H]
+              \centering
+              \includegraphics{images/development/ResetPasswordForm_cancel.PNG}
+              \caption{\_on\_cancel\_button\_pressed}
+        \end{figure}
+        This button function is pretty simple as I only need to change scene back to the login form.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics{images/development/ResetPasswordForm_reset.PNG}
+                \caption{\_on\_reset\_password\_button\_pressed}
+        \end{figure}
+        \[\]
+        This is the function for when the reset password button is pressed it fetches the data and tries to reset the password, displaying any errors it gets. If the reset is successful then it switches the scene to the login\_form scene.\\
+        \subsubsection{Create Account Form}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.5\columnwidth]{images/development/CreateAccountForm_layout.PNG}
+                        \caption{Layout}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.6\columnwidth]{images/development/CreateAccountForm_structure.PNG}
+                        \caption{Structure}
+                \end{figure}
+        \end{multicols}
+        \[\]
+        \begin{figure}[H]
+              \centering
+              \includegraphics{images/development/CreateAccountForm_cancel.PNG}
+              \caption{\_on\_cancel\_button\_pressed}
+        \end{figure}
+        This button function is pretty simple as I only need to change scene back to the login form.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics{images/development/CreateAccountForm_create.PNG}
+                \caption{\_on\_reset\_password\_button\_pressed}
+        \end{figure}
+        \[\]
+        This is the function for when the create account button is pressed it fetches the data and tries to create the account, displaying any errors it gets. If the reset is successful then it switches the scene to the login\_form scene.\\
+        
+        \newpage
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
         \hline

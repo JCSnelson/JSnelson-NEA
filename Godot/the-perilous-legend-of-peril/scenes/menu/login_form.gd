@@ -13,11 +13,7 @@ func _on_sign_in_button_pressed() -> void:
 		elif success == "IncorrectPasswordError":
 			$Labels/ErrorLabel.text = "Incorrect Password"
 	else:
-		print("YOU ARE IN :3")
-
-
-func _on_cancel_button_pressed() -> void:
-	global.quit()
+		get_tree().change_scene_to_file("res://scenes/menu/save_menu.tscn")
 
 
 func _on_forgot_password_button_pressed() -> void:
@@ -26,3 +22,7 @@ func _on_forgot_password_button_pressed() -> void:
 
 func _on_create_account_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu/create_account_form.tscn")
+
+
+func _on_quit_button_pressed() -> void:
+	global.quit()

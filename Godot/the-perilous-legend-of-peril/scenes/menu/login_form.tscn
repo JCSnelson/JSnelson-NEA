@@ -43,7 +43,7 @@ offset_right = 88.0
 offset_bottom = 232.0
 text = "Sign In"
 
-[node name="CancelButton" type="Button" parent="Buttons"]
+[node name="QuitButton" type="Button" parent="Buttons"]
 offset_left = 104.0
 offset_top = 200.0
 offset_right = 192.0
@@ -81,6 +81,6 @@ placeholder_text = "Password"
 secret = true
 
 [connection signal="pressed" from="Buttons/SignInButton" to="." method="_on_sign_in_button_pressed"]
-[connection signal="pressed" from="Buttons/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Buttons/ForgotPasswordButton" to="." method="_on_forgot_password_button_pressed"]
 [connection signal="pressed" from="Buttons/CreateAccountButton" to="." method="_on_create_account_button_pressed"]

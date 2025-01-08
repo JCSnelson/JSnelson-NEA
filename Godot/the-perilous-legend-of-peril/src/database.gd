@@ -162,7 +162,7 @@ func add_user(username, password, answer):
 	if not db.query_with_bindings(_add_new_user,[username,hashedPassword,hashedAnswer,salt]): #Tries to add user with hashed password and answer
 		return "InvalidUsernameError" #If user cannot be added then the username must be invalid
 	return true
-
+#Function for logging in
 func login(username,password):
 	db.query_with_bindings(_get_user_data,[username]) # Getting user data
 	if len(db.query_result) == 0: # If user doesnt exist
@@ -172,7 +172,7 @@ func login(username,password):
 	if hashed_password == user_data["password"]: # Checking password hash against stored hash
 		return true
 	return "IncorrectPasswordError" # If password doesnt match
-
+#Function for resetting the password
 func reset_password(username, answer, password):
 	db.query_with_bindings(_get_user_data,[username]) # Getting user data
 	if len(db.query_result) == 0: # If user doesnt exist
@@ -188,9 +188,6 @@ func _ready() -> void:
 	
 	db.path = "res://game_data.db"
 	db.open_db()
-	db.drop_table("users")
-	db.drop_table("save_data")
-	db.drop_table("stored_items")
 	if not db.query(_create_table_users):
 		print("Error: users table unable to be created")
 		return
@@ -203,6 +200,7 @@ func _ready() -> void:
 		print("Error: stored_items table unable to be created")
 		return
 	print("DONE")
+	
 	if not add_user("Hyrule","password","oxford"):
 		print("non unique")
 		
@@ -211,6 +209,7 @@ func _ready() -> void:
 	print(db.query_result)
 	
 	login("Hyrule","password")
+
 
 func quit():
 	db.close_db()
