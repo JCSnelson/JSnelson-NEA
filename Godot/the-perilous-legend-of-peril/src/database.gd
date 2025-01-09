@@ -30,7 +30,7 @@ VALUES (?,?,?,?);
 
 var _reset_password = """
 --Assume hashed password and answer
-UPDATE TABLE users
+UPDATE users
 SET password = ?
 WHERE username = ?
 """
@@ -181,9 +181,10 @@ func reset_password(username, answer, password):
 	if len(db.query_result) == 0: # If user doesnt exist
 		return "InvalidUsernameError"
 	var user_data = db.query_result[0]
-	var hashed_answer = j_hash(password,user_data["salt"])
+	var hashed_answer = j_hash(answer,user_data["salt"])
+	var hashed_password = j_hash(password, user_data["salt"])
 	if hashed_answer == user_data["answer"]: # Checking the answer hash against the stored hash
-		db.query_with_bindings(_reset_password,[password,username])
+		db.query_with_bindings(_reset_password,[hashed_password,username])
 		return true
 	return "IncorrectAnswerError" # If answer doesnt match
 

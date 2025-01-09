@@ -119,7 +119,7 @@
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3cm}{Peter Dunn} & \mr{2}{6cm}{17 year old Male Sixth Form Student and aspiring hobbyist game developer.}& \mr{2}{5cm}{Peter will use my solution as a form of entertainment after studies and as he loves Dungeon Crawl Style games. He needs a replayable game with an intuitive combat system.}\\
+                \mr{2}{3cm}{Peter Dunn} & \mr{2}{6cm}{17 year old Male College Student and aspiring hobbyist game developer.}& \mr{2}{5cm}{Peter will use my solution as a form of entertainment after studies and as he loves Dungeon Crawl Style games. He needs a replayable game with an intuitive combat system.}\\
                 &&\\
                 &&\\
                 &&\\
@@ -141,7 +141,7 @@
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3cm}{Steff} & \mr{2}{6cm}{17 year old Female College Student and Game Developer} & \mr{2}{5cm}{Steff will use my product to relax from studies. Steff needs a replayable game but also want it to be engaging.}\\
+                \mr{2}{3cm}{Steff Stylianos} & \mr{2}{6cm}{17 year old Female College Student and Game Developer} & \mr{2}{5cm}{Steff will use my product to relax from studies. Steff needs a replayable game but also want it to be engaging.}\\
                 &&\\
                 &&\\
                 &&\\
@@ -989,7 +989,7 @@ def _input(event):
         \end{python}
 \section{Development}
         \subsection{Database Development}
-        I used a global autoloaded script database.gd in order to implement all of my functions for handling the database.\\
+        I used a global autoloaded script database.gd in order to implement all of my functions for handling the database. Upon testing the functions I realised that the reset\_password query was incorrect as it says UPDATE TABLE instead of just update.\\
         I added all the prepared queries as private variables with strings in order to use db.query\_with\_bindings to sanitise and substitute inputs aswell as run the queries. This function would output wether the query succeeded or failed.\\
         I then could use db.query\_result in order to get the results of the query.\\
         \subsubsection{\_ready()}
