@@ -1,6 +1,8 @@
 extends Node
 
 var db = SQLite.new()
+var current_user_id: int
+var current_save_id: int
 
 #region Prepared Statements
 
@@ -170,6 +172,7 @@ func login(username,password):
 	var user_data = db.query_result[0]
 	var hashed_password = j_hash(password,user_data["salt"])
 	if hashed_password == user_data["password"]: # Checking password hash against stored hash
+		current_user_id = user_data["user_id"]
 		return true
 	return "IncorrectPasswordError" # If password doesnt match
 #Function for resetting the password
@@ -207,9 +210,7 @@ func _ready() -> void:
 	print(db.query_result)
 	add_user("Hyrule","password","oxford")
 	print(db.query_result)
-	
-	login("Hyrule","password")
 
 
-func quit():
+func _exit_tree() -> void:
 	db.close_db()

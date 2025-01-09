@@ -1,48 +1,50 @@
-\contentsline {section}{\numberline {1}Analysis}{1}{}%
-\contentsline {subsection}{\numberline {1.1}Dungeon Crawlers}{1}{}%
-\contentsline {subsection}{\numberline {1.2}The Problem}{1}{}%
-\contentsline {subsection}{\numberline {1.3}Stakeholders}{1}{}%
-\contentsline {subsubsection}{\numberline {1.3.1}Survey}{1}{}%
-\contentsline {subsubsection}{\numberline {1.3.2}Survey Results}{2}{}%
-\contentsline {subsubsection}{\numberline {1.3.3}About Stakeholders}{3}{}%
-\contentsline {subsection}{\numberline {1.4}Research}{4}{}%
-\contentsline {subsubsection}{\numberline {1.4.1}Existing Solutions}{4}{}%
-\contentsline {subsection}{\numberline {1.5}Limitations and Requirements}{7}{}%
-\contentsline {subsection}{\numberline {1.6}Features}{8}{}%
-\contentsline {subsubsection}{\numberline {1.6.1}Essential Features}{8}{}%
-\contentsline {subsubsection}{\numberline {1.6.2}Desireable Features}{9}{}%
-\contentsline {subsection}{\numberline {1.7}Success Criteria}{10}{}%
-\contentsline {subsection}{\numberline {1.8}Computational Methods}{14}{}%
-\contentsline {section}{\numberline {2}Design}{15}{}%
-\contentsline {subsection}{\numberline {2.1}Overview}{15}{}%
-\contentsline {subsubsection}{\numberline {2.1.1}Global Variables}{15}{}%
-\contentsline {subsubsection}{\numberline {2.1.2}Folder Structure}{15}{}%
-\contentsline {subsubsection}{\numberline {2.1.3}Naming Convention}{15}{}%
-\contentsline {subsection}{\numberline {2.2}Database Design}{16}{}%
-\contentsline {subsubsection}{\numberline {2.2.1}ERD}{16}{}%
-\contentsline {subsubsection}{\numberline {2.2.2}Database Naming Conventions}{17}{}%
-\contentsline {subsubsection}{\numberline {2.2.3}SQL Queries}{18}{}%
-\contentsline {subsubsection}{\numberline {2.2.4}Algorithms}{19}{}%
-\contentsline {subsection}{\numberline {2.3}Login System}{20}{}%
-\contentsline {subsubsection}{\numberline {2.3.1}Activity Diagram}{20}{}%
-\contentsline {subsubsection}{\numberline {2.3.2}Algorithms}{20}{}%
-\contentsline {subsubsection}{\numberline {2.3.3}Mockup Forms}{21}{}%
-\contentsline {subsection}{\numberline {2.4}Item Design}{22}{}%
-\contentsline {subsubsection}{\numberline {2.4.1}Class Diagram}{22}{}%
-\contentsline {subsubsection}{\numberline {2.4.2}Algorithms}{22}{}%
-\contentsline {subsection}{\numberline {2.5}Inventory Design}{23}{}%
-\contentsline {subsubsection}{\numberline {2.5.1}Stored Items}{23}{}%
-\contentsline {subsubsection}{\numberline {2.5.2}Equipped Items}{23}{}%
-\contentsline {subsubsection}{\numberline {2.5.3}Algorithms}{23}{}%
-\contentsline {subsection}{\numberline {2.6}Player Character}{26}{}%
-\contentsline {subsubsection}{\numberline {2.6.1}Composition}{26}{}%
-\contentsline {subsubsection}{\numberline {2.6.2}Algorithms}{26}{}%
-\contentsline {section}{\numberline {3}Development}{27}{}%
-\contentsline {subsection}{\numberline {3.1}Database Development}{27}{}%
-\contentsline {subsubsection}{\numberline {3.1.1}\_ready()}{27}{}%
-\contentsline {subsubsection}{\numberline {3.1.2}Hashing}{27}{}%
-\contentsline {subsection}{\numberline {3.2}Login System Development}{28}{}%
-\contentsline {subsubsection}{\numberline {3.2.1}Login Form}{28}{}%
-\contentsline {subsubsection}{\numberline {3.2.2}Reset Password Form}{29}{}%
-\contentsline {subsubsection}{\numberline {3.2.3}Create Account Form}{30}{}%
-\contentsline {section}{\numberline {4}References}{32}{}%
+\contentsline {section}{\numberline {1}Analysis}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Dungeon Crawlers}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}The Problem}{1}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Stakeholders}{1}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Survey}{1}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Survey Results}{2}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}About Stakeholders}{3}{subsubsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.4}Research}{4}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Existing Solutions}{4}{subsubsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.5}Limitations and Requirements}{7}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Features}{8}{subsection.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.1}Essential Features}{8}{subsubsection.1.6.1}%
+\contentsline {subsubsection}{\numberline {1.6.2}Desireable Features}{9}{subsubsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.7}Success Criteria}{10}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Computational Methods}{14}{subsection.1.8}%
+\contentsline {section}{\numberline {2}Design}{15}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Overview}{15}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Global Variables}{15}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Folder Structure}{15}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Naming Convention}{15}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Database Design}{16}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}ERD}{16}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Database Naming Conventions}{17}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}SQL Queries}{18}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Algorithms}{19}{subsubsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.3}Login System}{20}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Activity Diagram}{20}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Algorithms}{20}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Mockup Forms}{21}{subsubsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.4}Item Design}{22}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Class Diagram}{22}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Algorithms}{22}{subsubsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.5}Inventory Design}{23}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Stored Items}{23}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Equipped Items}{23}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Algorithms}{23}{subsubsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.6}Player Character}{26}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Composition}{26}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Algorithms}{26}{subsubsection.2.6.2}%
+\contentsline {section}{\numberline {3}Development}{27}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Database Development}{27}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}\_ready()}{27}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Hashing}{28}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Login Functions}{28}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Login System Development}{29}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Login Form}{30}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Reset Password Form}{31}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Create Account Form}{31}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Item Development}{33}{subsection.3.3}%
+\contentsline {section}{\numberline {4}References}{33}{section.4}%

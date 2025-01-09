@@ -22,10 +22,17 @@
 \usepackage{graphicx, float}
 \usepackage{multirow, pgfplotstable}
 \usepackage{multicol}
-\usepackage{listings}
 \usepackage{pythonhighlight}
 \usepackage{color}
 \usepackage[a4paper, total={150mm, 210mm}, margin=60pt]{geometry}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,       % Use colored text instead of boxes
+    linkcolor=black,        % Color for internal links (e.g., TOC entries)
+    urlcolor=cyan,         % Color for URLs
+    citecolor=green,       % Color for citations (optional)
+    filecolor=magenta      % Color for file links (optional)
+}
 %command for creating spaces
 \newcommand\tab[1][0.5cm]{\hspace*{#1}}
 
@@ -723,6 +730,7 @@
         I will use godot's $query\_with\_bindings()$ function in order to substitute in the bindings for the ?s in the queries. This is useful as it automatically performs input sanitisation so that the system isn't vulnerable to SQL injection.\\
         \subsubsection{Algorithms}
         \textbf{login():}\\
+        The login function will be used to find if the user exists and then check the hashed password if it does.\\
         \begin{python}
 def login(username,password):
    query_result = get_user_data(username) #Getting user data
@@ -733,6 +741,7 @@ def login(username,password):
    return "IncorrectPasswordError" #If password doesnt match
         \end{python}
         \textbf{add\_user():}\\
+        The add\_user function will be used to generate salt for the user check if the username is unique and add the user.\\
         \begin{python}
 def add_user(username, password, answer):
    salt = gen_salt() #Generating new salt
@@ -743,6 +752,7 @@ def add_user(username, password, answer):
    return True
         \end{python}
         \textbf{reset\_password():}\\
+        The reset\_password function will be used to check if the username is valid, fetch the user data and then check if the hashed answer is the same as the stored answer before updating the stored password.\\
         \begin{python}
 def reset_password(username, answer, password):
    query_result = get_user_data(username) #Getting user data
@@ -822,6 +832,7 @@ def changeForm(form1: scene,form2: scene):
         \newpage
         \subsection{Item Design}
         I will implement the different item types using Godot's resource system. This will allow me to define properties that all items of the same type will share and I can use inheritance to allow classes to derive from a parent class.\\
+        The resource system is useful as it is reusable throughout scenes and scripts and it can easily be saved and loaded from disk.\\
         The types of items I will aim to implement will be different weapon types, charms/trinkets/amulets, armour and keys.\\
         \subsubsection{Class Diagram}
         \begin{figure}[H]
@@ -980,7 +991,7 @@ def _input(event):
 \section{Development}
         \subsection{Database Development}
         I used a global autoloaded script database.gd in order to implement all of my functions for handling the database.\\
-        I added all the prepared queries with strings in order to use db.query\_with\_bindings to sanitise and substitute inputs aswell as run the queries. This function would output wether the query succeeded or failed.\\
+        I added all the prepared queries as private variables with strings in order to use db.query\_with\_bindings to sanitise and substitute inputs aswell as run the queries. This function would output wether the query succeeded or failed.\\
         I then could use db.query\_result in order to get the results of the query.\\
         \subsubsection{\_ready()}
         \begin{figure}[H]
@@ -989,6 +1000,7 @@ def _input(event):
                 \caption{\_ready}
         \end{figure}
         In the database script db is declared using $SQLite.new()$ which is a wrapper class. I use the script to load the database and make sure all the necessary tables are present.\\
+        I also made it so that the database is closed when the script exits the tree so as to make sure all the data is saved properly.\\
         \subsubsection{Hashing}
         \begin{figure}[H]
                 \centering
@@ -1002,10 +1014,30 @@ def _input(event):
         \end{figure}
         \[\]
         The hash and gen\_salt functions implementation followed the pseudocode pretty faithfully apart from the fact I decided to not hash the number turned into a string as the salt doesnt have to be a certain length for the code to work. I also decided to times the number by a random integer to increase randomness and the number of possible salts.\\
+        \subsubsection{Login Functions}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = \columnwidth]{images/development/login.PNG}
+                \caption{login}
+        \end{figure}
+        This algorithm is a copy of the design algorithm just using godot's relevant functions instead.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = \columnwidth]{images/development/add_user.PNG}
+                \caption{add\_user}
+        \end{figure}
+        This algorithm is a copy of the design algorithm just using godot's relevant functions instead.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = \columnwidth]{images/development/reset_password.PNG}
+                \caption{reset\_password}
+        \end{figure}
+        This algorithm is a copy of the design algorithm just using godot's relevant functions instead.\\
         \subsection{Login System Development}
         I used godot's inbuilt label, button and line edit node's in order to construct my forms. To each form I added an extra label in order to display Errors to the user.\\
         I linked the buttons pressed signals to a script in order to determine what happens when the button is pressed and used variables to fetch and store the data from the line edit nodes.\\
         I used node2ds in order to create groups of the nodes for more organisation and I kept the form layout mostly the same without some of the fancier unnecesary design elements from the mockup forms.\\
+        \newpage
         \subsubsection{Login Form}
         \begin{multicols}{2}
                 \begin{figure}[H]
@@ -1089,29 +1121,29 @@ def _input(event):
         This is the function for when the create account button is pressed it fetches the data and tries to create the account, displaying any errors it gets. If the reset is successful then it switches the scene to the login\_form scene.\\
         
         \newpage
+        \subsection{Item Development}
+        I will use resource scripts in order to implement the item classes and I will export the variables so that when I create new resources I can set the values.\\
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
         \hline
         REF$\#$ &Date&Topic/Abstract&Type&URL or BOOK reference&How I used this\\
         \hline
-        1&1/6/24&\mr{2}{3cm}{Research/ Existing Solutions}&\mr{2}{2cm}{video games store, online}& \mr{2}{4cm}{https://store.steampowered\\.com/app/113200/\\The\_Binding\_of\_Isaac}&\mr{2}{3cm}{One of the exisiting solutions I researched.}\\
+        1&1/6/24&\mr{2}{3cm}{Research/ Existing Solutions}&\mr{2}{2cm}{video games store, online}& \mr{2}{4cm}{\href{https://store.steampowered.com/app/113200/The_Binding_of_Isaac}{Steam (The Binding of Isaac)}}&\mr{2}{3cm}{One of the exisiting solutions I researched.}\\
         &&&&&\\
         &&&&&\\
         \hline
-        2&15/6/24&\mr{2}{3cm}{Research/ Existing Solutions}&\mr{2}{2cm}{video games store, online}& \mr{2}{4cm}{https://store.steampowered\\.com/app/588650/\\Dead\_Cells}&\mr{2}{3cm}{One of the existing solutions I researched}\\
+        2&15/6/24&\mr{2}{3cm}{Research/ Existing Solutions}&\mr{2}{2cm}{video games store, online}& \mr{2}{4cm}{\href{https://store.steampowered.com/app/588650/Dead_Cells}{Steam (Dead Cells)}}&\mr{2}{3cm}{One of the existing solutions I researched}\\
         &&&&&\\
         &&&&&\\
         \hline
-        3&15/6/24&\mr{2}{3cm}{Research/ Existing Solutions}&\mr{2}{2cm}{youtube video, online}&\mr{2}{4cm}{https://www.youtube.com\\/watch?v\=tyMrRW\-Li\_I}&\mr{2}{3cm}{A dev log for an existing solution.}\\
+        3&15/6/24&\mr{2}{3cm}{Research/ Existing Solutions}&\mr{2}{2cm}{youtube video, online}&\mr{2}{4cm}{\href{https://www.youtube.com/watch?v=tyMrRW-Li_I}{Youtube (Motion Twin)}}&\mr{2}{3cm}{A dev log for an existing solution.}\\
+        &&&&&\\
+        \hline
+        4&15/6/24&\mr{2}{3cm}{Research/ Existing Solutions}&\mr{2}{2cm}{blog, online}&\mr{2}{4cm}{\href{https://robertheaton.com/2018/12/17/wavefunction-collapse-algorithm/}{robertheaton.com}}&\mr{2}{3cm}{An existing algorithm I researched.}\\
         &&&&&\\
         &&&&&\\
         \hline
-        4&15/6/24&\mr{2}{3cm}{Research/ Existing Solutions}&\mr{2}{2cm}{blog, online}&\mr{2}{4cm}{https://robertheaton.com\\/2018/12/17/wavefunction\-collapse\-algorithm/}&\mr{2}{3cm}{An existing algorithm I researched.}\\
-        &&&&&\\
-        &&&&&\\
-        \hline
-        5&25/11/24&\mr{3}{3cm}{Research/ Exisiting Solutions}&\mr{2}{2cm}{video games store, online}&\mr{2}{4cm}{https://store.nintendo.co\\.uk/en/the-legend-of-zelda-breath-of-the-wild-70010000000023}&\mr{2}{3cm}{One of the existing solutions I researched}\\
-        &&&&&\\
+        5&25/11/24&\mr{3}{3cm}{Research/ Exisiting Solutions}&\mr{2}{2cm}{video games store, online}&\mr{2}{4cm}{\href{https://store.nintendo.co\\.uk/en/the-legend-of-zelda-breath-of-the-wild-70010000000023}{Nintendo Store (Breath of The Wild)}}&\mr{2}{3cm}{One of the existing solutions I researched}\\
         &&&&&\\
         &&&&&\\
         \hline
