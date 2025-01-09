@@ -47,4 +47,11 @@
 \contentsline {subsubsection}{\numberline {3.2.2}Reset Password Form}{31}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Create Account Form}{31}{subsubsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.3}Item Development}{33}{subsection.3.3}%
-\contentsline {section}{\numberline {4}References}{33}{section.4}%
+\contentsline {subsubsection}{\numberline {3.3.1}Folder Structure}{33}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Item}{33}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Equipable}{34}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Armour}{34}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}Charm}{34}{subsubsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.3.6}Weapon}{35}{subsubsection.3.3.6}%
+\contentsline {subsubsection}{\numberline {3.3.7}Key}{35}{subsubsection.3.3.7}%
+\contentsline {section}{\numberline {4}References}{36}{section.4}%

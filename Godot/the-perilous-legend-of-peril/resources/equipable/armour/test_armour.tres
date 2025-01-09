@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Armour" load_steps=2 format=3 uid="uid://cv3j7r48tdee1"]
+
+[ext_resource type="Script" path="res://resources/scripts/armour.gd" id="1_kjkqx"]
+
+[resource]
+script = ExtResource("1_kjkqx")
+defense = 0
+armour_type = 0
+body_part = 0
+set_id = 0
+stat_boosts = {}
+stackable = false
+description = ""

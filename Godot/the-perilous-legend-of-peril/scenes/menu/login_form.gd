@@ -17,7 +17,7 @@ func _on_sign_in_button_pressed() -> void:
 
 
 func _on_forgot_password_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/reset_password_form.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu/reset_password_form.tscn")
 
 
 func _on_create_account_button_pressed() -> void:

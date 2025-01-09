@@ -1,5 +1,6 @@
-extends "res://resources/scripts/item.gd"
+extends Item
 
+class_name Equipable
 
 @export var stat_boosts: Dictionary = {}
 

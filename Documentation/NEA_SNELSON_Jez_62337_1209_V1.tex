@@ -1123,6 +1123,109 @@ def _input(event):
         \newpage
         \subsection{Item Development}
         I will use resource scripts in order to implement the item classes and I will export the variables so that when I create new resources I can set the values.\\
+        In order to export the armour\_type, body\_part, charm\_type, weapon\_type and damage\_type I will use an enum as it can only take one of the values in the list. This means the variables will take the form of an integer instead of a string.\\
+        \subsubsection{Folder Structure}
+        \begin{figure}[H]
+                \centering
+                \includegraphics{images/development/Item_folder.PNG}
+                \caption{Folder Structure}
+        \end{figure}
+        \[\]
+        I added more folders in order to organise the items into their groups aswell as keeping the resource scripts in a scripts folder.\\
+        \subsubsection{Item}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Item_script.PNG}
+                        \caption{Item Script}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Item_export.PNG}
+                        \caption{Item Exports}
+                \end{figure}
+        \end{multicols}
+        \[\]
+        This shows the Item script and exported variables which I can set for each instance of that class including instances of classes that inherit from item.\\
+        I chose to remove the item\_id as it seemed complicated to autoincrement it and enforce uniqueness and so I will store the file path in the item\_id column in the database instead of an integer and so I updated the create\_table\_stored\_items query in order to allow that.\\
+        \newpage
+        \subsubsection{Equipable}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Equipable_script.PNG}
+                        \caption{Equipable Script}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Equipable_export.PNG}
+                        \caption{Equipable Exports}
+                \end{figure}
+        \end{multicols}
+        \[\]
+        This shows the Equipable script and exported variables which I can set in any instance of this class or classes that inherit from it. I am using a dictionary to store stat boosts where the key is the stat and the value is the boost and these pairs can be added through the inspector. I set stackable to false by default as Equipable items will not be stackable.
+        \subsubsection{Armour}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = \columnwidth]{images/development/Armour_script.PNG}
+                        \caption{Armour Script}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Armour_export.PNG}
+                        \caption{Armour Exports}
+                \end{figure}
+        \end{multicols}
+        \[\]
+        This shows the Armour script and exported variables which I can set in any instance. I used an enum to represent the types of armour and body parts which it can be equipped on.\\
+        \subsubsection{Charm}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = \columnwidth]{images/development/Charm_script.PNG}
+                        \caption{Charm Script}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Charm_export.PNG}
+                        \caption{Charm Exports}
+                \end{figure}
+        \end{multicols}
+        \[\]
+        This shows the Charm script and exported variables which I can set in any instance. I used an enum to represent the different charm types as you can only have one of them.\\
+        \subsubsection{Weapon}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = \columnwidth]{images/development/Weapon_script.PNG}
+                        \caption{Weapon Script}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Weapon_export.PNG}
+                        \caption{Weapon Exports}
+                \end{figure}
+        \end{multicols}
+        \[\]
+        This shows the Weapon script and exported variables which I can set in any instance. I used an enum to represent the different weapon types and damage types so you can only select one
+        \subsubsection{Key}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = \columnwidth]{images/development/Key_script.PNG}
+                        \caption{Key Script}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Key_export.PNG}
+                        \caption{Key Exports}
+                \end{figure}
+        \end{multicols}
+        \[\]
+        This shows the Key script and exported variables which I can set in any instance. The key ID will correspond to a door id and unlock that door.\\
+
+\newpage
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
         \hline

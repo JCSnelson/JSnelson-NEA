@@ -1,7 +1,7 @@
 extends Resource
 
-@export var item_id: int
-@export var name: String
+class_name Item
+
 @export var stackable: bool
 @export var description: String
 @export var icon: Texture
