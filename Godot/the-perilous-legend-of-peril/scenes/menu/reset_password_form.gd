@@ -8,7 +8,7 @@ func _on_reset_button_pressed() -> void:
 	var username = $Input/UsernameInput.text
 	var answer = $Input/QuestionInput.text
 	var password = $Input/PasswordInput.text
-	var success = database.reset_password(username, answer, password)
+	var success = Database.reset_password(username, answer, password)
 	if not (typeof(success) == TYPE_BOOL and success == true):
 		if success == "InvalidUsernameError":
 			$Labels/ErrorLabel.text = "Invalid Username"

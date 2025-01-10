@@ -719,7 +719,22 @@
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{4.2cm}{}&\mr{2}{2.5cm}{}&\mr{2}{9.3cm}{\texttt{}}\\
+                \mr{2}{4.2cm}{count\_stored\_items}&\mr{2}{2.5cm}{Count's the number of items stored for a save\_id}&\mr{2}{9.3cm}{\texttt{SELECT COUNT(*)\\FROM stored\_items\\WHERE save\_id = ?;}}\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{4.2cm}{remove\_stored\_item}&\mr{2}{2.5cm}{Removes an item from stored\_items}&\mr{2}{9.3cm}{\texttt{DELETE * FROM stored\_items\\WHERE save\_id = ?\\AND item\_id = ?;}}\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{4.2cm}{get\_slot\_value}&\mr{2}{2.5cm}{Gets the file path of the item equipped in the slot}&\mr{2}{9.3cm}{\texttt{SELECT ? FROM save\_data\\WHERE save\_id = ?;}}\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{4.2cm}{set\_slot\_value}&\mr{2}{2.5cm}{Sets the value of the slot to the file path}&\mr{2}{9.3cm}{\texttt{UPDATE save\_data\\ SET ? = ?\\WHERE save\_id = ?;}}\\
+                &&\\
                 &&\\
                 \hline
                 \mr{2}{4.2cm}{}&\mr{2}{2.5cm}{}&\mr{2}{9.3cm}{\texttt{}}\\
@@ -876,57 +891,59 @@ def attack():
    owner.add_child(projectile_instance)
         \end{python}
         \subsection{Inventory Design}
-        My inventory design will cover two main parts the equipped items and the item storage.\\
+        My inventory design will cover two main parts the equipped items and the item storage. I will have a maximum inventory size script variable so that we can still display all the items in the inventory and a max stack size for stackable items.\\
         \subsubsection{Stored Items}
         I will implement the stored items through a dictionary that stores the item resource and the quantity of it. I will implement add and remove item functions. I will also add a max inventory size.\\
         \subsubsection{Equipped Items}
         I will implement the equipped items through a dictionary where the keys are the slots and the values are what is equipped in that slot. I will also add a equip function to equip an item and an unequip function to unequip the item in a slot.\\
+        \subsubsection{Clarification}
+        Upon further thought I have decided it is best to use SQL tables instead of dictionaries and use SQL queries to manage the inventory.\\
         \subsubsection{Algorithms}
         \textbf{add\_item():}\\
         \begin{python}
-def add_item(item: Resource):
-   if len(stored_items) > max_inventory_size + 1:
-      return null #Indicates that the inventory is full
+def add_item(item_id: file_path, amount):
+   if count_stored_items(save_id) > max_inventory_size: #Full Inventory
+        return "FullInventoryError"
    else:
       #Checks if you can stack the item and either adds a new entry or stacks it
-         if item in stored_items and item.stackable:
-            stored_items[item] += 1
+         if get_stored_item_amount(save_id,item_id) and item.stackable: #If the item is in the database and stackable
+            update_stored_item_amount(amount, item_id, save_id)
          else:
-            stored_items[item] = 1
-   return item #Indicates success
+            add_stored_item(save_id, item_id, amount)
+   return True
         \end{python}
         \textbf{remove\_item():}\\
         \begin{python}
-def remove_item(item: Resource, quantity: int = 1):
-   if item in stored_items:
-      if stored_items[item] < quantity:
-         return null #Indicates that there is an item quantity error
-      stored_items[item] -= quantity #Removes the ammount of that item
-      if stored_items[item] == 0:
-         stored_items.erase(item)
-      return item #Indicates that it was successful
-   return null #Indicates that there is an item quantity error
+def remove_item(item: Resource, amount: int = 1):
+   if get_stored_item_amount(save_id, item_id): #If the item is in the database
+      if get_stored_item_amount(save_id, item_id) < quantity: #Not enough items
+         return "ItemQuantityError"
+      if get_stored_item_amount(save_id, item_id) == quantity: #Exactly enough items
+         remove_stored_item(save_id, item_id)
+      else:
+         update_stored_item_amount(-amount, item_id, save_id) #Removes the ammount of that item
+      return True #Indicates that it was successful
+   return "ItemQuantityError" #Indicates that there is an item quantity error
         
         \end{python}
         \textbf{unequip\_item():}\\
         \begin{python}
 def unequip_item(slot: str):
-   #Checks if there is a slot and item to unequip
-   if slot in equipped_items and equipped_items[slot] != null:
-      item = equipped_items[slot]
-      add_item(item) #Adds the item back to the stored_items
-      equipped_items[slot] = null #Sets the slot back to null
+   #Checks if there is an item to unequip
+   if get_slot_value(slot, save_id) != null:
+      item = get_slot_value(slot, save_id)
+      add_item(item, 1) #Adds the item back to the stored_items
+      set_slot_value(slot, null, save_id) #Sets the slot back to null
       return True
-   return False
+   return True #If not item in slot it is unequipped
         \end{python}
-        \newpage
         \textbf{equip\_item():}\\
         \begin{python}
 def equip_item(item: Resource):
         #Checks if the item is Equipable
         if not(item.is_class(Equipable)):
                 return False
-        #Gets the slot to equip it inot
+        #Gets the slot to equip it into
         if item.is_class(Armour):
                 slot = item.body_part
         elif item.is_class(Weapon):
@@ -935,18 +952,18 @@ def equip_item(item: Resource):
                 equipped = false
                 #Tries both charm slots
                 for slot in ["charm1","charm2"]:
-                        if equipped_items[slot] == null and not(equipped):
-                                equipped_items[slot] = item #Equips item
+                        if get_slot_value(slot, save_id) == null and not(equipped):
+                                set_slot_value(slot, item, save_id) #Equips item
                                 remove_item(item) #Removes from stored_items
                                 equipped = True
                 if not(equipped):
                         unequip_item(slot)
-                        equipped_items[slot] = item #Equips item
+                        set_slot_value(slot, item, save_id) #Equips item
                         remove_item(item) #Removes from stored_items
                 return True
         if slot in equipped_items:
                 unequip_item(slot)
-                equipped_items[slot] = item #Equips item
+                set_slot_value(slot, item, save_id) #Equips item
                 remove_item(item) #Removes from stored_items
                 return True
         return False      
@@ -1019,7 +1036,7 @@ def _input(event):
                 \includegraphics[width = \columnwidth]{images/development/login.PNG}
                 \caption{login}
         \end{figure}
-        This algorithm is a copy of the design algorithm just using godot's relevant functions instead.\\
+        This algorithm is a copy of the design algorithm just using godot's relevant functions instead. I further saved the current\_user\_id for ease of future queries.\\
         \begin{figure}[H]
                 \centering
                 \includegraphics[width = \columnwidth]{images/development/add_user.PNG}
@@ -1223,6 +1240,17 @@ def _input(event):
         \end{multicols}
         \[\]
         This shows the Key script and exported variables which I can set in any instance. The key ID will correspond to a door id and unlock that door.\\
+        \subsection{Inventory Development}
+        I used a seperate autoloaded script inventory.gd in order to implement the inventory functions.\\
+        I added functions to the database script in order to utilise the current\_save\_id script variable so that I dont have to input the variable every time I want to run a save\_data or stored\_items query. The functions also return the query result.\\
+        \subsubsection{Add Item}
+        \subsubsection{Remove Item}
+        \subsubsection{Unequip Item}
+        \subsubsection{Equip Item}
+
+
+
+
 
 \newpage
 \section{References}

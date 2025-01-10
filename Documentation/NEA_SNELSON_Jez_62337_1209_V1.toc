@@ -25,7 +25,7 @@
 \contentsline {subsubsection}{\numberline {2.2.4}Algorithms}{19}{subsubsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.3}Login System}{20}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Activity Diagram}{20}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Algorithms}{20}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.2}Algorithms}{21}{subsubsection.2.3.2}%
 \contentsline {subsubsection}{\numberline {2.3.3}Mockup Forms}{21}{subsubsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.4}Item Design}{22}{subsection.2.4}%
 \contentsline {subsubsection}{\numberline {2.4.1}Class Diagram}{22}{subsubsection.2.4.1}%
@@ -33,25 +33,31 @@
 \contentsline {subsection}{\numberline {2.5}Inventory Design}{23}{subsection.2.5}%
 \contentsline {subsubsection}{\numberline {2.5.1}Stored Items}{23}{subsubsection.2.5.1}%
 \contentsline {subsubsection}{\numberline {2.5.2}Equipped Items}{23}{subsubsection.2.5.2}%
-\contentsline {subsubsection}{\numberline {2.5.3}Algorithms}{23}{subsubsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.6}Player Character}{26}{subsection.2.6}%
-\contentsline {subsubsection}{\numberline {2.6.1}Composition}{26}{subsubsection.2.6.1}%
-\contentsline {subsubsection}{\numberline {2.6.2}Algorithms}{26}{subsubsection.2.6.2}%
-\contentsline {section}{\numberline {3}Development}{27}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Database Development}{27}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}\_ready()}{27}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Hashing}{28}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Login Functions}{28}{subsubsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.2}Login System Development}{29}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Login Form}{30}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Reset Password Form}{31}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Create Account Form}{31}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}Item Development}{33}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Folder Structure}{33}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Item}{33}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Equipable}{34}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Armour}{34}{subsubsection.3.3.4}%
-\contentsline {subsubsection}{\numberline {3.3.5}Charm}{34}{subsubsection.3.3.5}%
-\contentsline {subsubsection}{\numberline {3.3.6}Weapon}{35}{subsubsection.3.3.6}%
-\contentsline {subsubsection}{\numberline {3.3.7}Key}{35}{subsubsection.3.3.7}%
-\contentsline {section}{\numberline {4}References}{36}{section.4}%
+\contentsline {subsubsection}{\numberline {2.5.3}Clarification}{23}{subsubsection.2.5.3}%
+\contentsline {subsubsection}{\numberline {2.5.4}Algorithms}{23}{subsubsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.6}Player Character}{25}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Composition}{25}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Algorithms}{25}{subsubsection.2.6.2}%
+\contentsline {section}{\numberline {3}Development}{26}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Database Development}{26}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}\_ready()}{26}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Hashing}{27}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Login Functions}{27}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Login System Development}{28}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Login Form}{29}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Reset Password Form}{30}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Create Account Form}{30}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Item Development}{32}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Folder Structure}{32}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Item}{32}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Equipable}{33}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Armour}{33}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}Charm}{33}{subsubsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.3.6}Weapon}{34}{subsubsection.3.3.6}%
+\contentsline {subsubsection}{\numberline {3.3.7}Key}{34}{subsubsection.3.3.7}%
+\contentsline {subsection}{\numberline {3.4}Inventory Development}{34}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Add Item}{34}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Remove Item}{34}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Unequip Item}{34}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Equip Item}{34}{subsubsection.3.4.4}%
+\contentsline {section}{\numberline {4}References}{35}{section.4}%

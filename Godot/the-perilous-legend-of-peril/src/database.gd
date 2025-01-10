@@ -110,6 +110,28 @@ stored_items(save_id,item_id,amount)
 VALUES (?,?,?);
 """
 
+var _count_stored_items = """
+SELECT COUNT(*)
+FROM stored_items
+WHERE save_id = ?;
+"""
+
+var _remove_stored_item = """
+ELETE * FROM stored_items
+WHERE save-id = ?
+AND item_id = ?;
+"""
+
+var _get_slot_value = """
+SELECT ? FROM save data
+WHERE save id = ?
+"""
+
+var _set_slot_value = """
+UPDATE save data
+SET ? = ?
+WHERE save id = ?;
+"""
 
 #endregion
 
@@ -187,6 +209,43 @@ func reset_password(username, answer, password):
 		db.query_with_bindings(_reset_password,[hashed_password,username])
 		return true
 	return "IncorrectAnswerError" # If answer doesnt match
+#Function for counting the stored_items in the save
+func count_stored_items():
+	db.query_with_bindings(_count_stored_items,[current_save_id])
+	return db.query_result
+#Function for getting the amount of a stored item in the save
+func get_stored_item_amount(item_id):
+	db.query_with_bindings(_get_stored_item_amount,[current_save_id, item_id])
+	return db.query_result
+#Function for updating the amount of a stored item in the save by adding an amount
+func update_stored_item_amount(amount, item_id):
+	db.query_with_bindings(_update_stored_item_amount, [amount, item_id, current_save_id])
+	return db.query_result
+#Function for adding a stored item into the save
+func add_stored_item(item_id, amount):
+	db.query_with_bindings(_add_stored_item, [current_save_id, item_id, amount])
+	return db.query_result
+#Function for removing a stored item from the save
+func remove_stored_item(item_id):
+	db.query_with_bindings(_remove_stored_item, [current_save_id, item_id])
+	return db.query_result
+#Function for getting a slot value from the save
+func get_slot_value(slot):
+	db.query_with_bindings(_get_slot_value,[slot, current_save_id])
+	return db.query_result
+#Function for setting a slot value in the save
+func set_slot_value(slot, item_id):
+	db.query_with_bindings(_set_slot_value, [slot, item_id, current_save_id])
+	return db.query_result
+	
+
+
+
+
+
+
+
+
 
 func _ready() -> void:
 	

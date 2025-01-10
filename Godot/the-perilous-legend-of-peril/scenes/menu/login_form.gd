@@ -6,7 +6,7 @@ extends Node2D
 func _on_sign_in_button_pressed() -> void:
 	var username = $Input/UsernameInput.text
 	var password = $Input/PasswordInput.text
-	var success = database.login(username, password)
+	var success = Database.login(username, password)
 	if not (typeof(success) == TYPE_BOOL and success == true):
 		if success == "InvalidUsernameError":
 			$Labels/ErrorLabel.text = "Invalid Username"
@@ -25,4 +25,4 @@ func _on_create_account_button_pressed() -> void:
 
 
 func _on_quit_button_pressed() -> void:
-	global.quit()
+	Global.quit()

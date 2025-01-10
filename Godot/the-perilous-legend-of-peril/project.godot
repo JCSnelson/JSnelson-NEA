@@ -16,8 +16,8 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 
 [autoload]
 
-database="*res://src/database.gd"
-global="*res://src/global.gd"
+Database="*res://src/database.gd"
+Global="*res://src/global.gd"
 
 [display]
 

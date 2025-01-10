@@ -7,7 +7,7 @@ func _on_sign_up_button_pressed() -> void:
 	var username = $Input/UsernameInput.text
 	var password =  $Input/PasswordInput.text
 	var answer = $Input/QuestionInput.text
-	var success = database.add_user(username, password, answer)
+	var success = Database.add_user(username, password, answer)
 	if not (typeof(success) == TYPE_BOOL and success == true):
 		if success == "InvalidUsernameError":
 			$Labels/ErrorLabel.text = "Invalid Username"
