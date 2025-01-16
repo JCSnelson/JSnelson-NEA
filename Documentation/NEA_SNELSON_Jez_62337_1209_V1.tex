@@ -24,6 +24,7 @@
 \usepackage{multicol}
 \usepackage{pythonhighlight}
 \usepackage{color}
+\usepackage{bookmark}
 \usepackage[a4paper, total={150mm, 210mm}, margin=60pt]{geometry}
 \usepackage{hyperref}
 \hypersetup{
@@ -163,7 +164,6 @@
                 \centering
                 \includegraphics[scale=0.25]{images/research/BOI_Capture.PNG}
                 \caption{A screenshot of The Binding of Isaac UI and Map}
-                \label{fig:ie_0}
         \end{figure}
         \newpage
         \[\]
@@ -499,7 +499,9 @@
                 &&&\\
                 &&&\\
                 \hline
-                12&\mr{2}{2cm}{Inventory System}&\mr{2}{6cm}{12.1 UI for Inventory\\12.2 Storage of Extra weapons and key items (keys, armour, charms, etc)\\12.3 E key to open up the inventory\\12.4 Ability to switch out what Weapons, Armour and charms are equipped.\\}&\mr{2}{4cm}{These criteria will allow for more complexity in the game and more customized and diverse playthrough options which allows for more replayability}\\
+                12&\mr{2}{2cm}{Inventory System}&\mr{2}{6cm}{12.1 UI for Inventory\\12.2 Storage of Extra weapons and key items (keys, armour, charms, etc)\\12.3 E key to open up the inventory\\12.4 Ability to switch out what Weapons, Armour and charms are equipped.\\12.5 Ability to add or remove items from the inventory.}&\mr{2}{4cm}{These criteria will allow for more complexity in the game and more customized and diverse playthrough options which allows for more replayability}\\
+                &&&\\
+                &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -587,7 +589,6 @@
                 \centering
                 \includegraphics[width=\textwidth, trim = 0 575 0 25, clip]{images/design/Database_Design.pdf}
                 \caption{Database Design}
-                \label{fig:ie_1}
         \end{figure}
         Figure 2 shows the Database Design:\\
         The users table will be the main table containing all the login details.\\
@@ -600,7 +601,7 @@
         \end{figure}
         \subsubsection{Database Naming Conventions}
         The naming conventions I will adopt for the database is as follows.\\
-        \begin{tabular}[pos]{|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|}
                 \hline
                 Abstract&Convention&Examples&Justification\\
                 \hline\
@@ -777,13 +778,46 @@ def reset_password(username, answer, password):
       return True
    return "IncorrectAnswerError" #If answer doesnt match
         \end{python}
+        \subsubsection{Testing Plan}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Test \#&Function&Parameters&Expected Outcome\\
+                \hline
+                6.3.1&add\_user()&"Hyrule", "Password", "Answer"&\mr{2}{6cm}{True}\\
+                &&&\\
+                \hline
+                6.3.2&add\_user()&"Hyrule", "Password", "Answer"&\mr{2}{6cm}{"InvalidUsernameError" as a user already exists with that username}\\
+                &&&\\
+                \hline
+                6.7.1&login()&"Hyru1e", "Password"&\mr{2}{6cm}{"InvalidUsernameError"}\\
+                &&&\\
+                \hline
+                6.7.2&login()&"Hyrule", "Password"&\mr{2}{6cm}{True}\\
+                &&&\\
+                \hline
+                6.8.1&reset\_password()&"Hyru1e", "Answer", "password&\mr{2}{6cm}{"InvalidUsernameError"}\\
+                &&&\\
+                \hline
+                6.8.2&reset\_password()&"Hyrule", "answer", "password"&\mr{2}{6cm}{"IncorrectAnswerError"}\\
+                &&&\\
+                \hline
+                6.8.3&reset\_password()&"Hyrule", "Answer", "password"&\mr{2}{6cm}{True}\\
+                &&&\\
+                \hline
+                6.7.3&login()&"Hyrule", "Password"&\mr{2}{6cm}{"IncorrectPasswordError"}\\
+                &&&\\
+                \hline
+                &&&\mr{2}{6cm}{}\\
+                &&&\\
+                \hline
+        \end{tabular}
         \subsection{Login System}
         \subsubsection{Activity Diagram}
         \begin{figure}[H]
                 \centering
                 \includegraphics[width=\textwidth, trim = 0 50 0 0, clip]{images/design/Login_System.pdf}
                 \caption{Activity Diagram for login forms}
-                \label{fig:ie_2}
+                
         \end{figure}
         The login form will allow users to create accounts aswell as login with an existing account and reset a password.\\
         Upon successful login the user will be redirected to the GAME system.\\
@@ -813,32 +847,40 @@ def gen_salt():
       salt = hash(salt,sha256(str(i)))
    return salt
         \end{python}
-        \textbf{removeForm():}\\
-        \begin{python}
-def changeForm(form1: scene,form2: scene):
-   self.remove_child(form1)
-   form  = form1.instantiate()
-   self.add_child(form)
-        \end{python}
+        \subsubsection{Testing Plan}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Test \#&Function&Parameters&Expected Outcome\\
+                \hline
+                6.1.1&gen\_salt()&&\mr{2}{6cm}{random 256 bit hex string}\\
+                &&&\\
+                \hline
+                6.1.2&hash()&"password", "salt"&\mr{2}{6cm}{random 256 bit hex string}\\
+                &&&\\
+                \hline
+                6.1.3&hash()&"password", "salt"&\mr{2}{6cm}{the same random 256 bit hex string}\\
+                &&&\\
+                \hline
+                6.1.2&hash()&"Password", "salt"&\mr{2}{6cm}{random 256 bit hex string different from before}\\
+                &&&\\
+                \hline
+        \end{tabular}
         \subsubsection{Mockup Forms}
         \begin{multicols}{3}
                 \begin{figure}[H]
                         \centering
                         \includegraphics[width = 0.9\columnwidth]{images/design/Login_Form.pdf}
                         \caption{Login Form}
-                        \label{fig:ie_3}
                 \end{figure}
                 \begin{figure}[H]
                         \centering
                         \includegraphics[width = 0.9\columnwidth]{images/design/Sign_Up_Form.pdf}
                         \caption{New Account Form}
-                        \label{fig:ie_4}
                 \end{figure}
                 \begin{figure}[H]
                         \centering
                         \includegraphics[width = 0.9\columnwidth]{images/design/Reset_Password.pdf}
                         \caption{Reset Password Form}
-                        \label{fig:ie_5}
                 \end{figure}
         \end{multicols}\[\]
         These forms would be used in order to create an account, reset your password and login.\\
@@ -853,7 +895,6 @@ def changeForm(form1: scene,form2: scene):
                 \centering
                 \includegraphics[width = 0.9\columnwidth, clip, trim = 0 270 0 25]{images/design/Item_Class_Diagram.pdf}
                 \caption{Player Class Diagram}
-                \label{fig:ie_5}
         \end{figure}
         \subsubsection{Algorithms}
         \textbf{attack():}\\
@@ -902,23 +943,21 @@ def attack():
         \textbf{add\_item():}\\
         \begin{python}
 def add_item(item_id: file_path, amount):
-   if count_stored_items(save_id) > max_inventory_size: #Full Inventory
-        return "FullInventoryError"
+   if get_stored_item_amount(save_id, item_id) and item.stackable: #Checks if you can stack the item
+      update_stored_item_amount(amount, item_id, save_id)
+   elif count_stored_items(save_id) >= max_inventory_size: #Full Inventory
+      return "FullInventoryError"
    else:
-      #Checks if you can stack the item and either adds a new entry or stacks it
-         if get_stored_item_amount(save_id,item_id) and item.stackable: #If the item is in the database and stackable
-            update_stored_item_amount(amount, item_id, save_id)
-         else:
-            add_stored_item(save_id, item_id, amount)
+      add_stored_item(save_id, item_id, amount)
    return True
         \end{python}
         \textbf{remove\_item():}\\
         \begin{python}
-def remove_item(item: Resource, amount: int = 1):
+def remove_item(item_id: Resource, amount: int = 1):
    if get_stored_item_amount(save_id, item_id): #If the item is in the database
-      if get_stored_item_amount(save_id, item_id) < quantity: #Not enough items
+      if get_stored_item_amount(save_id, item_id) < amount: #Not enough items
          return "ItemQuantityError"
-      if get_stored_item_amount(save_id, item_id) == quantity: #Exactly enough items
+      if get_stored_item_amount(save_id, item_id) == amount: #Exactly enough items
          remove_stored_item(save_id, item_id)
       else:
          update_stored_item_amount(-amount, item_id, save_id) #Removes the ammount of that item
@@ -932,7 +971,8 @@ def unequip_item(slot: str):
    #Checks if there is an item to unequip
    if get_slot_value(slot, save_id) != null:
       item = get_slot_value(slot, save_id)
-      add_item(item, 1) #Adds the item back to the stored_items
+      if (add_item(item, 1) == "FullInventoryError"): #Adds the item back to the stored_items and checks if the inventory is full
+         return "FullInventoryError"     
       set_slot_value(slot, null, save_id) #Sets the slot back to null
       return True
    return True #If not item in slot it is unequipped
@@ -968,6 +1008,54 @@ def equip_item(item: Resource):
                 return True
         return False      
         \end{python}
+        \subsubsection{Testing Plan}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Test \#&Function&Parameters&Expected Outcome\\
+                \hline
+                12.5.1&add\_item()&"test\_item.tres", 2&\mr{2}{6cm}{Adds test item to the stored\_items table.}\\
+                &&&\\
+                \hline
+                12.5.2&add\_item()&"test\_item.tres", 3&\mr{2}{6cm}{As the item already exists it should add 2 to the amount.}\\
+                &&&\\
+                \hline
+                12.5.3&add\_item()&"test\_weapon.tres", 1&\mr{2}{6cm}{As in the testing environment the max inventory size will be 1 and this should return "FullInventoryError"}\\
+                &&&\\
+                &&&\\
+                \hline
+                12.5.4&remove\_item()&"test\_item.tres", 2&\mr{2}{6cm}{As more than the amount of the item is in the inventory it should subtract 2.}\\
+                &&&\\
+                \hline
+                12.5.5&remove\_item()&"test\_item.tres", 10&\mr{2}{6cm}{"ItemQuantityError" as there isnt enough of the item in the database}\\
+                &&&\\
+                \hline
+                12.5.6&remove\_item()&"test\_item.tres", 3&\mr{2}{6cm}{As exactly the amount is in the database the item entry should get removed.}\\
+                &&&\\
+                &&&\\
+                \hline
+                12.5.7&remove\_item()&"test\_item.tres", 2&\mr{2}{6cm}{"ItemQuantityError" as there isnt any of the item in the database}\\
+                &&&\\
+                \hline
+                12.4.1&unequip\_item()&"head"&\mr{2}{6cm}{True and the head slot should remain as NULL}\\
+                &&&\\
+                \hline
+                12.4.2&equip\_item()&"test\_helmet.tres"&\mr{2}{6cm}{True and the head slot should become "test\_helmet.tres"}\\
+                &&&\\
+                \hline
+                12.4.3&equip\_item()&"test\_helmet\_2.tres"&\mr{2}{6cm}{True and the head slot should become "test\_helmet.tres"}\\
+                &&&\\
+                \hline
+                12.4.4&unequip\_item()&"head"&\mr{2}{6cm}{"FullInventoryError"}\\
+                &&&\\
+                \hline
+                12.4.5&unequip\_item()&"head"&\mr{2}{6cm}{True as I will empty the inventory and the head should be NULL and the inventory should contain the helmet.}\\
+                &&&\\
+                &&&\\
+                \hline
+                &&&\mr{2}{6cm}{}\\
+                &&&\\
+                \hline
+        \end{tabular}
         \newpage
         \subsection{Player Character}
         This is my design for the physical player character and sprite.\\
@@ -976,7 +1064,6 @@ def equip_item(item: Resource):
                 \centering
                 \includegraphics[width = 0.9\columnwidth, clip, trim = 0 450 0 0]{images/design/Player_Class_Diagram.pdf}
                 \caption{Player Class Diagram}
-                \label{fig:ie_6}
         \end{figure}
         The root node of the player which will contain all the child nodes will be Godot's CharacterBody2D as this will allow for a user controlled physics body. It will then have child nodes of CollisionShape2D(for collision detection), AnimatedSprite2D(for an animated character sprite) and Camera2D(for the player's view window to be centered on).\\
         I have chosen to store the speed and health variables within the player class as they will reset/ be recalculated based of the equipment equipped.\\
@@ -1049,6 +1136,54 @@ def _input(event):
                 \caption{reset\_password}
         \end{figure}
         This algorithm is a copy of the design algorithm just using godot's relevant functions instead.\\
+        \subsubsection{Testing}
+        \begin{figure}[H]
+                \centering
+                \includegraphics{images/development/test_database.PNG}
+                \caption{test\_database.gd}
+        \end{figure}
+        \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                Test \#&Function&Parameters&Expected Outcome&Actual Outcome\\
+                \hline
+                6.1.1&gen\_salt()&&\mr{2}{4cm}{random 256 bit hex string}&Success\\
+                &&&&\\
+                \hline
+                6.1.2&hash()&"password", "salt"&\mr{2}{4cm}{random 256 bit hex string}&Success\\
+                &&&&\\
+                \hline
+                6.1.3&hash()&"password", "salt"&\mr{2}{4cm}{the same random 256 bit hex string}&Success\\
+                &&&&\\
+                \hline
+                6.1.2&hash()&"Password", "salt"&\mr{2}{4cm}{random 256 bit hex string different from before}&Success\\
+                &&&&\\
+                \hline
+                6.3.1&add\_user()&"Hyrule", "Password", "Answer"&\mr{2}{4cm}{True}&Success\\
+                &&&&\\
+                \hline
+                6.3.2&add\_user()&"Hyrule", "Password", "Answer"&\mr{2}{4cm}{"InvalidUsernameError" as a user already exists with that username}&Success\\
+                &&&&\\
+                &&&&\\
+                \hline
+                6.7.1&login()&"Hyru1e", "Password"&\mr{2}{4cm}{"InvalidUsernameError"}&Success\\
+                &&&&\\
+                \hline
+                6.7.2&login()&"Hyrule", "Password"&\mr{2}{4cm}{True}&Success\\
+                &&&&\\
+                \hline
+                6.8.1&reset\_password()&"Hyru1e", "Answer", "password&\mr{2}{4cm}{"InvalidUsernameError"}&Success\\
+                &&&&\\
+                \hline
+                6.8.2&reset\_password()&"Hyrule", "answer", "password"&\mr{2}{4cm}{"IncorrectAnswerError"}&Success\\
+                &&&&\\
+                \hline
+                6.8.3&reset\_password()&"Hyrule", "Answer", "password"&\mr{2}{4cm}{True}&Success\\
+                &&&&\\
+                \hline
+                6.7.3&login()&"Hyrule", "Password"&\mr{2}{4cm}{"IncorrectPasswordError"}&Success\\
+                &&&&\\
+                \hline
+        \end{tabular}
         \subsection{Login System Development}
         I used godot's inbuilt label, button and line edit node's in order to construct my forms. To each form I added an extra label in order to display Errors to the user.\\
         I linked the buttons pressed signals to a script in order to determine what happens when the button is pressed and used variables to fetch and store the data from the line edit nodes.\\
@@ -1242,7 +1377,7 @@ def _input(event):
         This shows the Key script and exported variables which I can set in any instance. The key ID will correspond to a door id and unlock that door.\\
         \subsection{Inventory Development}
         I used a seperate autoloaded script inventory.gd in order to implement the inventory functions.\\
-        I added functions to the database script in order to utilise the current\_save\_id script variable so that I dont have to input the variable every time I want to run a save\_data or stored\_items query. The functions also return the query result.\\
+        I added functions to the database script in order to utilise the current\_save\_id script variable so that I dont have to input the variable every time I want to run a save\_data or stored\_items query. The functions execute the query passing in the current\_save\_id and return the query result.\\
         \subsubsection{Add Item}
         \subsubsection{Remove Item}
         \subsubsection{Unequip Item}

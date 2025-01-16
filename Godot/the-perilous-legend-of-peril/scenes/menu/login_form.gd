@@ -2,7 +2,6 @@ extends Node2D
 
 
 
-
 func _on_sign_in_button_pressed() -> void:
 	var username = $Input/UsernameInput.text
 	var password = $Input/PasswordInput.text

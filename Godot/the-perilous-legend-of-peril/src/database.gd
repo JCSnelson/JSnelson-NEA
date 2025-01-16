@@ -86,6 +86,7 @@ var _create_table_stored_items = """
 CREATE TABLE IF NOT EXISTS stored_items (
 item_id INTEGER NOT NULL,
 save_id INTEGER NOT NULL,
+amount INTEGER NOT NULL,
 PRIMARY KEY(item_id,save_id),
 FOREIGN KEY(save_id) REFERENCES save_data(save_id)
 );
@@ -117,8 +118,8 @@ WHERE save_id = ?;
 """
 
 var _remove_stored_item = """
-ELETE * FROM stored_items
-WHERE save-id = ?
+DELETE FROM stored_items
+WHERE save_id = ?
 AND item_id = ?;
 """
 
@@ -212,7 +213,7 @@ func reset_password(username, answer, password):
 #Function for counting the stored_items in the save
 func count_stored_items():
 	db.query_with_bindings(_count_stored_items,[current_save_id])
-	return db.query_result
+	return db.query_result[0]["COUNT(*)"]
 #Function for getting the amount of a stored item in the save
 func get_stored_item_amount(item_id):
 	db.query_with_bindings(_get_stored_item_amount,[current_save_id, item_id])
@@ -244,12 +245,9 @@ func set_slot_value(slot, item_id):
 
 
 
-
-
-
-func _ready() -> void:
-	
-	db.path = "res://game_data.db"
+#Function for setting up the database
+func setup(path):
+	db.path = path
 	db.open_db()
 	if not db.query(_create_table_users):
 		print("Error: users table unable to be created")
@@ -262,14 +260,9 @@ func _ready() -> void:
 	if not db.query(_create_table_stored_items):
 		print("Error: stored_items table unable to be created")
 		return
-	print("DONE")
-	
-	if not add_user("Hyrule","password","oxford"):
-		print("non unique")
-		
-	print(db.query_result)
-	add_user("Hyrule","password","oxford")
-	print(db.query_result)
+
+func _ready() -> void:
+	setup("res://game_data.db")
 
 
 func _exit_tree() -> void:

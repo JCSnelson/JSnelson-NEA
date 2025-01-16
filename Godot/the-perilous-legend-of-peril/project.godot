@@ -18,11 +18,20 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 
 Database="*res://src/database.gd"
 Global="*res://src/global.gd"
+Inventory="*res://src/inventory.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg", "res://addons/gdUnit4/plugin.cfg")
+
+[gdunit4]
+
+settings/common/update_notification_enabled=false
 
 [rendering]
 
