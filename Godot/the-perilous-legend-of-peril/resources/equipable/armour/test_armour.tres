@@ -6,7 +6,8 @@
 script = ExtResource("1_kjkqx")
 defense = 0
 armour_type = 0
-body_part = 0
+test = ["heavy", "one", "two"]
+body_part = "Legs"
 set_id = 0
 stat_boosts = {}
 stackable = false

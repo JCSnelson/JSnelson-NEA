@@ -48,6 +48,7 @@
 \fancyfoot[L]{Jez Snelson, Candidate No. 1209}
 %Margins
 \setlength{\marginparwidth}{0pt}
+\pgfplotsset{compat=1.18}
 \begin{document}
 \pagenumbering{roman}
 \date{}
@@ -650,7 +651,8 @@
                 &&\\
                 &&\\
                 \hline
-                \mr{3}{3.5cm}{create\_table\_save\_data}&\mr{2}{3cm}{Create's a table for save\_data if it does not exist.}&\mr{2}{9.5cm}{\texttt{CREATE TABLE IF NOT EXISTS save\_data (\\\tab save\_id INTEGER AUTOINCREMENT,\\\tab FOREIGN KEY (user\_id) REFERENCES users(user\_id),\\\tab difficulty INTEGER,\\\tab hardcore INTEGER,\\\tab level INTEGER,\\\tab head VARCHAR(32),\\\tab chest VARCHAR(32),\\\tab legs VARCHAR(32),\\\tab charm\_1 VARCHAR(32),\\\tab charm\_2 VARCHAR(32)\\);\\}}\\
+                \mr{3}{3.5cm}{create\_table\_save\_data}&\mr{2}{3cm}{Create's a table for save\_data if it does not exist.}&\mr{2}{9.5cm}{\texttt{CREATE TABLE IF NOT EXISTS save\_data (\\\tab save\_id INTEGER AUTOINCREMENT,\\\tab FOREIGN KEY (user\_id) REFERENCES users(user\_id),\\\tab difficulty INTEGER,\\\tab hardcore INTEGER,\\\tab level INTEGER,\\\tab head VARCHAR(32),\\\tab chest VARCHAR(32),\\\tab legs VARCHAR(32),\\\tab weapon VARCHAR(32),\\\tab charm\_1 VARCHAR(32),\\\tab charm\_2 VARCHAR(32)\\);\\}}\\
+                &&\\
                 &&\\
                 &&\\
                 &&\\
@@ -675,7 +677,8 @@
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{update\_save\_data}&\mr{2}{3cm}{updateSave}&\mr{2}{9.5cm}{\texttt{UPDATE save\_data\\SET\\\tab head = ?,\\\tab chest = ?,\\\tab legs = ?,\\\tab charm\_1 = ?,\\\tab charm\_2 = ?,\\\tab level = ?\\WHERE\\\tab user\_id = ?\\AND save\_id = ?;}}\\
+                \mr{2}{3.5cm}{update\_save\_data}&\mr{2}{3cm}{updateSave}&\mr{2}{9.5cm}{\texttt{UPDATE save\_data\\SET\\\tab head = ?,\\\tab chest = ?,\\\tab legs = ?,\\\tab weapon = ?,\\\tab charm\_1 = ?,\\\tab charm\_2 = ?,\\\tab level = ?\\WHERE\\\tab user\_id = ?\\AND save\_id = ?;}}\\
+                &&\\
                 &&\\
                 &&\\
                 &&\\
@@ -886,6 +889,26 @@ def gen_salt():
         These forms would be used in order to create an account, reset your password and login.\\
         The Password and Challenge question entries would be starred for privacy.\\
         \newpage
+        \subsection{Save Select System}
+        I will implement the save select system using a ScrollContainer with a VBoxContainer inside to create a list of scrollable items. I will get the list of saves for a given user\_id and then display them and when the button for that save is pressed the current\_save\_id will be set.\\
+        In order to add new save's I will add a button for hardcore and a slider for difficulty as well as an add save button which will add the save and update the list.\\
+        \subsubsection{Algorithms}
+        \textbf{\_ready():}
+        \begin{python}
+def _ready():
+   save_data_list = get_user_save_data(current_user_id)
+   for save_data in save_data_list:
+      button = Button.new
+      button.text = f"Level: {save_data['level']} \t Difficulty: {save_data['difficulty']}\n Hardcore: {save_data['hardcore']}"
+      button.connect("pressed", self, "_on_save_selected", [save_data])
+      add_child(button)
+        \end{python}
+        \textbf{\_on\_save\_selected():}
+        \begin{python}
+def _on_save_selected(save_data):
+   current_save_id = save_data["save_id"]
+   get_tree().change_scene_to_file(world)
+        \end{python}
         \subsection{Item Design}
         I will implement the different item types using Godot's resource system. This will allow me to define properties that all items of the same type will share and I can use inheritance to allow classes to derive from a parent class.\\
         The resource system is useful as it is reusable throughout scenes and scripts and it can easily be saved and loaded from disk.\\
@@ -1001,12 +1024,10 @@ def equip_item(item: Resource):
                         set_slot_value(slot, item, save_id) #Equips item
                         remove_item(item) #Removes from stored_items
                 return True
-        if slot in equipped_items:
-                unequip_item(slot)
-                set_slot_value(slot, item, save_id) #Equips item
-                remove_item(item) #Removes from stored_items
-                return True
-        return False      
+        unequip_item(slot)
+        set_slot_value(slot, item, save_id) #Equips item
+        remove_item(item) #Removes from stored_items
+        return True     
         \end{python}
         \subsubsection{Testing Plan}
         \begin{tabular}{|c|c|c|c|}
@@ -1016,7 +1037,7 @@ def equip_item(item: Resource):
                 12.5.1&add\_item()&"test\_item.tres", 2&\mr{2}{6cm}{Adds test item to the stored\_items table.}\\
                 &&&\\
                 \hline
-                12.5.2&add\_item()&"test\_item.tres", 3&\mr{2}{6cm}{As the item already exists it should add 2 to the amount.}\\
+                12.5.2&add\_item()&"test\_item.tres", 3&\mr{2}{6cm}{As the item already exists it should add 3 to the amount.}\\
                 &&&\\
                 \hline
                 12.5.3&add\_item()&"test\_weapon.tres", 1&\mr{2}{6cm}{As in the testing environment the max inventory size will be 1 and this should return "FullInventoryError"}\\
@@ -1184,6 +1205,40 @@ def _input(event):
                 &&&&\\
                 \hline
         \end{tabular}
+        \[\]
+        Upon Testing I realised I needed a delete user function so that the user can be deleted.\\
+        I designed a simple SQL query and created a function to delete users.\\
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.3\columnwidth]{images/development/_delete_user.png}
+            \caption{\_delete\_user}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.7\columnwidth]{images/development/delete_user.png}
+            \caption{delete\_user}
+        \end{figure}
+        \[\]
+        \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                Test \#&Function&Parameters&Expected Outcome&Actual Outcome\\
+                \hline
+                6.10.1&delete\_user()&"Hyrule", "Password"&\mr{1}{4cm}{IncorrectPasswordError}&\\
+                \hline
+                6.10.2&delete\_user()&"Hyrule", "password"&\mr{1}{4cm}{True}&\\
+                \hline
+                6.7.4&login()&"Hyrule", "password"&\mr{1}{4cm}{InvalidUsernameError}&\\
+                \hline
+                
+        \end{tabular}
+        \[\]
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\columnwidth]{images/development/test_remove_user.png}
+            \caption{Test Remove User}
+        \end{figure}
+        \[\]
+        Upon Testing the remove functions in the database I have updated the table queries to add ON DELETE CASCADE so that if the user gets deleted all their saves get deleted.\\
         \subsection{Login System Development}
         I used godot's inbuilt label, button and line edit node's in order to construct my forms. To each form I added an extra label in order to display Errors to the user.\\
         I linked the buttons pressed signals to a script in order to determine what happens when the button is pressed and used variables to fetch and store the data from the line edit nodes.\\
@@ -1375,13 +1430,93 @@ def _input(event):
         \end{multicols}
         \[\]
         This shows the Key script and exported variables which I can set in any instance. The key ID will correspond to a door id and unlock that door.\\
+        \subsubsection{Revision}
+        Upon starting the inventory development I have decided to switch from enums to strings as the enums make it more complicated to access the string associated with the number.\\
         \subsection{Inventory Development}
         I used a seperate autoloaded script inventory.gd in order to implement the inventory functions.\\
         I added functions to the database script in order to utilise the current\_save\_id script variable so that I dont have to input the variable every time I want to run a save\_data or stored\_items query. The functions execute the query passing in the current\_save\_id and return the query result.\\
         \subsubsection{Add Item}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\columnwidth]{images/development/add_item.PNG}
+                \caption{add\_item()}
+        \end{figure}
+        \[\]
+        The add\_item function stayed mostly faithful to the pseudocode except I moved stuff arround for clarity.\\
         \subsubsection{Remove Item}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\columnwidth]{images/development/remove_item.PNG}
+                \caption{remove\_item()}
+        \end{figure}
+        \[\]
+        The remove\_item function is mostly the same as the pseudocode except I extracted some of the query data so I don't end up running repeat queries.\\
         \subsubsection{Unequip Item}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\columnwidth]{images/development/unequip_item.PNG}
+                \caption{unequip\_item()}
+        \end{figure}
+        \[\]
+        The unequip\_item function is again close to the pseudocode except I extracted repeat queries to a variable.\\
         \subsubsection{Equip Item}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\columnwidth]{images/development/equip_item.PNG}
+                \caption{equip\_item()}
+        \end{figure}
+        In the equip item function I decided to simplify the proccess of deciding which charm slot as it was unnecesarily complex and I also added a check for if the inventory is full making sure to still accept it if equipping the item leaves just enough room in the inventory.\\
+        \subsubsection{Testing}
+        \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                Test \#&Function&Parameters&Expected Outcome&Actual Outcome\\
+                \hline
+                12.5.1&add\_item()&"test\_item.tres", 2&\mr{2}{5cm}{Adds test item to the stored\_items table.}&\\
+                &&&&\\
+                \hline
+                12.5.2&add\_item()&"test\_item.tres", 3&\mr{2}{5cm}{As the item already exists it should add 2 to the amount.}&\\
+                &&&&\\
+                &&&&\\
+                \hline
+                12.5.3&add\_item()&"test\_weapon.tres", 1&\mr{2}{5cm}{As in the testing environment the max inventory size will be 1 and this should return "FullInventoryError"}&\\
+                &&&&\\
+                &&&&\\
+                &&&&\\
+                \hline
+                12.5.4&remove\_item()&"test\_item.tres", 2&\mr{2}{5cm}{As more than the amount of the item is in the inventory it should subtract 2.}&\\
+                &&&&\\
+                &&&&\\
+                \hline
+                12.5.5&remove\_item()&"test\_item.tres", 10&\mr{2}{5cm}{"ItemQuantityError" as there isnt enough of the item in the database}&\\
+                &&&&\\
+                &&&&\\
+                \hline
+                12.5.6&remove\_item()&"test\_item.tres", 3&\mr{2}{5cm}{As exactly the amount is in the database the item entry should get removed.}&\\
+                &&&&\\
+                &&&&\\
+                \hline
+                12.5.7&remove\_item()&"test\_item.tres", 2&\mr{2}{5cm}{"ItemQuantityError" as there isnt any of the item in the database}&\\
+                &&&&\\
+                &&&&\\
+                \hline
+                12.4.1&unequip\_item()&"head"&\mr{2}{5cm}{True and the head slot should remain as NULL}&\\
+                &&&&\\
+                \hline
+                12.4.2&equip\_item()&"test\_helmet.tres"&\mr{2}{5cm}{True and the head slot should become "test\_helmet.tres"}&\\
+                &&&&\\
+                \hline
+                12.4.3&equip\_item()&"test\_helmet\_2.tres"&\mr{2}{5cm}{True and the head slot should become "test\_helmet.tres"}&\\
+                &&&&\\
+                \hline
+                12.4.4&unequip\_item()&"head"&\mr{2}{5cm}{"FullInventoryError"}&\\
+                &&&&\\
+                \hline
+                12.4.5&unequip\_item()&"head"&\mr{2}{5cm}{True as I will empty the inventory and the head should be NULL and the inventory should contain the helmet.}&\\
+                &&&&\\
+                &&&&\\
+                &&&&\\
+                \hline
+        \end{tabular}
 
 
 

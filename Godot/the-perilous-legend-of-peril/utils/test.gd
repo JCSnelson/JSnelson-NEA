@@ -2,7 +2,7 @@
 extends EditorScript
 
 
-
+var db = preload("res://src/database.gd").new()
 
 func _run() -> void:
 	var path = "res://utils/test.db"
@@ -10,9 +10,14 @@ func _run() -> void:
 	
 	if dir.file_exists("test.db"):
 		var err = dir.remove("test.db")
-	var db = load("res://src/database.gd").new()
+
 	db.setup(path)
 	
+	test_database()
+	
+	db.db.close_db()
+
+func test_database():
 	#Criteria 6.
 	print("6.1:")
 	print((len(db.gen_salt()) == 64) and (db.gen_salt() != db.gen_salt())) # Test 6.1.1
@@ -20,9 +25,11 @@ func _run() -> void:
 	print(db.j_hash("password", "salt") == db.j_hash("password", "salt")) # Test 6.1.3
 	print(db.j_hash("password", "salt") != db.j_hash("Password", "salt")) # Test 6.1.4
 	
-	print("6.3:")
+	print("6.3")
 	print(db.add_user("Hyrule", "Password", "Answer")) # Test 6.3.1
 	print(db.add_user("Hyrule", "Password", "Answer") == "InvalidUsernameError") # Test 6.3.2
+	
+	print("6.7,6.8,6.10")
 	print(db.login("Hyru1e", "Password") == "InvalidUsernameError") # Test 6.7.1
 	print(db.login("Hyrule", "Password")) # Test 6.7.2
 	print(db.reset_password("Hyru1e", "Answer", "password") == "InvalidUsernameError") # Test 6.8.1
@@ -30,5 +37,21 @@ func _run() -> void:
 	print(db.reset_password("Hyrule", "Answer", "password")) # Test 6.8.3
 	print(db.login("Hyrule", "Password") == "IncorrectPaswordError") # Test 6.7.3
 	
-	print("hi")
-	db.db.close_db()
+	print(db.delete_user("Hyrule", "Password") == "IncorrectPaswordError") # Test 6.10.1
+	print(db.delete_user("Hyrule", "password")) # Test 6.10.2
+	print(db.reset_password("Hyrule", "Answer", "password") == "InvalidUsernameError") # Test 6.7.4
+
+
+func test_inventory():
+	Database.add_user("test", "password", "answer")
+	Database.login("test", "password")
+	Database.add_new_save_data(1,true)
+	Database.current_save_id = 1
+	#Criteria 12
+	Inventory.add_item("res://utils/test_item.tres", 2) # Test 12.5.1
+	print(Inventory.item_amount("res://utils/test_item.tres") == 2)
+	Inventory.add_item("res://utils/test_item.tres", 3) # Test 12.5.2
+	
+	
+	
+	

@@ -28,6 +28,11 @@ users(username,password,answer,salt)
 VALUES (?,?,?,?);
 """
 
+var _delete_user = """
+DELETE FROM users
+WHERE username = ?;
+"""
+
 var _reset_password = """
 --Assume hashed password and answer
 UPDATE users
@@ -45,9 +50,10 @@ level INTEGER,
 head VARCHAR(32),
 chest VARCHAR(32),
 legs VARCHAR(32),
+weapon VARCHAR(32),
 charm_1 VARCHAR(32),
 charm_2 VARCHAR(32),
-FOREIGN KEY(user_id) REFERENCES users(user_id)
+FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 """
 
@@ -64,7 +70,7 @@ AND save_id = ?;
 """
 
 var _get_user_save_data = """
-SELECT level, hardcore, save_id FROM save_data
+SELECT level, hardcore, save_id, difficulty FROM save_data
 WHERE user_id = ?;
 """
 
@@ -74,6 +80,7 @@ SET
 head = ?,
 chest = ?,
 legs = ?,
+weapon = ?
 charm_1 = ?,
 charm_2 = ?,
 level = ?
@@ -88,7 +95,7 @@ item_id INTEGER NOT NULL,
 save_id INTEGER NOT NULL,
 amount INTEGER NOT NULL,
 PRIMARY KEY(item_id,save_id),
-FOREIGN KEY(save_id) REFERENCES save_data(save_id)
+FOREIGN KEY(save_id) REFERENCES save_data(save_id) ON DELETE CASCADE
 );
 """
 
@@ -187,6 +194,17 @@ func add_user(username, password, answer):
 	if not db.query_with_bindings(_add_new_user,[username,hashedPassword,hashedAnswer,salt]): #Tries to add user with hashed password and answer
 		return "InvalidUsernameError" #If user cannot be added then the username must be invalid
 	return true
+#Function for deleting a user
+func delete_user(username, password):
+	db.query_with_bindings(_get_user_data,[username])
+	if len(db.query_result) == 0: # If user doesnt exist
+		return "InvalidUsernameError"
+	var user_data = db.query_result[0]
+	var hashed_password = j_hash(password,user_data["salt"])
+	if hashed_password == user_data["password"]: # Checking password hash against stored hash
+		db.query_with_bindings(_delete_user,[username]) # Deleting User
+		return true
+	return "IncorrectPasswordError" # If password doesnt match
 #Function for logging in
 func login(username,password):
 	db.query_with_bindings(_get_user_data,[username]) # Getting user data
@@ -238,9 +256,14 @@ func get_slot_value(slot):
 func set_slot_value(slot, item_id):
 	db.query_with_bindings(_set_slot_value, [slot, item_id, current_save_id])
 	return db.query_result
-	
-
-
+#Function for getting the save data entries for the current user
+func get_user_save_data():
+	db.query_with_bindings(_get_user_save_data,[current_user_id])
+	return db.query_result
+#Function to add a new save file for the current user
+func add_new_save_data(difficulty, hardcore):
+	db.query_with_bindings(_add_new_save_data,[current_user_id, difficulty, hardcore, 1])
+	return db.query_result
 
 
 

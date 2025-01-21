@@ -1,3 +1,52 @@
-[gd_scene format=3 uid="uid://sp4ok58gd2rb"]
+[gd_scene load_steps=2 format=3 uid="uid://sp4ok58gd2rb"]
+
+[ext_resource type="Script" path="res://scenes/menu/save_menu.gd" id="1_28ran"]
 
 [node name="SaveMenu" type="Node2D"]
+script = ExtResource("1_28ran")
+
+[node name="SavesScroller" type="ScrollContainer" parent="."]
+offset_left = 792.0
+offset_top = 64.0
+offset_right = 1112.0
+offset_bottom = 768.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SavesScroller"]
+layout_mode = 2
+alignment = 1
+
+[node name="NewSaveButton" type="Button" parent="."]
+offset_left = 800.0
+offset_top = 928.0
+offset_right = 1120.0
+offset_bottom = 1024.0
+text = "Add New"
+
+[node name="HardcoreButton" type="Button" parent="."]
+offset_left = 832.0
+offset_top = 848.0
+offset_right = 1088.0
+offset_bottom = 912.0
+toggle_mode = true
+text = "Hardcore"
+
+[node name="Difficulty" type="HSlider" parent="."]
+offset_left = 800.0
+offset_top = 824.0
+offset_right = 1120.0
+offset_bottom = 848.0
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+tick_count = 10
+
+[node name="DifficultyLabel" type="Label" parent="Difficulty"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -16.0
+offset_right = 128.0
+offset_bottom = 7.0
+text = "Difficulty: 1"
+
+[connection signal="pressed" from="NewSaveButton" to="." method="_on_new_save_button_pressed"]
+[connection signal="drag_ended" from="Difficulty" to="." method="_on_difficulty_drag_ended"]
