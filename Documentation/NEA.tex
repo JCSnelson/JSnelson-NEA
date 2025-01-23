@@ -1223,11 +1223,11 @@ def _input(event):
                 \hline
                 Test \#&Function&Parameters&Expected Outcome&Actual Outcome\\
                 \hline
-                6.10.1&delete\_user()&"Hyrule", "Password"&\mr{1}{4cm}{IncorrectPasswordError}&\\
+                6.10.1&delete\_user()&"Hyrule", "Password"&\mr{1}{4cm}{IncorrectPasswordError}&Success\\
                 \hline
-                6.10.2&delete\_user()&"Hyrule", "password"&\mr{1}{4cm}{True}&\\
+                6.10.2&delete\_user()&"Hyrule", "password"&\mr{1}{4cm}{True}&Success\\
                 \hline
-                6.7.4&login()&"Hyrule", "password"&\mr{1}{4cm}{InvalidUsernameError}&\\
+                6.7.4&login()&"Hyrule", "password"&\mr{1}{4cm}{InvalidUsernameError}&Success\\
                 \hline
                 
         \end{tabular}
@@ -1467,60 +1467,142 @@ def _input(event):
         \end{figure}
         In the equip item function I decided to simplify the proccess of deciding which charm slot as it was unnecesarily complex and I also added a check for if the inventory is full making sure to still accept it if equipping the item leaves just enough room in the inventory.\\
         \subsubsection{Testing}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\columnwidth]{images/development/test_inventory.PNG}
+                \caption{test\_inventory()}
+        \end{figure}
         \begin{tabular}{|c|c|c|c|c|}
                 \hline
                 Test \#&Function&Parameters&Expected Outcome&Actual Outcome\\
                 \hline
-                12.5.1&add\_item()&"test\_item.tres", 2&\mr{2}{5cm}{Adds test item to the stored\_items table.}&\\
+                12.5.1&add\_item()&"test\_item.tres", 2&\mr{2}{5cm}{Adds test item to the stored\_items table.}&Success\\
                 &&&&\\
                 \hline
-                12.5.2&add\_item()&"test\_item.tres", 3&\mr{2}{5cm}{As the item already exists it should add 2 to the amount.}&\\
-                &&&&\\
-                &&&&\\
-                \hline
-                12.5.3&add\_item()&"test\_weapon.tres", 1&\mr{2}{5cm}{As in the testing environment the max inventory size will be 1 and this should return "FullInventoryError"}&\\
-                &&&&\\
+                12.5.2&add\_item()&"test\_item.tres", 3&\mr{2}{5cm}{As the item already exists it should add 3 to the amount.}&Success\\
                 &&&&\\
                 &&&&\\
                 \hline
-                12.5.4&remove\_item()&"test\_item.tres", 2&\mr{2}{5cm}{As more than the amount of the item is in the inventory it should subtract 2.}&\\
+                12.5.3&add\_item()&"test\_weapon.tres", 1&\mr{2}{5cm}{As in the testing environment the max inventory size will be 1 and this should return "FullInventoryError"}&Fail\\
                 &&&&\\
-                &&&&\\
-                \hline
-                12.5.5&remove\_item()&"test\_item.tres", 10&\mr{2}{5cm}{"ItemQuantityError" as there isnt enough of the item in the database}&\\
                 &&&&\\
                 &&&&\\
                 \hline
-                12.5.6&remove\_item()&"test\_item.tres", 3&\mr{2}{5cm}{As exactly the amount is in the database the item entry should get removed.}&\\
+                12.5.4&remove\_item()&"test\_item.tres", 2&\mr{2}{5cm}{As more than the amount of the item is in the inventory it should subtract 2.}&Success\\
                 &&&&\\
                 &&&&\\
                 \hline
-                12.5.7&remove\_item()&"test\_item.tres", 2&\mr{2}{5cm}{"ItemQuantityError" as there isnt any of the item in the database}&\\
+                12.5.5&remove\_item()&"test\_item.tres", 10&\mr{2}{5cm}{"ItemQuantityError" as there isnt enough of the item in the database}&Success\\
                 &&&&\\
                 &&&&\\
                 \hline
-                12.4.1&unequip\_item()&"head"&\mr{2}{5cm}{True and the head slot should remain as NULL}&\\
+                12.5.6&remove\_item()&"test\_item.tres", 3&\mr{2}{5cm}{As exactly the amount is in the database the item entry should get removed.}&Success\\
+                &&&&\\
                 &&&&\\
                 \hline
-                12.4.2&equip\_item()&"test\_helmet.tres"&\mr{2}{5cm}{True and the head slot should become "test\_helmet.tres"}&\\
+                12.5.7&remove\_item()&"test\_item.tres", 2&\mr{2}{5cm}{"ItemQuantityError" as there isnt any of the item in the database}&Success\\
+                &&&&\\
                 &&&&\\
                 \hline
-                12.4.3&equip\_item()&"test\_helmet\_2.tres"&\mr{2}{5cm}{True and the head slot should become "test\_helmet.tres"}&\\
+                12.4.1&unequip\_item()&"head"&\mr{2}{5cm}{True and the head slot should remain as NULL}&Fail\\
                 &&&&\\
                 \hline
-                12.4.4&unequip\_item()&"head"&\mr{2}{5cm}{"FullInventoryError"}&\\
+                12.4.2&equip\_item()&"test\_helmet.tres"&\mr{2}{5cm}{True and the head slot should become "test\_helmet.tres"}&Success\\
                 &&&&\\
                 \hline
-                12.4.5&unequip\_item()&"head"&\mr{2}{5cm}{True as I will empty the inventory and the head should be NULL and the inventory should contain the helmet.}&\\
+                12.4.3&equip\_item()&"test\_helmet\_2.tres"&\mr{2}{5cm}{True and the head slot should become "test\_helmet.tres"}&Success\\
+                &&&&\\
+                \hline
+                12.4.4&unequip\_item()&"head"&\mr{2}{5cm}{"FullInventoryError"}&Success\\
+                &&&&\\
+                \hline
+                12.4.5&unequip\_item()&"head"&\mr{2}{5cm}{True as I will empty the inventory and the head should be NULL and the inventory should contain the helmet.}&Success\\
                 &&&&\\
                 &&&&\\
                 &&&&\\
                 \hline
         \end{tabular}
-
-
-
-
+        \[\]
+        The add\_item function failed to return "FullInventoryError" as it only checked if the item wasnt stackable not if it wasnt stackabled and already stored so I updated the script.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/add_item_2.PNG}
+                \caption{add\_item() fixed}
+        \end{figure}
+        \[\]
+        The remove\_item failed due to a syntax error with the SQL statement so I edited the get\_slot\_value function to query for all values and then look it up I also updated the set\_slot\_value function to query the slot using a match case rather than bindings.\\
+        \begin{multicols}{2}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/get_slot_value.PNG}
+                \caption{get\_slot\_value() fixed}
+        \end{figure}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/set_slot_value.PNG}
+                \caption{set\_slot\_value() fixed}
+        \end{figure}
+        \end{multicols}
+        \[\]
+        The unequip\_item function failed due to not checking if success is a boolean before comparing it so I amended it.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/unequip_item_2.PNG}
+                \caption{unequip\_item() fixed}
+        \end{figure}
+        \[\]
+        \textbf{Retesting:}
+        \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                Test \#&Function&Parameters&Expected Outcome&Actual Outcome\\
+                \hline
+                12.5.1&add\_item()&"test\_item.tres", 2&\mr{2}{5cm}{Adds test item to the stored\_items table.}&Success\\
+                &&&&\\
+                \hline
+                12.5.2&add\_item()&"test\_item.tres", 3&\mr{2}{5cm}{As the item already exists it should add 3 to the amount.}&Success\\
+                &&&&\\
+                &&&&\\
+                \hline
+                12.5.3&add\_item()&"test\_weapon.tres", 1&\mr{2}{5cm}{As in the testing environment the max inventory size will be 1 and this should return "FullInventoryError"}&Success\\
+                &&&&\\
+                &&&&\\
+                &&&&\\
+                \hline
+                12.5.4&remove\_item()&"test\_item.tres", 2&\mr{2}{5cm}{As more than the amount of the item is in the inventory it should subtract 2.}&Success\\
+                &&&&\\
+                &&&&\\
+                \hline
+                12.5.5&remove\_item()&"test\_item.tres", 10&\mr{2}{5cm}{"ItemQuantityError" as there isnt enough of the item in the database}&Success\\
+                &&&&\\
+                &&&&\\
+                \hline
+                12.5.6&remove\_item()&"test\_item.tres", 3&\mr{2}{5cm}{As exactly the amount is in the database the item entry should get removed.}&Success\\
+                &&&&\\
+                &&&&\\
+                \hline
+                12.5.7&remove\_item()&"test\_item.tres", 2&\mr{2}{5cm}{"ItemQuantityError" as there isnt any of the item in the database}&Success\\
+                &&&&\\
+                &&&&\\
+                \hline
+                12.4.1&unequip\_item()&"head"&\mr{2}{5cm}{True and the head slot should remain as NULL}&Success\\
+                &&&&\\
+                \hline
+                12.4.2&equip\_item()&"test\_helmet.tres"&\mr{2}{5cm}{True and the head slot should become "test\_helmet.tres"}&Success\\
+                &&&&\\
+                \hline
+                12.4.3&equip\_item()&"test\_helmet\_2.tres"&\mr{2}{5cm}{True and the head slot should become "test\_helmet.tres"}&Success\\
+                &&&&\\
+                \hline
+                12.4.4&unequip\_item()&"head"&\mr{2}{5cm}{"FullInventoryError"}&Success\\
+                &&&&\\
+                \hline
+                12.4.5&unequip\_item()&"head"&\mr{2}{5cm}{True as I will empty the inventory and the head should be NULL and the inventory should contain the helmet.}&Success\\
+                &&&&\\
+                &&&&\\
+                &&&&\\
+                \hline
+        \end{tabular}
+        Finally all my testing was a success.
 
 \newpage
 \section{References}

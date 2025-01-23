@@ -4,17 +4,20 @@ var max_inventory_size = 100
 
 
 func item_amount(item_id: String):
-	return Database.get_stored_item_amount(item_id)
+	var query = Database.get_stored_item_amount(item_id)
+	if len(query) == 0:
+		return 0
+	return query[0]["amount"]
 
 
 
 func add_item (item_id, amount):
 	var item = load(item_id) # Loads the item
-	if Database.count_stored_items() > max_inventory_size : # Full Inventory
+	if Database.count_stored_items() >= max_inventory_size and not(item.stackable and item_amount(item_id) != 0): # Full Inventory
 		return "FullInventoryError"
 	else :
 		# Checks if you can stack the item and either adds a new entry or stacks it
-		if len(Database.get_stored_item_amount(item_id)) != 0 and item.stackable : # If the item is in the database and stackable
+		if item_amount(item_id) != 0 and item.stackable: # If the item is in the database
 			Database.update_stored_item_amount(amount, item_id)
 		else :
 			Database.add_stored_item(item_id, amount)
@@ -22,9 +25,8 @@ func add_item (item_id, amount):
 
 
 func remove_item(item_id, amount):
-	var amount_stored = Database.get_stored_item_amount(item_id)
-	if len(amount_stored) != 0: # If the item is in the database
-		amount_stored = amount_stored[0]["amount"]
+	var amount_stored = item_amount(item_id)
+	if amount_stored != 0: # If the item is in the database
 		if amount_stored < amount: # Not enough items
 			return "ItemQuantityError"
 		elif amount_stored == amount: # Exactly enough items
@@ -40,7 +42,8 @@ func unequip_item(slot):
 	var value = Database.get_slot_value(slot)
 	# Checks if there is an item to unequip
 	if value != null:
-		if (add_item(value, 1) == "FullInventoryError"): # Adds the item back to the stored_items/checks if the inventory is full
+		var success = add_item(value, 1)
+		if (not(success is bool) and success == "FullInventoryError"): # Adds the item back to the stored_items/checks if the inventory is full
 			return "FullInventoryError"
 		Database.set_slot_value(slot, null) # Sets the slot back to null
 		return true
@@ -63,12 +66,11 @@ func equip_item(item_id):
 			slot = "charm_1"
 		else:
 			slot = "charm_2"
-	
 	remove_item(item_id,1)
-	var success = unequip_item(slot)
+	var success = unequip_item(slot) # Checks the success of unequipping the item
 	if not(success is bool) and success == "FullInventoryError":
 		add_item(item_id,1)
 		return "FullInventoryError"
-	Database.set_slot_value(slot, item_id)
-	
+	Database.set_slot_value(slot, item_id) # Equips the item
+	return true
 	

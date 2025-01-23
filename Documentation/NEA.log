@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.21)  21 JAN 2025 21:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.21)  22 JAN 2025 22:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1634,12 +1634,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 1159--1160
 
  []
 
-<images/development/test_database.PNG, id=606, 375.5459pt x 280.9066pt>
+<images/development/test_database.PNG, id=606, 592.46344pt x 316.18124pt>
 File: images/development/test_database.PNG Graphic file (type png)
 <use images/development/test_database.PNG>
 Package pdftex.def Info: images/development/test_database.PNG  used on input line 1163.
-(pdftex.def)             Requested size: 375.54498pt x 280.9059pt.
+(pdftex.def)             Requested size: 592.46199pt x 316.18047pt.
 
+Overfull \hbox (114.95412pt too wide) in paragraph at lines 1163--1164
+ [][] 
+ []
+
+
+
+[31 <./images/development/add_user.PNG> <./images/development/reset_password.PNG>]
 Overfull \vbox (12.0pt too high) detected at line 1185
  []
 
@@ -1648,10 +1655,7 @@ Overfull \hbox (17.69261pt too wide) in paragraph at lines 1166--1208
 [] 
  []
 
-
-
-[31 <./images/development/add_user.PNG> <./images/development/reset_password.PNG> <./images/development/test_database.PNG>]
-<images/development/_delete_user.png, id=617, 206.7725pt x 102.3825pt>
+<images/development/_delete_user.png, id=615, 206.7725pt x 102.3825pt>
 File: images/development/_delete_user.png Graphic file (type png)
 <use images/development/_delete_user.png>
 Package pdftex.def Info: images/development/_delete_user.png  used on input line 1213.
@@ -1661,19 +1665,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 1208--1215
 
  []
 
-<images/development/delete_user.png, id=618, 796.9775pt x 253.94875pt>
+
+
+[32 <./images/development/test_database.PNG>]
+<images/development/delete_user.png, id=622, 796.9775pt x 253.94875pt>
 File: images/development/delete_user.png Graphic file (type png)
 <use images/development/delete_user.png>
 Package pdftex.def Info: images/development/delete_user.png  used on input line 1218.
 (pdftex.def)             Requested size: 334.25404pt x 106.50662pt.
-<images/development/test_remove_user.png, id=619, 815.045pt x 75.28125pt>
+<images/development/test_remove_user.png, id=623, 815.045pt x 75.28125pt>
 File: images/development/test_remove_user.png Graphic file (type png)
 <use images/development/test_remove_user.png>
 Package pdftex.def Info: images/development/test_remove_user.png  used on input line 1237.
 (pdftex.def)             Requested size: 382.00775pt x 35.28339pt.
 
-
-[32 <./images/development/_delete_user.png> <./images/development/delete_user.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 1240--1242
 
  []
@@ -1685,7 +1690,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1243--1246
 
 
 
-[33 <./images/development/test_remove_user.png>]
+[33 <./images/development/_delete_user.png> <./images/development/delete_user.png> <./images/development/test_remove_user.png>]
 <images/development/LoginForm_layout.PNG, id=634, 113.29828pt x 184.81548pt>
 File: images/development/LoginForm_layout.PNG Graphic file (type png)
 <use images/development/LoginForm_layout.PNG>
@@ -1939,76 +1944,153 @@ Underfull \hbox (badness 10000) in paragraph at lines 1468--1469
 
  []
 
-
-Overfull \vbox (24.0pt too high) detected at line 1481
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 1486
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 1490
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 1494
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 1498
- []
-
-
-Overfull \vbox (24.0pt too high) detected at line 1514
- []
-
+<images/development/test_inventory.PNG, id=750, 611.28375pt x 487.06969pt>
+File: images/development/test_inventory.PNG Graphic file (type png)
+<use images/development/test_inventory.PNG>
+Package pdftex.def Info: images/development/test_inventory.PNG  used on input line 1472.
+(pdftex.def)             Requested size: 382.00775pt x 304.38063pt.
 
 
 [41 <./images/development/equip_item.PNG>]
-
-[42]
-Overfull \vbox (12.0pt too high) detected at line 1531
+Overfull \vbox (24.0pt too high) detected at line 1486
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 1535
+Overfull \vbox (12.0pt too high) detected at line 1491
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 1542
+Overfull \vbox (12.0pt too high) detected at line 1495
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 1546
+Overfull \vbox (12.0pt too high) detected at line 1499
  []
 
 
-Overfull \hbox (7.75319pt too wide) in paragraph at lines 1527--1551
+Overfull \vbox (12.0pt too high) detected at line 1503
+ []
+
+
+Overfull \vbox (24.0pt too high) detected at line 1519
+ []
+
+
+
+[42 <./images/development/test_inventory.PNG>]
+<images/development/add_item_2.PNG, id=763, 681.29532pt x 199.49532pt>
+File: images/development/add_item_2.PNG Graphic file (type png)
+<use images/development/add_item_2.PNG>
+Package pdftex.def Info: images/development/add_item_2.PNG  used on input line 1529.
+(pdftex.def)             Requested size: 382.00775pt x 111.85966pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1525--1531
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1532--1535
+
+ []
+
+
+
+[43 <./images/development/add_item_2.PNG>]
+<images/development/get_slot_value.PNG, id=770, 480.29437pt x 99.37125pt>
+File: images/development/get_slot_value.PNG Graphic file (type png)
+<use images/development/get_slot_value.PNG>
+Package pdftex.def Info: images/development/get_slot_value.PNG  used on input line 1537.
+(pdftex.def)             Requested size: 187.00386pt x 38.69093pt.
+<images/development/set_slot_value.PNG, id=771, 499.8675pt x 248.42813pt>
+File: images/development/set_slot_value.PNG Graphic file (type png)
+<use images/development/set_slot_value.PNG>
+Package pdftex.def Info: images/development/set_slot_value.PNG  used on input line 1542.
+(pdftex.def)             Requested size: 187.00386pt x 92.93666pt.
+<images/development/unequip_item_2.PNG, id=772, 444.15938pt x 194.22563pt>
+File: images/development/unequip_item_2.PNG Graphic file (type png)
+<use images/development/unequip_item_2.PNG>
+Package pdftex.def Info: images/development/unequip_item_2.PNG  used on input line 1550.
+(pdftex.def)             Requested size: 382.00775pt x 167.0456pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1546--1552
+
+ []
+
+
+Overfull \vbox (24.0pt too high) detected at line 1566
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 1571
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 1575
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 1579
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 1583
+ []
+
+
+Overfull \vbox (24.0pt too high) detected at line 1599
+ []
+
+
+Overfull \hbox (42.67006pt too wide) in paragraph at lines 1553--1606
+\OT1/cmr/bx/n/10 Retesting: []
+ []
+
+
+
+[44 <./images/development/get_slot_value.PNG> <./images/development/set_slot_value.PNG> <./images/development/unequip_item_2.PNG>]
+
+[45]
+Overfull \vbox (12.0pt too high) detected at line 1613
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 1617
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 1624
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 1628
+ []
+
+
+Overfull \hbox (7.75319pt too wide) in paragraph at lines 1609--1633
 [] 
  []
 
 
 
-[43] (./NEA.aux)
+[46] (./NEA.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 35229 strings out of 475177
- 827429 string characters out of 5763895
+ 35272 strings out of 475177
+ 829042 string characters out of 5763895
  1738370 words of memory out of 5000000
- 57397 multiletter control sequences out of 15000+600000
+ 57432 multiletter control sequences out of 15000+600000
  565032 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  114i,12n,121p,938b,1624s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on NEA.pdf (46 pages, 1919735 bytes).
+Output written on NEA.pdf (49 pages, 2136008 bytes).
 PDF statistics:
- 1100 PDF objects out of 1200 (max. 8388607)
- 898 compressed objects within 9 object streams
- 320 named destinations out of 1000 (max. 500000)
- 856 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1131 PDF objects out of 1200 (max. 8388607)
+ 915 compressed objects within 10 object streams
+ 328 named destinations out of 1000 (max. 500000)
+ 881 words of extra memory for PDF output out of 10000 (max. 10000000)
 

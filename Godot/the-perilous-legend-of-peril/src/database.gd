@@ -130,16 +130,47 @@ WHERE save_id = ?
 AND item_id = ?;
 """
 
-var _get_slot_value = """
-SELECT ? FROM save data
-WHERE save id = ?
+var _get_slot_values = """
+SELECT * FROM save_data
+WHERE save_id = ?;
 """
 
-var _set_slot_value = """
-UPDATE save data
-SET ? = ?
-WHERE save id = ?;
+var _set_head_value = """
+UPDATE save_data
+SET head = ?
+WHERE save_id = ?;
 """
+
+var _set_chest_value = """
+UPDATE save_data
+SET chest = ?
+WHERE save_id = ?;
+"""
+
+var _set_legs_value = """
+UPDATE save_data
+SET legs = ?
+WHERE save_id = ?;
+"""
+
+var _set_weapon_value = """
+UPDATE save_data
+SET weapon = ?
+WHERE save_id = ?;
+"""
+
+var _set_charm_1_value = """
+UPDATE save_data
+SET charm_1 = ?
+WHERE save_id = ?;
+"""
+
+var _set_charm_2_value = """
+UPDATE save_data
+SET charm_2 = ?
+WHERE save_id = ?;
+"""
+
 
 #endregion
 
@@ -250,11 +281,25 @@ func remove_stored_item(item_id):
 	return db.query_result
 #Function for getting a slot value from the save
 func get_slot_value(slot):
-	db.query_with_bindings(_get_slot_value,[slot, current_save_id])
-	return db.query_result
+	db.query_with_bindings(_get_slot_values,[current_save_id])
+	if len(db.query_result) == 0:
+		return null
+	return db.query_result[0][slot]
 #Function for setting a slot value in the save
 func set_slot_value(slot, item_id):
-	db.query_with_bindings(_set_slot_value, [slot, item_id, current_save_id])
+	match slot:
+		"head":
+			db.query_with_bindings(_set_head_value, [item_id, current_save_id])
+		"chest":
+			db.query_with_bindings(_set_chest_value, [item_id, current_save_id])
+		"legs":
+			db.query_with_bindings(_set_legs_value, [item_id, current_save_id])
+		"weapon":
+			db.query_with_bindings(_set_weapon_value, [item_id, current_save_id])
+		"charm_1":
+			db.query_with_bindings(_set_charm_1_value, [item_id, current_save_id])
+		"charm_2":
+			db.query_with_bindings(_set_charm_2_value, [item_id, current_save_id])
 	return db.query_result
 #Function for getting the save data entries for the current user
 func get_user_save_data():
@@ -283,6 +328,8 @@ func setup(path):
 	if not db.query(_create_table_stored_items):
 		print("Error: stored_items table unable to be created")
 		return
+	
+	db.query("PRAGMA foreign_keys = ON;")
 
 func _ready() -> void:
 	setup("res://game_data.db")

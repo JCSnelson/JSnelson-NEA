@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://bhi3ga5dkh3q8"]
+
+[ext_resource type="Script" path="res://resources/scripts/weapon.gd" id="1_ke6y2"]
+
+[resource]
+script = ExtResource("1_ke6y2")
+weapon_type = ""
+attack_power = 0
+attack_range = 0
+damage_type = ""
+stat_boosts = {}
+stackable = true
+description = ""

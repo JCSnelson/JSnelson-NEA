@@ -6,7 +6,7 @@ func _on_sign_in_button_pressed() -> void:
 	var username = $Input/UsernameInput.text
 	var password = $Input/PasswordInput.text
 	var success = Database.login(username, password)
-	if not (typeof(success) == TYPE_BOOL and success == true):
+	if not (success is bool and success == true):
 		if success == "InvalidUsernameError":
 			$Labels/ErrorLabel.text = "Invalid Username"
 		elif success == "IncorrectPasswordError":
