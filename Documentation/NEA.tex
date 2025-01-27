@@ -1088,6 +1088,9 @@ def equip_item(item: Resource):
         \end{figure}
         The root node of the player which will contain all the child nodes will be Godot's CharacterBody2D as this will allow for a user controlled physics body. It will then have child nodes of CollisionShape2D(for collision detection), AnimatedSprite2D(for an animated character sprite) and Camera2D(for the player's view window to be centered on).\\
         I have chosen to store the speed and health variables within the player class as they will reset/ be recalculated based of the equipment equipped.\\
+        \subsubsection{Animations}
+        I have an animation set for the player that includes 8 Directional top down animations for all player actions and so how I will decide which directional animation will be based of the last direction the player walked.\\
+        I will use a get\_animation function in order to get the directional animation to play.\\
         \subsubsection{Algorithms}
         \textbf{\_ready():}\\
         The \_ready() function gets called whenever the player is instantiated in a scene and so it will be used to setup variables and the environment based on existing stuff.\\
@@ -1104,13 +1107,34 @@ def _ready():
 def _physics_process(delta):
    direction = Input.get_vector("left", "right", "up", "down")
    velocity = direction * speed
+   if direction:
+      last_direction = direction
+      anim.play(get_animation("run"))
+   else:
+      anim.play(get_animation("idle"))
    move_and_slide()
         \end{python}
         \textbf{\_input(event):}\\
         \begin{python}
 def _input(event):
    if event.is_action_pressed('attack'):
-      attack()
+      Inventory.get_weapon().attack(last_direction)
+        \end{python}
+        \textbf{get\_animation():}
+        \begin{python}
+def get_animation(animation_type):
+   anim = animation_type + "_"
+   if direction.x:
+      if direction.x == 1:
+         anim += "r"
+      else:
+         anim += "l"
+   if direction.y:
+      if direction.y == 1:
+         anim += "d"
+      else:
+         anim += "u"
+   return anim
         \end{python}
 \section{Development}
         \subsection{Database Development}
