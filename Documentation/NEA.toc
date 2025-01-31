@@ -44,6 +44,8 @@
 \contentsline {subsubsection}{\numberline {2.7.1}Composition}{28}{subsubsection.2.7.1}%
 \contentsline {subsubsection}{\numberline {2.7.2}Animations}{28}{subsubsection.2.7.2}%
 \contentsline {subsubsection}{\numberline {2.7.3}Algorithms}{28}{subsubsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.8}Weapon Hurtbox}{29}{subsection.2.8}%
+\contentsline {subsubsection}{\numberline {2.8.1}Algorithms}{29}{subsubsection.2.8.1}%
 \contentsline {section}{\numberline {3}Development}{29}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Database Development}{29}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}\_ready()}{30}{subsubsection.3.1.1}%
@@ -62,11 +64,13 @@
 \contentsline {subsubsection}{\numberline {3.3.5}Charm}{38}{subsubsection.3.3.5}%
 \contentsline {subsubsection}{\numberline {3.3.6}Weapon}{39}{subsubsection.3.3.6}%
 \contentsline {subsubsection}{\numberline {3.3.7}Key}{39}{subsubsection.3.3.7}%
-\contentsline {subsubsection}{\numberline {3.3.8}Revision}{39}{subsubsection.3.3.8}%
-\contentsline {subsection}{\numberline {3.4}Inventory Development}{39}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.8}Revision}{40}{subsubsection.3.3.8}%
+\contentsline {subsection}{\numberline {3.4}Inventory Development}{40}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Add Item}{40}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Remove Item}{40}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Unequip Item}{40}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.3}Unequip Item}{41}{subsubsection.3.4.3}%
 \contentsline {subsubsection}{\numberline {3.4.4}Equip Item}{41}{subsubsection.3.4.4}%
 \contentsline {subsubsection}{\numberline {3.4.5}Testing}{42}{subsubsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.5}Hurtbox Development}{45}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Layout}{45}{subsubsection.3.5.1}%
 \contentsline {section}{\numberline {4}References}{46}{section.4}%

@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 100
 var last_direction = Vector2(1,0)
+var animating = false
 
 func get_animation(animation_type: String):
 	var anim = animation_type + "_"
@@ -26,11 +27,25 @@ func _physics_process(delta: float) -> void:
 	velocity = direction.normalized() * SPEED
 	
 	#Sprite
-	if direction:
-		last_direction = direction
-		$AnimatedSprite2D.play(get_animation("walk"))
-	else:
-		$AnimatedSprite2D.play(get_animation("idle"))
+	if not animating:
+		if direction:
+			last_direction = direction
+			$AnimatedSprite2D.play(get_animation("walk"))
+		else:
+			$AnimatedSprite2D.play(get_animation("idle"))
+		move_and_slide()
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("attack"):
+		attack()
+
+
+func attack():
+	if not animating:
+		animating = true
+		$AnimatedSprite2D.play(get_animation("melee"))
+		load(Database.get_slot_value("weapon")).attack(self, last_direction)
+		await $AnimatedSprite2D.animation_finished
+		animating = false
 		
-	
-	#move_and_slide()

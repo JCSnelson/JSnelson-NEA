@@ -281,6 +281,7 @@ func remove_stored_item(item_id):
 	return db.query_result
 #Function for getting a slot value from the save
 func get_slot_value(slot):
+	return "res://resources/equipable/weapon/test_weapon.tres"
 	db.query_with_bindings(_get_slot_values,[current_save_id])
 	if len(db.query_result) == 0:
 		return null
@@ -304,7 +305,7 @@ func set_slot_value(slot, item_id):
 #Function for getting the save data entries for the current user
 func get_user_save_data():
 	db.query_with_bindings(_get_user_save_data,[current_user_id])
-	return db.query_result
+	return db.query_result[0]
 #Function to add a new save file for the current user
 func add_new_save_data(difficulty, hardcore):
 	db.query_with_bindings(_add_new_save_data,[current_user_id, difficulty, hardcore, 1])
