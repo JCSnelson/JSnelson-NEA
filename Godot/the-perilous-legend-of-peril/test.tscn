@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://cuc3sp1s4jyhf"]
+[gd_scene load_steps=4 format=4 uid="uid://cuc3sp1s4jyhf"]
 
 [ext_resource type="PackedScene" uid="uid://cxuyu802r6apc" path="res://scenes/game/worlds/tile_map.tscn" id="1_ub1nj"]
 [ext_resource type="PackedScene" uid="uid://ck3jgk73i7lrm" path="res://scenes/game/player/player.tscn" id="2_otal8"]
+[ext_resource type="PackedScene" uid="uid://dvv2l5etm4wye" path="res://utils/dummy.tscn" id="3_qoers"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,3 +11,6 @@ tile_map_data = PackedByteArray("AAAoABwAAAAGABAAAAAoAB0AAAAGABEAAAApABwAAAAHABA
 
 [node name="Player" parent="." instance=ExtResource("2_otal8")]
 position = Vector2(328, 208)
+
+[node name="Dummy" parent="." instance=ExtResource("3_qoers")]
+position = Vector2(312, 208)

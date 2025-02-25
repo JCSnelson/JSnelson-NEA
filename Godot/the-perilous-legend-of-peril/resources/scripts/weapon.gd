@@ -14,6 +14,7 @@ func attack(owner, direction: Vector2):
 	var hurtbox_instance = hurtbox_scene.instantiate()
 	hurtbox_instance.range = attack_range
 	hurtbox_instance.damage = attack_power
+	hurtbox_instance.damage_type = damage_type
 	hurtbox_instance.rotation = direction.angle()
 	#Add child
 	owner.add_child(hurtbox_instance)

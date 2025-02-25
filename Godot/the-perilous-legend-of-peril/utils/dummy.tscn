@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvv2l5etm4wye"]
+
+[ext_resource type="Script" path="res://utils/dummy.gd" id="1_7hc2m"]
+[ext_resource type="Texture2D" uid="uid://duqawt510oywl" path="res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/box_2/box_2_3.png" id="2_k7ph2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwq0h"]
+size = Vector2(14, 13)
+
+[node name="Dummy" type="StaticBody2D"]
+script = ExtResource("1_7hc2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_k7ph2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_pwq0h")

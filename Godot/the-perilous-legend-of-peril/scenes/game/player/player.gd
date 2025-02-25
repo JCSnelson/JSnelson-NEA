@@ -25,8 +25,7 @@ func _physics_process(delta: float) -> void:
 	var direction = Vector2(Input.get_axis("left", "right"),Input.get_axis("up","down"))
 	# Velocity
 	velocity = direction.normalized() * SPEED
-	
-	#Sprite
+	#Mocing/Idling if its not already animating
 	if not animating:
 		if direction:
 			last_direction = direction

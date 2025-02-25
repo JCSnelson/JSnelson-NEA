@@ -1149,6 +1149,7 @@ def get_animation(animation_type):
         I will use an Area2D node with a capsule shape CollisionShape2D node attached oriented in order to encompass the sword swing area and then I will rotate it around the player dependent on the direction of attack. It will have variables for the damage and damage\_type\\
         \subsubsection{Algorithms}
         \textbf{\_ready():}
+        This script is used to get the bodies overlapping and if they are enemies call their take\_damage function using polymorphism to decide the effect this will have on the specific enemy.\\ 
         \begin{python}
 def _ready():
    bodies = self.get_overlapping_bodies() #Get bodies in the area
@@ -1461,10 +1462,10 @@ def _ready():
         This shows the Weapon script and exported variables which I can set in any instance. I used an enum to represent the different weapon types and damage types so you can only select one
         \begin{figure}[H]
                 \centering
-                \includegraphics[width = \columnwidth]{images/development/Weapon_attack.PNG}
+                \includegraphics[width = 0.8\columnwidth]{images/development/Weapon_attack.PNG}
                 \caption{Weapon attack() function}
         \end{figure}
-        This shows the weapon attack script that I implemented I changed the name from hitbox to hurtbox as that is more accurate and I had to use a timer in order to sleep for an amount of time.\\
+        \noindent This shows the weapon attack script that I implemented I changed the name from hitbox to hurtbox as that is more accurate and I had to use a timer in order to sleep for an amount of time that the hitbox will last for.\\
         \subsubsection{Key}
         \begin{multicols}{2}
                 \begin{figure}[H]
@@ -1661,6 +1662,13 @@ def _ready():
                 \caption{HurtBox Layout}
         \end{figure}
         I made the hurtbox like this as the center of the area2d node (the cross) can rotate allowing the actual collisionshape to rotate around the player depending on the direction of attack.\\
+        \subsubsection{Script}
+        \begin{figure}[H]
+                \centering
+                \includegraphics{images/development/HurtBox_Script.PNG}
+                \caption{Hurtbox Script}
+        \end{figure}
+        I changed the script from using the ready function to running every time a body enters the hurtbox as it allows the hurtbox to work for the duration of its existence rather than just at the start. Other than that the script is the same.\\
         \subsection{Player Development}
         \subsubsection{Layout and Structure}
         \begin{multicols}{2}
@@ -1695,6 +1703,25 @@ def _ready():
                 \includegraphics[width = 0.5\columnwidth]{images/development/Player_get_anim.PNG}
                 \caption{get\_animation():}
         \end{figure}
+        \subsection{Dummy Development}
+        As part of my developmental testing I deciced to create a simple dummy to test weapons on. The dummy consists of a StaticBody2D with a CollisionShape2D and a Sprite2D it also has a simple script for taking damage which I have set to print damage type and damage to the console.\\
+        \begin{multicols}{3}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Dummy_layout.PNG}
+                        \caption{Layout}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Dummy_structure.PNG}
+                        \caption{Structure}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Dummy_script.PNG}
+                        \caption{Script}
+                \end{figure}
+        \end{multicols}
 \newpage
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
