@@ -73,4 +73,7 @@
 \contentsline {subsubsection}{\numberline {3.4.5}Testing}{42}{subsubsection.3.4.5}%
 \contentsline {subsection}{\numberline {3.5}Hurtbox Development}{45}{subsection.3.5}%
 \contentsline {subsubsection}{\numberline {3.5.1}Layout}{45}{subsubsection.3.5.1}%
-\contentsline {section}{\numberline {4}References}{46}{section.4}%
+\contentsline {subsection}{\numberline {3.6}Player Development}{46}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Layout and Structure}{46}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}\_physics\_proccess(delta):}{46}{subsubsection.3.6.2}%
+\contentsline {section}{\numberline {4}References}{47}{section.4}%

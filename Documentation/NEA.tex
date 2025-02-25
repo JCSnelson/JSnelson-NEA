@@ -594,10 +594,10 @@
         Figure 2 shows the Database Design:\\
         The users table will be the main table containing all the login details.\\
         Each user will be able to have multiple save instances which will be stored in save data.\\
-        Upon designing the inventory I have decided that I will split the inventory into the stored items which I will use a seperate table to store with the item\_path as a primary composite key with the save \_id aswell as storing the equipped items in the save\_data table. I have also decided to split the composite key in the save\_data table and just have the save\_id as the primary key autoincrementing.\\
+        Upon designing the inventory I have decided that I will split the inventory into the stored items which I will use a seperate table to store with the item\_id (the path to the item resources location in the game files) as a primary composite key with the save \_id aswell as storing the equipped items in the save\_data table. I have also decided to split the composite key in the save\_data table and just have the save\_id as the primary key autoincrementing. This will help keep the inventory more accessible and prevent the need for a BLOB decoder.\\
         \begin{figure}[H]
                 \centering
-                \includegraphics[width=\textwidth, trim = 0 550 0 25, clip]{images/design/Database_Design_Second.pdf}
+                \includegraphics[width=\textwidth, trim = 0 525 0 25, clip]{images/design/Database_Design_Second.pdf}
                 \caption{Database Design}
         \end{figure}
         \subsubsection{Database Naming Conventions}
@@ -748,7 +748,7 @@
         I will use godot's $query\_with\_bindings()$ function in order to substitute in the bindings for the ?s in the queries. This is useful as it automatically performs input sanitisation so that the system isn't vulnerable to SQL injection.\\
         \subsubsection{Algorithms}
         \textbf{login():}\\
-        The login function will be used to find if the user exists and then check the hashed password if it does.\\
+        The login function will be used to find if the user exists and then check the hashed password if it does. This will help fulfill criteria 6.7.\\
         \begin{python}
 def login(username,password):
    query_result = get_user_data(username) #Getting user data
@@ -759,7 +759,7 @@ def login(username,password):
    return "IncorrectPasswordError" #If password doesnt match
         \end{python}
         \textbf{add\_user():}\\
-        The add\_user function will be used to generate salt for the user check if the username is unique and add the user.\\
+        The add\_user function will be used to generate salt for the user check if the username is unique and add the user. This will help fulfill criteria 6.3\\
         \begin{python}
 def add_user(username, password, answer):
    salt = gen_salt() #Generating new salt
@@ -770,7 +770,7 @@ def add_user(username, password, answer):
    return True
         \end{python}
         \textbf{reset\_password():}\\
-        The reset\_password function will be used to check if the username is valid, fetch the user data and then check if the hashed answer is the same as the stored answer before updating the stored password.\\
+        The reset\_password function will be used to check if the username is valid, fetch the user data and then check if the hashed answer is the same as the stored answer before updating the stored password. This will help fulfill criteria 6.8.\\
         \begin{python}
 def reset_password(username, answer, password):
    query_result = get_user_data(username) #Getting user data
@@ -814,6 +814,7 @@ def reset_password(username, answer, password):
                 &&&\\
                 \hline
         \end{tabular}
+        These tests will be used to evaluate to what extent I have met the criteria and allow me to identify and fix any issues in my code.\\
         \subsection{Login System}
         \subsubsection{Activity Diagram}
         \begin{figure}[H]
@@ -823,10 +824,11 @@ def reset_password(username, answer, password):
                 
         \end{figure}
         The login form will allow users to create accounts aswell as login with an existing account and reset a password.\\
-        Upon successful login the user will be redirected to the GAME system.\\
+        Upon successful login the user will be redirected to the GAME system. This login form along with the database functions provides all the necessary UI and algorithmic elements to fulfill criteria 6.\\
         \subsubsection{Algorithms}
 
         \textbf{hash():}\\
+        This function alternates between two different hashing functions a consistent number of times while making sure the final hash is a consistent length. It also adds in a unique salt for every user which is necessary to prevent rainbow table lookups and keep the passwords secure even if it is generic. This and the salt function fulfills criteria 6.1.\\
         \begin{python}
 def hash(password: str, salt: str):
    hashedPassword = password
@@ -841,7 +843,7 @@ def hash(password: str, salt: str):
         return hashedPassword
         \end{python}
         \textbf{genSalt():}\\
-        The genSalt function uses random processes to generate a salt string to be used in the hashing of the password and challenge question.\\
+        The genSalt function uses random processes to generate a salt string to be used in the hashing of the password and challenge question. This needs to be random for every user to prevent the potential to create a table of common password hashes to loop up user's passwords in.\\
         \begin{python}
 def gen_salt():
    salt = "string"
@@ -886,11 +888,11 @@ def gen_salt():
                         \caption{Reset Password Form}
                 \end{figure}
         \end{multicols}\[\]
-        These forms would be used in order to create an account, reset your password and login.\\
-        The Password and Challenge question entries would be starred for privacy.\\
+        These forms would be used in order to create an account, reset your password and login, Helping fulfill criteria 6.3, 6.7, 6.8 and 6.9.\\
+        The Password and Challenge question entries would be hidden/starred for privacy.\\
         \newpage
         \subsection{Save Select System}
-        I will implement the save select system using a ScrollContainer with a VBoxContainer inside to create a list of scrollable items. I will get the list of saves for a given user\_id and then display them and when the button for that save is pressed the current\_save\_id will be set.\\
+        I will implement the save select system as an additional menu for the login system in order to improve replayability to help  using a ScrollContainer with a VBoxContainer inside to create a list of scrollable items. I will get the list of saves for a given user\_id and then display them and when the button for that save is pressed the current\_save\_id will be set.\\
         In order to add new save's I will add a button for hardcore and a slider for difficulty as well as an add save button which will add the save and update the list.\\
         \subsubsection{Algorithms}
         \textbf{\_ready():}
@@ -1659,6 +1661,28 @@ def _ready():
                 \caption{HurtBox Layout}
         \end{figure}
         I made the hurtbox like this as the center of the area2d node (the cross) can rotate allowing the actual collisionshape to rotate around the player depending on the direction of attack.\\
+        \subsection{Player Development}
+        \subsubsection{Layout and Structure}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics{images/development/Player_layout.png}
+                        \caption{Layout}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.8\columnwidth]{images/development/Player_structure.png}
+                        \caption{Structure}
+                \end{figure}
+        \end{multicols}
+        \noindent The structure is the same as was described in the class diagram and the layout is as such so that the player can interact with walls and enemy hits can register it.\\
+        \subsubsection{\_physics\_proccess(delta):}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/Player_physics_process().PNG}
+                \caption{Script}
+        \end{figure}
+        \noindent I decided to add an animating flag for use in this script that will be flagged when animations that cannnot be interrupted are playing (e.g. attacks) so that the player will not move or switch animations during that. Other than that the function is the same as the designed function with a slightly different method of getting direction.\\
 \newpage
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
