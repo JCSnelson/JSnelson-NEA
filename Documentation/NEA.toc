@@ -76,4 +76,5 @@
 \contentsline {subsection}{\numberline {3.6}Player Development}{46}{subsection.3.6}%
 \contentsline {subsubsection}{\numberline {3.6.1}Layout and Structure}{46}{subsubsection.3.6.1}%
 \contentsline {subsubsection}{\numberline {3.6.2}\_physics\_proccess(delta):}{46}{subsubsection.3.6.2}%
-\contentsline {section}{\numberline {4}References}{47}{section.4}%
+\contentsline {subsubsection}{\numberline {3.6.3}Player Animation}{47}{subsubsection.3.6.3}%
+\contentsline {section}{\numberline {4}References}{48}{section.4}%

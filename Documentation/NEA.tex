@@ -1680,9 +1680,21 @@ def _ready():
         \begin{figure}[H]
                 \centering
                 \includegraphics[width = 0.8\columnwidth]{images/development/Player_physics_process().PNG}
-                \caption{Script}
+                \caption{\_physics\_process():}
         \end{figure}
         \noindent I decided to add an animating flag for use in this script that will be flagged when animations that cannnot be interrupted are playing (e.g. attacks) so that the player will not move or switch animations during that. Other than that the function is the same as the designed function with a slightly different method of getting direction.\\
+        \subsubsection{Player Animation}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/Animations.PNG}
+                \caption{Animations}
+        \end{figure}
+        I added the animation frames into seperate animations in the Player's animationPlayer naming them such that the different directional animation names can be got using the get\_animation() function.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.5\columnwidth]{images/development/Player_get_anim.PNG}
+                \caption{get\_animation():}
+        \end{figure}
 \newpage
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
