@@ -305,7 +305,8 @@ func set_slot_value(slot, item_id):
 #Function for getting the save data entries for the current user
 func get_user_save_data():
 	db.query_with_bindings(_get_user_save_data,[current_user_id])
-	return db.query_result[0]
+	print(db.query_result)
+	return db.query_result
 #Function to add a new save file for the current user
 func add_new_save_data(difficulty, hardcore):
 	db.query_with_bindings(_add_new_save_data,[current_user_id, difficulty, hardcore, 1])

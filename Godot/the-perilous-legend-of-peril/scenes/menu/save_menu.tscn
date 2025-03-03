@@ -48,5 +48,13 @@ offset_right = 128.0
 offset_bottom = 7.0
 text = "Difficulty: 1"
 
+[node name="LogOutButton" type="Button" parent="."]
+offset_left = 1664.0
+offset_top = 960.0
+offset_right = 1856.0
+offset_bottom = 1024.0
+text = "Log Out"
+
 [connection signal="pressed" from="NewSaveButton" to="." method="_on_new_save_button_pressed"]
 [connection signal="drag_ended" from="Difficulty" to="." method="_on_difficulty_drag_ended"]
+[connection signal="pressed" from="LogOutButton" to="." method="_on_log_out_button_pressed"]

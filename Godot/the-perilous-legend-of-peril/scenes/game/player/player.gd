@@ -4,6 +4,12 @@ extends CharacterBody2D
 const SPEED = 100
 var last_direction = Vector2(1,0)
 var animating = false
+var weapon
+
+func _ready():
+	print("no")
+	await $AnimatedSprite2D.get_tree().create_timer(0.1).timeout
+	print("yes")
 
 func get_animation(animation_type: String):
 	var anim = animation_type + "_"
@@ -44,7 +50,20 @@ func attack():
 	if not animating:
 		animating = true
 		$AnimatedSprite2D.play(get_animation("melee"))
-		load(Database.get_slot_value("weapon")).attack(self, last_direction)
+		weapon = load(Database.get_slot_value("weapon"))
+		if weapon.weapon_type == "melee":
+			#Load the hurtbox scene
+			var hurtbox_scene = load(weapon.hurtbox_scene_path)
+			var hurtbox_instance = hurtbox_scene.instantiate()
+			hurtbox_instance.range = weapon.attack_range
+			hurtbox_instance.damage = weapon.attack_power
+			hurtbox_instance.damage_type = weapon.damage_type
+			hurtbox_instance.rotation = last_direction.angle()
+			#Add child
+			add_child(hurtbox_instance)
+			#Hitbox lasts for a tenth of a second
+			await get_tree().create_timer(0.1).timeout
+			print("yes")
+			hurtbox_instance.queue_free()
 		await $AnimatedSprite2D.animation_finished
 		animating = false
-		

@@ -1157,7 +1157,51 @@ def _ready():
       if body.is_in_group("enemies"): #Damages bodies if they are an enemy.
          body.take_damage(damage, damage_type)
         \end{python}
-\section{Development}
+        \subsection{Dungeon Environment Design}
+        \subsubsection{Generic Tiles}
+        I will use a TileMap node as that will allow me to import a spritesheet for a tilemap and define the properties of the tiles such as hitboxes and place them down easily. This will be used for criteria 3.1 and 3.2.\\
+        \subsubsection{Chests}
+        I will implement Chests, the basic structure of the chest will be a StaticBody2D with a circular area2D node to tell if the player is within range to open the chest aswell as the chest sprite. Each chest will have a key path for the key needed to unlock it. The chests will have a loot pool given by a dictionary where the key is the item path and the value relates to the ratio of getting it. There will also be a variable for the amount of items given by the chest and upon opening the chest will give that many items.\\
+        \subsubsection{Doors}
+        I will implement doors, the basic structure of the door will be using a StaticBody2D with an Area2D Node to detect if the player is infront of the door. If the player is infront of the door and if the I key is pressed the door will either dissappear revealing another room or switch the scene to another room depending on the purpose. I will export the variables for the scene to go to and wether it just dissappears or changes scene. This would fulfill all of criteria 3.5\\
+        \subsubsection{Algorithms}
+        \textbf{Chest Script:}\\
+        This will consist of the exported variables aswell as an input function that checks if the requirements to unlock the chest are met before generating the random items based on their probabilities which will be set up using an array and after the chest is opened then it will dissappear.\\
+        \begin{python}
+@export item_pool: dict
+@export item_number: int
+@export key_path: string
+
+#Constructing the item_list
+def _ready():
+   item_list = []
+   for item in item_pool: #For all items
+     item_list += [item for x in range(item_pool[item])] #Adding on the amount relevant to the ratio of the item
+
+def _input(event):
+   if event.is_action_pressed("enter") and Area2D.overlaps_body("player"): #Check if player within range and pressed button
+      if Inventory.remove_item(key_path,1) is bool: #Check if player has the key to unlock it 
+         for x in range(item_number):
+            Inventory.add_item(item_list[randint(0,len(item_list)-1)])
+        queue_free()
+   
+        \end{python}
+        \textbf{Door Script:}\\
+        This consists of the variables and input function that checks if they right key is pressed then it checks if the player is in the Area2D Node and if so will check if the player has the correct key perform the right action\\
+        \begin{python}
+@export change_scene: bool
+@export scene_path: string
+@export key_path: string
+
+def _input(event):
+   if event.is_action_pressed("enter") and Area2D.overlaps_body("player"): #Check if player within range and pressed button
+      if Inventory.remove_item(key_path,1) is bool: #Check if player has the key to unlock it 
+         if change_scene:
+            get_tree().change_scene_to_file(scene_path) #Change Scene
+         else:
+            queue_free() #Dissappear
+        \end{python}
+        \section{Development}
         \subsection{Database Development}
         I used a global autoloaded script database.gd in order to implement all of my functions for handling the database. Upon testing the functions I realised that the reset\_password query was incorrect as it says UPDATE TABLE instead of just update.\\
         I added all the prepared queries as private variables with strings in order to use db.query\_with\_bindings to sanitise and substitute inputs aswell as run the queries. This function would output wether the query succeeded or failed.\\
