@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scenes/menu/login_form.gd" id="1_opgd2"]
 
 [node name="LoginForm" type="Node2D"]
+texture_filter = 1
 position = Vector2(768, 220)
 scale = Vector2(2, 2)
 script = ExtResource("1_opgd2")

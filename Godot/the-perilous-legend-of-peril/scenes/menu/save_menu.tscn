@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scenes/menu/save_menu.gd" id="1_28ran"]
 
 [node name="SaveMenu" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_28ran")
 
 [node name="SavesScroller" type="ScrollContainer" parent="."]

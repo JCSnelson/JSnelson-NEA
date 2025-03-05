@@ -1,15 +1,14 @@
 extends CharacterBody2D
 
 
-const SPEED = 100
+var speed = 100
+var health = 100
 var last_direction = Vector2(1,0)
 var animating = false
 var weapon
 
 func _ready():
-	print("no")
-	await $AnimatedSprite2D.get_tree().create_timer(0.1).timeout
-	print("yes")
+	add_to_group("player")
 
 func get_animation(animation_type: String):
 	var anim = animation_type + "_"
@@ -30,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	# Get the direction
 	var direction = Vector2(Input.get_axis("left", "right"),Input.get_axis("up","down"))
 	# Velocity
-	velocity = direction.normalized() * SPEED
+	velocity = direction.normalized() * speed
 	#Mocing/Idling if its not already animating
 	if not animating:
 		if direction:
@@ -50,6 +49,7 @@ func attack():
 	if not animating:
 		animating = true
 		$AnimatedSprite2D.play(get_animation("melee"))
+		await get_tree().create_timer(0.5).timeout
 		weapon = load(Database.get_slot_value("weapon"))
 		if weapon.weapon_type == "melee":
 			#Load the hurtbox scene
@@ -67,3 +67,10 @@ func attack():
 			hurtbox_instance.queue_free()
 		await $AnimatedSprite2D.animation_finished
 		animating = false
+
+
+func take_damage(damage, damage_type):
+	health = health-damage
+	if health <= 0:
+		get_tree().change_scene_to_file("res://scenes/menu/save_menu.tscn")
+	print(health)

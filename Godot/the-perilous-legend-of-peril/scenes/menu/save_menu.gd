@@ -18,6 +18,7 @@ func _ready() -> void:
 func _on_save_selected(save_data):
 	Database.current_save_id = save_data["save_id"]
 	print("yes")
+	get_tree().change_scene_to_file("res://test.tscn")
 
 func _on_difficulty_drag_ended(value_changed: bool) -> void:
 	$Difficulty/DifficultyLabel.text = "Difficulty: " + str($Difficulty.value)
