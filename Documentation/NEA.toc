@@ -84,4 +84,7 @@
 \contentsline {subsubsection}{\numberline {3.6.2}\_physics\_proccess(delta):}{49}{subsubsection.3.6.2}%
 \contentsline {subsubsection}{\numberline {3.6.3}Player Animation}{49}{subsubsection.3.6.3}%
 \contentsline {subsection}{\numberline {3.7}Dummy Development}{50}{subsection.3.7}%
-\contentsline {section}{\numberline {4}References}{51}{section.4}%
+\contentsline {subsection}{\numberline {3.8}Dungeon Environment Development}{50}{subsection.3.8}%
+\contentsline {subsubsection}{\numberline {3.8.1}Door}{50}{subsubsection.3.8.1}%
+\contentsline {subsubsection}{\numberline {3.8.2}Chest}{51}{subsubsection.3.8.2}%
+\contentsline {section}{\numberline {4}References}{53}{section.4}%

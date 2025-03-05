@@ -1766,6 +1766,47 @@ def _input(event):
                         \caption{Script}
                 \end{figure}
         \end{multicols}
+        \subsection{Dungeon Environment Development}
+        \subsubsection{Door}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Door_layout.PNG}
+                        \caption{Layout}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Door_structure.PNG}
+                        \caption{Structure}
+                \end{figure}   
+        \end{multicols}
+        \noindent The layout and structure of the door is as shown above, mostly the same as was designed making sure to get the area2d infront of the door for opening.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.9\columnwidth]{images/development/Door_script.PNG}
+                \caption{Script}
+        \end{figure}
+        \noindent I added a variable that detemines wether or not the door is locked aswell as looping through the overlapping bodies instead of checking if it overlaps a certain body as that was easier to implement.\\
+        \subsubsection{Chest}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Chest_layout.PNG}
+                        \caption{Layout}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Chest_structure.PNG}
+                        \caption{Structure}
+                \end{figure}   
+        \end{multicols}
+        \noindent The layout and structure of the chest are mostly the same as was designed with the detection area being a circle around the chest.
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.9\columnwidth]{images/development/Chest_script.PNG}
+                \caption{Script}
+        \end{figure}
+        \noindent The chest script is has a couple changes from the design, the addition of a locked flag aswell as making the item list a script variable so that it can be accessed from the input function and constructing the list without the use of pythonic list comprehension. I also switched from directly seeing if the player body overlaps to looping through overlapping bodies again as this wasy easier to implement and works the same.\\
 \newpage
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
