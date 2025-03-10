@@ -331,7 +331,7 @@ func setup(path):
 		print("Error: stored_items table unable to be created")
 		return
 	
-	db.query("PRAGMA foreign_keys = ON;")
+	db.query("PRAGMA foreign_keys = ON;") # Activates foreign key
 
 func _ready() -> void:
 	setup("res://game_data.db")

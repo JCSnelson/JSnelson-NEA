@@ -1201,6 +1201,100 @@ def _input(event):
          else:
             queue_free() #Dissappear
         \end{python}
+        \subsection{Enemy Design}
+        \subsubsection{Overview}
+        For my basic enemies I have decided to go with different types of slimes representing different elements. The slimes will have animations and collisions aswell as a radius that they will detect the player and navigate towards them dealing damage upon impact. Each unique slime will deal a different damage type and have a different look.\\
+        \subsubsection{Composition}
+        The root node of the slimes will be a CharacterBody2D node to allow for a physics body that can be easily moved via the script. I will then have a CollisionShape2D for collision detection aswell as an Area2D node for detecting the player. It will contain an AnimatedSprite2D for the animations.\\
+        \begin{tabular}{|c|c|c|}
+                \hline
+                Identifier&Data Type&Justification\\
+                \hline
+                speed&Exported Integer&This allows slimes to have variable speeds to allow for difficulty increase.\\
+                \hline
+                health&Exported Integer&This allows for slimes to have variable healths to allow for difficulty increase.\\
+                \hline
+                damage&Exported Integer&This allows for slimes to deal variable damage to allow for difficulty increase.\\
+                \hline
+                damage\_type&Exported String&This allows for slimes to deal different damage types to pose a different challenge.\\
+                \hline
+                direction&Vector2&This is used for direction to move in and the type of animation to play.\\
+                \hline
+                weaknesses&Exported List&Shows which damage\_types to take more damage from.\\
+                \hline
+        \end{tabular}
+        \subsubsection{Navigation}
+        Upon researching I found the godot documentation on 2D navigation$_{(6)}$ and decided to use the NavigationAgent2D node to utilise the A* algorithm, this means that I would need to add a navigation layer to my tileset to show the areas that the navigation agent can use. I decided to use a Timer node that autostarts and repeats and update the navigation path on the timeout so that the player can evade the slimes to a certain extent.\\
+        Ontop of this I used a circular CollisionShape2D with and Area2D node to detect when the player is within a certain range and pathfind towards them.\\
+        \subsubsection{Animation}
+        I decided to add idle animations for all of the 4 cardinal directions aswell as idle and hurt animations. I used a get\_animation() function to get the relevant animation based on the direction.
+        \subsubsection{Algorithms}
+        \textbf{get\_animation(animation\_type):}\\
+        This gets the animation based on the type and direction.\\
+        \begin{python}
+def get_animation(animation_type: String):
+	if abs(direction.x) > abs(direction.y):
+		if direction.x > 0:
+			return animation_type + "_r"
+		else:
+			return animation_type + "_l"
+	else:
+		if direction.y > 0:
+			return animation_type + "_d"
+		else:
+			return animation_type + "_u"
+        \end{python}
+        \textbf{\_ready():}\\
+        This is used to add the slime to the enemies group.\\
+        \begin{python}
+def _ready():
+   add_to_group("enemies")
+        \end{python}
+        \textbf{\_physics\_process(delta):}\\
+        This checks if the player is within the detection range and if so moves towards them aswell as handling animations and detecting if the slime collides with the player.\\
+        \begin{python}
+def _physics_process(delta: float) -> void:
+   var move = false
+   for body in Area2D.get_overlapping_bodies(): #Checking if player in the Area2D area
+      if body.name == "Player":
+         move = true
+   if not animating: #If not playing a different animation
+      if move: #If the slime can move
+         direction = to_local(NavigationAgent2D.get_next_path_position()).normalized() #Getting the direction of the next point on the path
+         velocity = direction * speed
+         AnimatedSprite2D.play(get_animation("walk"))
+      else:
+         AnimatedSprite2D.play(get_animation("idle"))
+   move_and_slide() #moving
+                
+   if can_attack: #If the attack cooldown is done
+      for i in range(get_slide_collision_count()): #Loops through collisions
+         var collision = get_slide_collision(i)
+         var collider = collision.get_collider()
+            if collider.is_in_group("player"): #Checks if collision is with the player
+               collider.take_damage(damage, damage_type) #Deals damage
+               can_attack=false 
+               AttackTimer.start() #Starts attack cooldown
+        \end{python}
+        \textbf{take\_damage(damage, damage\_type):}
+        The take damage function will change based on 
+        \begin{python}
+def take_damage(damage, damage_type):
+   var player = get_tree().get_first_node_in_group("player")
+   animating = true
+   if damage_type in weaknesses:
+      health -= 2*damage
+   else:
+      health -= damage
+   velocity = - 25 * to_local(player.global_position).normalized()
+   if health == 0:
+      queue_free()
+   else:
+      AnimatedSprite2D.play(get_animation("hurt"))
+      await AnimatedSprite2D.animation_finished
+      animating = false
+        \end{python}
+
         \section{Development}
         \subsection{Database Development}
         I used a global autoloaded script database.gd in order to implement all of my functions for handling the database. Upon testing the functions I realised that the reset\_password query was incorrect as it says UPDATE TABLE instead of just update.\\
@@ -1829,6 +1923,11 @@ def _input(event):
         &&&&&\\
         \hline
         5&25/11/24&\mr{3}{3cm}{Research/ Exisiting Solutions}&\mr{2}{2cm}{video games store, online}&\mr{2}{4cm}{\href{https://store.nintendo.co\\.uk/en/the-legend-of-zelda-breath-of-the-wild-70010000000023}{Nintendo Store (Breath of The Wild)}}&\mr{2}{3cm}{One of the existing solutions I researched}\\
+        &&&&&\\
+        &&&&&\\
+        \hline
+        6&04/03/25&\mr{3}{3cm}{Design/ Enemy Design}&\mr{2}{2cm}{Game Engine Documentation, online}&\mr{2}{4cm}{\href{https://docs.godotengine.org/en/stable/tutorials/navigation/navigation_introduction_2d.html}{Godot Docs (2D navigation)}}&\mr{2}{3cm}{The documentation for godot's navigation nodes in 2D}\\
+        &&&&&\\
         &&&&&\\
         &&&&&\\
         \hline

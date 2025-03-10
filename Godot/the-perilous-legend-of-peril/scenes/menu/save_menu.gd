@@ -2,6 +2,8 @@ extends Node2D
 
 #Function to load the list
 func _load_list():
+	for child in $SavesScroller/VBoxContainer.get_children():
+		child.queue_free()
 	var save_data_list = Database.get_user_save_data()
 	for save_data in save_data_list:
 		print(save_data)

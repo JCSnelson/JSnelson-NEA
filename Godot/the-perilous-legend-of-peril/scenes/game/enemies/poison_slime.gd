@@ -6,7 +6,7 @@ var direction = Vector2(0,1)
 @export var speed:int = 20
 @export var health: int = 10
 @export var damage: int = 1
-@export var damage_type: String = "normal"
+@export var damage_type: String = "poison"
 @export var weaknesses: Array
 var animating: bool
 var can_attack = true
@@ -70,10 +70,10 @@ func take_damage(damage, damage_type):
 	
 
 
+
 func _on_navigation_timer_timeout() -> void:
 	var player = get_tree().get_first_node_in_group("player")
 	$NavigationAgent2D.set_target_position(player.global_position)
-
 
 
 func _on_attack_timer_timeout() -> void:

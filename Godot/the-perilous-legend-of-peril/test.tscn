@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cuc3sp1s4jyhf"]
+[gd_scene load_steps=10 format=4 uid="uid://cuc3sp1s4jyhf"]
 
 [ext_resource type="PackedScene" uid="uid://cxuyu802r6apc" path="res://scenes/game/worlds/tile_map.tscn" id="1_ub1nj"]
 [ext_resource type="PackedScene" uid="uid://ck3jgk73i7lrm" path="res://scenes/game/player/player.tscn" id="2_otal8"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://btpen6sxkyfmu" path="res://scenes/game/worlds/door.tscn" id="4_1lfuq"]
 [ext_resource type="PackedScene" uid="uid://bv53ydufy7he0" path="res://scenes/game/worlds/chest.tscn" id="5_ci4xq"]
 [ext_resource type="PackedScene" uid="uid://bgncfnu33yavy" path="res://scenes/game/enemies/default_slime.tscn" id="6_8stno"]
+[ext_resource type="PackedScene" uid="uid://dyn2myc0ig8xr" path="res://scenes/game/enemies/poison_slime.tscn" id="7_u6fx0"]
+[ext_resource type="PackedScene" uid="uid://b1l3b8ucgd7v3" path="res://scenes/game/enemies/fire_slime.tscn" id="8_3ekl1"]
 
 [sub_resource type="GDScript" id="GDScript_0rb26"]
 script/source = "extends Node2D
@@ -44,7 +46,6 @@ item_number = 1
 [node name="DefaultSlime" parent="." instance=ExtResource("6_8stno")]
 position = Vector2(400, 160)
 health = 5
-damage = 1
 
 [node name="Player" parent="." instance=ExtResource("2_otal8")]
 position = Vector2(312, 240)
@@ -54,3 +55,9 @@ offset_left = 280.0
 offset_top = 160.0
 offset_right = 344.0
 offset_bottom = 183.0
+
+[node name="PosionSlime" parent="." instance=ExtResource("7_u6fx0")]
+position = Vector2(264, 160)
+
+[node name="FireSlime" parent="." instance=ExtResource("8_3ekl1")]
+position = Vector2(336, 160)

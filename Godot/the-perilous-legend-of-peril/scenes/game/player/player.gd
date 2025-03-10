@@ -69,8 +69,16 @@ func attack():
 		animating = false
 
 
+
 func take_damage(damage, damage_type):
-	health = health-damage
-	if health <= 0:
-		get_tree().change_scene_to_file("res://scenes/menu/save_menu.tscn")
-	print(health)
+	if damage_type == "poison":
+		print("yes")
+		for x in range(damage):
+			health -= 1
+			if health <= 0:
+				get_tree().change_scene_to_file("res://scenes/menu/save_menu.tscn")
+			await get_tree().create_timer(1).timeout
+	else:
+		health -= damage
+		if health <= 0:
+			get_tree().change_scene_to_file("res://scenes/menu/save_menu.tscn")
