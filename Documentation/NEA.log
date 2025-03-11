@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.21)  7 MAR 2025 13:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.21)  11 MAR 2025 10:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -802,7 +802,7 @@ Overfull \vbox (24.0pt too high) detected at line 146
 [2]
 
 [3]
-<images/research/BOI_Capture.PNG, id=230, 1302.36563pt x 633.86812pt>
+<images/research/BOI_Capture.PNG, id=244, 1302.36563pt x 633.86812pt>
 File: images/research/BOI_Capture.PNG Graphic file (type png)
 <use images/research/BOI_Capture.PNG>
 Package pdftex.def Info: images/research/BOI_Capture.PNG  used on input line 166.
@@ -825,215 +825,221 @@ Underfull \hbox (badness 10000) in paragraph at lines 155--169
 
 
 [4 <./images/research/BOI_Capture.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 170--180
+<images/research/Dead_Cells_level_gen.PNG, id=254, 711.08517pt x 567.40553pt>
+File: images/research/Dead_Cells_level_gen.PNG Graphic file (type png)
+<use images/research/Dead_Cells_level_gen.PNG>
+Package pdftex.def Info: images/research/Dead_Cells_level_gen.PNG  used on input line 181.
+(pdftex.def)             Requested size: 382.00775pt x 304.82735pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--180
+Underfull \hbox (badness 10000) in paragraph at lines 170--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--180
+Underfull \hbox (badness 10000) in paragraph at lines 170--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--180
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 170--180
+Underfull \hbox (badness 10000) in paragraph at lines 170--183
 
  []
 
 
 
-[5]
+[5 <./images/research/Dead_Cells_level_gen.PNG>]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
+<images/research/BOTW_tutorial_map.jpg, id=261, 3035.34pt x 4047.12pt>
+File: images/research/BOTW_tutorial_map.jpg Graphic file (type jpg)
+<use images/research/BOTW_tutorial_map.jpg>
+Package pdftex.def Info: images/research/BOTW_tutorial_map.jpg  used on input line 196.
+(pdftex.def)             Requested size: 238.75394pt x 318.2801pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--191
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 181--191
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 181--191
+Underfull \hbox (badness 10000) in paragraph at lines 185--198
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--191
+Underfull \hbox (badness 10000) in paragraph at lines 185--198
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--191
+Underfull \hbox (badness 10000) in paragraph at lines 185--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
 
 
-[6]
-Overfull \vbox (48.0pt too high) detected at line 198
+[6 <./images/research/BOTW_tutorial_map.jpg>]
+Overfull \vbox (48.0pt too high) detected at line 207
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 198
+Overfull \vbox (24.0pt too high) detected at line 207
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 208
+Overfull \vbox (60.0pt too high) detected at line 217
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 217
+Overfull \vbox (24.0pt too high) detected at line 226
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 217
+Overfull \vbox (36.0pt too high) detected at line 226
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 224
+Overfull \vbox (36.0pt too high) detected at line 233
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 238
+Overfull \vbox (60.0pt too high) detected at line 247
  []
 
 
-Overfull \vbox (72.0pt too high) detected at line 238
+Overfull \vbox (108.0pt too high) detected at line 247
  []
 
 
-Overfull \vbox (84.0pt too high) detected at line 247
+Overfull \vbox (84.0pt too high) detected at line 259
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 247
+Overfull \vbox (72.0pt too high) detected at line 259
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 257
+Overfull \vbox (60.0pt too high) detected at line 269
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 257
+Overfull \vbox (60.0pt too high) detected at line 269
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 265
+Overfull \vbox (36.0pt too high) detected at line 277
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 265
+Overfull \vbox (36.0pt too high) detected at line 277
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 271
+Overfull \vbox (12.0pt too high) detected at line 283
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 271
+Overfull \vbox (24.0pt too high) detected at line 283
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 271
+Overfull \vbox (36.0pt too high) detected at line 283
  []
 
 
-Overfull \vbox (96.0pt too high) detected at line 276
+Overfull \vbox (96.0pt too high) detected at line 289
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 276
+Overfull \vbox (72.0pt too high) detected at line 289
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 287
+Overfull \vbox (24.0pt too high) detected at line 300
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 287
+Overfull \vbox (48.0pt too high) detected at line 300
  []
 
 
 
 [7]
-Overfull \vbox (12.0pt too high) detected at line 298
+Overfull \vbox (12.0pt too high) detected at line 313
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 298
+Overfull \vbox (60.0pt too high) detected at line 313
  []
 
 
-Overfull \vbox (84.0pt too high) detected at line 298
+Overfull \vbox (108.0pt too high) detected at line 313
  []
 
 
-Overfull \vbox (72.0pt too high) detected at line 308
+Overfull \vbox (72.0pt too high) detected at line 325
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 308
+Overfull \vbox (72.0pt too high) detected at line 325
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 317
+Overfull \vbox (12.0pt too high) detected at line 334
  []
 
 
-Overfull \vbox (96.0pt too high) detected at line 317
+Overfull \vbox (96.0pt too high) detected at line 334
  []
 
 
-Overfull \vbox (72.0pt too high) detected at line 317
+Overfull \vbox (96.0pt too high) detected at line 334
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 328
+Overfull \vbox (48.0pt too high) detected at line 345
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 328
+Overfull \vbox (60.0pt too high) detected at line 345
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 335
+Overfull \vbox (36.0pt too high) detected at line 353
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 335
+Overfull \vbox (48.0pt too high) detected at line 353
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 341
+Overfull \vbox (12.0pt too high) detected at line 360
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 341
+Overfull \vbox (24.0pt too high) detected at line 360
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 346
+Overfull \vbox (12.0pt too high) detected at line 365
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 346
+Overfull \vbox (60.0pt too high) detected at line 365
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 346
+Overfull \vbox (48.0pt too high) detected at line 365
  []
 
 
@@ -1041,157 +1047,162 @@ Overfull \vbox (48.0pt too high) detected at line 346
 [8]
 
 [9]
-Overfull \vbox (84.0pt too high) detected at line 361
+Overfull \vbox (84.0pt too high) detected at line 380
  []
 
 
-Overfull \vbox (72.0pt too high) detected at line 361
+Overfull \vbox (72.0pt too high) detected at line 380
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 361
+Overfull \vbox (24.0pt too high) detected at line 380
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 371
+Overfull \vbox (48.0pt too high) detected at line 390
  []
 
 
-Overfull \vbox (180.0pt too high) detected at line 371
+Overfull \vbox (156.0pt too high) detected at line 390
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 371
+Overfull \vbox (168.0pt too high) detected at line 390
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 389
+Overfull \vbox (60.0pt too high) detected at line 408
  []
 
 
-Overfull \vbox (96.0pt too high) detected at line 389
+Overfull \vbox (96.0pt too high) detected at line 408
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 389
+Overfull \vbox (84.0pt too high) detected at line 408
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 400
+Overfull \vbox (48.0pt too high) detected at line 419
  []
 
 
-Overfull \vbox (84.0pt too high) detected at line 400
+Overfull \vbox (84.0pt too high) detected at line 419
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 400
+Overfull \vbox (36.0pt too high) detected at line 419
+ []
+
+
+Overfull \hbox (16.4419pt too wide) in paragraph at lines 376--430
+[] 
  []
 
 
 
 [10]
-Overfull \vbox (24.0pt too high) detected at line 414
+Overfull \vbox (24.0pt too high) detected at line 433
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 414
+Overfull \vbox (60.0pt too high) detected at line 433
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 414
+Overfull \vbox (36.0pt too high) detected at line 433
  []
 
 
-Overfull \vbox (216.0pt too high) detected at line 422
+Overfull \vbox (216.0pt too high) detected at line 441
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 422
+Overfull \vbox (60.0pt too high) detected at line 441
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 443
+Overfull \vbox (60.0pt too high) detected at line 462
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 443
+Overfull \vbox (60.0pt too high) detected at line 462
  []
 
 
 
 [11]
-Overfull \vbox (36.0pt too high) detected at line 455
+Overfull \vbox (36.0pt too high) detected at line 474
  []
 
 
-Overfull \vbox (84.0pt too high) detected at line 455
+Overfull \vbox (84.0pt too high) detected at line 474
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 455
+Overfull \vbox (36.0pt too high) detected at line 474
  []
 
 
-Overfull \vbox (108.0pt too high) detected at line 465
+Overfull \vbox (108.0pt too high) detected at line 484
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 465
+Overfull \vbox (36.0pt too high) detected at line 484
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 477
+Overfull \vbox (12.0pt too high) detected at line 496
  []
 
 
-Overfull \vbox (156.0pt too high) detected at line 477
+Overfull \vbox (156.0pt too high) detected at line 496
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 477
+Overfull \vbox (36.0pt too high) detected at line 496
  []
 
 
-Overfull \vbox (84.0pt too high) detected at line 493
+Overfull \vbox (84.0pt too high) detected at line 512
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 493
+Overfull \vbox (24.0pt too high) detected at line 512
  []
 
 
-Overfull \vbox (84.0pt too high) detected at line 503
+Overfull \vbox (84.0pt too high) detected at line 522
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 503
+Overfull \vbox (60.0pt too high) detected at line 522
  []
 
 
 
 [12]
-Overfull \vbox (12.0pt too high) detected at line 517
+Overfull \vbox (12.0pt too high) detected at line 536
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 517
+Overfull \vbox (36.0pt too high) detected at line 536
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 517
+Overfull \vbox (36.0pt too high) detected at line 536
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 523
+Overfull \vbox (24.0pt too high) detected at line 542
  []
 
 
-Overfull \vbox (144.0pt too high) detected at line 523
+Overfull \vbox (144.0pt too high) detected at line 542
  []
 
 
-Overfull \vbox (96.0pt too high) detected at line 523
+Overfull \vbox (96.0pt too high) detected at line 542
  []
 
 
@@ -1199,100 +1210,100 @@ Overfull \vbox (96.0pt too high) detected at line 523
 [13]
 
 [14]
-<images/design/File_System.PNG, id=283, 196.10765pt x 279.66985pt>
+<images/design/File_System.PNG, id=302, 196.10765pt x 279.66985pt>
 File: images/design/File_System.PNG Graphic file (type png)
 <use images/design/File_System.PNG>
-Package pdftex.def Info: images/design/File_System.PNG  used on input line 554.
+Package pdftex.def Info: images/design/File_System.PNG  used on input line 573.
 (pdftex.def)             Requested size: 143.25381pt x 204.30663pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 557--563
+Underfull \hbox (badness 10000) in paragraph at lines 576--582
 
  []
 
 
 
 [15 <./images/design/File_System.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 587--588
+Underfull \hbox (badness 10000) in paragraph at lines 606--607
 
  []
 
 
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Database_Design.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Database_Design.pdf, id=290, 614.295pt x 794.97pt>
+<images/design/Database_Design.pdf, id=309, 614.295pt x 794.97pt>
 File: images/design/Database_Design.pdf Graphic file (type pdf)
 <use images/design/Database_Design.pdf>
-Package pdftex.def Info: images/design/Database_Design.pdf  used on input line 591.
+Package pdftex.def Info: images/design/Database_Design.pdf  used on input line 610.
 (pdftex.def)             Requested size: 477.50787pt x 149.80818pt.
 
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Database_Design_Second.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Database_Design_Second.pdf, id=292, 614.295pt x 794.97pt>
+<images/design/Database_Design_Second.pdf, id=311, 614.295pt x 794.97pt>
 File: images/design/Database_Design_Second.pdf Graphic file (type pdf)
 <use images/design/Database_Design_Second.pdf>
-Package pdftex.def Info: images/design/Database_Design_Second.pdf  used on input line 600.
+Package pdftex.def Info: images/design/Database_Design_Second.pdf  used on input line 619.
 (pdftex.def)             Requested size: 477.50787pt x 188.82112pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 594--602
+Underfull \hbox (badness 10000) in paragraph at lines 613--621
 
  []
 
 
 
 [16 <./images/design/Database_Design.pdf> <./images/design/Database_Design_Second.pdf>]
-Overfull \vbox (12.0pt too high) detected at line 628
+Overfull \vbox (12.0pt too high) detected at line 647
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 628
+Overfull \vbox (60.0pt too high) detected at line 647
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 637
+Overfull \vbox (24.0pt too high) detected at line 656
  []
 
 
-Overfull \vbox (60.0pt too high) detected at line 642
+Overfull \vbox (60.0pt too high) detected at line 661
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 642
+Overfull \vbox (24.0pt too high) detected at line 661
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 649
+Overfull \vbox (24.0pt too high) detected at line 668
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 654
+Overfull \vbox (12.0pt too high) detected at line 673
  []
 
 
-Overfull \vbox (144.0pt too high) detected at line 654
+Overfull \vbox (144.0pt too high) detected at line 673
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 668
+Overfull \vbox (12.0pt too high) detected at line 687
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 672
+Overfull \vbox (12.0pt too high) detected at line 691
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 672
+Overfull \vbox (12.0pt too high) detected at line 691
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 676
+Overfull \vbox (12.0pt too high) detected at line 695
  []
 
 
-Overfull \vbox (120.0pt too high) detected at line 680
+Overfull \vbox (120.0pt too high) detected at line 699
  []
 
 
-Overfull \hbox (38.45042pt too wide) in paragraph at lines 623--694
+Overfull \hbox (38.45042pt too wide) in paragraph at lines 642--713
 [] 
  []
 
@@ -1301,52 +1312,24 @@ Overfull \hbox (38.45042pt too wide) in paragraph at lines 623--694
 [17]
 
 [18]
-Overfull \vbox (24.0pt too high) detected at line 700
+Overfull \vbox (24.0pt too high) detected at line 719
  []
 
 
-Overfull \vbox (48.0pt too high) detected at line 700
+Overfull \vbox (48.0pt too high) detected at line 719
  []
 
 
-Overfull \hbox (0.82658pt too wide) in paragraph at lines 707--707
+Overfull \hbox (0.82658pt too wide) in paragraph at lines 726--726
 []|\OT1/cmr/m/n/10 update[]stored[]item[]amount|  
  []
 
 
-Overfull \vbox (72.0pt too high) detected at line 707
+Overfull \vbox (72.0pt too high) detected at line 726
  []
 
 
-Overfull \vbox (36.0pt too high) detected at line 707
- []
-
-
-Overfull \vbox (24.0pt too high) detected at line 716
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 716
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 722
- []
-
-
-Overfull \vbox (24.0pt too high) detected at line 726
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 726
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 731
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 731
+Overfull \vbox (36.0pt too high) detected at line 726
  []
 
 
@@ -1354,76 +1337,104 @@ Overfull \vbox (24.0pt too high) detected at line 735
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 740
+Overfull \vbox (12.0pt too high) detected at line 735
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 740
+Overfull \vbox (12.0pt too high) detected at line 741
  []
 
 
-Overfull \hbox (52.67679pt too wide) in paragraph at lines 695--749
+Overfull \vbox (24.0pt too high) detected at line 745
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 745
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 750
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 750
+ []
+
+
+Overfull \vbox (24.0pt too high) detected at line 754
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 759
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 759
+ []
+
+
+Overfull \hbox (52.67679pt too wide) in paragraph at lines 714--768
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 695--749
+Underfull \hbox (badness 10000) in paragraph at lines 714--768
 
  []
 
 (c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 750--752
+Underfull \hbox (badness 10000) in paragraph at lines 769--771
 
  []
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 753.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 772.
 
-Underfull \hbox (badness 10000) in paragraph at lines 761--763
+Underfull \hbox (badness 10000) in paragraph at lines 780--782
 
  []
 
 
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 772--774
+Underfull \hbox (badness 10000) in paragraph at lines 791--793
 
  []
 
 
-Overfull \hbox (18.08685pt too wide) in paragraph at lines 785--818
+Overfull \hbox (18.08685pt too wide) in paragraph at lines 804--837
 [] \OT1/cmr/m/n/10 These
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 785--818
+Underfull \hbox (badness 10000) in paragraph at lines 804--837
 
  []
 
 
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Login_System.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Login_System.pdf, id=355, 845.07718pt x 597.19106pt>
+<images/design/Login_System.pdf, id=374, 845.07718pt x 597.19106pt>
 File: images/design/Login_System.pdf Graphic file (type pdf)
 <use images/design/Login_System.pdf>
-Package pdftex.def Info: images/design/Login_System.pdf  used on input line 822.
+Package pdftex.def Info: images/design/Login_System.pdf  used on input line 841.
 (pdftex.def)             Requested size: 477.50787pt x 309.08255pt.
 
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 826--828
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 830--832
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 845--847
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 849--851
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 864--866
 
  []
 
@@ -1432,109 +1443,105 @@ Underfull \hbox (badness 10000) in paragraph at lines 845--847
 [21 <./images/design/Login_System.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Login_Form.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Login_Form.pdf, id=405, 597.19106pt x 845.07718pt>
+<images/design/Login_Form.pdf, id=424, 597.19106pt x 845.07718pt>
 File: images/design/Login_Form.pdf Graphic file (type pdf)
 <use images/design/Login_Form.pdf>
-Package pdftex.def Info: images/design/Login_Form.pdf  used on input line 877.
+Package pdftex.def Info: images/design/Login_Form.pdf  used on input line 896.
 (pdftex.def)             Requested size: 137.25142pt x 194.22182pt.
 
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Sign_Up_Form.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Sign_Up_Form.pdf, id=406, 597.19106pt x 845.07718pt>
+<images/design/Sign_Up_Form.pdf, id=425, 597.19106pt x 845.07718pt>
 File: images/design/Sign_Up_Form.pdf Graphic file (type pdf)
 <use images/design/Sign_Up_Form.pdf>
-Package pdftex.def Info: images/design/Sign_Up_Form.pdf  used on input line 882.
+Package pdftex.def Info: images/design/Sign_Up_Form.pdf  used on input line 901.
 (pdftex.def)             Requested size: 137.25142pt x 194.22182pt.
 
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Reset_Password.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Reset_Password.pdf, id=407, 597.19106pt x 845.07718pt>
+<images/design/Reset_Password.pdf, id=426, 597.19106pt x 845.07718pt>
 File: images/design/Reset_Password.pdf Graphic file (type pdf)
 <use images/design/Reset_Password.pdf>
-Package pdftex.def Info: images/design/Reset_Password.pdf  used on input line 887.
+Package pdftex.def Info: images/design/Reset_Password.pdf  used on input line 906.
 (pdftex.def)             Requested size: 137.25142pt x 194.22182pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 890--893
+Underfull \hbox (badness 10000) in paragraph at lines 909--912
 
  []
 
 
 
 [22 <./images/design/Login_Form.pdf> <./images/design/Sign_Up_Form.pdf> <./images/design/Reset_Password.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 895--897
+Underfull \hbox (badness 10000) in paragraph at lines 914--916
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 915--918
+Underfull \hbox (badness 10000) in paragraph at lines 934--937
 
  []
 
 
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Item_Class_Diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Item_Class_Diagram.pdf, id=466, 597.19106pt x 845.07718pt>
+<images/design/Item_Class_Diagram.pdf, id=485, 597.19106pt x 845.07718pt>
 File: images/design/Item_Class_Diagram.pdf Graphic file (type pdf)
 <use images/design/Item_Class_Diagram.pdf>
-Package pdftex.def Info: images/design/Item_Class_Diagram.pdf  used on input line 921.
+Package pdftex.def Info: images/design/Item_Class_Diagram.pdf  used on input line 940.
 (pdftex.def)             Requested size: 429.75417pt x 395.04883pt.
 
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 925--930
+Underfull \hbox (badness 10000) in paragraph at lines 944--949
 
  []
 
 
 
 [24 <./images/design/Item_Class_Diagram.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 961--962
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 963--964
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 965--966
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 967--968
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 969--970
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 980--981
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 994--995
+Underfull \hbox (badness 10000) in paragraph at lines 982--983
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 984--985
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 986--987
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 988--989
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 999--1000
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1014
 
  []
 
 
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1006--1007
+Underfull \hbox (badness 10000) in paragraph at lines 1025--1026
 
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 1046
- []
-
-
-Overfull \vbox (12.0pt too high) detected at line 1056
+Overfull \vbox (12.0pt too high) detected at line 1065
  []
 
 
@@ -1542,446 +1549,424 @@ Overfull \vbox (12.0pt too high) detected at line 1075
  []
 
 
+Overfull \vbox (12.0pt too high) detected at line 1094
+ []
+
+
 
 [26]
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 1085--1086
+Underfull \hbox (badness 10000) in paragraph at lines 1104--1105
 
  []
 
 
 
 pdfTeX warning: pdflatex.exe (file ./images/design/Player_Class_Diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/design/Player_Class_Diagram.pdf, id=598, 597.19106pt x 845.07718pt>
+<images/design/Player_Class_Diagram.pdf, id=617, 597.19106pt x 845.07718pt>
 File: images/design/Player_Class_Diagram.pdf Graphic file (type pdf)
 <use images/design/Player_Class_Diagram.pdf>
-Package pdftex.def Info: images/design/Player_Class_Diagram.pdf  used on input line 1089.
+Package pdftex.def Info: images/design/Player_Class_Diagram.pdf  used on input line 1108.
 (pdftex.def)             Requested size: 429.75417pt x 283.0895pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1094
+Underfull \hbox (badness 10000) in paragraph at lines 1111--1113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1095--1097
+Underfull \hbox (badness 10000) in paragraph at lines 1114--1116
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1098--1100
+Underfull \hbox (badness 10000) in paragraph at lines 1117--1118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1107--1109
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1121
 
  []
 
 
 
 [28 <./images/design/Player_Class_Diagram.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1120--1121
+Underfull \hbox (badness 10000) in paragraph at lines 1128--1130
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1149--1150
+Underfull \hbox (badness 10000) in paragraph at lines 1141--1142
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1151--1153
+Underfull \hbox (badness 10000) in paragraph at lines 1178--1179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1162--1163
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1164--1165
+Underfull \hbox (badness 10000) in paragraph at lines 1180--1182
 
  []
 
 
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1166--1167
+Underfull \hbox (badness 10000) in paragraph at lines 1191--1192
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1168--1170
+Underfull \hbox (badness 10000) in paragraph at lines 1193--1194
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1189--1191
+Underfull \hbox (badness 10000) in paragraph at lines 1195--1196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1206--1207
+Underfull \hbox (badness 10000) in paragraph at lines 1197--1199
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1218--1220
 
  []
 
 
 
 [30]
-Overfull \hbox (49.30414pt too wide) in paragraph at lines 1208--1226
+Underfull \hbox (badness 10000) in paragraph at lines 1235--1236
+
+ []
+
+
+Overfull \hbox (49.30414pt too wide) in paragraph at lines 1237--1255
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1227--1229
+Underfull \hbox (badness 10000) in paragraph at lines 1256--1258
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1232--1234
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1249
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1253--1255
+Underfull \hbox (badness 10000) in paragraph at lines 1261--1263
 
  []
 
 
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 1300--1303
+Underfull \hbox (badness 10000) in paragraph at lines 1276--1278
 
  []
 
-<images/development/database_ready.PNG, id=727, 308.27672pt x 198.7425pt>
-File: images/development/database_ready.PNG Graphic file (type png)
-<use images/development/database_ready.PNG>
-Package pdftex.def Info: images/development/database_ready.PNG  used on input line 1306.
-(pdftex.def)             Requested size: 308.27596pt x 198.742pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1282--1284
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1326--1328
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1336--1339
+
+ []
+
 
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1309--1311
+<images/development/database_ready.PNG, id=795, 308.27672pt x 198.7425pt>
+File: images/development/database_ready.PNG Graphic file (type png)
+<use images/development/database_ready.PNG>
+Package pdftex.def Info: images/development/database_ready.PNG  used on input line 1342.
+(pdftex.def)             Requested size: 308.27596pt x 198.742pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1345--1347
 
  []
 
-<images/development/gen_salt.PNG, id=765, 266.49562pt x 101.62968pt>
+<images/development/gen_salt.PNG, id=796, 266.49562pt x 101.62968pt>
 File: images/development/gen_salt.PNG Graphic file (type png)
 <use images/development/gen_salt.PNG>
-Package pdftex.def Info: images/development/gen_salt.PNG  used on input line 1314.
+Package pdftex.def Info: images/development/gen_salt.PNG  used on input line 1350.
 (pdftex.def)             Requested size: 266.49496pt x 101.62943pt.
-<images/development/hash.PNG, id=766, 654.19406pt x 175.40532pt>
+<images/development/hash.PNG, id=797, 654.19406pt x 175.40532pt>
 File: images/development/hash.PNG Graphic file (type png)
 <use images/development/hash.PNG>
-Package pdftex.def Info: images/development/hash.PNG  used on input line 1319.
+Package pdftex.def Info: images/development/hash.PNG  used on input line 1355.
 (pdftex.def)             Requested size: 477.50787pt x 128.03142pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1322--1324
+
+[33 <./images/development/database_ready.PNG> <./images/development/gen_salt.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1358--1360
 
  []
 
-
-
-[33 <./images/development/database_ready.PNG> <./images/development/gen_salt.PNG> <./images/development/hash.PNG>]
-<images/development/login.PNG, id=777, 456.20438pt x 126.8489pt>
+<images/development/login.PNG, id=806, 456.20438pt x 126.8489pt>
 File: images/development/login.PNG Graphic file (type png)
 <use images/development/login.PNG>
-Package pdftex.def Info: images/development/login.PNG  used on input line 1327.
+Package pdftex.def Info: images/development/login.PNG  used on input line 1363.
 (pdftex.def)             Requested size: 477.50787pt x 132.77525pt.
-<images/development/add_user.PNG, id=778, 536.3789pt x 101.62968pt>
+<images/development/add_user.PNG, id=807, 536.3789pt x 101.62968pt>
 File: images/development/add_user.PNG Graphic file (type png)
 <use images/development/add_user.PNG>
-Package pdftex.def Info: images/development/add_user.PNG  used on input line 1333.
+Package pdftex.def Info: images/development/add_user.PNG  used on input line 1369.
 (pdftex.def)             Requested size: 477.50787pt x 90.47493pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1335
+Underfull \hbox (badness 10000) in paragraph at lines 1366--1371
 
  []
 
-<images/development/reset_password.PNG, id=779, 455.45157pt x 123.83766pt>
+<images/development/reset_password.PNG, id=808, 455.45157pt x 123.83766pt>
 File: images/development/reset_password.PNG Graphic file (type png)
 <use images/development/reset_password.PNG>
-Package pdftex.def Info: images/development/reset_password.PNG  used on input line 1339.
+Package pdftex.def Info: images/development/reset_password.PNG  used on input line 1375.
 (pdftex.def)             Requested size: 477.50787pt x 129.83684pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1336--1341
+Underfull \hbox (badness 10000) in paragraph at lines 1372--1377
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1342--1343
+
+[34 <./images/development/hash.PNG> <./images/development/login.PNG> <./images/development/add_user.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1378--1379
 
  []
 
-<images/development/test_database.PNG, id=780, 592.46344pt x 316.18124pt>
+<images/development/test_database.PNG, id=820, 592.46344pt x 316.18124pt>
 File: images/development/test_database.PNG Graphic file (type png)
 <use images/development/test_database.PNG>
-Package pdftex.def Info: images/development/test_database.PNG  used on input line 1346.
+Package pdftex.def Info: images/development/test_database.PNG  used on input line 1382.
 (pdftex.def)             Requested size: 592.46199pt x 316.18047pt.
 
-Overfull \hbox (114.95412pt too wide) in paragraph at lines 1346--1347
+Overfull \hbox (114.95412pt too wide) in paragraph at lines 1382--1383
  [][] 
  []
 
 
-
-[34 <./images/development/login.PNG> <./images/development/add_user.PNG> <./images/development/reset_password.PNG>]
-Overfull \vbox (12.0pt too high) detected at line 1368
+Overfull \vbox (12.0pt too high) detected at line 1404
  []
 
 
-Overfull \hbox (17.69261pt too wide) in paragraph at lines 1349--1391
+Overfull \hbox (17.69261pt too wide) in paragraph at lines 1385--1427
 [] 
  []
 
-<images/development/_delete_user.png, id=792, 206.7725pt x 102.3825pt>
+
+
+[35 <./images/development/reset_password.PNG> <./images/development/test_database.PNG>]
+<images/development/_delete_user.png, id=829, 206.7725pt x 102.3825pt>
 File: images/development/_delete_user.png Graphic file (type png)
 <use images/development/_delete_user.png>
-Package pdftex.def Info: images/development/_delete_user.png  used on input line 1396.
+Package pdftex.def Info: images/development/_delete_user.png  used on input line 1432.
 (pdftex.def)             Requested size: 143.25381pt x 70.933pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1391--1398
+Underfull \hbox (badness 10000) in paragraph at lines 1427--1434
 
  []
 
-
-
-[35 <./images/development/test_database.PNG>]
-<images/development/delete_user.png, id=799, 796.9775pt x 253.94875pt>
+<images/development/delete_user.png, id=830, 796.9775pt x 253.94875pt>
 File: images/development/delete_user.png Graphic file (type png)
 <use images/development/delete_user.png>
-Package pdftex.def Info: images/development/delete_user.png  used on input line 1401.
+Package pdftex.def Info: images/development/delete_user.png  used on input line 1437.
 (pdftex.def)             Requested size: 334.25404pt x 106.50662pt.
-<images/development/test_remove_user.png, id=800, 815.045pt x 75.28125pt>
+<images/development/test_remove_user.png, id=831, 815.045pt x 75.28125pt>
 File: images/development/test_remove_user.png Graphic file (type png)
 <use images/development/test_remove_user.png>
-Package pdftex.def Info: images/development/test_remove_user.png  used on input line 1420.
+Package pdftex.def Info: images/development/test_remove_user.png  used on input line 1456.
 (pdftex.def)             Requested size: 382.00775pt x 35.28339pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1423--1425
+
+[36 <./images/development/_delete_user.png> <./images/development/delete_user.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1459--1461
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1426--1429
+Underfull \hbox (badness 10000) in paragraph at lines 1462--1465
 
  []
 
 
 
-[36 <./images/development/_delete_user.png> <./images/development/delete_user.png> <./images/development/test_remove_user.png>]
-<images/development/LoginForm_layout.PNG, id=811, 113.29828pt x 184.81548pt>
+[37 <./images/development/test_remove_user.png>]
+<images/development/LoginForm_layout.PNG, id=846, 113.29828pt x 184.81548pt>
 File: images/development/LoginForm_layout.PNG Graphic file (type png)
 <use images/development/LoginForm_layout.PNG>
-Package pdftex.def Info: images/development/LoginForm_layout.PNG  used on input line 1434.
+Package pdftex.def Info: images/development/LoginForm_layout.PNG  used on input line 1470.
 (pdftex.def)             Requested size: 116.87697pt x 190.65253pt.
-<images/development/LoginForm_structure.PNG, id=812, 206.64703pt x 293.22047pt>
+<images/development/LoginForm_structure.PNG, id=847, 206.64703pt x 293.22047pt>
 File: images/development/LoginForm_structure.PNG Graphic file (type png)
 <use images/development/LoginForm_structure.PNG>
-Package pdftex.def Info: images/development/LoginForm_structure.PNG  used on input line 1439.
+Package pdftex.def Info: images/development/LoginForm_structure.PNG  used on input line 1475.
 (pdftex.def)             Requested size: 140.25378pt x 199.01591pt.
-<images/development/LoginForm_buttons.PNG, id=813, 399.74344pt x 123.46124pt>
+<images/development/LoginForm_buttons.PNG, id=848, 399.74344pt x 123.46124pt>
 File: images/development/LoginForm_buttons.PNG Graphic file (type png)
 <use images/development/LoginForm_buttons.PNG>
-Package pdftex.def Info: images/development/LoginForm_buttons.PNG  used on input line 1446.
+Package pdftex.def Info: images/development/LoginForm_buttons.PNG  used on input line 1482.
 (pdftex.def)             Requested size: 399.74245pt x 123.46092pt.
-<images/development/_on_sign_in_button_pressed.PNG, id=814, 368.1253pt x 135.12984pt>
+<images/development/_on_sign_in_button_pressed.PNG, id=849, 368.1253pt x 135.12984pt>
 File: images/development/_on_sign_in_button_pressed.PNG Graphic file (type png)
 <use images/development/_on_sign_in_button_pressed.PNG>
-Package pdftex.def Info: images/development/_on_sign_in_button_pressed.PNG  used on input line 1452.
+Package pdftex.def Info: images/development/_on_sign_in_button_pressed.PNG  used on input line 1488.
 (pdftex.def)             Requested size: 368.1244pt x 135.1295pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1449--1454
+Underfull \hbox (badness 10000) in paragraph at lines 1485--1490
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1455--1457
+Underfull \hbox (badness 10000) in paragraph at lines 1491--1493
 
  []
 
 
 
-[37 <./images/development/LoginForm_layout.PNG> <./images/development/LoginForm_structure.PNG> <./images/development/LoginForm_buttons.PNG> <./images/development/_on_sign_in_button_pressed.PNG>]
-<images/development/ResetPasswordForm_layout.PNG, id=827, 76.41046pt x 130.98938pt>
+[38 <./images/development/LoginForm_layout.PNG> <./images/development/LoginForm_structure.PNG> <./images/development/LoginForm_buttons.PNG> <./images/development/_on_sign_in_button_pressed.PNG>]
+<images/development/ResetPasswordForm_layout.PNG, id=862, 76.41046pt x 130.98938pt>
 File: images/development/ResetPasswordForm_layout.PNG Graphic file (type png)
 <use images/development/ResetPasswordForm_layout.PNG>
-Package pdftex.def Info: images/development/ResetPasswordForm_layout.PNG  used on input line 1461.
+Package pdftex.def Info: images/development/ResetPasswordForm_layout.PNG  used on input line 1497.
 (pdftex.def)             Requested size: 116.87697pt x 200.3691pt.
-<images/development/ResetPasswordForm_structure.PNG, id=828, 171.26485pt x 284.93953pt>
+<images/development/ResetPasswordForm_structure.PNG, id=863, 171.26485pt x 284.93953pt>
 File: images/development/ResetPasswordForm_structure.PNG Graphic file (type png)
 <use images/development/ResetPasswordForm_structure.PNG>
-Package pdftex.def Info: images/development/ResetPasswordForm_structure.PNG  used on input line 1466.
+Package pdftex.def Info: images/development/ResetPasswordForm_structure.PNG  used on input line 1502.
 (pdftex.def)             Requested size: 140.25378pt x 233.3606pt.
-<images/development/ResetPasswordForm_cancel.PNG, id=829, 353.82187pt x 22.96078pt>
+<images/development/ResetPasswordForm_cancel.PNG, id=864, 353.82187pt x 22.96078pt>
 File: images/development/ResetPasswordForm_cancel.PNG Graphic file (type png)
 <use images/development/ResetPasswordForm_cancel.PNG>
-Package pdftex.def Info: images/development/ResetPasswordForm_cancel.PNG  used on input line 1473.
+Package pdftex.def Info: images/development/ResetPasswordForm_cancel.PNG  used on input line 1509.
 (pdftex.def)             Requested size: 353.821pt x 22.96071pt.
-<images/development/ResetPasswordForm_reset.PNG, id=830, 379.4175pt x 154.32657pt>
+<images/development/ResetPasswordForm_reset.PNG, id=865, 379.4175pt x 154.32657pt>
 File: images/development/ResetPasswordForm_reset.PNG Graphic file (type png)
 <use images/development/ResetPasswordForm_reset.PNG>
-Package pdftex.def Info: images/development/ResetPasswordForm_reset.PNG  used on input line 1479.
+Package pdftex.def Info: images/development/ResetPasswordForm_reset.PNG  used on input line 1515.
 (pdftex.def)             Requested size: 379.41656pt x 154.32617pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1476--1481
+Underfull \hbox (badness 10000) in paragraph at lines 1512--1517
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1482--1484
+Underfull \hbox (badness 10000) in paragraph at lines 1518--1520
 
  []
 
 
 
-[38 <./images/development/ResetPasswordForm_layout.PNG> <./images/development/ResetPasswordForm_structure.PNG> <./images/development/ResetPasswordForm_cancel.PNG> <./images/development/ResetPasswordForm_reset.PNG>]
-<images/development/CreateAccountForm_layout.PNG, id=843, 100.87688pt x 170.13562pt>
+[39 <./images/development/ResetPasswordForm_layout.PNG> <./images/development/ResetPasswordForm_structure.PNG> <./images/development/ResetPasswordForm_cancel.PNG> <./images/development/ResetPasswordForm_reset.PNG>]
+<images/development/CreateAccountForm_layout.PNG, id=878, 100.87688pt x 170.13562pt>
 File: images/development/CreateAccountForm_layout.PNG Graphic file (type png)
 <use images/development/CreateAccountForm_layout.PNG>
-Package pdftex.def Info: images/development/CreateAccountForm_layout.PNG  used on input line 1488.
+Package pdftex.def Info: images/development/CreateAccountForm_layout.PNG  used on input line 1524.
 (pdftex.def)             Requested size: 116.87697pt x 197.1238pt.
-<images/development/CreateAccountForm_structure.PNG, id=844, 173.89969pt x 290.96204pt>
+<images/development/CreateAccountForm_structure.PNG, id=879, 173.89969pt x 290.96204pt>
 File: images/development/CreateAccountForm_structure.PNG Graphic file (type png)
 <use images/development/CreateAccountForm_structure.PNG>
-Package pdftex.def Info: images/development/CreateAccountForm_structure.PNG  used on input line 1493.
+Package pdftex.def Info: images/development/CreateAccountForm_structure.PNG  used on input line 1529.
 (pdftex.def)             Requested size: 140.25378pt x 234.67458pt.
-<images/development/CreateAccountForm_cancel.PNG, id=845, 357.20953pt x 24.4664pt>
+<images/development/CreateAccountForm_cancel.PNG, id=880, 357.20953pt x 24.4664pt>
 File: images/development/CreateAccountForm_cancel.PNG Graphic file (type png)
 <use images/development/CreateAccountForm_cancel.PNG>
-Package pdftex.def Info: images/development/CreateAccountForm_cancel.PNG  used on input line 1500.
+Package pdftex.def Info: images/development/CreateAccountForm_cancel.PNG  used on input line 1536.
 (pdftex.def)             Requested size: 357.20865pt x 24.46632pt.
-<images/development/CreateAccountForm_create.PNG, id=846, 373.77141pt x 126.4725pt>
+<images/development/CreateAccountForm_create.PNG, id=881, 373.77141pt x 126.4725pt>
 File: images/development/CreateAccountForm_create.PNG Graphic file (type png)
 <use images/development/CreateAccountForm_create.PNG>
-Package pdftex.def Info: images/development/CreateAccountForm_create.PNG  used on input line 1506.
+Package pdftex.def Info: images/development/CreateAccountForm_create.PNG  used on input line 1542.
 (pdftex.def)             Requested size: 373.7705pt x 126.47218pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1503--1508
+Underfull \hbox (badness 10000) in paragraph at lines 1539--1544
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1509--1511
+Underfull \hbox (badness 10000) in paragraph at lines 1545--1547
 
  []
 
 
 
-[39 <./images/development/CreateAccountForm_layout.PNG> <./images/development/CreateAccountForm_structure.PNG> <./images/development/CreateAccountForm_cancel.PNG> <./images/development/CreateAccountForm_create.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 1514--1516
+[40 <./images/development/CreateAccountForm_layout.PNG> <./images/development/CreateAccountForm_structure.PNG> <./images/development/CreateAccountForm_cancel.PNG> <./images/development/CreateAccountForm_create.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1550--1552
 
  []
 
-<images/development/Item_folder.PNG, id=859, 184.06265pt x 147.92766pt>
+<images/development/Item_folder.PNG, id=895, 184.06265pt x 147.92766pt>
 File: images/development/Item_folder.PNG Graphic file (type png)
 <use images/development/Item_folder.PNG>
-Package pdftex.def Info: images/development/Item_folder.PNG  used on input line 1519.
+Package pdftex.def Info: images/development/Item_folder.PNG  used on input line 1555.
 (pdftex.def)             Requested size: 184.0622pt x 147.92728pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1522--1524
+Underfull \hbox (badness 10000) in paragraph at lines 1558--1560
 
  []
 
-<images/development/Item_script.PNG, id=860, 179.54578pt x 88.07906pt>
+<images/development/Item_script.PNG, id=896, 179.54578pt x 88.07906pt>
 File: images/development/Item_script.PNG Graphic file (type png)
 <use images/development/Item_script.PNG>
-Package pdftex.def Info: images/development/Item_script.PNG  used on input line 1528.
+Package pdftex.def Info: images/development/Item_script.PNG  used on input line 1564.
 (pdftex.def)             Requested size: 210.3771pt x 103.21065pt.
-<images/development/Item_export.PNG, id=861, 192.3436pt x 87.32625pt>
+<images/development/Item_export.PNG, id=897, 192.3436pt x 87.32625pt>
 File: images/development/Item_export.PNG Graphic file (type png)
 <use images/development/Item_export.PNG>
-Package pdftex.def Info: images/development/Item_export.PNG  used on input line 1533.
+Package pdftex.def Info: images/development/Item_export.PNG  used on input line 1569.
 (pdftex.def)             Requested size: 210.3771pt x 95.52084pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1537--1540
+Underfull \hbox (badness 10000) in paragraph at lines 1573--1576
 
  []
 
 
 
-[40 <./images/development/Item_folder.PNG> <./images/development/Item_script.PNG> <./images/development/Item_export.PNG>]
-<images/development/Equipable_script.PNG, id=873, 232.99547pt x 103.51172pt>
+[41 <./images/development/Item_folder.PNG> <./images/development/Item_script.PNG> <./images/development/Item_export.PNG>]
+<images/development/Equipable_script.PNG, id=909, 232.99547pt x 103.51172pt>
 File: images/development/Equipable_script.PNG Graphic file (type png)
 <use images/development/Equipable_script.PNG>
-Package pdftex.def Info: images/development/Equipable_script.PNG  used on input line 1545.
+Package pdftex.def Info: images/development/Equipable_script.PNG  used on input line 1581.
 (pdftex.def)             Requested size: 210.3771pt x 93.46608pt.
-<images/development/Equipable_export.PNG, id=874, 185.19188pt x 123.83766pt>
+<images/development/Equipable_export.PNG, id=910, 185.19188pt x 123.83766pt>
 File: images/development/Equipable_export.PNG Graphic file (type png)
 <use images/development/Equipable_export.PNG>
-Package pdftex.def Info: images/development/Equipable_export.PNG  used on input line 1550.
+Package pdftex.def Info: images/development/Equipable_export.PNG  used on input line 1586.
 (pdftex.def)             Requested size: 210.3771pt x 140.6813pt.
-<images/development/Armour_script.PNG, id=875, 295.1025pt x 102.00609pt>
+<images/development/Armour_script.PNG, id=911, 295.1025pt x 102.00609pt>
 File: images/development/Armour_script.PNG Graphic file (type png)
 <use images/development/Armour_script.PNG>
-Package pdftex.def Info: images/development/Armour_script.PNG  used on input line 1560.
+Package pdftex.def Info: images/development/Armour_script.PNG  used on input line 1596.
 (pdftex.def)             Requested size: 233.75394pt x 80.80182pt.
-<images/development/Armour_export.PNG, id=876, 195.35484pt x 119.69719pt>
+<images/development/Armour_export.PNG, id=912, 195.35484pt x 119.69719pt>
 File: images/development/Armour_export.PNG Graphic file (type png)
 <use images/development/Armour_export.PNG>
-Package pdftex.def Info: images/development/Armour_export.PNG  used on input line 1565.
+Package pdftex.def Info: images/development/Armour_export.PNG  used on input line 1601.
 (pdftex.def)             Requested size: 210.3771pt x 128.90756pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1569--1571
+Underfull \hbox (badness 10000) in paragraph at lines 1605--1607
 
  []
 
-<images/development/Charm_script.PNG, id=877, 394.85016pt x 63.23625pt>
+<images/development/Charm_script.PNG, id=913, 394.85016pt x 63.23625pt>
 File: images/development/Charm_script.PNG Graphic file (type png)
 <use images/development/Charm_script.PNG>
-Package pdftex.def Info: images/development/Charm_script.PNG  used on input line 1575.
+Package pdftex.def Info: images/development/Charm_script.PNG  used on input line 1611.
 (pdftex.def)             Requested size: 233.75394pt x 37.43642pt.
-<images/development/Charm_export.PNG, id=878, 196.48407pt x 45.54515pt>
+<images/development/Charm_export.PNG, id=914, 196.48407pt x 45.54515pt>
 File: images/development/Charm_export.PNG Graphic file (type png)
 <use images/development/Charm_export.PNG>
-Package pdftex.def Info: images/development/Charm_export.PNG  used on input line 1580.
+Package pdftex.def Info: images/development/Charm_export.PNG  used on input line 1616.
 (pdftex.def)             Requested size: 210.3771pt x 48.76895pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1584--1586
-
- []
-
-
-
-[41 <./images/development/Equipable_script.PNG> <./images/development/Equipable_export.PNG> <./images/development/Armour_script.PNG> <./images/development/Armour_export.PNG> <./images/development/Charm_script.PNG> <./images/development/Charm_export.PNG>]
-<images/development/Weapon_script.PNG, id=895, 396.35577pt x 100.87688pt>
-File: images/development/Weapon_script.PNG Graphic file (type png)
-<use images/development/Weapon_script.PNG>
-Package pdftex.def Info: images/development/Weapon_script.PNG  used on input line 1590.
-(pdftex.def)             Requested size: 233.75394pt x 59.49374pt.
-<images/development/Weapon_export.PNG, id=896, 189.33234pt x 118.94438pt>
-File: images/development/Weapon_export.PNG Graphic file (type png)
-<use images/development/Weapon_export.PNG>
-Package pdftex.def Info: images/development/Weapon_export.PNG  used on input line 1595.
-(pdftex.def)             Requested size: 210.3771pt x 132.16774pt.
-<images/development/Weapon_attack.PNG, id=897, 197.88214pt x 124.75179pt>
-File: images/development/Weapon_attack.PNG Graphic file (type png)
-<use images/development/Weapon_attack.PNG>
-Package pdftex.def Info: images/development/Weapon_attack.PNG  used on input line 1603.
-(pdftex.def)             Requested size: 382.00775pt x 240.83794pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1606--1607
-
- []
-
-<images/development/Key_script.PNG, id=898, 221.70328pt x 62.10703pt>
-File: images/development/Key_script.PNG Graphic file (type png)
-<use images/development/Key_script.PNG>
-Package pdftex.def Info: images/development/Key_script.PNG  used on input line 1611.
-(pdftex.def)             Requested size: 233.75394pt x 65.48721pt.
-<images/development/Key_export.PNG, id=899, 194.97844pt x 45.16875pt>
-File: images/development/Key_export.PNG Graphic file (type png)
-<use images/development/Key_export.PNG>
-Package pdftex.def Info: images/development/Key_export.PNG  used on input line 1616.
-(pdftex.def)             Requested size: 210.3771pt x 48.73808pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1620--1622
 
@@ -1989,350 +1974,421 @@ Underfull \hbox (badness 10000) in paragraph at lines 1620--1622
 
 
 
-[42 <./images/development/Weapon_script.PNG> <./images/development/Weapon_export.PNG> <./images/development/Weapon_attack.PNG> <./images/development/Key_script.PNG> <./images/development/Key_export.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 1623--1624
+[42 <./images/development/Equipable_script.PNG> <./images/development/Equipable_export.PNG> <./images/development/Armour_script.PNG> <./images/development/Armour_export.PNG> <./images/development/Charm_script.PNG> <./images/development/Charm_export.PNG>]
+<images/development/Weapon_script.PNG, id=931, 396.35577pt x 100.87688pt>
+File: images/development/Weapon_script.PNG Graphic file (type png)
+<use images/development/Weapon_script.PNG>
+Package pdftex.def Info: images/development/Weapon_script.PNG  used on input line 1626.
+(pdftex.def)             Requested size: 233.75394pt x 59.49374pt.
+<images/development/Weapon_export.PNG, id=932, 189.33234pt x 118.94438pt>
+File: images/development/Weapon_export.PNG Graphic file (type png)
+<use images/development/Weapon_export.PNG>
+Package pdftex.def Info: images/development/Weapon_export.PNG  used on input line 1631.
+(pdftex.def)             Requested size: 210.3771pt x 132.16774pt.
+<images/development/Weapon_attack.PNG, id=933, 197.88214pt x 124.75179pt>
+File: images/development/Weapon_attack.PNG Graphic file (type png)
+<use images/development/Weapon_attack.PNG>
+Package pdftex.def Info: images/development/Weapon_attack.PNG  used on input line 1639.
+(pdftex.def)             Requested size: 382.00775pt x 240.83794pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1642--1643
+
+ []
+
+<images/development/Key_script.PNG, id=934, 221.70328pt x 62.10703pt>
+File: images/development/Key_script.PNG Graphic file (type png)
+<use images/development/Key_script.PNG>
+Package pdftex.def Info: images/development/Key_script.PNG  used on input line 1647.
+(pdftex.def)             Requested size: 233.75394pt x 65.48721pt.
+<images/development/Key_export.PNG, id=935, 194.97844pt x 45.16875pt>
+File: images/development/Key_export.PNG Graphic file (type png)
+<use images/development/Key_export.PNG>
+Package pdftex.def Info: images/development/Key_export.PNG  used on input line 1652.
+(pdftex.def)             Requested size: 210.3771pt x 48.73808pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1656--1658
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1625--1627
+
+[43 <./images/development/Weapon_script.PNG> <./images/development/Weapon_export.PNG> <./images/development/Weapon_attack.PNG> <./images/development/Key_script.PNG> <./images/development/Key_export.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1659--1660
 
  []
 
-<images/development/add_item.PNG, id=915, 692.5875pt x 185.19188pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1661--1663
+
+ []
+
+<images/development/add_item.PNG, id=950, 692.5875pt x 185.19188pt>
 File: images/development/add_item.PNG Graphic file (type png)
 <use images/development/add_item.PNG>
-Package pdftex.def Info: images/development/add_item.PNG  used on input line 1630.
+Package pdftex.def Info: images/development/add_item.PNG  used on input line 1666.
 (pdftex.def)             Requested size: 382.00775pt x 102.14688pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1633--1635
+Underfull \hbox (badness 10000) in paragraph at lines 1669--1671
 
  []
 
-<images/development/remove_item.PNG, id=916, 591.71063pt x 203.25937pt>
+<images/development/remove_item.PNG, id=951, 591.71063pt x 203.25937pt>
 File: images/development/remove_item.PNG Graphic file (type png)
 <use images/development/remove_item.PNG>
-Package pdftex.def Info: images/development/remove_item.PNG  used on input line 1638.
+Package pdftex.def Info: images/development/remove_item.PNG  used on input line 1674.
 (pdftex.def)             Requested size: 382.00775pt x 131.22688pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1641--1643
+Underfull \hbox (badness 10000) in paragraph at lines 1677--1679
 
  []
 
-<images/development/unequip_item.PNG, id=917, 580.41844pt x 173.14688pt>
+<images/development/unequip_item.PNG, id=952, 580.41844pt x 173.14688pt>
 File: images/development/unequip_item.PNG Graphic file (type png)
 <use images/development/unequip_item.PNG>
-Package pdftex.def Info: images/development/unequip_item.PNG  used on input line 1646.
+Package pdftex.def Info: images/development/unequip_item.PNG  used on input line 1682.
 (pdftex.def)             Requested size: 382.00775pt x 113.96025pt.
 
 
-[43 <./images/development/add_item.PNG> <./images/development/remove_item.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1649--1651
+[44 <./images/development/add_item.PNG> <./images/development/remove_item.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1685--1687
 
  []
 
-<images/development/equip_item.PNG, id=926, 283.0575pt x 226.7041pt>
+<images/development/equip_item.PNG, id=961, 283.0575pt x 226.7041pt>
 File: images/development/equip_item.PNG Graphic file (type png)
 <use images/development/equip_item.PNG>
-Package pdftex.def Info: images/development/equip_item.PNG  used on input line 1654.
+Package pdftex.def Info: images/development/equip_item.PNG  used on input line 1690.
 (pdftex.def)             Requested size: 382.00775pt x 305.98196pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1657--1658
+Underfull \hbox (badness 10000) in paragraph at lines 1693--1694
 
  []
 
-<images/development/test_inventory.PNG, id=927, 611.28375pt x 487.06969pt>
+<images/development/test_inventory.PNG, id=962, 611.28375pt x 487.06969pt>
 File: images/development/test_inventory.PNG Graphic file (type png)
 <use images/development/test_inventory.PNG>
-Package pdftex.def Info: images/development/test_inventory.PNG  used on input line 1661.
+Package pdftex.def Info: images/development/test_inventory.PNG  used on input line 1697.
 (pdftex.def)             Requested size: 382.00775pt x 304.38063pt.
 
 
-[44 <./images/development/unequip_item.PNG> <./images/development/equip_item.PNG>]
-Overfull \vbox (24.0pt too high) detected at line 1675
+[45 <./images/development/unequip_item.PNG> <./images/development/equip_item.PNG>]
+Overfull \vbox (24.0pt too high) detected at line 1711
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 1680
+Overfull \vbox (12.0pt too high) detected at line 1716
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 1684
+Overfull \vbox (12.0pt too high) detected at line 1720
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 1688
+Overfull \vbox (12.0pt too high) detected at line 1724
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 1692
+Overfull \vbox (12.0pt too high) detected at line 1728
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 1708
+Overfull \vbox (24.0pt too high) detected at line 1744
  []
 
 
 
-[45 <./images/development/test_inventory.PNG>]
-<images/development/add_item_2.PNG, id=942, 681.29532pt x 199.49532pt>
+[46 <./images/development/test_inventory.PNG>]
+<images/development/add_item_2.PNG, id=978, 681.29532pt x 199.49532pt>
 File: images/development/add_item_2.PNG Graphic file (type png)
 <use images/development/add_item_2.PNG>
-Package pdftex.def Info: images/development/add_item_2.PNG  used on input line 1718.
+Package pdftex.def Info: images/development/add_item_2.PNG  used on input line 1754.
 (pdftex.def)             Requested size: 382.00775pt x 111.85966pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1714--1720
+Underfull \hbox (badness 10000) in paragraph at lines 1750--1756
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1721--1724
+Underfull \hbox (badness 10000) in paragraph at lines 1757--1760
 
  []
 
 
 
-[46 <./images/development/add_item_2.PNG>]
-<images/development/get_slot_value.PNG, id=950, 480.29437pt x 99.37125pt>
+[47 <./images/development/add_item_2.PNG>]
+<images/development/get_slot_value.PNG, id=985, 480.29437pt x 99.37125pt>
 File: images/development/get_slot_value.PNG Graphic file (type png)
 <use images/development/get_slot_value.PNG>
-Package pdftex.def Info: images/development/get_slot_value.PNG  used on input line 1726.
+Package pdftex.def Info: images/development/get_slot_value.PNG  used on input line 1762.
 (pdftex.def)             Requested size: 187.00386pt x 38.69093pt.
-<images/development/set_slot_value.PNG, id=951, 499.8675pt x 248.42813pt>
+<images/development/set_slot_value.PNG, id=986, 499.8675pt x 248.42813pt>
 File: images/development/set_slot_value.PNG Graphic file (type png)
 <use images/development/set_slot_value.PNG>
-Package pdftex.def Info: images/development/set_slot_value.PNG  used on input line 1731.
+Package pdftex.def Info: images/development/set_slot_value.PNG  used on input line 1767.
 (pdftex.def)             Requested size: 187.00386pt x 92.93666pt.
-<images/development/unequip_item_2.PNG, id=952, 444.15938pt x 194.22563pt>
+<images/development/unequip_item_2.PNG, id=987, 444.15938pt x 194.22563pt>
 File: images/development/unequip_item_2.PNG Graphic file (type png)
 <use images/development/unequip_item_2.PNG>
-Package pdftex.def Info: images/development/unequip_item_2.PNG  used on input line 1739.
+Package pdftex.def Info: images/development/unequip_item_2.PNG  used on input line 1775.
 (pdftex.def)             Requested size: 382.00775pt x 167.0456pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1735--1741
+Underfull \hbox (badness 10000) in paragraph at lines 1771--1777
 
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 1755
+Overfull \vbox (24.0pt too high) detected at line 1791
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 1760
+Overfull \vbox (12.0pt too high) detected at line 1796
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 1764
+Overfull \vbox (12.0pt too high) detected at line 1800
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 1768
+Overfull \vbox (12.0pt too high) detected at line 1804
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 1772
+Overfull \vbox (12.0pt too high) detected at line 1808
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 1788
+Overfull \vbox (24.0pt too high) detected at line 1824
  []
 
 
-Overfull \hbox (2.46758pt too wide) in paragraph at lines 1742--1795
+Overfull \hbox (2.46758pt too wide) in paragraph at lines 1778--1831
 [] \OT1/cmr/m/n/10 Fi-
  []
 
 
 
-[47 <./images/development/get_slot_value.PNG> <./images/development/set_slot_value.PNG> <./images/development/unequip_item_2.PNG>]
-<images/development/HurtBox.PNG, id=963, 240.03964pt x 186.26732pt>
+[48 <./images/development/get_slot_value.PNG> <./images/development/set_slot_value.PNG> <./images/development/unequip_item_2.PNG>]
+<images/development/HurtBox.PNG, id=998, 240.03964pt x 186.26732pt>
 File: images/development/HurtBox.PNG Graphic file (type png)
 <use images/development/HurtBox.PNG>
-Package pdftex.def Info: images/development/HurtBox.PNG  used on input line 1799.
+Package pdftex.def Info: images/development/HurtBox.PNG  used on input line 1835.
 (pdftex.def)             Requested size: 240.03905pt x 186.26685pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1802--1803
+Underfull \hbox (badness 10000) in paragraph at lines 1838--1839
 
  []
 
 
 
-[48 <./images/development/HurtBox.PNG>]
-<images/development/HurtBox_Script.PNG, id=970, 226.7041pt x 103.24286pt>
+[49 <./images/development/HurtBox.PNG>]
+<images/development/HurtBox_Script.PNG, id=1005, 226.7041pt x 103.24286pt>
 File: images/development/HurtBox_Script.PNG Graphic file (type png)
 <use images/development/HurtBox_Script.PNG>
-Package pdftex.def Info: images/development/HurtBox_Script.PNG  used on input line 1806.
+Package pdftex.def Info: images/development/HurtBox_Script.PNG  used on input line 1842.
 (pdftex.def)             Requested size: 226.70354pt x 103.2426pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1809--1810
+Underfull \hbox (badness 10000) in paragraph at lines 1845--1846
 
  []
 
-<images/development/Player_layout.png, id=971, 144.54pt x 167.76964pt>
+<images/development/Player_layout.png, id=1006, 144.54pt x 167.76964pt>
 File: images/development/Player_layout.png Graphic file (type png)
 <use images/development/Player_layout.png>
-Package pdftex.def Info: images/development/Player_layout.png  used on input line 1815.
+Package pdftex.def Info: images/development/Player_layout.png  used on input line 1851.
 (pdftex.def)             Requested size: 144.53963pt x 167.76921pt.
-<images/development/Player_structure.png, id=972, 132.06482pt x 57.21375pt>
+<images/development/Player_structure.png, id=1007, 132.06482pt x 57.21375pt>
 File: images/development/Player_structure.png Graphic file (type png)
 <use images/development/Player_structure.png>
-Package pdftex.def Info: images/development/Player_structure.png  used on input line 1820.
+Package pdftex.def Info: images/development/Player_structure.png  used on input line 1856.
 (pdftex.def)             Requested size: 187.00386pt x 81.01534pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1824--1825
+Underfull \hbox (badness 10000) in paragraph at lines 1860--1861
 
  []
 
-<images/development/Player_physics_process().PNG, id=973, 309.72858pt x 127.33286pt>
+<images/development/Player_physics_process().PNG, id=1008, 309.72858pt x 127.33286pt>
 File: images/development/Player_physics_process().PNG Graphic file (type png)
 <use images/development/Player_physics_process().PNG>
-Package pdftex.def Info: images/development/Player_physics_process().PNG  used on input line 1828.
+Package pdftex.def Info: images/development/Player_physics_process().PNG  used on input line 1864.
 (pdftex.def)             Requested size: 382.00775pt x 157.05174pt.
 
 
-[49 <./images/development/HurtBox_Script.PNG> <./images/development/Player_layout.png> <./images/development/Player_structure.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1831--1832
+[50 <./images/development/HurtBox_Script.PNG> <./images/development/Player_layout.png> <./images/development/Player_structure.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1867--1868
 
  []
 
-<images/development/Animations.PNG, id=984, 841.42929pt x 335.53929pt>
+<images/development/Animations.PNG, id=1019, 841.42929pt x 335.53929pt>
 File: images/development/Animations.PNG Graphic file (type png)
 <use images/development/Animations.PNG>
-Package pdftex.def Info: images/development/Animations.PNG  used on input line 1835.
+Package pdftex.def Info: images/development/Animations.PNG  used on input line 1871.
 (pdftex.def)             Requested size: 382.00775pt x 152.33781pt.
-<images/development/Player_get_anim.PNG, id=985, 154.43411pt x 123.46124pt>
+<images/development/Player_get_anim.PNG, id=1020, 154.43411pt x 123.46124pt>
 File: images/development/Player_get_anim.PNG Graphic file (type png)
 <use images/development/Player_get_anim.PNG>
-Package pdftex.def Info: images/development/Player_get_anim.PNG  used on input line 1841.
+Package pdftex.def Info: images/development/Player_get_anim.PNG  used on input line 1877.
 (pdftex.def)             Requested size: 238.75394pt x 190.88441pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1838--1843
+Underfull \hbox (badness 10000) in paragraph at lines 1874--1879
 
  []
 
 
 
-[50 <./images/development/Player_physics_process().PNG> <./images/development/Animations.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 1845--1847
+[51 <./images/development/Player_physics_process().PNG> <./images/development/Animations.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1881--1883
 
  []
 
-<images/development/Dummy_layout.PNG, id=994, 105.39375pt x 89.90732pt>
+<images/development/Dummy_layout.PNG, id=1029, 105.39375pt x 89.90732pt>
 File: images/development/Dummy_layout.PNG Graphic file (type png)
 <use images/development/Dummy_layout.PNG>
-Package pdftex.def Info: images/development/Dummy_layout.PNG  used on input line 1849.
+Package pdftex.def Info: images/development/Dummy_layout.PNG  used on input line 1885.
 (pdftex.def)             Requested size: 137.25142pt x 117.08664pt.
-<images/development/Dummy_structure.PNG, id=995, 128.1932pt x 41.29715pt>
+<images/development/Dummy_structure.PNG, id=1030, 128.1932pt x 41.29715pt>
 File: images/development/Dummy_structure.PNG Graphic file (type png)
 <use images/development/Dummy_structure.PNG>
-Package pdftex.def Info: images/development/Dummy_structure.PNG  used on input line 1854.
+Package pdftex.def Info: images/development/Dummy_structure.PNG  used on input line 1890.
 (pdftex.def)             Requested size: 137.25142pt x 44.21649pt.
-<images/development/Dummy_script.PNG, id=996, 138.08733pt x 71.40964pt>
+<images/development/Dummy_script.PNG, id=1031, 138.08733pt x 71.40964pt>
 File: images/development/Dummy_script.PNG Graphic file (type png)
 <use images/development/Dummy_script.PNG>
-Package pdftex.def Info: images/development/Dummy_script.PNG  used on input line 1859.
+Package pdftex.def Info: images/development/Dummy_script.PNG  used on input line 1895.
 (pdftex.def)             Requested size: 137.25142pt x 70.98123pt.
-<images/development/Door_layout.PNG, id=997, 138.08733pt x 102.81268pt>
+<images/development/Door_layout.PNG, id=1032, 138.08733pt x 102.81268pt>
 File: images/development/Door_layout.PNG Graphic file (type png)
 <use images/development/Door_layout.PNG>
-Package pdftex.def Info: images/development/Door_layout.PNG  used on input line 1868.
+Package pdftex.def Info: images/development/Door_layout.PNG  used on input line 1904.
 (pdftex.def)             Requested size: 210.3771pt x 156.64552pt.
-<images/development/Door_structure.PNG, id=998, 128.1932pt x 68.39839pt>
+<images/development/Door_structure.PNG, id=1033, 128.1932pt x 68.39839pt>
 File: images/development/Door_structure.PNG Graphic file (type png)
 <use images/development/Door_structure.PNG>
-Package pdftex.def Info: images/development/Door_structure.PNG  used on input line 1873.
+Package pdftex.def Info: images/development/Door_structure.PNG  used on input line 1909.
 (pdftex.def)             Requested size: 210.3771pt x 112.25233pt.
-<images/development/Door_script.PNG, id=999, 391.4625pt x 124.32161pt>
+<images/development/Door_script.PNG, id=1034, 391.4625pt x 124.32161pt>
 File: images/development/Door_script.PNG Graphic file (type png)
 <use images/development/Door_script.PNG>
-Package pdftex.def Info: images/development/Door_script.PNG  used on input line 1880.
+Package pdftex.def Info: images/development/Door_script.PNG  used on input line 1916.
 (pdftex.def)             Requested size: 429.75417pt x 136.49051pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1877--1882
+Underfull \hbox (badness 10000) in paragraph at lines 1913--1918
 
  []
 
 
 
-[51 <./images/development/Player_get_anim.PNG> <./images/development/Dummy_layout.PNG> <./images/development/Dummy_structure.PNG> <./images/development/Dummy_script.PNG> <./images/development/Door_layout.PNG> <./images/development/Door_structure.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 1883--1884
+[52 <./images/development/Player_get_anim.PNG> <./images/development/Dummy_layout.PNG> <./images/development/Dummy_structure.PNG> <./images/development/Dummy_script.PNG> <./images/development/Door_layout.PNG> <./images/development/Door_structure.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1919--1920
 
  []
 
-<images/development/Chest_layout.PNG, id=1016, 277.035pt x 250.79411pt>
+<images/development/Chest_layout.PNG, id=1052, 277.035pt x 250.79411pt>
 File: images/development/Chest_layout.PNG Graphic file (type png)
 <use images/development/Chest_layout.PNG>
-Package pdftex.def Info: images/development/Chest_layout.PNG  used on input line 1888.
+Package pdftex.def Info: images/development/Chest_layout.PNG  used on input line 1924.
 (pdftex.def)             Requested size: 210.3771pt x 190.4486pt.
-<images/development/Chest_structure.PNG, id=1017, 129.91393pt x 67.10786pt>
+<images/development/Chest_structure.PNG, id=1053, 129.91393pt x 67.10786pt>
 File: images/development/Chest_structure.PNG Graphic file (type png)
 <use images/development/Chest_structure.PNG>
-Package pdftex.def Info: images/development/Chest_structure.PNG  used on input line 1893.
+Package pdftex.def Info: images/development/Chest_structure.PNG  used on input line 1929.
 (pdftex.def)             Requested size: 210.3771pt x 108.67725pt.
-<images/development/Chest_script.PNG, id=1018, 393.18321pt x 199.60286pt>
+<images/development/Chest_script.PNG, id=1054, 393.18321pt x 199.60286pt>
 File: images/development/Chest_script.PNG Graphic file (type png)
 <use images/development/Chest_script.PNG>
-Package pdftex.def Info: images/development/Chest_script.PNG  used on input line 1900.
+Package pdftex.def Info: images/development/Chest_script.PNG  used on input line 1936.
 (pdftex.def)             Requested size: 429.75417pt x 218.18108pt.
 
 
-[52 <./images/development/Door_script.PNG> <./images/development/Chest_layout.PNG> <./images/development/Chest_structure.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 1903--1904
+[53 <./images/development/Door_script.PNG> <./images/development/Chest_layout.PNG> <./images/development/Chest_structure.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1939--1940
+
+ []
+
+<images/development/Enemy_layout.PNG, id=1065, 408.66965pt x 365.2216pt>
+File: images/development/Enemy_layout.PNG Graphic file (type png)
+<use images/development/Enemy_layout.PNG>
+Package pdftex.def Info: images/development/Enemy_layout.PNG  used on input line 1945.
+(pdftex.def)             Requested size: 210.3771pt x 188.01599pt.
+<images/development/Enemy_structure.PNG, id=1066, 110.5559pt x 104.53339pt>
+File: images/development/Enemy_structure.PNG Graphic file (type png)
+<use images/development/Enemy_structure.PNG>
+Package pdftex.def Info: images/development/Enemy_structure.PNG  used on input line 1950.
+(pdftex.def)             Requested size: 210.3771pt x 198.9313pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1954--1955
 
  []
 
 
 
-[53 <./images/development/Chest_script.PNG>]
-Overfull \vbox (12.0pt too high) detected at line 1910
+[54 <./images/development/Chest_script.PNG> <./images/development/Enemy_layout.PNG> <./images/development/Enemy_structure.PNG>]
+<images/development/Enemy_script.PNG, id=1078, 274.02374pt x 367.3725pt>
+File: images/development/Enemy_script.PNG Graphic file (type png)
+<use images/development/Enemy_script.PNG>
+Package pdftex.def Info: images/development/Enemy_script.PNG  used on input line 1959.
+(pdftex.def)             Requested size: 187.00386pt x 250.7125pt.
+<images/development/Enemy_ready.PNG, id=1079, 172.9318pt x 30.97285pt>
+File: images/development/Enemy_ready.PNG Graphic file (type png)
+<use images/development/Enemy_ready.PNG>
+Package pdftex.def Info: images/development/Enemy_ready.PNG  used on input line 1964.
+(pdftex.def)             Requested size: 210.3771pt x 37.68141pt.
+<images/development/Enemy_timer_timeouts.PNG, id=1080, 377.2666pt x 96.36pt>
+File: images/development/Enemy_timer_timeouts.PNG Graphic file (type png)
+<use images/development/Enemy_timer_timeouts.PNG>
+Package pdftex.def Info: images/development/Enemy_timer_timeouts.PNG  used on input line 1969.
+(pdftex.def)             Requested size: 210.3771pt x 53.7333pt.
+
+
+[55 <./images/development/Enemy_script.PNG> <./images/development/Enemy_ready.PNG> <./images/development/Enemy_timer_timeouts.PNG>]
+Overfull \vbox (12.0pt too high) detected at line 1982
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 1914
+Overfull \vbox (12.0pt too high) detected at line 1986
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 1921
+Overfull \vbox (12.0pt too high) detected at line 1993
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 1925
+Overfull \vbox (12.0pt too high) detected at line 1997
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 1929
+Overfull \vbox (24.0pt too high) detected at line 2001
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 1929
+Overfull \vbox (24.0pt too high) detected at line 2001
  []
 
 
-Overfull \hbox (7.75319pt too wide) in paragraph at lines 1906--1935
+Overfull \hbox (7.75319pt too wide) in paragraph at lines 1978--2007
 [] 
  []
 
 
 
-[54] (./NEA.aux)
+[56] (./NEA.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 35690 strings out of 475177
- 838756 string characters out of 5763895
- 1738401 words of memory out of 5000000
- 57687 multiletter control sequences out of 15000+600000
+ 35789 strings out of 475177
+ 841698 string characters out of 5763895
+ 1791511 words of memory out of 5000000
+ 57758 multiletter control sequences out of 15000+600000
  565032 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 114i,12n,121p,1034b,2145s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 114i,12n,121p,1166b,2145s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on NEA.pdf (57 pages, 2432237 bytes).
+Output written on NEA.pdf (59 pages, 4581783 bytes).
 PDF statistics:
- 1489 PDF objects out of 1728 (max. 8388607)
- 1228 compressed objects within 13 object streams
- 490 named destinations out of 1000 (max. 500000)
- 1166 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1570 PDF objects out of 1728 (max. 8388607)
+ 1294 compressed objects within 13 object streams
+ 518 named destinations out of 1000 (max. 500000)
+ 1257 words of extra memory for PDF output out of 10000 (max. 10000000)
 

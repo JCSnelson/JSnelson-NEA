@@ -43,6 +43,16 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
 		attack()
+	if event.is_action_pressed("help"):
+		var help_menu = preload("res://scenes/menu/help_menu.tscn").instantiate()
+		self.add_child(help_menu)
+		get_tree().paused = true
+		await get_tree().create_timer(0.2).timeout
+		while not Input.is_action_just_pressed("help"):
+			await get_tree().process_frame
+			print("yippee")
+		help_menu.queue_free()
+		get_tree().paused = false
 
 
 func attack():

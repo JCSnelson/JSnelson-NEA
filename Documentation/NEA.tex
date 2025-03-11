@@ -158,9 +158,9 @@
         \\
         The procedurally generated dungeons consist of different shaped square based rooms that tesalate and are generated next to each other in a psuedo random fashion whilst obeying a set of rules. The mobs that spawn in each room can vary but there is usually only one or two enemy types per room and as you go up levels the amount of enemies and difficulty the pose increases. This system allows for every playthrough of the game to be different to the next with the same reccuring theme/difficulty which allows for lots of replay oppurtunity. This would be an appropiate way for me to fix the replayabilty issue.\\
         \\
-        I like the games simple UI design as it clearly indicates all the necessary parts. The Map also shows the basic stucture of the level without revealing too much.\\
+        I like the games simple UI design as it clearly indicates all the necessary parts. The Map also shows the basic stucture of the level without revealing too much. I want to take inspiration from the simplicity of ui in order to help my game be intuitive.\\
         \\
-        However, the game has a couple issues that mean that it does not completely solve our problem. First is the steep learning curve that the game presents which, although to some is a welcome challenge, can put off new or less experienced players especially due to its roguelike nature meaning when you die you start from scratch. The game also has an unintuitive movement and fighting system as there is only really quad directional projectiles and a simple walking design which when combined contributes to the steep learning curve.\\
+        However, the game has a couple issues that mean that it does not completely solve our problem. First is the steep learning curve that the game presents which, although to some is a welcome challenge, can put off new or less experienced players especially due to its roguelike nature meaning when you die you start from scratch. The game also has an unintuitive movement and fighting system as there is only really quad directional projectiles and a simple walking design which when combined contributes to the steep learning curve. These are some of the features I will not include in my product opting to instead try for an easier approach by allowing scaleable difficulty and oct-directional movement and attacks.\\
         \begin{figure}[h]
                 \centering
                 \includegraphics[scale=0.25]{images/research/BOI_Capture.PNG}
@@ -173,10 +173,14 @@
         \\
         The way Dead Cells uses procedural generation interests me as it allows for there to be some fixed attributes to the level whilst still allowing elements of randomness. The developers talk about how they do this in a video devlog$_{(3)}$, here the dev talks about his system of having a fixed structure for each level almost like a skeleton. This skeleton will include stuff like important rooms along the way and how much distance of rooms has to be between them. It then fills in all the spaces for rooms with one of the many handmade rooms made by the developers. After one room has been chosen for a spot this leaves less choice for the other spots as the rooms need to join and flow into each other properly and so as it chooses more of them the structure of the level is determined similar to the wave function collapse algorithm$_{(4)}$.\\
         \\
-        This style of generation allows for a unique experience each time whilst keeping a hand crafted and natural feel to the levels that is often lost in other techniques.\\
+        This style of generation allows for a unique experience each time whilst keeping a hand crafted and natural feel to the levels that is often lost in other techniques. Because of these advantages I will take heavy inspiration from this style of procedural generation for my level generation in order to make them more unique.\\
         \\
-        However due to the game being aimed at more hardcore gamers with it being part of the rouguelike genre it can often appear complex and offputting to newer players who dont like the idea of taking multiple runs just to have very little to show for it and not much forward progress in the game. Although the game is a side on game I think that I will use the idea of its procedural generation as inspiration in my product.\\
-        \\
+        However due to the game being aimed at more hardcore gamers with it being part of the rouguelike genre it can often appear complex and offputting to newer players who dont like the idea of taking multiple runs just to have very little to show for it and not much forward progress in the game. Although the game is a side on game I think that I will use the idea of its procedural generation as inspiration in my product aswell as aiming to forgo some of the games more complex or challenging mechanics such as permadeath in order to create a more accessible game.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/research/Dead_Cells_level_gen.PNG}
+                \caption{Dead Cells Level Generation Example}
+        \end{figure}
         \newpage
         \[\]
         \textbf{Nintendo's Legend Of Zelda Breath of the Wild}\\
@@ -184,10 +188,15 @@
         \\
         The game starts with a tutorial that teaches players the mechanics of the game (combat, exploration, and resource gathering). This tutorial helps players into the world without overwhelming them, offering opportunities to learn at their own pace which helps reduce the steep learning curve of other games in the genre. The open-world nature of the game also adds to its replayability, allowing the player to take many different routes to complete the game. However, while the game’s size and allows for alot of replayabilty, the volume of content and time required to explore everything can reduce its effectiveness as a game that can be picked up easily for shorter sessions. Its 3D world and complex systems are features that would be too tricky to implement within the scope of an A-level computer science project. It also does not fully fit the dungeon-crawler genre, particularly as it is less dungeon-focused.\\ 
         \\
-        I want to take inspiration from the open-world nature of the game to increase replayability aswell as its approach to tutorials in order to make the learning curve steeper. Ontop of this another feature I would like to take inspiration from is the intuitiveness of the combat system which is easy to learn but hard to master in particular its feature of being able to lock onto enemies.\\
+        I want to take inspiration from the open-world nature of the game to allow different routes through my game to increase replayability aswell as its approach to tutorials in order to make the learning curve steeper. Ontop of this another feature I would like to take inspiration from is the intuitiveness of the combat system which is easy to learn but hard to master in particular its feature of being able to lock onto enemies.\\
         \\
         Some features I will not be including are the 3D nature and the overall content heaviness aswell as the focus less on dungeon crawling as I believe these would be unnecesary features which would drive up the complexity of the solution both to make and run.\\
-        \\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.5\columnwidth]{images/research/BOTW_tutorial_map.jpg}
+                \caption{BOTW tutorial map}
+        \end{figure}
+        \noindent This map shows how the BOTW tutorial has the different "shrines" placed to help the player learn the basic mechanics of the game.\\
         \newpage
         \[\]   
         \subsection{Limitations and Requirements}
@@ -235,45 +244,8 @@
                 \hline
                 Feature\#&Feature&Description&Justification\\
                 \hline
-                1&\mr{2}{3cm}{Player Movement and Controls}&\mr{2}{5cm}{The player will control movement using the WASD keys for up, left, down and right respectively. Alternatively they will use the left control stick of a controller.}&\mr{2}{5cm}{This will be used tp navigate around the Dungeon environment and WASD was the most popular control mechanism for the stakeholders with controller close behind. I will also include mouse buttons as a non-mandatory addition.}\\
+                1&\mr{2}{3cm}{Player Movement and Controls}&\mr{2}{5cm}{The player will control movement using the WASD keys for up, left, down and right respectively Q will trigger a dash. Alternatively they will use the left control stick of a controller.}&\mr{2}{5cm}{This will be used to navigate around the Dungeon environment and WASD was the most popular control mechanism for the stakeholders with controller close behind. The controls of my game aim to follow the stakeholder feedback aswell as the general controls that seemed to be favoured in my research}\\
                 &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                \hline
-                2&\mr{2}{3cm}{A Basic Combat System}&\mr{2}{5cm}{The combat system will consist of a primary weapon (melee, magic or ranged) on mouse-1/1 key/X button and a sheild or secondary weapon on mouse-2/2 key/Y button. I will have to implement projectiles and hitboxes for both the player and enemies.}&\mr{2}{5cm}{A basic combat system is essential as it will provide the main difficulty and entertainment within the game.}\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                \hline
-                3&\mr{2}{3cm}{Dungeon Environment}&\mr{2}{5cm}{The Dungeon Environment will consist of different shaped rooms with different purposes(e.g. boss room, chest room and shop room.) with hallways connecting inbetween them and a starting room.}&\mr{2}{5cm}{A Dungeon Environment is essential as it is the environment the player will play in.}\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                \hline
-                4&\mr{2}{3cm}{Different Enemies}&\mr{2}{5cm}{The Enemies will consist of a variety of enemies that attack the player with different patterns and have different looks and animations.}&\mr{2}{5cm}{This is essential as it will add variety to the gameplay and each enemy will provide a challenge to the player.}\\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                \hline
-                5&\mr{2}{3cm}{Appearance and Animations of the Player}&\mr{2}{5cm}{The Player will have a recognisable appearance aswell as animations for all its actions such as walking and fighting}&\mr{2}{5cm}{This is essential as it lets you know where your character is on screen aswell as giving life to the actions the player is performing.}\\\
-                &&&\\
-                &&&\\
-                &&&\\
-                \hline
-                6&\mr{2}{3cm}{Login System}&\mr{2}{5cm}{Users will be able to login in order to save and reload their progress. The login system will use a username and password with the details being encrypted and stored in an external database. Their will be options for signing in or creating a new account aswell as resetting your password.}&\mr{2}{5cm}{This is an essential feature as saving progress is essential for making the game replayable.}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -284,7 +256,50 @@
                 &&&\\
                 &&&\\
                 \hline
-                7&\mr{2}{3cm}{User Interface}&\mr{2}{5cm}{A Simple UI that shows status indicators like health, weapons being used, enemy health and magic points.}&\mr{2}{5cm}{This would allow the player to be aware of the characters health and give them the necessary information.}\\
+                2&\mr{2}{3cm}{A Basic Combat System}&\mr{2}{5cm}{The combat system will consist of a primary weapon (melee, magic or ranged) on mouse-1/1 key/X button and a sheild or secondary weapon on mouse-2/2 key/Y button. I will have to implement projectiles and hitboxes for both the player and enemies.}&\mr{2}{5cm}{A basic combat system is essential as it will provide the main difficulty and entertainment within the game. The existing solutions all have at least a basic combat system as one of the driving forces for progress through the game.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                3&\mr{2}{3cm}{Dungeon Environment}&\mr{2}{5cm}{The Dungeon Environment will consist of different shaped rooms with different purposes(e.g. boss room, chest room and shop room.) with hallways connecting inbetween them and a starting room.}&\mr{2}{5cm}{A Dungeon Environment is essential as it is the environment the player will play in. All the existing solutions had dungeon environments as this is an essential part of a 'dungeon crawler'.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                4&\mr{2}{3cm}{Different Enemies}&\mr{2}{5cm}{The Enemies will consist of a variety of enemies that attack the player with different patterns and have different looks and animations.}&\mr{2}{5cm}{This is essential as it will add variety to the gameplay and each enemy will provide a challenge to the player as I saw it used during my research.}\\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                5&\mr{2}{3cm}{Appearance and Animations of the Player}&\mr{2}{5cm}{The Player will have a recognisable appearance aswell as animations for all its actions such as walking and fighting}&\mr{2}{5cm}{This is essential as it tells you about where your character is aswell as what they are doing even if the animations are basic like in Binding of Isaac.}\\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                6&\mr{2}{3cm}{Login System}&\mr{2}{5cm}{Users will be able to login in order to save and reload their progress. The login system will use a username and password with the details being encrypted and stored in an external database. Their will be options for signing in or creating a new account aswell as resetting your password.}&\mr{2}{5cm}{This is an essential feature as saving progress is essential for making the game replayable. All the Exisiting solutions I looked at either had login systems or used an existing login system (e.g. steam) in order to manage seperate user saves.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                7&\mr{2}{3cm}{User Interface}&\mr{2}{5cm}{A Simple UI that shows status indicators like health, weapons being used, enemy health and magic points.}&\mr{2}{5cm}{This would allow the player to be aware of the characters health and communicate necessary information for playing the game as I found through the Binding of Isaac UI.}\\
+                &&&\\
+                &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -295,26 +310,8 @@
                 \hline
                 Feature\#&Feature&Description&Justification\\
                 \hline
-                8&\mr{2}{3cm}{Weapons and a more Advanced Combat System.}&\mr{2}{5cm}{A system of weapons where you can get them from boss drops and potentially shops and a combat system with normal, charged (based on how long you hold down) and special attacks (using a special key).}&\mr{2}{5cm}{Different weapons will allow each player to have a playstyle more customized to them and will allow for the player getting stronger as they progress more. An advanced combat system will allow for a more smooth and enjoyable fighting experience.}\\
+                8&\mr{2}{3cm}{Weapons and a more Advanced Combat System.}&\mr{2}{5cm}{A system of weapons where you can get them from boss drops and potentially shops and a combat system with normal, charged (based on how long you hold down) and special attacks (using a special key).}&\mr{2}{5cm}{Different weapons will allow each player to have a playstyle more customized to them and will allow for the player getting stronger as they progress more. An advanced combat system will allow for a more smooth and enjoyable fighting experience as I saw through my research into Dead Cells and BOTW.}\\
                 &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                \hline
-                9&\mr{2}{3cm}{Skill Tree}&\mr{2}{5cm}{A skill tree to unlock unique skills/abilities and get better at using existing skills/weapons. You would gain points from playing the game and can then put them into different areas in order to create a customized character build}&\mr{2}{5cm}{This would further allow the player to choose their own play style and add an element of replayability where you can try going for a different build each time you play. This was also requested by the stakeholders.}\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                \hline
-                10&\mr{2}{3cm}{Procedurally Generated Dungeons}&\mr{2}{5cm}{The Dungeons would be procedurally generated whilst keeping some amount of structure (e.g. the same amount of distance between posses and key rooms). This would happen through many similar small room sections that can be slotted together in order to make a full dungeon.}&\mr{2}{5cm}{This would create a more engaging game which is different each time you play it and therefore increase replayability exponentially as the different combinations of room increases. This was also requested by the stakeholders.}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -325,14 +322,36 @@
                 &&&\\
                 &&&\\
                 \hline
-                11&\mr{2}{3cm}{Hidden Areas}&\mr{2}{5cm}{Secret areas that can be unlocked through wasy such as progressing further in the game and coming back or through puzzles/fake walls. Could have secret loot or bosses.}&\mr{2}{5cm}{This feature was highly requested by the stakeholders and would allow for more time spent having fun in the game through finding these areas.}\\
+                9&\mr{2}{3cm}{Skill Tree}&\mr{2}{5cm}{A skill tree to unlock unique skills/abilities and get better at using existing skills/weapons. You would gain points from playing the game and can then put them into different areas in order to create a customized character build}&\mr{2}{5cm}{This would further allow the player to choose their own play style and add an element of replayability where you can try going for a different build each time you play. This was also requested by the stakeholders and can be seen in Dead Cells.}\\
+                &&&\\
+                &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
                 \hline
-                12&\mr{2}{3cm}{Inventory Sysetm}&\mr{2}{5cm}{An Inventory to be opened with the E key or the + button through which you will manage equipped weapons, key items, skills and more.}&\mr{2}{5cm}{An Inventory System is an essential feature if we want to add more weapons/weapon types and a skill tree.}\\
+                10&\mr{2}{3cm}{Procedurally Generated Dungeons}&\mr{2}{5cm}{The Dungeons would be procedurally generated whilst keeping some amount of structure (e.g. the same amount of distance between posses and key rooms). This would happen through many similar small room sections that can be slotted together in order to make a full dungeon.}&\mr{2}{5cm}{This would create a more engaging game which is different each time you play it and therefore increase replayability exponentially as the different combinations of room increases. This was also requested by the stakeholders and was used in Dead Cells to allow for greater replayability.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                11&\mr{2}{3cm}{Hidden Areas}&\mr{2}{5cm}{Secret areas that can be unlocked through wasy such as progressing further in the game and coming back or through puzzles/fake walls. Could have secret loot or bosses.}&\mr{2}{5cm}{This feature was highly requested by the stakeholders and can be seen in alot of existing solutions and would allow for more time spent having fun in the game through finding these areas.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                12&\mr{2}{3cm}{Inventory System}&\mr{2}{5cm}{An Inventory to be opened with the E key or the + button through which you will manage equipped weapons, key items, skills and more.}&\mr{2}{5cm}{An Inventory System is an essential feature if we want to add more weapons/weapon types and a skill tree. It can be seen in BOTW and less complex in Dead Cells.}\\
+                &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -343,7 +362,7 @@
                 &&&\\
                 &&&\\
                 \hline
-                14&\mr{2}{3cm}{Difficulty Levels and Hardcore Mode}&\mr{2}{5cm}{A Difficulty level selector which allows the user to up the difficulty(damage the enemies do etc) and a Hardcore Mode which switches the game to a roguelike format with seperate save state to the normal game.}&\mr{2}{5cm}{50\% of the stakeholders are experienced with Dungeon Crawlers so in order to help the game still be reasonably challening for them I will add a difficulty toggle.}\\
+                14&\mr{2}{3cm}{Difficulty Levels and Hardcore Mode}&\mr{2}{5cm}{A Difficulty level selector which allows the user to up the difficulty(damage the enemies do etc) and a Hardcore Mode which switches the game to a roguelike format with seperate save state to the normal game.}&\mr{2}{5cm}{50\% of the stakeholders are experienced with Dungeon Crawlers so in order to help the game still be reasonably challening for them I will add a difficulty slider.}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -356,27 +375,9 @@
         \subsection{Success Criteria}
         \begin{tabular}{|c|c|c|c|}
                 \hline
-                Criteria \# & Abstraction & Success Criteria & Justification\\
+                Criteria \# & Abstraction & Success Criteria & Success Indicators\\
                 \hline
-                1&\mr{2}{2cm}{Players to be able to control and move the player using both the WASD keys and a controller.}&\mr{2}{6cm}{1.1 W key - Forward\\1.2 A key - Left\\1.3 S key - Backward\\1.4 D key - Right\\1.5 Q key - Dash\\1.6 Left Control Stick directional movement corresponds to player movement.}&\mr{2}{4cm}{These Criteria need to be met for the character to be controllable by the player. These specific controls where preffered by the stakeholders.}\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                \hline
-                2&\mr{2}{2cm}{Players to be able to have different weapons and attack with them.}&\mr{2}{6cm}{2.1 mouse-1/1 key/X button - Primary Attack\\2.2 mouse-2/2 key/Y button - Secondary Attack\\2.3 Add a basic melee sword\\2.4 Add a basic ranged bow and projectiles\\2.5 Add a basic magic staff and projectiles\\2.6 Add a basic magic staff with area of effect attacks\\2.7 Add a hitbox for the player\\2.8 Add a health bar for the player\\2.9 Add the ability to lock facing an enemy\\2.10 Make sure all attacks go in the correct direction}&\mr{2}{4cm}{These criteria need to be met for a basic combat system to create the main difficulty and entertainment throughout the game}\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
+                1&\mr{2}{2cm}{Players to be able to control and move the player using both the WASD keys and a controller.}&\mr{2}{6cm}{1.1 W key - Forward\\1.2 A key - Left\\1.3 S key - Backward\\1.4 D key - Right\\1.5 Q key - Dash\\1.6 Left Control Stick directional movement corresponds to player movement.}&\mr{2}{6cm}{WASD/Left Stick direction - Move in that directional\\Q - Faster movement in direction player is facing}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -386,7 +387,25 @@
                 &&&\\
                 &&&\\
                 \hline
-                3&\mr{2}{2cm}{A Dungeon environment for the character to walk around and different rooms}&\mr{2}{6cm}{3.1 Walls that you cannot walk through\\3.2 Floor of the Dungeon\\3.3 Interactive chests for loot\\3.4 Seperate Boss, Chest, Monster and Shop Rooms\\3.5 A room Door that only opens on a certain condition\\3.6 A Dungeon Environment built out of the rooms and corridors}&\mr{2}{4cm}{These Criteria will provide the environment within which the game is played.}\\
+                2&\mr{2}{2cm}{Players to be able to have different weapons and attack with them.}&\mr{2}{6cm}{2.1 mouse-1/1 key/X button - Primary Attack\\2.2 mouse-2/2 key/Y button - Secondary Attack\\2.3 Add a basic melee sword\\2.4 Add a basic ranged bow and projectiles\\2.5 Add a basic magic staff and projectiles\\2.6 Add a basic magic staff with area of effect attacks\\2.7 Add a hitbox for the player\\2.8 Add a health bar for the player\\2.9 Make sure all attacks go in the direction the player is facing}&\mr{2}{6cm}{Attacks are triggered when their corresponding controls are pressed.\\Melee attacks affect all enemies within range in the direction the player is facing causing them to lose health.\\ Projectiles launch on a ranged attack and travel in the direction the player is facing\\Area of effect attacks spawn an area around the player that slowly damages enemies that come into it.\\Enemy attacks cause player health to go down.\\Player health accurately displayed on a health bar in the UI\\}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                3&\mr{2}{2cm}{A Dungeon environment for the character to walk around and different rooms}&\mr{2}{6cm}{3.1 Walls that you cannot walk through\\3.2 Floor of the Dungeon\\3.3 Interactive chests for loot\\3.4 Seperate Boss, Chest and Monster Rooms\\3.5 A room Door that only opens on a certain condition\\3.6 A Dungeon Environment built out of the rooms and corridors}&\mr{2}{6cm}{Ability to walk around the dungeon environment and remain contained by it.\\Ability to open chests and recieve a specific quantity of random loot from a pool.\\A level built out of specific purpose built rooms and corridors.\\ }\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -1094,6 +1113,8 @@ def equip_item(item: Resource):
         \subsubsection{Animations}
         I have an animation set for the player that includes 8 Directional top down animations for all player actions and so how I will decide which directional animation will be based of the last direction the player walked.\\
         I will use a get\_animation function in order to get the directional animation to play.\\
+        \subsubsection{Help Screen}
+        I have decided to add a simple Help Screen in order to allow the user to check the controls when they want a reminder. I will implement this by creating a seperate scene with a label and then when the help button is pressed I will pause the tree and instance the scene before waiting for the help button to be pressed again to unpause the scene tree and queue\_free the label.\\
         \subsubsection{Algorithms}
         \textbf{\_ready():}\\
         The \_ready() function gets called whenever the player is instantiated in a scene and so it will be used to setup variables and the environment based on existing stuff.\\
@@ -1122,6 +1143,14 @@ def _physics_process(delta):
 def _input(event):
    if event.is_action_pressed('attack'):
       attack()
+   if event.is_action_pressed('help'):
+      help_screen = preload("path/to/help/scene").instantiate()
+      add_child(help_screen)
+      get_tree().paused = True
+      while not Input.is_action_just_pressed("help"):
+         sleep(0.01)
+      help_scene.queue_free()
+      get_tree().paused = false
         \end{python}
         \textbf{attack():}
         \begin{python}
@@ -1254,7 +1283,7 @@ def _ready():
         This checks if the player is within the detection range and if so moves towards them aswell as handling animations and detecting if the slime collides with the player.\\
         \begin{python}
 def _physics_process(delta: float) -> void:
-   var move = false
+   move = false
    for body in Area2D.get_overlapping_bodies(): #Checking if player in the Area2D area
       if body.name == "Player":
          move = true
@@ -1269,18 +1298,18 @@ def _physics_process(delta: float) -> void:
                 
    if can_attack: #If the attack cooldown is done
       for i in range(get_slide_collision_count()): #Loops through collisions
-         var collision = get_slide_collision(i)
-         var collider = collision.get_collider()
+         collision = get_slide_collision(i)
+         collider = collision.get_collider()
             if collider.is_in_group("player"): #Checks if collision is with the player
                collider.take_damage(damage, damage_type) #Deals damage
                can_attack=false 
                AttackTimer.start() #Starts attack cooldown
         \end{python}
-        \textbf{take\_damage(damage, damage\_type):}
+        \textbf{take\_damage(damage, damage\_type):}\\
         The take damage function will change based on 
         \begin{python}
 def take_damage(damage, damage_type):
-   var player = get_tree().get_first_node_in_group("player")
+   player = get_tree().get_first_node_in_group("player")
    animating = true
    if damage_type in weaknesses:
       health -= 2*damage
@@ -1293,6 +1322,13 @@ def take_damage(damage, damage_type):
       AnimatedSprite2D.play(get_animation("hurt"))
       await AnimatedSprite2D.animation_finished
       animating = false
+        \end{python}
+        \textbf{\_on\_navigation\_timer\_timeout():}\\
+        This will run when the navigation timer runs out and only update the navigation then to allow the enemies to not have perfect tracking so the player can avoid them easier.\\
+        \begin{python}
+def _on_navigation_timer_timeout() -> void:
+   player = get_tree().get_first_node_in_group("player")
+   NavigationAgent2D.set_target_position(player.global_position)
         \end{python}
 
         \section{Development}
@@ -1901,6 +1937,42 @@ def take_damage(damage, damage_type):
                 \caption{Script}
         \end{figure}
         \noindent The chest script is has a couple changes from the design, the addition of a locked flag aswell as making the item list a script variable so that it can be accessed from the input function and constructing the list without the use of pythonic list comprehension. I also switched from directly seeing if the player body overlaps to looping through overlapping bodies again as this wasy easier to implement and works the same.\\
+        \subsection{Enemy Development}
+        \subsubsection{Layout and Structure}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Enemy_layout.PNG}
+                        \caption{Layout}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Enemy_structure.PNG}
+                        \caption{Structure}
+                \end{figure}   
+        \end{multicols}
+        The layout and structure are as shown above with all the relevant timer nodes, the larger collision shape is the area2D for detecting the player whereas the smaller one handles physics collisons. The NavigationAgent2D handles the navigation and the AnimatedSprite2D handles animation.\\
+        \subsubsection{General Script}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.8\columnwidth]{images/development/Enemy_script.PNG}
+                        \caption{General Script and Variables}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Enemy_ready.PNG}
+                        \caption{\_ready():}
+                \end{figure}   
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Enemy_timer_timeouts.PNG}
+                        \caption{timer\_timeouts}
+                \end{figure}
+        \end{multicols}
+        \subsubsection{\_physics\_process(delta):}
+        \subsubsection{take\_damage(damage, damage\_type):}
+        \subsubsection{Animation}
 \newpage
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
