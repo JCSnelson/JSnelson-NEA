@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Key" load_steps=2 format=3 uid="uid://b44g8rf3h02qp"]
 
-[ext_resource type="Script" path="res://resources/scripts/key.gd" id="1_f0ois"]
+[ext_resource type="Script" uid="uid://cmmlrjdg25e1q" path="res://resources/scripts/key.gd" id="1_f0ois"]
 
 [resource]
 resource_name = "test"

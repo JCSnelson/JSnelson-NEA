@@ -1,12 +1,12 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dfwii21eedtxn"]
+[gd_resource type="Resource" script_class="Armour" load_steps=2 format=3 uid="uid://dfwii21eedtxn"]
 
-[ext_resource type="Script" path="res://resources/scripts/armour.gd" id="1_b2g1y"]
+[ext_resource type="Script" uid="uid://b56uxkuxbjdog" path="res://resources/scripts/armour.gd" id="1_b2g1y"]
 
 [resource]
 script = ExtResource("1_b2g1y")
 defense = 0
-armour_type = 0
-body_part = 0
+armour_type = ""
+body_part = ""
 set_id = 0
 stat_boosts = {}
 stackable = false

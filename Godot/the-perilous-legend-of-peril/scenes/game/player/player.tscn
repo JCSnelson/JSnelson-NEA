@@ -1,6 +1,6 @@
 [gd_scene load_steps=369 format=3 uid="uid://ck3jgk73i7lrm"]
 
-[ext_resource type="Script" path="res://scenes/game/player/player.gd" id="1_msq84"]
+[ext_resource type="Script" uid="uid://bmr6da7bgtsjo" path="res://scenes/game/player/player.gd" id="1_msq84"]
 [ext_resource type="Texture2D" uid="uid://de6nmkxeui0gj" path="res://assets/2D Character Knight/Spritesheets/Shadowless/Idle_Shadowless.png" id="2_qgx4k"]
 [ext_resource type="Texture2D" uid="uid://balhh6bjv2we0" path="res://assets/2D Character Knight/Spritesheets/Shadowless/Melee_Shadowless.png" id="4_e7tp3"]
 [ext_resource type="Texture2D" uid="uid://dnowcf4agf8wv" path="res://assets/2D Character Knight/Spritesheets/Shadowless/Walk_Shadowless.png" id="4_srwju"]

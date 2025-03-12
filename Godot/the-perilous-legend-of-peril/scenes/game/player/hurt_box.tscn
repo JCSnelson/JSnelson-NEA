@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0maqc0ehefh"]
 
-[ext_resource type="Script" path="res://scenes/game/player/hurt_box.gd" id="1_0yxxu"]
+[ext_resource type="Script" uid="uid://ckdrk5q6iv78q" path="res://scenes/game/player/hurt_box.gd" id="1_0yxxu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bstfb"]
 height = 40.0

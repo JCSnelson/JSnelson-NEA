@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7unf4u2b3edg"]
 
-[ext_resource type="Script" path="res://scenes/menu/create_account_form.gd" id="1_kr0ve"]
+[ext_resource type="Script" uid="uid://bdu7ingkwpnr0" path="res://scenes/menu/create_account_form.gd" id="1_kr0ve"]
 
 [node name="CreateAccountForm" type="Node2D"]
 position = Vector2(768, 192)

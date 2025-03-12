@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://btpen6sxkyfmu"]
 
 [ext_resource type="Texture2D" uid="uid://bkjpf57dyqygs" path="res://assets/2D Pixel Dungeon Asset Pack/Dungeon_Tileset_at.png" id="1_qte6o"]
-[ext_resource type="Script" path="res://scenes/game/worlds/door.gd" id="1_xviec"]
+[ext_resource type="Script" uid="uid://pn08ymwys33w" path="res://scenes/game/worlds/door.gd" id="1_xviec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06gex"]
 size = Vector2(63, 30)

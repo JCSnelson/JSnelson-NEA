@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bv53ydufy7he0"]
 
 [ext_resource type="Texture2D" uid="uid://bkjpf57dyqygs" path="res://assets/2D Pixel Dungeon Asset Pack/Dungeon_Tileset_at.png" id="1_b0p88"]
-[ext_resource type="Script" path="res://scenes/game/worlds/chest.gd" id="1_b7ul6"]
+[ext_resource type="Script" uid="uid://qp2tyyu0g4rv" path="res://scenes/game/worlds/chest.gd" id="1_b7ul6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1w6hb"]
 size = Vector2(24, 24)

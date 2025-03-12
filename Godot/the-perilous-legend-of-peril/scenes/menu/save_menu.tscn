@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://sp4ok58gd2rb"]
 
-[ext_resource type="Script" path="res://scenes/menu/save_menu.gd" id="1_28ran"]
+[ext_resource type="Script" uid="uid://cwabjipmnymnj" path="res://scenes/menu/save_menu.gd" id="1_28ran"]
 
 [node name="SaveMenu" type="Node2D"]
 texture_filter = 1
