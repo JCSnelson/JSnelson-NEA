@@ -45,7 +45,7 @@ func _input(event: InputEvent) -> void:
 		attack()
 	if event.is_action_pressed("help"):
 		var help_menu = preload("res://scenes/menu/help_menu.tscn").instantiate()
-		self.add_child(help_menu)
+		add_child(help_menu)
 		get_tree().paused = true
 		await get_tree().create_timer(0.2).timeout
 		while not Input.is_action_just_pressed("help"):

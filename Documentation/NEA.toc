@@ -12,92 +12,92 @@
 \contentsline {subsubsection}{\numberline {1.6.1}Essential Features}{8}{subsubsection.1.6.1}%
 \contentsline {subsubsection}{\numberline {1.6.2}Desireable Features}{9}{subsubsection.1.6.2}%
 \contentsline {subsection}{\numberline {1.7}Success Criteria}{10}{subsection.1.7}%
-\contentsline {subsection}{\numberline {1.8}Computational Methods}{14}{subsection.1.8}%
-\contentsline {section}{\numberline {2}Design}{15}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Overview}{15}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Global Variables}{15}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Folder Structure}{15}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}Naming Convention}{15}{subsubsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.2}Database Design}{16}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}ERD}{16}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Database Naming Conventions}{17}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}SQL Queries}{18}{subsubsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}Algorithms}{19}{subsubsection.2.2.4}%
-\contentsline {subsubsection}{\numberline {2.2.5}Testing Plan}{20}{subsubsection.2.2.5}%
-\contentsline {subsection}{\numberline {2.3}Login System}{21}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Activity Diagram}{21}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Algorithms}{21}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Testing Plan}{22}{subsubsection.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.4}Mockup Forms}{22}{subsubsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.4}Save Select System}{23}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Algorithms}{23}{subsubsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.5}Item Design}{23}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}Class Diagram}{24}{subsubsection.2.5.1}%
-\contentsline {subsubsection}{\numberline {2.5.2}Algorithms}{24}{subsubsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.6}Inventory Design}{25}{subsection.2.6}%
-\contentsline {subsubsection}{\numberline {2.6.1}Stored Items}{25}{subsubsection.2.6.1}%
-\contentsline {subsubsection}{\numberline {2.6.2}Equipped Items}{25}{subsubsection.2.6.2}%
-\contentsline {subsubsection}{\numberline {2.6.3}Clarification}{25}{subsubsection.2.6.3}%
-\contentsline {subsubsection}{\numberline {2.6.4}Algorithms}{25}{subsubsection.2.6.4}%
-\contentsline {subsubsection}{\numberline {2.6.5}Testing Plan}{27}{subsubsection.2.6.5}%
-\contentsline {subsection}{\numberline {2.7}Player Character}{28}{subsection.2.7}%
-\contentsline {subsubsection}{\numberline {2.7.1}Composition}{28}{subsubsection.2.7.1}%
-\contentsline {subsubsection}{\numberline {2.7.2}Animations}{28}{subsubsection.2.7.2}%
-\contentsline {subsubsection}{\numberline {2.7.3}Help Screen}{28}{subsubsection.2.7.3}%
-\contentsline {subsubsection}{\numberline {2.7.4}Algorithms}{28}{subsubsection.2.7.4}%
-\contentsline {subsection}{\numberline {2.8}Weapon Hurtbox}{29}{subsection.2.8}%
-\contentsline {subsubsection}{\numberline {2.8.1}Algorithms}{30}{subsubsection.2.8.1}%
-\contentsline {subsection}{\numberline {2.9}Dungeon Environment Design}{30}{subsection.2.9}%
-\contentsline {subsubsection}{\numberline {2.9.1}Generic Tiles}{30}{subsubsection.2.9.1}%
-\contentsline {subsubsection}{\numberline {2.9.2}Chests}{30}{subsubsection.2.9.2}%
-\contentsline {subsubsection}{\numberline {2.9.3}Doors}{30}{subsubsection.2.9.3}%
-\contentsline {subsubsection}{\numberline {2.9.4}Algorithms}{30}{subsubsection.2.9.4}%
-\contentsline {subsection}{\numberline {2.10}Enemy Design}{31}{subsection.2.10}%
-\contentsline {subsubsection}{\numberline {2.10.1}Overview}{31}{subsubsection.2.10.1}%
-\contentsline {subsubsection}{\numberline {2.10.2}Composition}{31}{subsubsection.2.10.2}%
-\contentsline {subsubsection}{\numberline {2.10.3}Navigation}{31}{subsubsection.2.10.3}%
-\contentsline {subsubsection}{\numberline {2.10.4}Animation}{31}{subsubsection.2.10.4}%
-\contentsline {subsubsection}{\numberline {2.10.5}Algorithms}{31}{subsubsection.2.10.5}%
-\contentsline {section}{\numberline {3}Development}{33}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Database Development}{33}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}\_ready()}{33}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Hashing}{33}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Login Functions}{34}{subsubsection.3.1.3}%
-\contentsline {subsubsection}{\numberline {3.1.4}Testing}{35}{subsubsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.2}Login System Development}{37}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Login Form}{38}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Reset Password Form}{39}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Create Account Form}{39}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}Item Development}{41}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Folder Structure}{41}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Item}{41}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Equipable}{42}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Armour}{42}{subsubsection.3.3.4}%
-\contentsline {subsubsection}{\numberline {3.3.5}Charm}{42}{subsubsection.3.3.5}%
-\contentsline {subsubsection}{\numberline {3.3.6}Weapon}{43}{subsubsection.3.3.6}%
-\contentsline {subsubsection}{\numberline {3.3.7}Key}{43}{subsubsection.3.3.7}%
-\contentsline {subsubsection}{\numberline {3.3.8}Revision}{44}{subsubsection.3.3.8}%
-\contentsline {subsection}{\numberline {3.4}Inventory Development}{44}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Add Item}{44}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Remove Item}{44}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Unequip Item}{45}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Equip Item}{45}{subsubsection.3.4.4}%
-\contentsline {subsubsection}{\numberline {3.4.5}Testing}{46}{subsubsection.3.4.5}%
-\contentsline {subsection}{\numberline {3.5}Hurtbox Development}{49}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Layout}{49}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Script}{50}{subsubsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.6}Player Development}{50}{subsection.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}Layout and Structure}{50}{subsubsection.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.2}\_physics\_proccess(delta):}{51}{subsubsection.3.6.2}%
-\contentsline {subsubsection}{\numberline {3.6.3}Player Animation}{51}{subsubsection.3.6.3}%
-\contentsline {subsection}{\numberline {3.7}Dummy Development}{52}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Dungeon Environment Development}{52}{subsection.3.8}%
-\contentsline {subsubsection}{\numberline {3.8.1}Door}{52}{subsubsection.3.8.1}%
-\contentsline {subsubsection}{\numberline {3.8.2}Chest}{53}{subsubsection.3.8.2}%
-\contentsline {subsection}{\numberline {3.9}Enemy Development}{54}{subsection.3.9}%
-\contentsline {subsubsection}{\numberline {3.9.1}Layout and Structure}{54}{subsubsection.3.9.1}%
-\contentsline {subsubsection}{\numberline {3.9.2}General Script}{54}{subsubsection.3.9.2}%
-\contentsline {subsubsection}{\numberline {3.9.3}\_physics\_process(delta):}{55}{subsubsection.3.9.3}%
-\contentsline {subsubsection}{\numberline {3.9.4}take\_damage(damage, damage\_type):}{55}{subsubsection.3.9.4}%
-\contentsline {subsubsection}{\numberline {3.9.5}Animation}{55}{subsubsection.3.9.5}%
-\contentsline {section}{\numberline {4}References}{56}{section.4}%
+\contentsline {subsection}{\numberline {1.8}Computational Methods}{13}{subsection.1.8}%
+\contentsline {section}{\numberline {2}Design}{14}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Overview}{14}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Global Variables}{14}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Folder Structure}{14}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Naming Convention}{14}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Database Design}{15}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}ERD}{15}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Database Naming Conventions}{16}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}SQL Queries}{17}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Algorithms}{18}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}Testing Plan}{19}{subsubsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.3}Login System}{20}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Activity Diagram}{20}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Algorithms}{20}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Testing Plan}{21}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Mockup Forms}{21}{subsubsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Save Select System}{22}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Algorithms}{22}{subsubsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.5}Item Design}{22}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Class Diagram}{23}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Algorithms}{23}{subsubsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.6}Inventory Design}{24}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Stored Items}{24}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Equipped Items}{24}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Clarification}{24}{subsubsection.2.6.3}%
+\contentsline {subsubsection}{\numberline {2.6.4}Algorithms}{24}{subsubsection.2.6.4}%
+\contentsline {subsubsection}{\numberline {2.6.5}Testing Plan}{26}{subsubsection.2.6.5}%
+\contentsline {subsection}{\numberline {2.7}Player Character}{27}{subsection.2.7}%
+\contentsline {subsubsection}{\numberline {2.7.1}Composition}{27}{subsubsection.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.7.2}Animations}{27}{subsubsection.2.7.2}%
+\contentsline {subsubsection}{\numberline {2.7.3}Help Screen}{27}{subsubsection.2.7.3}%
+\contentsline {subsubsection}{\numberline {2.7.4}Algorithms}{27}{subsubsection.2.7.4}%
+\contentsline {subsection}{\numberline {2.8}Weapon Hurtbox}{28}{subsection.2.8}%
+\contentsline {subsubsection}{\numberline {2.8.1}Algorithms}{29}{subsubsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.9}Dungeon Environment Design}{29}{subsection.2.9}%
+\contentsline {subsubsection}{\numberline {2.9.1}Generic Tiles}{29}{subsubsection.2.9.1}%
+\contentsline {subsubsection}{\numberline {2.9.2}Chests}{29}{subsubsection.2.9.2}%
+\contentsline {subsubsection}{\numberline {2.9.3}Doors}{29}{subsubsection.2.9.3}%
+\contentsline {subsubsection}{\numberline {2.9.4}Algorithms}{29}{subsubsection.2.9.4}%
+\contentsline {subsection}{\numberline {2.10}Enemy Design}{30}{subsection.2.10}%
+\contentsline {subsubsection}{\numberline {2.10.1}Overview}{30}{subsubsection.2.10.1}%
+\contentsline {subsubsection}{\numberline {2.10.2}Composition}{30}{subsubsection.2.10.2}%
+\contentsline {subsubsection}{\numberline {2.10.3}Navigation}{30}{subsubsection.2.10.3}%
+\contentsline {subsubsection}{\numberline {2.10.4}Animation}{30}{subsubsection.2.10.4}%
+\contentsline {subsubsection}{\numberline {2.10.5}Algorithms}{30}{subsubsection.2.10.5}%
+\contentsline {section}{\numberline {3}Development}{32}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Database Development}{32}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}\_ready()}{32}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Hashing}{32}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Login Functions}{33}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Testing}{34}{subsubsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.2}Login System Development}{36}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Login Form}{37}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Reset Password Form}{38}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Create Account Form}{38}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Item Development}{40}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Folder Structure}{40}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Item}{40}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Equipable}{41}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Armour}{41}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}Charm}{41}{subsubsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.3.6}Weapon}{42}{subsubsection.3.3.6}%
+\contentsline {subsubsection}{\numberline {3.3.7}Key}{42}{subsubsection.3.3.7}%
+\contentsline {subsubsection}{\numberline {3.3.8}Revision}{43}{subsubsection.3.3.8}%
+\contentsline {subsection}{\numberline {3.4}Inventory Development}{43}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Add Item}{43}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Remove Item}{43}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Unequip Item}{44}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Equip Item}{44}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.5}Testing}{45}{subsubsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.5}Hurtbox Development}{48}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Layout}{48}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Script}{49}{subsubsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.6}Player Development}{49}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Layout and Structure}{49}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}\_physics\_proccess(delta):}{50}{subsubsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.3}Player Animation}{50}{subsubsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.7}Dummy Development}{51}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Dungeon Environment Development}{51}{subsection.3.8}%
+\contentsline {subsubsection}{\numberline {3.8.1}Door}{51}{subsubsection.3.8.1}%
+\contentsline {subsubsection}{\numberline {3.8.2}Chest}{52}{subsubsection.3.8.2}%
+\contentsline {subsection}{\numberline {3.9}Enemy Development}{53}{subsection.3.9}%
+\contentsline {subsubsection}{\numberline {3.9.1}Layout and Structure}{53}{subsubsection.3.9.1}%
+\contentsline {subsubsection}{\numberline {3.9.2}General Script}{53}{subsubsection.3.9.2}%
+\contentsline {subsubsection}{\numberline {3.9.3}\_physics\_process(delta):}{54}{subsubsection.3.9.3}%
+\contentsline {subsubsection}{\numberline {3.9.4}take\_damage(damage, damage\_type):}{54}{subsubsection.3.9.4}%
+\contentsline {subsubsection}{\numberline {3.9.5}Animation}{54}{subsubsection.3.9.5}%
+\contentsline {section}{\numberline {4}References}{55}{section.4}%

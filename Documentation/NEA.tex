@@ -416,7 +416,11 @@
                 &&&\\
                 &&&\\
                 \hline
-                4&\mr{2}{2cm}{Different Enemies for the player to face including bosses}&\mr{2}{6cm}{4.1 Enemy Sprites\\4.2 Enemy Pathfinding Abilities\\4.3 Enemy sight range\\4.4 Enemy hitbox\\4.5 Enemy health tracking\\4.6 Melee Enemies\\4.7 Projectile Enemies\\4.8 Boss Enemies with different attack combinations}&\mr{2}{4cm}{These Criterie need to be met in order to provide enemies in order to provide the challenge throughout the game.}\\
+                4&\mr{2}{2cm}{Different Enemies for the player to face including bosses}&\mr{2}{6cm}{4.1 Enemy Sprites\\4.2 Enemy Pathfinding Abilities\\4.3 Enemy sight range\\4.4 Enemy hitbox\\4.5 Enemy health tracking\\4.6 Melee Enemies\\4.7 Projectile Enemies\\4.8 Boss Enemies with different attack combinations}&\mr{2}{6cm}{Enemies have distinct and visually recognisable sprites with smooth animations.\\Enemies navigate around walls and obstacles and follow the player.\\Enemies detect the player within a certain range and react.\\Player attacks are registered and decrease enemy health.\\When an enemies health runs out it will die.\\Melee enemies attack the player within close range.\\}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -430,7 +434,7 @@
         \newpage
         \begin{tabular}{|c|c|c|c|}
                 \hline
-                \mr{2}{0.6cm}{}5\mr{2}{0.6cm}{}&\mr{2}{2cm}{Appearance and Animations of the Player}&\mr{2}{6cm}{5.1 Player Sprite\\5.2 Walking Animation\\5.3 Player sprite turns to face the direction of movement\\5.4 Melee Animation\\5.5 Magic Animation\\5.6 Bow Animation}&\mr{2}{4cm}{These Criteria will provide the visual animations so the player knows where they are attacking and moving}\\
+                \mr{2}{0.6cm}{}5\mr{2}{0.6cm}{}&\mr{2}{2cm}{Appearance and Animations of the Player}&\mr{2}{6cm}{5.1 Player Sprite\\5.2 Walking Animation\\5.3 Player sprite turns to face the direction of movement\\5.4 Melee Animation\\5.5 Magic Animation\\5.6 Bow Animation}&\mr{2}{6cm}{The Player has a distinct and visually recognisable sprite with smooth animations for walking, melee attacks and others.\\The direction of the player changes based on last direction moved.}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -438,10 +442,7 @@
                 &&&\\
                 &&&\\
                 \hline
-                6&\mr{2}{2cm}{Login System}&\mr{2}{6cm}{6.1 Password Hashing Algorithm\\6.2 SQL Table to store username and hashed password pairs\\6.3 Ability to create a new account with unique username\\6.4 Validation of Usernames (1$\le$chars$<$15)\\6.5 Validation of passwords (One Special Character, One Number, At least 8 Characters, One upper and lower case character)\\6.6 Input Sanitisation (Removing any escape chars for SQL before sending the command)\\6.7 Ability to log in with an exisiting account and correct password\\6.8 Ability to reset password (If admin account)\\6.9 A general login form which links the other forms}&\mr{2}{4cm}{These Criteria will provide a Login system in order to allow multiple users to login whilst keeping user data secure and accessible by that user.}\\
-                &&&\\
-                &&&\\
-                &&&\\
+                6&\mr{2}{2cm}{Login System}&\mr{2}{6cm}{6.1 Password Hashing Algorithm\\6.2 SQL Table to store username and hashed password pairs\\6.3 Ability to create a new account with unique username\\6.4 Validation of Usernames (1$\le$chars$<$15)\\6.5 Input Sanitisation (Removing any escape chars for SQL before sending the command)\\6.6 Ability to log in with an exisiting account and correct password\\6.7 Ability to reset password (With challenge question)\\6.8 A general login form which links the other forms.\\6.9 Ability to delete an account.\\}&\mr{2}{6cm}{Uses a strong hashing algorithm with salting.\\Username password pairs are stored in an SQL table.\\Users can only create an account if the username is unique and between 1 and 14 characters.\\Preventation of SQL injection attacks.\\User's can login with credentials.\\User's can reset their password.\\A general login form links to registration, password reset and logging in.\\}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -459,7 +460,7 @@
                 &&&\\
                 &&&\\
                 \hline
-                7&\mr{2}{2cm}{User Interface}&\mr{2}{6cm}{7.1 Health Bar\\7.2 Magic Points Bar\\7.3 Display of the weapon being used\\7.4 Popup display with enemy health over their head when they get damaged\\7.5 ability to switch between weapons}&\mr{2}{4cm}{These Criteria allow the key information to be displayed to the user aswell as the user being able to change what weapon they have equipped}\\
+                7&\mr{2}{2cm}{User Interface}&\mr{2}{6cm}{7.1 Health Bar\\7.2 Magic Points Bar\\7.3 Display of the weapon being used\\7.4 Popup display with enemy health over their head when they get damaged\\7.5 ability to switch between weapons}&\mr{2}{6cm}{Displays Player health and MP accurately and updates dynamically.\\ Clearly indicates which weapon is being used.\\ Clearly displays enemies health when they get damaged.\\ Allows switching between weapons.\\}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -467,11 +468,7 @@
                 &&&\\
                 &&&\\
                 \hline
-        \end{tabular}
-        \newpage
-        \begin{tabular}{|c|c|c|c|}
-                \hline
-                \mr{2}{0.6cm}{}8\mr{2}{0.6cm}{}&\mr{2}{2cm}{Weapons And a More Advanced Combat System}&\mr{2}{6cm}{8.1 Different Styles of melee, magic and ranged weapons\\8.2 Item pick up\\8.3 Boss Drops\\8.4 Shop System that appears throughout levels\\8.5 Charged Attacks (based on how long you hold down)\\8.6 Special attacks}&\mr{2}{4cm}{These Criteria would allow for a more complex combat system to increase differences in the way you play}\\
+                \mr{2}{0.6cm}{}8\mr{2}{0.6cm}{}&\mr{2}{2cm}{Weapons And a More Advanced Combat System}&\mr{2}{6cm}{8.1 Different Styles of melee, magic and ranged weapons\\8.2 Boss Drops\\8.3 Shop System that appears throughout levels\\8.4 Charged Attacks (based on how long you hold down)\\8.5 Special attacks}&\mr{2}{6cm}{Distinct different weapon styles, levels and dynamics.\\Defeated Bosses drop unique or rare items.\\Shops can appear throughout levels.\\Holding down attack button increases power of attacks.\\More powerful secondary special attacks.}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -481,45 +478,9 @@
                 &&&\\
                 &&&\\
                 \hline
-                9&\mr{2}{2cm}{Skill Tree}&\mr{2}{6cm}{9.1 UI Menu for the skill tree (Some skills required before others unlocked).\\9.2 Different Branches (Melee, Ranged, Magic, Defense)\\ 9.3 Experience system.\\\tab 9.3.1 Experience gained after \tab killing enemies/bosses\\ \tab 9.3.2 Different experience amounts \tab required for different skills\\9.4 Ability to unlock skills\\9.5 Ability to reset your skill tree}&\mr{2}{4cm}{These Criteria will fulfill a stakeholder desire and will allow the game to have more complexity and replayability}\\
+                \mr{2}{0.6cm}{}9\mr{2}{0.6cm}{}&\mr{2}{2cm}{Skill Tree}&\mr{2}{6cm}{9.1 UI Menu for the skill tree (Some skills required before others unlocked).\\9.2 Different Branches (Melee, Ranged, Magic, Defense)\\ 9.3 Experience system.\\\tab 9.3.1 Experience gained after \tab killing enemies/bosses\\ \tab 9.3.2 Different experience amounts \tab required for different skills\\9.4 Ability to unlock skills\\9.5 Ability to reset your skill tree}&\mr{2}{6cm}{A user-friendy menu displaying skills and prerequesites.\\Seperate branches for Melee, Ranged, Magic and Defense skills.\\Players gain xp from defeating enemies and bosses.\\Different skills requiring different amounts of XP to unlock.\\Players can spend XP to unlock skills.\\Players can reset and redistribute points in the skill tree.\\}\\
                 &&&\\
                 &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                \hline
-                10&\mr{2}{2cm}{Procedurally Generated Dungeons}&\mr{2}{6cm}{10.1 Creating requirements for each level to satisfy\\10.2 Creating differnt room sections/rooms to peice together\\10.3 Creating the algorithm to generate which room sections are slotted together where.\\10.4 Create an algorithm to peice the sections together to create a fully playable level.\\\tab 10.4.1 Level's generated satisfy \tab length requirements\\\tab 10.4.2 Level's generated contain all \tab the special rooms needed (chest \tab room, secret rooms, etc.)}&\mr{2}{4cm}{These criteria will help to add a ton of replayability to the game aswell as being requested by stakeholders}\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                \hline
-                11&\mr{2}{2cm}{Hidden Areas}&\mr{2}{6cm}{11.1 Add mechanics to get into the secret rooms (breakable walls, climbing vines, keys, etc.)\\\tab 11.1.1 Add a hammer to break \tab walls with\\\tab 11.1.2 Add climbing gloves which \tab you need in order to climb vines\\11.2 Add secret Boss and Treasure rooms for behind these obstacles.}&\mr{2}{4cm}{These Criteria will make the game more engaging as well as being requested by the stakeholders}\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                &&&\\
-                \hline
-                12&\mr{2}{2cm}{Inventory System}&\mr{2}{6cm}{12.1 UI for Inventory\\12.2 Storage of Extra weapons and key items (keys, armour, charms, etc)\\12.3 E key to open up the inventory\\12.4 Ability to switch out what Weapons, Armour and charms are equipped.\\12.5 Ability to add or remove items from the inventory.}&\mr{2}{4cm}{These criteria will allow for more complexity in the game and more customized and diverse playthrough options which allows for more replayability}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -533,13 +494,50 @@
         \newpage
         \begin{tabular}{|c|c|c|c|}
                 \hline
-                \mr{2}{0.6cm}{}13\mr{2}{0.6cm}{}&\mr{2}{2cm}{Settings and Volume Control}&\mr{2}{6cm}{13.1 Settings UI with buttons for each setting\\13.2 Ability to control the volume\\13.3 Ability to control the vibrancy of colours in the game.}&\mr{2}{4cm}{These criteria have been requested by stakeholders as a way to increase the accessibility of the game to them}\\
+                10&\mr{2}{2cm}{Procedurally Generated Dungeons}&\mr{2}{6cm}{10.1 Creating requirements for each level to satisfy\\10.2 Creating different room sections/rooms to peice together\\10.3 Creating the algorithm to generate which room sections are slotted together where.\\10.4 Create an algorithm to peice the sections together to create a fully playable level.\\\tab 10.4.1 Level's generated satisfy \tab length requirements\\\tab 10.4.2 Level's generated contain all \tab the special rooms needed (chest \tab room, secret rooms, etc.)}&\mr{2}{6cm}{Each level generated meets specific preconditions.\\Different Room sections are designed to be peiced together dynamically.\\An algorithm places room sections together to form a level layout.\\Generated levels are fully playable and contain all rooms needed.\\}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
                 \hline
-                14&\mr{2}{2cm}{Difficulty Levels and Hardcore Mode}&\mr{2}{6cm}{14.1 A slider for difficulty in the settings menu\\14.2 Increasing difficulty based on the slider\\\tab 14.2.1 Increasing enemy health\\\tab 14.2.2 Decreasing player health\\\tab 14.2.3 Increasing number of \tab enemies\\14.3 A Hardcore mode at maximum difficulty with a seperate save state to the normal game.\\\tab 14.3.1 roguelike features \tab (permadeath, resource \tab management, etc)}&\mr{2}{4cm}{These criteria will allow those of the stakeholders who have more experience in dungeon crawlers aswell as those that have played the game more to up the difficulty and it increases the replayabilty through different challenges.}\\
+                11&\mr{2}{2cm}{Hidden Areas}&\mr{2}{6cm}{11.1 Add mechanics to get into the secret rooms (breakable walls, climbing vines, keys, etc.)\\\tab 11.1.1 Add a hammer to break \tab walls with\\\tab 11.1.2 Add climbing gloves which \tab you need in order to climb vines\\11.2 Add secret Boss and Treasure rooms for behind these obstacles.}&\mr{2}{6cm}{Players can access secret rooms using specific methods.\\A hammer item allows players to break walls.\\Players need climbing gloves to scale vines.\\Secret areas contain unique bosses or loot.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                        12&\mr{2}{2cm}{Inventory System}&\mr{2}{6cm}{12.1 UI for Inventory\\12.2 Storage of Extra weapons and key items (keys, armour, charms, etc)\\12.3 E key to open up the inventory\\12.4 Ability to switch out what Weapons, Armour and charms are equipped.\\12.5 Ability to add or remove items from the inventory.}&\mr{2}{6cm}{A clear and intuitive menu for managing items.\\ Players can store extra weapons and items to be saved in their inventory.\\ E Key - Open Inventory UI.\\Players can swap weapons/armour.\\Players can remove items from their inventory.}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                \mr{2}{0.6cm}{}13\mr{2}{0.6cm}{}&\mr{2}{2cm}{Settings and Volume Control}&\mr{2}{6cm}{13.1 Settings UI with buttons for each setting\\13.2 Ability to control the volume\\13.3 Ability to control the vibrancy of colours in the game.}&\mr{2}{6cm}{A clear and accessible menu with buttons for different settings.\\Players can adjust the volume of each source of noise in the game.\\Allow users to adjust colour intensity along with accessibility needs.\\}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+                14&\mr{2}{2cm}{Difficulty Levels and Hardcore Mode}&\mr{2}{6cm}{14.1 A slider for difficulty in create save\\14.2 Increasing difficulty based on the slider\\\tab 14.2.1 Increasing enemy health\\\tab 14.2.2 Decreasing player health\\\tab 14.2.3 Increasing number of \tab enemies\\14.3 A Hardcore mode at maximum difficulty with a seperate save state to the normal game.\\\tab 14.3.1 roguelike features \tab (permadeath, resource \tab management, etc)}&\mr{2}{6cm}{A difficulty slider in the save menu.\\The game adjusts difficulty by increasing enemy health and damage and increasing the number of enemies.\\A hardcore mode with permadeath that can be toggled in the save creation menu.}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -767,7 +765,7 @@
         I will use godot's $query\_with\_bindings()$ function in order to substitute in the bindings for the ?s in the queries. This is useful as it automatically performs input sanitisation so that the system isn't vulnerable to SQL injection.\\
         \subsubsection{Algorithms}
         \textbf{login():}\\
-        The login function will be used to find if the user exists and then check the hashed password if it does. This will help fulfill criteria 6.7.\\
+        The login function will be used to find if the user exists and then check the hashed password if it does. This will help fulfill criteria 6.6.\\
         \begin{python}
 def login(username,password):
    query_result = get_user_data(username) #Getting user data
@@ -789,7 +787,7 @@ def add_user(username, password, answer):
    return True
         \end{python}
         \textbf{reset\_password():}\\
-        The reset\_password function will be used to check if the username is valid, fetch the user data and then check if the hashed answer is the same as the stored answer before updating the stored password. This will help fulfill criteria 6.8.\\
+        The reset\_password function will be used to check if the username is valid, fetch the user data and then check if the hashed answer is the same as the stored answer before updating the stored password. This will help fulfill criteria 6.7.\\
         \begin{python}
 def reset_password(username, answer, password):
    query_result = get_user_data(username) #Getting user data
@@ -811,22 +809,22 @@ def reset_password(username, answer, password):
                 6.3.2&add\_user()&"Hyrule", "Password", "Answer"&\mr{2}{6cm}{"InvalidUsernameError" as a user already exists with that username}\\
                 &&&\\
                 \hline
-                6.7.1&login()&"Hyru1e", "Password"&\mr{2}{6cm}{"InvalidUsernameError"}\\
+                6.6.1&login()&"Hyru1e", "Password"&\mr{2}{6cm}{"InvalidUsernameError"}\\
                 &&&\\
                 \hline
-                6.7.2&login()&"Hyrule", "Password"&\mr{2}{6cm}{True}\\
+                6.6.2&login()&"Hyrule", "Password"&\mr{2}{6cm}{True}\\
                 &&&\\
                 \hline
-                6.8.1&reset\_password()&"Hyru1e", "Answer", "password&\mr{2}{6cm}{"InvalidUsernameError"}\\
+                6.7.1&reset\_password()&"Hyru1e", "Answer", "password&\mr{2}{6cm}{"InvalidUsernameError"}\\
                 &&&\\
                 \hline
-                6.8.2&reset\_password()&"Hyrule", "answer", "password"&\mr{2}{6cm}{"IncorrectAnswerError"}\\
+                6.7.2&reset\_password()&"Hyrule", "answer", "password"&\mr{2}{6cm}{"IncorrectAnswerError"}\\
                 &&&\\
                 \hline
-                6.8.3&reset\_password()&"Hyrule", "Answer", "password"&\mr{2}{6cm}{True}\\
+                6.7.3&reset\_password()&"Hyrule", "Answer", "password"&\mr{2}{6cm}{True}\\
                 &&&\\
                 \hline
-                6.7.3&login()&"Hyrule", "Password"&\mr{2}{6cm}{"IncorrectPasswordError"}\\
+                6.6.3&login()&"Hyrule", "Password"&\mr{2}{6cm}{"IncorrectPasswordError"}\\
                 &&&\\
                 \hline
                 &&&\mr{2}{6cm}{}\\
@@ -907,7 +905,7 @@ def gen_salt():
                         \caption{Reset Password Form}
                 \end{figure}
         \end{multicols}\[\]
-        These forms would be used in order to create an account, reset your password and login, Helping fulfill criteria 6.3, 6.7, 6.8 and 6.9.\\
+        These forms would be used in order to create an account, reset your password and login, Helping fulfill criteria 6.3, 6.6, 6.7 and 6.8.\\
         The Password and Challenge question entries would be hidden/starred for privacy.\\
         \newpage
         \subsection{Save Select System}
@@ -1405,22 +1403,22 @@ def _on_navigation_timer_timeout() -> void:
                 &&&&\\
                 &&&&\\
                 \hline
-                6.7.1&login()&"Hyru1e", "Password"&\mr{2}{4cm}{"InvalidUsernameError"}&Success\\
+                6.6.1&login()&"Hyru1e", "Password"&\mr{2}{4cm}{"InvalidUsernameError"}&Success\\
                 &&&&\\
                 \hline
-                6.7.2&login()&"Hyrule", "Password"&\mr{2}{4cm}{True}&Success\\
+                6.6.2&login()&"Hyrule", "Password"&\mr{2}{4cm}{True}&Success\\
                 &&&&\\
                 \hline
-                6.8.1&reset\_password()&"Hyru1e", "Answer", "password&\mr{2}{4cm}{"InvalidUsernameError"}&Success\\
+                6.7.1&reset\_password()&"Hyru1e", "Answer", "password&\mr{2}{4cm}{"InvalidUsernameError"}&Success\\
                 &&&&\\
                 \hline
-                6.8.2&reset\_password()&"Hyrule", "answer", "password"&\mr{2}{4cm}{"IncorrectAnswerError"}&Success\\
+                6.7.2&reset\_password()&"Hyrule", "answer", "password"&\mr{2}{4cm}{"IncorrectAnswerError"}&Success\\
                 &&&&\\
                 \hline
-                6.8.3&reset\_password()&"Hyrule", "Answer", "password"&\mr{2}{4cm}{True}&Success\\
+                6.7.3&reset\_password()&"Hyrule", "Answer", "password"&\mr{2}{4cm}{True}&Success\\
                 &&&&\\
                 \hline
-                6.7.3&login()&"Hyrule", "Password"&\mr{2}{4cm}{"IncorrectPasswordError"}&Success\\
+                6.6.3&login()&"Hyrule", "Password"&\mr{2}{4cm}{"IncorrectPasswordError"}&Success\\
                 &&&&\\
                 \hline
         \end{tabular}
@@ -1442,11 +1440,11 @@ def _on_navigation_timer_timeout() -> void:
                 \hline
                 Test \#&Function&Parameters&Expected Outcome&Actual Outcome\\
                 \hline
-                6.10.1&delete\_user()&"Hyrule", "Password"&\mr{1}{4cm}{IncorrectPasswordError}&Success\\
+                6.9.1&delete\_user()&"Hyrule", "Password"&\mr{1}{4cm}{IncorrectPasswordError}&Success\\
                 \hline
-                6.10.2&delete\_user()&"Hyrule", "password"&\mr{1}{4cm}{True}&Success\\
+                6.9.2&delete\_user()&"Hyrule", "password"&\mr{1}{4cm}{True}&Success\\
                 \hline
-                6.7.4&login()&"Hyrule", "password"&\mr{1}{4cm}{InvalidUsernameError}&Success\\
+                6.6.4&login()&"Hyrule", "password"&\mr{1}{4cm}{InvalidUsernameError}&Success\\
                 \hline
                 
         \end{tabular}

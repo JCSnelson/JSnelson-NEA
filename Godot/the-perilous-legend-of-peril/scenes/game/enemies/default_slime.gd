@@ -23,7 +23,6 @@ func get_animation(animation_type: String):
 		else:
 			return animation_type + "_u"
 
-
 func _ready():
 	add_to_group("enemies")
 
@@ -49,10 +48,7 @@ func _physics_process(delta: float) -> void:
 				collider.take_damage(damage, damage_type)
 				can_attack=false
 				$AttackTimer.start()
-	
 
-
-	
 func take_damage(damage, damage_type):
 	var player = get_tree().get_first_node_in_group("player")
 	animating = true
@@ -67,14 +63,10 @@ func take_damage(damage, damage_type):
 		$AnimatedSprite2D.play(get_animation("hurt"))
 	await $AnimatedSprite2D.animation_finished
 	animating = false
-	
-
 
 func _on_navigation_timer_timeout() -> void:
 	var player = get_tree().get_first_node_in_group("player")
 	$NavigationAgent2D.set_target_position(player.global_position)
-
-
 
 func _on_attack_timer_timeout() -> void:
 	can_attack = true
