@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cuc3sp1s4jyhf"]
+[gd_scene load_steps=14 format=4 uid="uid://cuc3sp1s4jyhf"]
 
 [ext_resource type="PackedScene" uid="uid://cxuyu802r6apc" path="res://scenes/game/worlds/tile_map.tscn" id="1_ub1nj"]
 [ext_resource type="PackedScene" uid="uid://c5beo6a2q4foo" path="res://scenes/game/player/ui.tscn" id="1_xersf"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dyn2myc0ig8xr" path="res://scenes/game/enemies/poison_slime.tscn" id="7_u6fx0"]
 [ext_resource type="PackedScene" uid="uid://b1l3b8ucgd7v3" path="res://scenes/game/enemies/fire_slime.tscn" id="8_3ekl1"]
 [ext_resource type="PackedScene" uid="uid://bi8mow4cvm611" path="res://scenes/game/projectiles/fire_projectile.tscn" id="10_00tp4"]
+[ext_resource type="PackedScene" uid="uid://lfd585lo8gug" path="res://scenes/game/projectiles/ice_projectile.tscn" id="11_5tkv4"]
+[ext_resource type="PackedScene" uid="uid://ug6l2qiqudoh" path="res://scenes/game/projectiles/thunder_projectile.tscn" id="12_0m0f1"]
 
 [sub_resource type="GDScript" id="GDScript_0rb26"]
 script/source = "extends Node2D
@@ -68,3 +70,9 @@ position = Vector2(336, 240)
 
 [node name="FireProjectile" parent="." instance=ExtResource("10_00tp4")]
 position = Vector2(288, 240)
+
+[node name="FireProjectile2" parent="." instance=ExtResource("11_5tkv4")]
+position = Vector2(288, 256)
+
+[node name="FireProjectile3" parent="." instance=ExtResource("12_0m0f1")]
+position = Vector2(288, 224)

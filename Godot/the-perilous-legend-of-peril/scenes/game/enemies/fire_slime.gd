@@ -62,6 +62,7 @@ func take_damage(damage, damage_type):
 	else:
 		$AnimatedSprite2D.play(get_animation("hurt"))
 	await $AnimatedSprite2D.animation_finished
+	velocity = Vector2(0,0)
 	animating = false
 	$HealthBar.visible = false
 	

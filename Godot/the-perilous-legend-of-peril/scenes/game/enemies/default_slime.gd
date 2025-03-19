@@ -69,6 +69,7 @@ func take_damage(damage, damage_type):
 		$AnimatedSprite2D.play(get_animation("hurt"))
 	await $AnimatedSprite2D.animation_finished
 	animating = false
+	velocity = Vector2(0,0)
 	$HealthBar.visible = false
 
 func _on_navigation_timer_timeout() -> void:

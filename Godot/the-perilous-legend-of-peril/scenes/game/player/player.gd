@@ -90,8 +90,9 @@ func attack():
 			$AnimatedSprite2D.play(get_animation("melee")) #Change later
 			#Load the projectile scene
 			var projectile = load("res://scenes/game/projectiles/%s_projectile.tscn"%weapon.damage_type).instantiate()
-			projectile.rotation_degrees = rad_to_deg(last_direction.angle())
-			projectile.position = position + 20*last_direction
+			var projectile_direction = (get_viewport().get_mouse_position()-Vector2(1920/2,1080/2)).normalized()
+			projectile.rotation_degrees = rad_to_deg(projectile_direction.angle())
+			projectile.position = position + 20 * projectile_direction
 			projectile.damage = weapon.attack_power
 			get_parent().add_child(projectile)
 		await $AnimatedSprite2D.animation_finished

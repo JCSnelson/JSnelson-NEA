@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var damage: int = 1
-var damage_type: String = "fire"
+var damage_type: String = "thunder"
 var speed = 120
 var attacking = false
 
