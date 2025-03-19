@@ -281,7 +281,7 @@ func remove_stored_item(item_id):
 	return db.query_result
 #Function for getting a slot value from the save
 func get_slot_value(slot):
-	return "res://resources/equipable/weapon/test_weapon.tres"
+	return "res://resources/equipable/weapon/test_weapon_magic_ranged.tres"
 	db.query_with_bindings(_get_slot_values,[current_save_id])
 	if len(db.query_result) == 0:
 		return null

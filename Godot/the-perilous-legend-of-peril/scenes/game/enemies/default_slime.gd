@@ -25,6 +25,10 @@ func get_animation(animation_type: String):
 
 func _ready():
 	add_to_group("enemies")
+	$HealthBar.max_value=health
+	$HealthBar.value=health
+	
+	
 
 func _physics_process(delta: float) -> void:
 	var move = false
@@ -57,12 +61,15 @@ func take_damage(damage, damage_type):
 	else:
 		health -= damage
 	velocity = - 25 * to_local(player.global_position).normalized()
+	$HealthBar.value=health
+	$HealthBar.visible = true
 	if health == 0:
 		queue_free()
 	else:
 		$AnimatedSprite2D.play(get_animation("hurt"))
 	await $AnimatedSprite2D.animation_finished
 	animating = false
+	$HealthBar.visible = false
 
 func _on_navigation_timer_timeout() -> void:
 	var player = get_tree().get_first_node_in_group("player")

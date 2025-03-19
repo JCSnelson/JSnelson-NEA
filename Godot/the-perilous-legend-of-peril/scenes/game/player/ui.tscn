@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5beo6a2q4foo"]
+
+[ext_resource type="Script" uid="uid://b6cuy5vxoemhv" path="res://scenes/game/player/ui.gd" id="1_lalxo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5s5d"]
+bg_color = Color(0.666667, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chwcf"]
+bg_color = Color(0, 0.666667, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lalxo"]
+bg_color = Color(0, 0, 0.333333, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_leu8t"]
+bg_color = Color(0.333333, 0, 0.666667, 1)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_lalxo")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = 21.0
+offset_top = 988.0
+offset_right = 181.0
+offset_bottom = 992.0
+scale = Vector2(5, 5)
+theme_override_styles/background = SubResource("StyleBoxFlat_v5s5d")
+theme_override_styles/fill = SubResource("StyleBoxFlat_chwcf")
+show_percentage = false
+
+[node name="MagicBar" type="ProgressBar" parent="."]
+offset_left = 21.0
+offset_top = 1027.0
+offset_right = 181.0
+offset_bottom = 1031.0
+scale = Vector2(5, 5)
+theme_override_styles/background = SubResource("StyleBoxFlat_lalxo")
+theme_override_styles/fill = SubResource("StyleBoxFlat_leu8t")
+show_percentage = false

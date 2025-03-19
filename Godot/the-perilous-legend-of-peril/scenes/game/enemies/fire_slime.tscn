@@ -1,9 +1,15 @@
-[gd_scene load_steps=84 format=3 uid="uid://b1l3b8ucgd7v3"]
+[gd_scene load_steps=86 format=3 uid="uid://b1l3b8ucgd7v3"]
 
 [ext_resource type="Script" uid="uid://cfnnoo41b3762" path="res://scenes/game/enemies/fire_slime.gd" id="1_mv2d2"]
 [ext_resource type="Texture2D" uid="uid://hqv6m4kre1du" path="res://assets/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime3/Hurt/Slime3_Hurt_body.png" id="2_7gwbm"]
 [ext_resource type="Texture2D" uid="uid://dtb1gblutb6i0" path="res://assets/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime3/Idle/Slime3_Idle_body.png" id="3_bhysf"]
 [ext_resource type="Texture2D" uid="uid://d4kruurl3162a" path="res://assets/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime3/Walk/Slime3_Walk_body.png" id="4_v5ldt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sydpu"]
+bg_color = Color(0.666667, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36lap"]
+bg_color = Color(0, 0.666667, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p4btn"]
 atlas = ExtResource("2_7gwbm")
@@ -612,10 +618,19 @@ collision_layer = 3
 script = ExtResource("1_mv2d2")
 weaknesses = ["ice"]
 
+[node name="HealthBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -10.0
+offset_top = -12.0
+offset_right = 10.0
+offset_bottom = -8.0
+theme_override_styles/background = SubResource("StyleBoxFlat_sydpu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_36lap")
+show_percentage = false
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dlmvt")
-animation = &"idle_d"
-frame_progress = 0.0814175
+animation = &"hurt_d"
 speed_scale = 1.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -627,9 +642,10 @@ shape = SubResource("CircleShape2D_u6ccj")
 shape = SubResource("CircleShape2D_3g6a4")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-target_desired_distance = 50.0
+target_desired_distance = 100.0
 
 [node name="NavigationTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="AttackTimer" type="Timer" parent="."]

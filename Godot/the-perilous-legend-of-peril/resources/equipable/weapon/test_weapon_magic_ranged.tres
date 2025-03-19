@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://dyh66cacsa5ax"]
+
+[ext_resource type="Script" uid="uid://cvithor0844be" path="res://resources/scripts/weapon.gd" id="1_egrup"]
+
+[resource]
+script = ExtResource("1_egrup")
+weapon_type = "ranged_magic"
+attack_power = 5
+attack_range = 0
+damage_type = "fire"
+stat_boosts = {}
+stackable = false
+description = ""

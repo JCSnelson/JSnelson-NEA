@@ -3,9 +3,11 @@ extends CharacterBody2D
 
 var speed = 100
 var health = 100
+var magic = 100
 var last_direction = Vector2(1,0)
 var animating = false
 var weapon
+var can_dash = true
 
 func _ready():
 	add_to_group("player")
@@ -43,7 +45,7 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
 		attack()
-	if event.is_action_pressed("help"):
+	elif event.is_action_pressed("help"):
 		var help_menu = preload("res://scenes/menu/help_menu.tscn").instantiate()
 		add_child(help_menu)
 		get_tree().paused = true
@@ -53,15 +55,24 @@ func _input(event: InputEvent) -> void:
 			print("yippee")
 		help_menu.queue_free()
 		get_tree().paused = false
+	elif event.is_action_pressed("dash"):
+		if can_dash:
+			speed = 8*speed
+			can_dash = false
+			await get_tree().create_timer(0.05).timeout
+			speed = speed/8
+			await get_tree().create_timer(0.5).timeout
+			can_dash = true
+			
 
 
 func attack():
 	if not animating:
 		animating = true
-		$AnimatedSprite2D.play(get_animation("melee"))
-		await get_tree().create_timer(0.5).timeout
 		weapon = load(Database.get_slot_value("weapon"))
 		if weapon.weapon_type == "melee":
+			$AnimatedSprite2D.play(get_animation("melee"))
+			await get_tree().create_timer(0.5).timeout # Account for animation delay
 			#Load the hurtbox scene
 			var hurtbox_scene = load(weapon.hurtbox_scene_path)
 			var hurtbox_instance = hurtbox_scene.instantiate()
@@ -75,6 +86,14 @@ func attack():
 			await get_tree().create_timer(0.1).timeout
 			print("yes")
 			hurtbox_instance.queue_free()
+		elif weapon.weapon_type == "ranged_magic":
+			$AnimatedSprite2D.play(get_animation("melee")) #Change later
+			#Load the projectile scene
+			var projectile = load("res://scenes/game/projectiles/%s_projectile.tscn"%weapon.damage_type).instantiate()
+			projectile.rotation_degrees = rad_to_deg(last_direction.angle())
+			projectile.position = position + 20*last_direction
+			projectile.damage = weapon.attack_power
+			get_parent().add_child(projectile)
 		await $AnimatedSprite2D.animation_finished
 		animating = false
 

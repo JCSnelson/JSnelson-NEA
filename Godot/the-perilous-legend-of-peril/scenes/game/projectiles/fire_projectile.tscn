@@ -1,0 +1,105 @@
+[gd_scene load_steps=15 format=3 uid="uid://bi8mow4cvm611"]
+
+[ext_resource type="Texture2D" uid="uid://dthf41enhkpt4" path="res://assets/Fire Effect/Fire Effect 1/Firebolt SpriteSheet.png" id="1_m7q0v"]
+[ext_resource type="Script" uid="uid://6tdgyfgb3k1w" path="res://scenes/game/projectiles/fire_projectile.gd" id="1_x7n77"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7n77"]
+atlas = ExtResource("1_m7q0v")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxebe"]
+atlas = ExtResource("1_m7q0v")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4wsd"]
+atlas = ExtResource("1_m7q0v")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3m62"]
+atlas = ExtResource("1_m7q0v")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc2w3"]
+atlas = ExtResource("1_m7q0v")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcl8r"]
+atlas = ExtResource("1_m7q0v")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfndl"]
+atlas = ExtResource("1_m7q0v")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afg86"]
+atlas = ExtResource("1_m7q0v")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8w7lj"]
+atlas = ExtResource("1_m7q0v")
+region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7wyx"]
+atlas = ExtResource("1_m7q0v")
+region = Rect2(480, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_myyha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7n77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxebe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4wsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3m62")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc2w3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcl8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfndl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afg86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8w7lj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7wyx")
+}],
+"loop": false,
+"name": &"impact",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c7t45"]
+radius = 6.0
+height = 32.0
+
+[node name="FireProjectile" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_x7n77")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6, -6)
+sprite_frames = SubResource("SpriteFrames_myyha")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_c7t45")
+one_way_collision = true

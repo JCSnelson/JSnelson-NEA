@@ -26,29 +26,25 @@ func get_animation(animation_type: String):
 
 func _ready():
 	add_to_group("enemies")
+	$HealthBar.max_value = health
+	$HealthBar.value=health
 
 func _physics_process(delta: float) -> void:
-	var move = false
+	var player_detected = false
 	for body in $Area2D.get_overlapping_bodies():
 		if body.name == "Player":
-			move = true
+			player_detected = true
 	if not animating:
-		if move:
+		$AnimatedSprite2D.play(get_animation("idle"))
+		if player_detected and can_attack:
 			direction = to_local($NavigationAgent2D.get_next_path_position()).normalized()
-			velocity = direction * speed
-			$AnimatedSprite2D.play(get_animation("walk"))
-		else:
-			$AnimatedSprite2D.play(get_animation("idle"))
-	move_and_slide()
-	
-	if can_attack:
-		for i in range(get_slide_collision_count()):
-			var collision = get_slide_collision(i)
-			var collider = collision.get_collider()
-			if collider.is_in_group("player"):
-				collider.take_damage(damage, damage_type)
-				can_attack=false
-				$AttackTimer.start()
+			var projectile = load("res://scenes/game/projectiles/fire_projectile.tscn").instantiate()
+			projectile.rotation_degrees = rad_to_deg(direction.angle())
+			projectile.position = position + 20*direction
+			projectile.damage = damage
+			get_parent().add_child(projectile)
+			can_attack=false
+			$AttackTimer.start()
 	
 	
 func take_damage(damage, damage_type):
@@ -59,12 +55,15 @@ func take_damage(damage, damage_type):
 	else:
 		health -= damage
 	velocity = - 25 * to_local(player.global_position).normalized()
+	$HealthBar.value = health
+	$HealthBar.visible = true
 	if health == 0:
 		queue_free()
 	else:
 		$AnimatedSprite2D.play(get_animation("hurt"))
 	await $AnimatedSprite2D.animation_finished
 	animating = false
+	$HealthBar.visible = false
 	
 
 

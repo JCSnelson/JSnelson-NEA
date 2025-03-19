@@ -1,9 +1,15 @@
-[gd_scene load_steps=84 format=3 uid="uid://dyn2myc0ig8xr"]
+[gd_scene load_steps=86 format=3 uid="uid://dyn2myc0ig8xr"]
 
 [ext_resource type="Script" uid="uid://0rlhtktpm0rc" path="res://scenes/game/enemies/poison_slime.gd" id="1_vawt3"]
 [ext_resource type="Texture2D" uid="uid://b7q7laeqrevjv" path="res://assets/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime2/Hurt/Slime2_Hurt_body.png" id="2_0re8f"]
 [ext_resource type="Texture2D" uid="uid://cgrmdqttflc7m" path="res://assets/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime2/Idle/Slime2_Idle_body.png" id="3_qgpet"]
 [ext_resource type="Texture2D" uid="uid://ca7e6wr8dkvej" path="res://assets/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime2/Walk/Slime2_Walk_body.png" id="4_nigov"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dopri"]
+bg_color = Color(0.666667, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhbx4"]
+bg_color = Color(0, 0.666667, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhl3e"]
 atlas = ExtResource("2_0re8f")
@@ -611,6 +617,16 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 3
 script = ExtResource("1_vawt3")
 
+[node name="HealthBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -10.0
+offset_top = -12.0
+offset_right = 10.0
+offset_bottom = -8.0
+theme_override_styles/background = SubResource("StyleBoxFlat_dopri")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bhbx4")
+show_percentage = false
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dlmvt")
 animation = &"hurt_d"
@@ -628,6 +644,7 @@ shape = SubResource("CircleShape2D_3g6a4")
 target_desired_distance = 50.0
 
 [node name="NavigationTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="AttackTimer" type="Timer" parent="."]

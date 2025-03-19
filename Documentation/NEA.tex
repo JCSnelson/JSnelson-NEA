@@ -434,7 +434,7 @@
         \newpage
         \begin{tabular}{|c|c|c|c|}
                 \hline
-                \mr{2}{0.6cm}{}5\mr{2}{0.6cm}{}&\mr{2}{2cm}{Appearance and Animations of the Player}&\mr{2}{6cm}{5.1 Player Sprite\\5.2 Walking Animation\\5.3 Player sprite turns to face the direction of movement\\5.4 Melee Animation\\5.5 Magic Animation\\5.6 Bow Animation}&\mr{2}{6cm}{The Player has a distinct and visually recognisable sprite with smooth animations for walking, melee attacks and others.\\The direction of the player changes based on last direction moved.}\\
+                \mr{2}{0.6cm}{}5\mr{2}{0.6cm}{}&\mr{2}{2cm}{Appearance and Animations of the Player}&\mr{2}{6cm}{5.1 Player Sprite\\5.2 Walking Animation\\5.3 Player sprite turns to face the direction of movement\\5.4 Melee Animation\\5.5 Magic Animation\\5.6 Dash Animation}&\mr{2}{6cm}{The Player has a distinct and visually recognisable sprite with smooth animations for walking, melee attacks and others.\\The direction of the player changes based on last direction moved.}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -520,7 +520,9 @@
                 &&&\\
                 &&&\\
                 \hline
-                        12&\mr{2}{2cm}{Inventory System}&\mr{2}{6cm}{12.1 UI for Inventory\\12.2 Storage of Extra weapons and key items (keys, armour, charms, etc)\\12.3 E key to open up the inventory\\12.4 Ability to switch out what Weapons, Armour and charms are equipped.\\12.5 Ability to add or remove items from the inventory.}&\mr{2}{6cm}{A clear and intuitive menu for managing items.\\ Players can store extra weapons and items to be saved in their inventory.\\ E Key - Open Inventory UI.\\Players can swap weapons/armour.\\Players can remove items from their inventory.}\\
+                12&\mr{2}{2cm}{Inventory System}&\mr{2}{6cm}{12.1 UI for Inventory\\12.2 Storage of Extra weapons and key items (keys, armour, charms, etc)\\12.3 E key to open up the inventory\\12.4 Ability to switch out what Weapons, Armour and charms are equipped.\\12.5 Ability to add or remove items from the inventory.\\12.6 SQL table to store inventory contents}&\mr{2}{6cm}{A clear and intuitive menu for managing items.\\ Players can store extra weapons and items to be saved in their inventory.\\ E Key - Open Inventory UI.\\Players can swap weapons/armour.\\Players can remove items from their inventory.\\ Inventory state persists even when game closes.}\\
+                &&&\\
+                &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -537,7 +539,8 @@
                 &&&\\
                 &&&\\
                 \hline
-                14&\mr{2}{2cm}{Difficulty Levels and Hardcore Mode}&\mr{2}{6cm}{14.1 A slider for difficulty in create save\\14.2 Increasing difficulty based on the slider\\\tab 14.2.1 Increasing enemy health\\\tab 14.2.2 Decreasing player health\\\tab 14.2.3 Increasing number of \tab enemies\\14.3 A Hardcore mode at maximum difficulty with a seperate save state to the normal game.\\\tab 14.3.1 roguelike features \tab (permadeath, resource \tab management, etc)}&\mr{2}{6cm}{A difficulty slider in the save menu.\\The game adjusts difficulty by increasing enemy health and damage and increasing the number of enemies.\\A hardcore mode with permadeath that can be toggled in the save creation menu.}\\
+                14&\mr{2}{2cm}{Difficulty Levels and Hardcore Mode}&\mr{2}{6cm}{14.1 A slider for difficulty in create save\\14.2 Increasing difficulty based on the slider\\\tab 14.2.1 Increasing enemy health\\\tab 14.2.2 Decreasing player health\\\tab 14.2.3 Increasing number of \tab enemies\\14.3 A Hardcore mode at maximum difficulty with a seperate save state to the normal game.\\\tab 14.3.1 roguelike features \tab (permadeath, resource \tab management, etc)\\14.4 SQL table to store different saves}&\mr{2}{6cm}{A difficulty slider in the save menu.\\The game adjusts difficulty by increasing enemy health and damage and increasing the number of enemies.\\A hardcore mode with permadeath that can be toggled in the save creation menu.\\Saves persist even when game closes.\\}\\
+                &&&\\
                 &&&\\
                 &&&\\
                 &&&\\
