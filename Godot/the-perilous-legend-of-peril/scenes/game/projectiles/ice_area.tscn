@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://756gnfr5oc2w"]
+
+[ext_resource type="Script" uid="uid://00ikb3xew1od" path="res://scenes/game/projectiles/ice_area.gd" id="1_l7sdl"]
+[ext_resource type="Texture2D" uid="uid://534eohnbt48o" path="res://assets/Ice Effect/Ice Effect 01/Ice VFX 2/Ice VFX 2 Active.png" id="2_l7sdl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rcdqg"]
+radius = 14.0357
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iss8"]
+atlas = ExtResource("2_l7sdl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iysgk"]
+atlas = ExtResource("2_l7sdl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pxji"]
+atlas = ExtResource("2_l7sdl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k56k"]
+atlas = ExtResource("2_l7sdl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j7hk"]
+atlas = ExtResource("2_l7sdl")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qybgc"]
+atlas = ExtResource("2_l7sdl")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl0wf"]
+atlas = ExtResource("2_l7sdl")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lqlg"]
+atlas = ExtResource("2_l7sdl")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aeih2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iss8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iysgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pxji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0k56k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j7hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qybgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl0wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lqlg")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="IceArea" type="Area2D"]
+script = ExtResource("1_l7sdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rcdqg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_aeih2")
+frame = 7
+frame_progress = 1.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

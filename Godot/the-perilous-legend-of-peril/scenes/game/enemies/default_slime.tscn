@@ -641,6 +641,7 @@ shape = SubResource("CircleShape2D_u6ccj")
 shape = SubResource("CircleShape2D_3g6a4")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 70.0
 target_desired_distance = 50.0
 
 [node name="NavigationTimer" type="Timer" parent="."]

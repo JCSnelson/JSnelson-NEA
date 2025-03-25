@@ -57,7 +57,7 @@ func take_damage(damage, damage_type):
 	velocity = - 25 * to_local(player.global_position).normalized()
 	$HealthBar.value = health
 	$HealthBar.visible = true
-	if health == 0:
+	if health <= 0:
 		queue_free()
 	else:
 		$AnimatedSprite2D.play(get_animation("hurt"))

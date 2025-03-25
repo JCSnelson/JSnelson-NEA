@@ -12,6 +12,8 @@ func item_amount(item_id: String):
 
 
 func add_item (item_id, amount):
+	if amount == 0:
+		return true
 	var item = load(item_id) # Loads the item
 	if Database.count_stored_items() >= max_inventory_size and not(item.stackable and item_amount(item_id) != 0): # Full Inventory
 		return "FullInventoryError"
@@ -19,8 +21,9 @@ func add_item (item_id, amount):
 		# Checks if you can stack the item and either adds a new entry or stacks it
 		if item_amount(item_id) != 0 and item.stackable: # If the item is in the database
 			Database.update_stored_item_amount(amount, item_id)
-		else :
-			Database.add_stored_item(item_id, amount)
+		else:
+			Database.add_stored_item(item_id, 1)
+			add_item(item_id,amount-1)
 		return true
 
 
@@ -73,4 +76,7 @@ func equip_item(item_id):
 		return "FullInventoryError"
 	Database.set_slot_value(slot, item_id) # Equips the item
 	return true
-	
+
+
+func _ready() -> void:
+	equip_item("res://resources/equipable/weapon/test_weapon_magic_area.tres")

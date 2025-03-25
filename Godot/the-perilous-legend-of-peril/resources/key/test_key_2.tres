@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Key" load_steps=2 format=3 uid="uid://cm1ofgbe63ok5"]
+
+[ext_resource type="Script" uid="uid://cmmlrjdg25e1q" path="res://resources/scripts/key.gd" id="1_vftkj"]
+
+[resource]
+resource_name = "My First Key"
+script = ExtResource("1_vftkj")
+key_id = "2"
+stackable = true
+description = "Try unlocking a door with this"

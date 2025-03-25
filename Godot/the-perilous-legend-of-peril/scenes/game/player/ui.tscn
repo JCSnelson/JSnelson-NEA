@@ -36,3 +36,14 @@ scale = Vector2(5, 5)
 theme_override_styles/background = SubResource("StyleBoxFlat_lalxo")
 theme_override_styles/fill = SubResource("StyleBoxFlat_leu8t")
 show_percentage = false
+
+[node name="WeaponLabel" type="Label" parent="."]
+offset_left = 1630.0
+offset_top = 962.0
+offset_right = 1921.0
+offset_bottom = 1091.0
+text = "Weapon
+Name: Excalibur
+Damage: 5
+Type: Thunder"
+horizontal_alignment = 1

@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://dnh5quyp3ds32"]
+
+[ext_resource type="Script" uid="uid://d3sxq1l7o4oga" path="res://scenes/game/projectiles/thunder_area.gd" id="1_ex562"]
+[ext_resource type="Texture2D" uid="uid://cd8d8m0524der" path="res://assets/Thunder Effect/Thunder Effect 01/Thunder Hit/Thunder hit wo blur.png" id="2_ex562"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rcdqg"]
+radius = 14.0357
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2de7"]
+atlas = ExtResource("2_ex562")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgvq7"]
+atlas = ExtResource("2_ex562")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtpo7"]
+atlas = ExtResource("2_ex562")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8yfd"]
+atlas = ExtResource("2_ex562")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5350"]
+atlas = ExtResource("2_ex562")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv60x"]
+atlas = ExtResource("2_ex562")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aeih2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2de7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgvq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtpo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8yfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5350")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv60x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ThunderArea" type="Area2D"]
+script = ExtResource("1_ex562")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rcdqg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_aeih2")
+frame_progress = 0.511262
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

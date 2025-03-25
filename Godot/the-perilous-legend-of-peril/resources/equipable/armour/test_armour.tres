@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://b56uxkuxbjdog" path="res://resources/scripts/armour.gd" id="1_kjkqx"]
 
 [resource]
+resource_name = "Yay"
 script = ExtResource("1_kjkqx")
-defense = 0
-armour_type = ""
+defense = 5
+armour_type = "light"
 body_part = "Legs"
 set_id = 0
 stat_boosts = {}

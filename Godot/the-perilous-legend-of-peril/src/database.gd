@@ -106,6 +106,11 @@ WHERE item_id = ?
 AND save_id = ?;
 """
 
+var _get_stored_items = """
+SELECT * FROM stored_items
+WHERE save_id = ?;
+"""
+
 var _get_stored_item_amount = """
 SELECT amount FROM stored_items
 WHERE save_id = ?
@@ -263,6 +268,10 @@ func reset_password(username, answer, password):
 func count_stored_items():
 	db.query_with_bindings(_count_stored_items,[current_save_id])
 	return db.query_result[0]["COUNT(*)"]
+#Function for getting the stored items in the save
+func get_stored_items():
+	db.query_with_bindings(_get_stored_items,[current_save_id])
+	return db.query_result
 #Function for getting the amount of a stored item in the save
 func get_stored_item_amount(item_id):
 	db.query_with_bindings(_get_stored_item_amount,[current_save_id, item_id])
@@ -281,7 +290,6 @@ func remove_stored_item(item_id):
 	return db.query_result
 #Function for getting a slot value from the save
 func get_slot_value(slot):
-	return "res://resources/equipable/weapon/test_weapon_magic_ranged.tres"
 	db.query_with_bindings(_get_slot_values,[current_save_id])
 	if len(db.query_result) == 0:
 		return null

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b56uxkuxbjdog" path="res://resources/scripts/armour.gd" id="1_b2g1y"]
 
 [resource]
+resource_name = "Yippee"
 script = ExtResource("1_b2g1y")
 defense = 0
 armour_type = ""

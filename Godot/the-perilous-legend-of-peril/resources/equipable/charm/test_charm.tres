@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cw7dr1qa8kanj" path="res://resources/scripts/charm.gd" id="1_vp3eu"]
 
 [resource]
+resource_name = "gay"
 script = ExtResource("1_vp3eu")
 charm_type = ""
 stat_boosts = {}

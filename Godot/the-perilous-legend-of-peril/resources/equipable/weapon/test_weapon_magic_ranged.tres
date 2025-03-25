@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cvithor0844be" path="res://resources/scripts/weapon.gd" id="1_egrup"]
 
 [resource]
+resource_name = "excaliburrr"
 script = ExtResource("1_egrup")
 weapon_type = "ranged_magic"
 attack_power = 5

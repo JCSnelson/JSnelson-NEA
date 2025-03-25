@@ -40,9 +40,11 @@ func _physics_process(delta: float) -> void:
 			direction = to_local($NavigationAgent2D.get_next_path_position()).normalized()
 			velocity = direction * speed
 			$AnimatedSprite2D.play(get_animation("walk"))
+			move_and_slide()
 		else:
 			$AnimatedSprite2D.play(get_animation("idle"))
-	move_and_slide()
+	else:
+		move_and_slide()
 	
 	if can_attack:
 		for i in range(get_slide_collision_count()):
@@ -63,7 +65,7 @@ func take_damage(damage, damage_type):
 	velocity = - 25 * to_local(player.global_position).normalized()
 	$HealthBar.value=health
 	$HealthBar.visible = true
-	if health == 0:
+	if health <= 0:
 		queue_free()
 	else:
 		$AnimatedSprite2D.play(get_animation("hurt"))

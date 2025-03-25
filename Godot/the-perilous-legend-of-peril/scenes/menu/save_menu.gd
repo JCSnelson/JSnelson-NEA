@@ -6,7 +6,6 @@ func _load_list():
 		child.queue_free()
 	var save_data_list = Database.get_user_save_data()
 	for save_data in save_data_list:
-		print(save_data)
 		var button = Button.new()
 		button.text = "Save_Id: %s\nLevel: %s \t Difficulty: %s\nHardcore: %s" % [save_data["save_id"], save_data["level"], save_data["difficulty"], save_data["hardcore"]]
 		button.connect("pressed",_on_save_selected.bind(save_data))
@@ -19,8 +18,7 @@ func _ready() -> void:
 
 func _on_save_selected(save_data):
 	Database.current_save_id = save_data["save_id"]
-	print("yes")
-	get_tree().change_scene_to_file("res://test.tscn")
+	get_tree().change_scene_to_file("res://scenes/game/worlds/tutorial.tscn")
 
 func _on_difficulty_drag_ended(value_changed: bool) -> void:
 	$Difficulty/DifficultyLabel.text = "Difficulty: " + str($Difficulty.value)

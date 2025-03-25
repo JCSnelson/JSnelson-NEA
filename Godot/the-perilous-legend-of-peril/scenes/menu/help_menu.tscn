@@ -1,19 +1,18 @@
 [gd_scene format=3 uid="uid://bqymsu2nm4aqj"]
 
-[node name="HelpMenu" type="Node2D"]
+[node name="HelpMenu" type="CanvasLayer"]
 
 [node name="Label" type="Label" parent="."]
-offset_left = -354.0
-offset_top = -250.0
-offset_right = 353.0
-offset_bottom = 251.0
-theme_override_font_sizes/font_size = 15
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_font_sizes/font_size = 30
 text = "WASD/LStick - Movement
-Q/Y - Dash
-LClick/1/B - Primary Attack
-RClick/2/A - Secondary Attack
-I/X - Interact (Doors/Chests)
+Q/Y Button - Dash
+LClick/1/B Button - Primary Attack
+RClick/2/A Button - Secondary Attack
+I/X Button - Interact (Doors/Chests)
 H/Menu - Help
+E/Back - Inventory
 
 "
 horizontal_alignment = 1

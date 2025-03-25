@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://cwpiw3smonycw"]
+
+[ext_resource type="Script" uid="uid://cvithor0844be" path="res://resources/scripts/weapon.gd" id="1_m57ag"]
+
+[resource]
+resource_name = "The Hunger"
+script = ExtResource("1_m57ag")
+weapon_type = "area_magic"
+attack_power = 5
+attack_range = 1
+damage_type = "fire"
+mana_cost = 2
+stat_boosts = {}
+stackable = false
+description = "Yippeee"
