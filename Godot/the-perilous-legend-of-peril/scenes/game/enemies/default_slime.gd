@@ -27,8 +27,6 @@ func _ready():
 	add_to_group("enemies")
 	$HealthBar.max_value=health
 	$HealthBar.value=health
-	
-	
 
 func _physics_process(delta: float) -> void:
 	var move = false

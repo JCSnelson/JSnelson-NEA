@@ -6,7 +6,6 @@ var time:int = 1
 
 
 func _ready():
-	$AnimatedSprite2D.play("default")
 	await get_tree().create_timer(time).timeout
 	queue_free()
 	

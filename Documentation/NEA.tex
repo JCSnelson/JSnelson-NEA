@@ -1233,6 +1233,56 @@ def _input(event):
          else:
             queue_free() #Dissappear
         \end{python}
+        \subsection{Projectile Design}
+        \subsubsection{Overview}
+        I will create two types of projectiles, one ranged type which will deal damage on impact and dissappear and one area of effect which will deal damage on an enemy or the player entering it and spawn next to the player/enemy that casts it. These projectiles will allow me to fulfill criteria 2.4, 2.5, 2.6, 4.7 and be used for the creation of boss enemies in 4.8.\\
+        \subsubsection{Ranged}
+        This will have the damage and damage\_type variables to be used to call other entities take\_damage functions, a variable so it only impacts once called attacking and a speed to determine how fast it goes. It will be comprised of a CharacterBody2D node and a AnimatedSprite2D node which will play the default animation until collision.\\
+        Its physics process will handle movement in the direction of rotation (as projectiles can be fired in any direction) and handle collisions.\\
+        \subsubsection{Area Of Effect}
+        This will have the damage and damage\_type variables to be used to call other entities take\_damage functions and a time variable for how long it lasts. It will be comprised of an Area2D node and an AnimatedSprite2D node which will play the default animation.\\
+        The ready function will be used to await the timer timeout before queue\_freeing the area.\\
+        The \_on\_body\_entered function will be linked from the Area2D and will deal damage if the body is an enemy or the player.\\
+        \subsubsection{Algorithms}
+        \textbf{\_physics\_process(delta):}\\
+        For the ranged projectile to handle movement in rotation direction and collisions.\\
+        \begin{python}
+def _physics_process(delta):
+   #Rotated Movement
+   velocity.x = speed * cos(rotation)
+   velocity.y = speed * sin(rotation)
+   if not attacking:
+      move_and_slide()
+   #Collisions
+   for i in range(get_slide_collision_count()): #Loops through collisions
+      if not attacking:
+         attacking = true
+         collision = get_slide_collision(i)
+         collider = collision.get_collider()
+         if collider.is_in_group("player") or collider.is_in_group("enemies"): #Damages what it hits if its an enemy or the player
+            collider.take_damage(damage, damage_type) 
+         CollisionShape2D.disabled = true #Disable collision shape so cant block other projectiles
+         AnimatedSprite2D.play("impact")
+         await AnimatedSprite2D.animation_finished #Wait for animation to finish
+         queue_free()
+        \end{python}
+        \textbf{\_ready():}\\
+        Will set the area of effect to dissappear after a certain time
+        \begin{python}
+def _ready():
+   await get_tree().create_timer(time).timeout
+   queue_free()
+        \end{python}
+        \textbf{\_on\_body\_entered(body):}\\
+        This is called by the Area2D node upon a body entering it with that body passed as a parameter so we can make it take damage if it needs to.\\
+        \begin{python}
+def _on_body_entered(body):
+   if body.is_in_group("enemies") or body.is_in_group("player"): # If its an enemy or player it will damage It
+      body.take_damage(damage, damage_type)
+        \end{python}
+
+
+
         \subsection{Enemy Design}
         \subsubsection{Overview}
         For my basic enemies I have decided to go with different types of slimes representing different elements. The slimes will have animations and collisions aswell as a radius that they will detect the player and navigate towards them dealing damage upon impact. Each unique slime will deal a different damage type and have a different look.\\
@@ -1260,6 +1310,8 @@ def _input(event):
         Ontop of this I used a circular CollisionShape2D with and Area2D node to detect when the player is within a certain range and pathfind towards them.\\
         \subsubsection{Animation}
         I decided to add idle animations for all of the 4 cardinal directions aswell as idle and hurt animations. I used a get\_animation() function to get the relevant animation based on the direction.
+        \subsubsection{Projectile Enemies}
+        There will be some enemies that will shoot a projectile instead of navigating in the direction given by the NavigationAgent2D so that the targetting would only update every couple seconds. These enemies will be non moving enemies.\\
         \subsubsection{Algorithms}
         \textbf{get\_animation(animation\_type):}\\
         This gets the animation based on the type and direction.\\
@@ -1277,22 +1329,23 @@ def get_animation(animation_type: String):
 			return animation_type + "_u"
         \end{python}
         \textbf{\_ready():}\\
-        This is used to add the slime to the enemies group.\\
+        This is ran on addition to the scene tree to add the slime to the enemies group.\\
         \begin{python}
 def _ready():
    add_to_group("enemies")
         \end{python}
         \textbf{\_physics\_process(delta):}\\
-        This checks if the player is within the detection range and if so moves towards them aswell as handling animations and detecting if the slime collides with the player.\\
+        Melee Enemies:\\
+        This checks if the player is within the detection range and if so moves towards them aswell as handling animations and detecting if the slime collides with the player so that the player will be damaged.\\
         \begin{python}
-def _physics_process(delta: float) -> void:
+def _physics_process(delta):
    move = false
-   for body in Area2D.get_overlapping_bodies(): #Checking if player in the Area2D area
+   for body in Area2D.get_overlapping_bodies(): #Checking if player in the detection area
       if body.name == "Player":
          move = true
    if not animating: #If not playing a different animation
       if move: #If the slime can move
-         direction = to_local(NavigationAgent2D.get_next_path_position()).normalized() #Getting the direction of the next point on the path
+         direction = NavigationAgent2D.get_next_path_position().normalized() #Getting the direction of the next point on the path
          velocity = direction * speed
          AnimatedSprite2D.play(get_animation("walk"))
       else:
@@ -1308,18 +1361,38 @@ def _physics_process(delta: float) -> void:
                can_attack=false 
                AttackTimer.start() #Starts attack cooldown
         \end{python}
+        Ranged Enemies:\\
+        This checks if the player is within detection range and if so will fire a projectile towards them.\\
+        \begin{python}
+def _physics_process(delta):
+   var player_detected = false
+   for body in Area2D.get_overlapping_bodies: #Checking if the player is in the detection Area
+      if body.name == "Player":
+         player_detected = true
+   if not animating: #If not playing a different animation
+      AnimatedSprite2D.play(get_animation("idle"))
+      if player_detected and can_attack: # Will instantiate a projectile scene aimed at the player if it can attack and detects the player
+         direction = NavigationAgent2D.get_next_path_position.normalized()
+         var projectile = load(projectile_scene_path).instantiate()
+         projectile.rotation_degrees = direction.angle()
+         projectile.position = position + 20*direction
+         projectile.damage = damage
+         get_parent.add_child(projectile)
+         can_attack = false
+         AttackTimer.start() #Starts the attack cooldown
+        \end{python}
         \textbf{take\_damage(damage, damage\_type):}\\
-        The take damage function will change based on 
+        The take damage function will allow the enemies to take more or less damage based on weaknesses and update their health aswell as applying knockback and checking to see if the enemy should die.\\
         \begin{python}
 def take_damage(damage, damage_type):
    player = get_tree().get_first_node_in_group("player")
    animating = true
-   if damage_type in weaknesses:
+   if damage_type in weaknesses: # If the enemy is weak to a specific damage type then they will take more damage
       health -= 2*damage
    else:
       health -= damage
-   velocity = - 25 * to_local(player.global_position).normalized()
-   if health == 0:
+   velocity = - 25 * to_local(player.global_position).normalized() # Move away from the player for knockback
+   if health <= 0:
       queue_free()
    else:
       AnimatedSprite2D.play(get_animation("hurt"))
@@ -1332,6 +1405,12 @@ def take_damage(damage, damage_type):
 def _on_navigation_timer_timeout() -> void:
    player = get_tree().get_first_node_in_group("player")
    NavigationAgent2D.set_target_position(player.global_position)
+        \end{python}
+        \textbf{\_on\_attack\_timer\_timeout():}\\
+        Thus function will run when the attack timer ends (1 second after an attack) to allow the enemy to attack again.\\
+        \begin{python}
+def _on_attack_timer_timeout():
+   can_attack = True
         \end{python}
 
         \section{Development}
