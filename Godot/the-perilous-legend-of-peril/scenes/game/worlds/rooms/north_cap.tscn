@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://caay5l4enibe"]
+
+[ext_resource type="PackedScene" uid="uid://cxuyu802r6apc" path="res://scenes/game/worlds/tile_map.tscn" id="1_slini"]
+
+[node name="NorthCap" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_slini")]
+tile_map_data = PackedByteArray(0, 0, 255, 255, 0, 0, 4, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 3, 0, 0, 0, 0, 0, 254, 255, 0, 0, 4, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 4, 0, 4, 0, 0, 0, 0, 0)
