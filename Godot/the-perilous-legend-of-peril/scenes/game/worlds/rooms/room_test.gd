@@ -3,11 +3,11 @@ extends Node2D
 
 func _ready():
 	await dungeon_1()
-	self.scale = Vector2(0.5,0.5)
-	self.position = Vector2(1920/4,1080/4)
-	#var player = load("res://scenes/game/player/player.tscn").instantiate()
-	#player.position = Vector2(1920/2,1080/2)
-	#add_child(player)
+	#self.scale = Vector2(0.5,0.5)
+	#self.position = Vector2(1920/4,1080/4)
+	var player = load("res://scenes/game/player/player.tscn").instantiate()
+	player.position = Vector2(1920/2,1080/2)
+	add_child(player)
 	
 	
 func dungeon_1():

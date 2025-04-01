@@ -13,7 +13,7 @@
 \contentsline {subsubsection}{\numberline {1.6.2}Desireable Features}{9}{subsubsection.1.6.2}%
 \contentsline {subsection}{\numberline {1.7}Success Criteria}{10}{subsection.1.7}%
 \contentsline {subsection}{\numberline {1.8}Computational Methods}{13}{subsection.1.8}%
-\contentsline {section}{\numberline {2}Design}{14}{section.2}%
+\contentsline {section}{\numberline {2}Design \& Plan}{14}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Overview}{14}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Global Variables}{14}{subsubsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.2}Folder Structure}{14}{subsubsection.2.1.2}%
@@ -66,7 +66,7 @@
 \contentsline {subsubsection}{\numberline {2.11.6}Algorithms}{32}{subsubsection.2.11.6}%
 \contentsline {subsection}{\numberline {2.12}Procedural Generation Design}{33}{subsection.2.12}%
 \contentsline {subsubsection}{\numberline {2.12.1}Overview}{33}{subsubsection.2.12.1}%
-\contentsline {section}{\numberline {3}Development}{33}{section.3}%
+\contentsline {section}{\numberline {3}Development \& Testing}{33}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Database Development}{33}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}\_ready()}{34}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.2}Hashing}{34}{subsubsection.3.1.2}%
@@ -109,3 +109,4 @@
 \contentsline {subsubsection}{\numberline {3.9.4}take\_damage(damage, damage\_type):}{55}{subsubsection.3.9.4}%
 \contentsline {subsubsection}{\numberline {3.9.5}Animation}{55}{subsubsection.3.9.5}%
 \contentsline {section}{\numberline {4}References}{56}{section.4}%
+\contentsline {section}{\numberline {5}Code Listings}{57}{section.5}%

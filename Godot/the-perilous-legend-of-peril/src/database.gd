@@ -44,6 +44,7 @@ var _create_table_save_data = """
 CREATE TABLE IF NOT EXISTS save_data (
 save_id INTEGER PRIMARY KEY AUTOINCREMENT,
 user_id INTEGER,
+name VARCHAR(32),
 difficulty INTEGER,
 hardcore INTEGER,
 level INTEGER,
@@ -59,8 +60,8 @@ FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE
 
 var _add_new_save_data = """
 INSERT INTO
-save_data(user_id,difficulty,hardcore,level)
-VALUES (?,?,?,?);
+save_data(user_id,name,difficulty,hardcore,level)
+VALUES (?,?,?,?,?);
 """
 
 var _get_save_data = """
@@ -70,7 +71,7 @@ AND save_id = ?;
 """
 
 var _get_user_save_data = """
-SELECT level, hardcore, save_id, difficulty FROM save_data
+SELECT name, level, hardcore, save_id, difficulty FROM save_data
 WHERE user_id = ?;
 """
 
@@ -316,8 +317,8 @@ func get_user_save_data():
 	print(db.query_result)
 	return db.query_result
 #Function to add a new save file for the current user
-func add_new_save_data(difficulty, hardcore):
-	db.query_with_bindings(_add_new_save_data,[current_user_id, difficulty, hardcore, 1])
+func add_new_save_data(name, difficulty, hardcore):
+	db.query_with_bindings(_add_new_save_data,[current_user_id, name, difficulty, hardcore, 1])
 	return db.query_result
 
 

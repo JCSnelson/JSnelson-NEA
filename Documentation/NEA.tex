@@ -18,6 +18,22 @@
 \usepackage{amsmath}
 \usepackage{fancyhdr}
 \usepackage{listings}
+\lstdefinelanguage{GDScript}{
+    keywords={extends, class_name, func, var, if, else, for, while, return, pass, break, continue, match, enum, true, false, null, in, is, and, or, not},
+    keywordstyle=\color{teal}\bfseries,
+    sensitive=true,
+    comment=[l]\#,                      % Line comments
+    morecomment=[s]{"}{"},               % String blocks
+    morecomment=[s]{"""}{"""},           % Multiline string
+    commentstyle=\color{violet}\ttfamily, % Comment style
+    stringstyle=\color{purple},             % String style
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=5pt
+}
 \usepackage{subcaption}
 \usepackage{graphicx, float}
 \usepackage{multirow, pgfplotstable}
@@ -559,7 +575,7 @@
         \newpage
         \subsection{Computational Methods}
 \newpage
-\section{Design}
+\section{Design \& Plan}
         \subsection{Overview}
         \subsubsection{Global Variables}
         I have a couple of main global variable scripts Global, Inventory, Database etc.\\
@@ -1414,7 +1430,7 @@ def _on_attack_timer_timeout():
         \end{python}
         \subsection{Procedural Generation Design}
         \subsubsection{Overview}
-        \section{Development}
+        \section{Development \& Testing}
         \subsection{Database Development}
         I used a global autoloaded script database.gd in order to implement all of my functions for handling the database. Upon testing the functions I realised that the reset\_password query was incorrect as it says UPDATE TABLE instead of just update.\\
         I added all the prepared queries as private variables with strings in order to use db.query\_with\_bindings to sanitise and substitute inputs aswell as run the queries. This function would output wether the query succeeded or failed.\\
@@ -2087,4 +2103,9 @@ def _on_attack_timer_timeout():
         &&&&&\\
         \hline
 \end{tabular}
+\newpage
+\newgeometry{a4paper,total={210mm, 150mm}, landscape, margin=50pt}
+\section{Code Listings}
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/src/inventory.gd}
+\restoregeometry
 \end{document}

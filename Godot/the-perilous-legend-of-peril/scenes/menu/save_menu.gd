@@ -7,7 +7,13 @@ func _load_list():
 	var save_data_list = Database.get_user_save_data()
 	for save_data in save_data_list:
 		var button = Button.new()
-		button.text = "Save_Id: %s\nLevel: %s \t Difficulty: %s\nHardcore: %s" % [save_data["save_id"], save_data["level"], save_data["difficulty"], save_data["hardcore"]]
+		var hardcore
+		if save_data["hardcore"] == 1:
+			hardcore = "True"
+		else:
+			hardcore = "False"
+		print(save_data)
+		button.text = "Name: %s\nLevel: %s \t Difficulty: %s\nHardcore: %s" % [save_data["name"], save_data["level"], save_data["difficulty"], hardcore]
 		button.connect("pressed",_on_save_selected.bind(save_data))
 		$SavesScroller/VBoxContainer.add_child(button)
 	
@@ -18,6 +24,7 @@ func _ready() -> void:
 
 func _on_save_selected(save_data):
 	Database.current_save_id = save_data["save_id"]
+	Global.difficulty = save_data["difficulty"]
 	get_tree().change_scene_to_file("res://scenes/game/worlds/tutorial.tscn")
 
 func _on_difficulty_drag_ended(value_changed: bool) -> void:
@@ -25,7 +32,7 @@ func _on_difficulty_drag_ended(value_changed: bool) -> void:
 
 
 func _on_new_save_button_pressed() -> void:
-	Database.add_new_save_data($Difficulty.value,$HardcoreButton.button_pressed)
+	Database.add_new_save_data($Name.text,$Difficulty.value,$HardcoreButton.button_pressed)
 	_load_list()
 
 

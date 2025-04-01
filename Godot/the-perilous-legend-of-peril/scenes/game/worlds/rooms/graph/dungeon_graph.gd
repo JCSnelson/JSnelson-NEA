@@ -7,10 +7,10 @@ var nodes: Array
 var rooms: Dictionary = {'chest':["res://scenes/game/worlds/rooms/monster/room.tscn"], 
 'boss':["res://scenes/game/worlds/rooms/monster/room.tscn"], 
 'monster':["res://scenes/game/worlds/rooms/monster/room.tscn","res://scenes/game/worlds/rooms/monster/m_room_1.tscn"], 
-'corridor':["res://scenes/game/worlds/rooms/corridors/corridor_1.tscn","res://scenes/game/worlds/rooms/corridors/corridor_2.tscn","res://scenes/game/worlds/rooms/corridors/corridor_3.tscn","res://scenes/game/worlds/rooms/corridors/corridor_4.tscn","res://scenes/game/worlds/rooms/corridors/corridor_5.tscn","res://scenes/game/worlds/rooms/corridors/corridor_6.tscn"],
-'corridor_along':["res://scenes/game/worlds/rooms/corridors/corridor_1.tscn"],
-'corridor_up':["res://scenes/game/worlds/rooms/corridors/corridor_2.tscn"],
-'corridor_corner':["res://scenes/game/worlds/rooms/corridors/corridor_3.tscn","res://scenes/game/worlds/rooms/corridors/corridor_4.tscn","res://scenes/game/worlds/rooms/corridors/corridor_5.tscn","res://scenes/game/worlds/rooms/corridors/corridor_6.tscn"]}
+'corridor':["res://scenes/game/worlds/rooms/corridors/corridor_1.tscn","res://scenes/game/worlds/rooms/corridors/corridor_2.tscn","res://scenes/game/worlds/rooms/corridors/corridor_3.tscn","res://scenes/game/worlds/rooms/corridors/corridor_4.tscn","res://scenes/game/worlds/rooms/corridors/corridor_5.tscn","res://scenes/game/worlds/rooms/corridors/corridor_6.tscn","res://scenes/game/worlds/rooms/corridors/corridor_7.tscn","res://scenes/game/worlds/rooms/corridors/corridor_8.tscn","res://scenes/game/worlds/rooms/corridors/corridor_9.tscn","res://scenes/game/worlds/rooms/corridors/corridor_10.tscn","res://scenes/game/worlds/rooms/corridors/corridor_11.tscn","res://scenes/game/worlds/rooms/corridors/corridor_12.tscn"],
+'corridor_along':["res://scenes/game/worlds/rooms/corridors/corridor_1.tscn","res://scenes/game/worlds/rooms/corridors/corridor_7.tscn"],
+'corridor_up':["res://scenes/game/worlds/rooms/corridors/corridor_2.tscn","res://scenes/game/worlds/rooms/corridors/corridor_8.tscn"],
+'corridor_corner':["res://scenes/game/worlds/rooms/corridors/corridor_3.tscn","res://scenes/game/worlds/rooms/corridors/corridor_4.tscn","res://scenes/game/worlds/rooms/corridors/corridor_5.tscn","res://scenes/game/worlds/rooms/corridors/corridor_6.tscn","res://scenes/game/worlds/rooms/corridors/corridor_9.tscn","res://scenes/game/worlds/rooms/corridors/corridor_10.tscn","res://scenes/game/worlds/rooms/corridors/corridor_11.tscn","res://scenes/game/worlds/rooms/corridors/corridor_12.tscn"]}
 var opposite_direction = {'north':'south', 'south':'north', 'east':'west', 'west':'east'}
 
 

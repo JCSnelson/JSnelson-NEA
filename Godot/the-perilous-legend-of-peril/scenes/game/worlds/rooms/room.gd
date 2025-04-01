@@ -1,6 +1,5 @@
 extends Node2D
 
-
 func get_pos(direction):
 	match direction:
 		'north':
@@ -38,4 +37,10 @@ func cap(direction):
 			var west_cap = load("res://scenes/game/worlds/rooms/west_cap.tscn").instantiate()
 			$West.add_child(west_cap)
 	
-	
+func _ready() -> void:
+	if $Slimes:
+		for slime in $Slimes.get_children():
+			slime.health = floor(2*Global.current_level*log(3*Global.difficulty))
+			slime.damage = floor(Global.current_level*log(3*Global.difficulty))
+			print(slime.health,slime.damage)
+		

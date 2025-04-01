@@ -74,7 +74,8 @@ func take_damage(damage, damage_type):
 
 func _on_navigation_timer_timeout() -> void:
 	var player = get_tree().get_first_node_in_group("player")
-	$NavigationAgent2D.set_target_position(player.global_position)
+	if player:
+		$NavigationAgent2D.set_target_position(player.global_position)
 
 func _on_attack_timer_timeout() -> void:
 	can_attack = true

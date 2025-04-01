@@ -57,6 +57,13 @@ offset_right = 1092.0
 offset_bottom = 1050.0
 text = "Equip"
 
+[node name="LogOutButton" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 984.0
+offset_right = 264.0
+offset_bottom = 1054.0
+text = "Log Out"
+
 [node name="BinButton" type="Button" parent="."]
 offset_left = 1670.0
 offset_top = 980.0
@@ -65,4 +72,5 @@ offset_bottom = 1050.0
 text = "Bin"
 
 [connection signal="pressed" from="EquipButton" to="." method="_on_equip_button_pressed"]
+[connection signal="pressed" from="LogOutButton" to="." method="_on_log_out_button_pressed"]
 [connection signal="pressed" from="BinButton" to="." method="_on_bin_button_pressed"]

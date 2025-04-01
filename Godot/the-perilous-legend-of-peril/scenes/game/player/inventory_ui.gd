@@ -49,3 +49,7 @@ func _on_equip_button_pressed() -> void:
 func _on_bin_button_pressed() -> void:
 	if selected != "":
 		Database.remove_stored_item(selected)
+
+
+func _on_log_out_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/menu/login_form.tscn")
