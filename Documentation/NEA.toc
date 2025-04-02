@@ -76,37 +76,46 @@
 \contentsline {subsubsection}{\numberline {3.2.1}Login Form}{38}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Reset Password Form}{39}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Create Account Form}{39}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}Item Development}{41}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Folder Structure}{41}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Item}{41}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Equipable}{42}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Armour}{42}{subsubsection.3.3.4}%
-\contentsline {subsubsection}{\numberline {3.3.5}Charm}{42}{subsubsection.3.3.5}%
-\contentsline {subsubsection}{\numberline {3.3.6}Weapon}{43}{subsubsection.3.3.6}%
-\contentsline {subsubsection}{\numberline {3.3.7}Key}{43}{subsubsection.3.3.7}%
-\contentsline {subsubsection}{\numberline {3.3.8}Revision}{44}{subsubsection.3.3.8}%
-\contentsline {subsection}{\numberline {3.4}Inventory Development}{44}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Add Item}{44}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Remove Item}{44}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Unequip Item}{45}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Equip Item}{45}{subsubsection.3.4.4}%
-\contentsline {subsubsection}{\numberline {3.4.5}Testing}{46}{subsubsection.3.4.5}%
-\contentsline {subsection}{\numberline {3.5}Hurtbox Development}{49}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Layout}{49}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Script}{50}{subsubsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.6}Player Development}{50}{subsection.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}Layout and Structure}{50}{subsubsection.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.2}\_physics\_proccess(delta):}{51}{subsubsection.3.6.2}%
-\contentsline {subsubsection}{\numberline {3.6.3}Player Animation}{51}{subsubsection.3.6.3}%
-\contentsline {subsection}{\numberline {3.7}Dummy Development}{52}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Dungeon Environment Development}{52}{subsection.3.8}%
-\contentsline {subsubsection}{\numberline {3.8.1}Door}{52}{subsubsection.3.8.1}%
-\contentsline {subsubsection}{\numberline {3.8.2}Chest}{53}{subsubsection.3.8.2}%
-\contentsline {subsection}{\numberline {3.9}Enemy Development}{54}{subsection.3.9}%
-\contentsline {subsubsection}{\numberline {3.9.1}Layout and Structure}{54}{subsubsection.3.9.1}%
-\contentsline {subsubsection}{\numberline {3.9.2}General Script}{54}{subsubsection.3.9.2}%
-\contentsline {subsubsection}{\numberline {3.9.3}\_physics\_process(delta):}{55}{subsubsection.3.9.3}%
-\contentsline {subsubsection}{\numberline {3.9.4}take\_damage(damage, damage\_type):}{55}{subsubsection.3.9.4}%
-\contentsline {subsubsection}{\numberline {3.9.5}Animation}{55}{subsubsection.3.9.5}%
-\contentsline {section}{\numberline {4}References}{56}{section.4}%
-\contentsline {section}{\numberline {5}Code Listings}{57}{section.5}%
+\contentsline {subsection}{\numberline {3.3}Save Select System}{41}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Item Development}{42}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Folder Structure}{42}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Item}{42}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Equipable}{43}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Armour}{43}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.5}Charm}{43}{subsubsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {3.4.6}Weapon}{44}{subsubsection.3.4.6}%
+\contentsline {subsubsection}{\numberline {3.4.7}Key}{44}{subsubsection.3.4.7}%
+\contentsline {subsubsection}{\numberline {3.4.8}Revision}{45}{subsubsection.3.4.8}%
+\contentsline {subsection}{\numberline {3.5}Inventory Development}{45}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Add Item}{45}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Remove Item}{45}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Unequip Item}{46}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}Equip Item}{46}{subsubsection.3.5.4}%
+\contentsline {subsubsection}{\numberline {3.5.5}Testing}{47}{subsubsection.3.5.5}%
+\contentsline {subsection}{\numberline {3.6}Hurtbox Development}{50}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Layout}{50}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Script}{51}{subsubsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.7}Player Development}{51}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.7.1}Layout and Structure}{51}{subsubsection.3.7.1}%
+\contentsline {subsubsection}{\numberline {3.7.2}\_physics\_proccess(delta):}{52}{subsubsection.3.7.2}%
+\contentsline {subsubsection}{\numberline {3.7.3}Player Animation}{52}{subsubsection.3.7.3}%
+\contentsline {subsubsection}{\numberline {3.7.4}Player Attack}{53}{subsubsection.3.7.4}%
+\contentsline {subsection}{\numberline {3.8}TileMap Development}{53}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Dummy Development}{54}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Stakeholder Feedback 1}{54}{subsection.3.10}%
+\contentsline {subsubsection}{\numberline {3.10.1}Login System and Save Menu}{54}{subsubsection.3.10.1}%
+\contentsline {subsubsection}{\numberline {3.10.2}Test Scene}{54}{subsubsection.3.10.2}%
+\contentsline {subsection}{\numberline {3.11}Dungeon Environment Development}{54}{subsection.3.11}%
+\contentsline {subsubsection}{\numberline {3.11.1}Door}{54}{subsubsection.3.11.1}%
+\contentsline {subsubsection}{\numberline {3.11.2}Chest}{55}{subsubsection.3.11.2}%
+\contentsline {subsection}{\numberline {3.12}Enemy Development}{56}{subsection.3.12}%
+\contentsline {subsubsection}{\numberline {3.12.1}Layout and Structure}{56}{subsubsection.3.12.1}%
+\contentsline {subsubsection}{\numberline {3.12.2}General Script}{56}{subsubsection.3.12.2}%
+\contentsline {subsubsection}{\numberline {3.12.3}\_physics\_process(delta):}{57}{subsubsection.3.12.3}%
+\contentsline {subsubsection}{\numberline {3.12.4}take\_damage(damage, damage\_type):}{57}{subsubsection.3.12.4}%
+\contentsline {subsubsection}{\numberline {3.12.5}Animation}{57}{subsubsection.3.12.5}%
+\contentsline {subsection}{\numberline {3.13}Tutorial Development}{57}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}Stakeholder Feedback 2}{57}{subsection.3.14}%
+\contentsline {subsubsection}{\numberline {3.14.1}Save Menu Feedback}{57}{subsubsection.3.14.1}%
+\contentsline {section}{\numberline {4}References}{58}{section.4}%
+\contentsline {section}{\numberline {5}Code Listings}{59}{section.5}%

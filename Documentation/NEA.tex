@@ -65,6 +65,9 @@
 %Margins
 \setlength{\marginparwidth}{0pt}
 \pgfplotsset{compat=1.18}
+\setlength\parindent{0pt}
+
+
 \begin{document}
 \pagenumbering{roman}
 \date{}
@@ -928,7 +931,7 @@ def gen_salt():
         The Password and Challenge question entries would be hidden/starred for privacy.\\
         \newpage
         \subsection{Save Select System}
-        I will implement the save select system as an additional menu for the login system in order to improve replayability to help  using a ScrollContainer with a VBoxContainer inside to create a list of scrollable items. I will get the list of saves for a given user\_id and then display them and when the button for that save is pressed the current\_save\_id will be set.\\
+        I will implement the save select system as an additional menu for the login system in order to improve replayability to help  using a ScrollContainer with a VBoxContainer inside to create a list of scrollable items. I will get the list of saves for a given user\_id and then display them and when the button for that save is pressed the current\_save\_id will be set and the scene will be switched to the current level.\\
         In order to add new save's I will add a button for hardcore and a slider for difficulty as well as an add save button which will add the save and update the list.\\
         \subsubsection{Algorithms}
         \textbf{\_ready():}
@@ -1441,8 +1444,8 @@ def _on_attack_timer_timeout():
                 \includegraphics{images/development/database_ready.PNG}
                 \caption{\_ready}
         \end{figure}
-        In the database script db is declared using $SQLite.new()$ which is a wrapper class. I use the script to load the database and make sure all the necessary tables are present.\\
-        I also made it so that the database is closed when the script exits the tree so as to make sure all the data is saved properly.\\
+        In the database script db is declared using $SQLite.new()$. I use the script to load the database and make sure all the necessary tables are present.\\
+        I also made it so that the database is closed when the script exits the tree so as to make sure all the data is saved properly using godot's \_exit\_tree() function.\\
         \subsubsection{Hashing}
         \begin{figure}[H]
                 \centering
@@ -1455,7 +1458,7 @@ def _on_attack_timer_timeout():
                 \caption{hash}
         \end{figure}
         \[\]
-        The hash and gen\_salt functions implementation followed the pseudocode pretty faithfully apart from the fact I decided to not hash the number turned into a string as the salt doesnt have to be a certain length for the code to work. I also decided to times the number by a random integer to increase randomness and the number of possible salts.\\
+        The hash and gen\_salt functions implementation followed the pseudocode pretty faithfully apart from the fact I decided to not hash the number turned into a string as the salt doesnt have to be a certain length for the code to work. I also decided to times the number by a random integer to increase randomness and the number of possible salts as before there was not enough different salts to properly prevent rainbow tables.\\
         \subsubsection{Login Functions}
         \begin{figure}[H]
                 \centering
@@ -1478,9 +1481,10 @@ def _on_attack_timer_timeout():
         \subsubsection{Testing}
         \begin{figure}[H]
                 \centering
-                \includegraphics{images/development/test_database.PNG}
+                \includegraphics[width = \columnwidth]{images/development/test_database.PNG}
                 \caption{test\_database.gd}
         \end{figure}
+        This testing function was implemented as detailed in my testing plan that I designed.\\
         \begin{tabular}{|c|c|c|c|c|}
                 \hline
                 Test \#&Function&Parameters&Expected Outcome&Actual Outcome\\
@@ -1575,7 +1579,7 @@ def _on_attack_timer_timeout():
                         \caption{Structure}
                 \end{figure}
         \end{multicols}
-        \[\]
+        The layout and structure are as designed but I decided to group all the Labels, Buttons and Input Boxes using Node2D to have a neater structure.\\
         \begin{figure}[H]
               \centering
               \includegraphics{images/development/LoginForm_buttons.PNG}  
@@ -1602,7 +1606,7 @@ def _on_attack_timer_timeout():
                         \caption{Structure}
                 \end{figure}
         \end{multicols}
-        \[\]
+        The layout and structure are as designed but I decided to group all the Labels, Buttons and Input Boxes using Node2D to have a neater structure.\\
         \begin{figure}[H]
               \centering
               \includegraphics{images/development/ResetPasswordForm_cancel.PNG}
@@ -1629,7 +1633,7 @@ def _on_attack_timer_timeout():
                         \caption{Structure}
                 \end{figure}
         \end{multicols}
-        \[\]
+        The layout and structure are as designed but I decided to group all the Labels, Buttons and Input Boxes using Node2D to have a neater structure.\\
         \begin{figure}[H]
               \centering
               \includegraphics{images/development/CreateAccountForm_cancel.PNG}
@@ -1643,7 +1647,28 @@ def _on_attack_timer_timeout():
         \end{figure}
         \[\]
         This is the function for when the create account button is pressed it fetches the data and tries to create the account, displaying any errors it gets. If the reset is successful then it switches the scene to the login\_form scene.\\
-        
+        \newpage
+        \subsection{Save Select System}
+        \begin{multicols}{2}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/SaveMenu_structure.PNG}
+                \caption{Structure}
+        \end{figure}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.5\columnwidth]{images/development/SaveMenu_layout.PNG}
+                \caption{Layout}
+        \end{figure}
+        \end{multicols}
+        The structure is as was described with the VBoxContainer in the ScrollContainer to make sure the save buttons are only stacked vertically. There is also a label atatched to the Difficulty slider.\\
+        The layout is simple with the save list in the center and scrollbar next to it and the add new save elements underneath.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/SaveMenu_script.PNG}
+                \caption{Script}
+        \end{figure}
+        This script is similar to pseudocode with the string formatting changed to work in godot and the code to load the save list moved to another function so the save list can be reloaded every time a new save is added aswell as a function linked to the Difficulty slider to update the Difficulty label.\\
         \newpage
         \subsection{Item Development}
         I will use resource scripts in order to implement the item classes and I will export the variables so that when I create new resources I can set the values.\\
@@ -1796,6 +1821,7 @@ def _on_attack_timer_timeout():
                 \includegraphics[width=0.8\columnwidth]{images/development/test_inventory.PNG}
                 \caption{test\_inventory()}
         \end{figure}
+        I added the relevant test items in order to test the inventory functions with this script which I ran.\\
         \begin{tabular}{|c|c|c|c|c|}
                 \hline
                 Test \#&Function&Parameters&Expected Outcome&Actual Outcome\\
@@ -1845,8 +1871,8 @@ def _on_attack_timer_timeout():
                 &&&&\\
                 &&&&\\
                 \hline
-        \end{tabular}
-        \[\]
+        \end{tabular}\\
+        \\
         The add\_item function failed to return "FullInventoryError" as it only checked if the item wasnt stackable not if it wasnt stackabled and already stored so I updated the script.\\
         \begin{figure}[H]
                 \centering
@@ -1925,8 +1951,9 @@ def _on_attack_timer_timeout():
                 &&&&\\
                 &&&&\\
                 \hline
-        \end{tabular}
-        Finally all my testing was a success.
+        \end{tabular}\\
+        \\
+        All the tests came out as a success so that concludes my testing.\\
         \subsection{Hurtbox Development}
         \subsubsection{Layout}
         \begin{figure}[H]
@@ -1965,19 +1992,34 @@ def _on_attack_timer_timeout():
         \end{figure}
         \noindent I decided to add an animating flag for use in this script that will be flagged when animations that cannnot be interrupted are playing (e.g. attacks) so that the player will not move or switch animations during that. Other than that the function is the same as the designed function with a slightly different method of getting direction.\\
         \subsubsection{Player Animation}
+        \begin{multicols}{2}
         \begin{figure}[H]
                 \centering
-                \includegraphics[width = 0.8\columnwidth]{images/development/Animations.PNG}
+                \includegraphics[width = 1.1\columnwidth]{images/development/Animations.PNG}
                 \caption{Animations}
         \end{figure}
-        I added the animation frames into seperate animations in the Player's animationPlayer naming them such that the different directional animation names can be got using the get\_animation() function.\\
         \begin{figure}[H]
                 \centering
-                \includegraphics[width = 0.5\columnwidth]{images/development/Player_get_anim.PNG}
+                \includegraphics[width = 0.8\columnwidth]{images/development/Player_get_anim.PNG}
                 \caption{get\_animation():}
         \end{figure}
+        \end{multicols}
+        I added the animation frames into seperate animations in the Player's animationPlayer naming them such that the different directional animation names can be got using the get\_animation() function.\\
+        \subsubsection{Player Attack}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/Player_attack.PNG}
+                \caption{Player Attack}
+        \end{figure}
+        I added code to the input function to call the player's attack function if the attack action is pressed which mostly does the same as the planned script except for setting the animating flag to true until it finishes animating to prevent the player from being able to attack twice or walk while attacking.\\
+        \subsection{TileMap Development}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.9\columnwidth]{images/development/TileMap_physics_layer.PNG}
+                \caption{Physics Layer on TileMap}
+        \end{figure}
+        I added a TileMap using Godot's TileMap node and a free dungeon tileset painting a physics layer on the walls so that the player and enemies will collide with them. I can add this as a child to any scene and use it to place individual tiles and build level/room structures. I only added physics layers to the wall and floor tiles as I will only use them.\\
         \subsection{Dummy Development}
-        As part of my developmental testing I deciced to create a simple dummy to test weapons on. The dummy consists of a StaticBody2D with a CollisionShape2D and a Sprite2D it also has a simple script for taking damage which I have set to print damage type and damage to the console.\\
         \begin{multicols}{3}
                 \begin{figure}[H]
                         \centering
@@ -1995,6 +2037,11 @@ def _on_attack_timer_timeout():
                         \caption{Script}
                 \end{figure}
         \end{multicols}
+        As part of my developmental testing I decided to create a simple dummy to test weapons on. The dummy consists of a StaticBody2D with a CollisionShape2D and a Sprite2D it also has a simple script for taking damage which I have set to print damage type and damage to the console.\\
+        \subsection{Stakeholder Feedback 1}
+        I got my first stakeholder feedback on 02/03/25 from Stakeholders Daniel and Samuel. I showed them my Login System and Save Select System aswell as player movement and 
+        \subsubsection{Login System and Save Menu}
+        \subsubsection{Test Scene}
         \subsection{Dungeon Environment Development}
         \subsubsection{Door}
         \begin{multicols}{2}
@@ -2072,6 +2119,11 @@ def _on_attack_timer_timeout():
         \subsubsection{\_physics\_process(delta):}
         \subsubsection{take\_damage(damage, damage\_type):}
         \subsubsection{Animation}
+        \subsection{Tutorial Development}
+        \subsection{Stakeholder Feedback 2}
+        \subsubsection{Save Menu Feedback}
+        I got feedback to add names to the saves and display them instead of the save\_id aswell as editing the button text to make it clear it is to create a new save.\\
+
 \newpage
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
