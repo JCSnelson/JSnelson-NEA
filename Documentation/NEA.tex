@@ -1410,7 +1410,7 @@ def take_damage(damage, damage_type):
       health -= 2*damage
    else:
       health -= damage
-   velocity = - 25 * to_local(player.global_position).normalized() # Move away from the player for knockback
+   velocity = - 25 * player.global_position.normalized() # Move away from the player for knockback
    if health <= 0:
       queue_free()
    else:
@@ -2041,7 +2041,30 @@ def _on_attack_timer_timeout():
         \subsection{Stakeholder Feedback 1}
         I got my first stakeholder feedback on 02/03/25 from Stakeholders Daniel and Samuel. I showed them my Login System and Save Select System aswell as player movement and 
         \subsubsection{Login System and Save Menu}
+        During the Demo of the Login System and Save Menu Samuel got stuck on the Save Menu and had to restart to log out, to fix this I added a simple Logout Button to the Save Menu which switches the scene back to the login page to allow login as another account.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.9\columnwidth]{images/development/SaveMenu_logout.PNG}
+                \caption{Logout Button}
+        \end{figure}
+        Stakeholders mentioned how they would like the addition of a confirm password box to make sure that no mistypes in the password would affect logging in and so I added this with a simple check to see if the entered fields are equal.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.3\columnwidth]{images/development/CreateAccountForm_layout2.PNG}
+                \caption{Confirm Password Field}
+        \end{figure}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = \columnwidth]{images/development/CreateAccountForm_create2.PNG}
+                \caption{Updated Script}
+        \end{figure}   
         \subsubsection{Test Scene}
+        During the demo the stakeholders ran into an issue with the attacks where the attack function in the weapon scripts wasnt able to properly use await and timers due to them not being in the scene tree and so crashed the program when the player tried to attack, to fix this I moved the attack functions out of the weapon script and directly into the player's attack function sacrificing the polymorphism for the sake of time.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.6\columnwidth]{images/development/Player_attack2.PNG}
+                \caption{Updated Player Attack Function}
+        \end{figure}
         \subsection{Dungeon Environment Development}
         \subsubsection{Door}
         \begin{multicols}{2}
@@ -2083,7 +2106,12 @@ def _on_attack_timer_timeout():
                 \caption{Script}
         \end{figure}
         \noindent The chest script is has a couple changes from the design, the addition of a locked flag aswell as making the item list a script variable so that it can be accessed from the input function and constructing the list without the use of pythonic list comprehension. I also switched from directly seeing if the player body overlaps to looping through overlapping bodies again as this wasy easier to implement and works the same.\\
+        \subsection{Projectile Development}
+        \subsubsection{Ranged}
+        \subsubsection{Area}
+        \subsection{Magic Weapon Development}
         \subsection{Enemy Development}
+        I implemented three types of enemies a default and poison slime with melee attacks aswell as a fire slime with ranged attacks.\\
         \subsubsection{Layout and Structure}
         \begin{multicols}{2}
                 \begin{figure}[H]
@@ -2116,9 +2144,36 @@ def _on_attack_timer_timeout():
                         \caption{timer\_timeouts}
                 \end{figure}
         \end{multicols}
-        \subsubsection{\_physics\_process(delta):}
+        This shows the general script structure and variables as was described with the animating and can\_attack flags declared as script variables so they can be used throughout the functions.\\
+        The ready function adds it to the enemies group so that the player's attacks will damage it and the navigation timer is set to autorun and when it times out the pathfinding towards the player (using NavigationAgent2D) is updated. When the attack timer runs out then the enemy can attack again.\\
+        \subsubsection{\_physics\_process():}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/Enemy_physics_process_melee.PNG}
+                \caption{melee \_physics\_process(delta)}
+        \end{figure}
+        This script is the same as the designed script except with the move\_and\_slide function moved so that the enemy will not move if the idle animation is playing.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/Enemy_physics_process_ranged.PNG}
+                \caption{ranged \_physics\_process(delta)}
+        \end{figure}
+        This is the same as the designed script using godot syntax and with the fire projectile scene added in as this is fire ranged slime.\\
         \subsubsection{take\_damage(damage, damage\_type):}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/Enemy_take_damage.PNG}
+                \caption{take\_damage()}
+        \end{figure}
+        This is the same as the designed script but changing the player global position to a localised position relative to the enemy to properly get the direction.\\
         \subsubsection{Animation}
+        For animation I used three different spritesheets for the different types of slimes.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/Enemy_get_animation.PNG}
+                \caption{get\_animation()}
+        \end{figure}
+        This is exactly the same as the designed script.
         \subsection{Tutorial Development}
         \subsection{Stakeholder Feedback 2}
         \subsubsection{Save Menu Feedback}
@@ -2158,6 +2213,83 @@ def _on_attack_timer_timeout():
 \newpage
 \newgeometry{a4paper,total={210mm, 150mm}, landscape, margin=50pt}
 \section{Code Listings}
+\subsection{resources/scripts}
+\textbf{item.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/resources/scripts/item.gd}
+\textbf{equipable.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/resources/scripts/equipable.gd}
+\textbf{armour.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/resources/scripts/armour.gd}
+\textbf{weapon.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/resources/scripts/weapon.gd}
+\textbf{charm.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/resources/scripts/charm.gd}
+\newpage
+\textbf{key.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/resources/scripts/key.gd}
+\subsection{scenes}
+\subsubsection{game/enemies}
+\textbf{default\_slime.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/enemies/default_slime.gd}
+\textbf{fire\_slime.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/enemies/fire_slime.gd}
+\textbf{poison\_slime.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/enemies/poison_slime.gd}
+\subsubsection{game/player}
+\textbf{player.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/player/player.gd}
+\textbf{hurt\_box.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/player/hurt_box.gd}
+\textbf{inventory\_ui.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/player/inventory_ui.gd}
+\textbf{ui.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/player/ui.gd}
+\subsubsection{game/projectiles}
+\textbf{ice\_projectile.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/ice_projectile.gd}
+\textbf{fire\_projectile.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/fire_projectile.gd}
+\textbf{thunder\_projectile.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/thunder_projectile.gd}
+\textbf{ice\_area.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/ice_area.gd}
+\textbf{fire\_area.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/fire_area.gd}
+\textbf{thunder\_area.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/thunder_area.gd}
+\subsubsection{game/worlds}
+\textbf{rooms/graph/dungeon\_graph.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/worlds/rooms/graph/dungeon_graph.gd}
+\textbf{rooms/graph/dungeon\_graph\_node.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/worlds/rooms/graph/dungeon_graph_node.gd}
+\textbf{rooms/room.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/worlds/rooms/room.gd}
+\textbf{rooms/room\_test.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/worlds/rooms/room_test.gd}
+\textbf{chest.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/worlds/chest.gd}
+\textbf{door.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/game/worlds/door.gd}
+\subsubsection{menu}
+\textbf{login\_form.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/menu/login_form.gd}
+\textbf{create\_account\_form.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/menu/create_account_form.gd}
+\textbf{reset\_password\_form.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/menu/reset_password_form.gd}
+\textbf{save\_meu.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/scenes/menu/save_menu.gd}
+\subsection{src}
+\textbf{database.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/src/database.gd}
+\textbf{inventory.gd}\\
 \lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/src/inventory.gd}
+\textbf{global.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/src/global.gd}
+\subsection{utils}
+\textbf{dummy.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/utils/dummy.gd}
+\textbf{test.gd}\\
+\lstinputlisting[language=GDScript]{../Godot/the-perilous-legend-of-peril/utils/test.gd}
 \restoregeometry
 \end{document}

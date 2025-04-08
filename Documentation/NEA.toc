@@ -104,18 +104,31 @@
 \contentsline {subsection}{\numberline {3.9}Dummy Development}{54}{subsection.3.9}%
 \contentsline {subsection}{\numberline {3.10}Stakeholder Feedback 1}{54}{subsection.3.10}%
 \contentsline {subsubsection}{\numberline {3.10.1}Login System and Save Menu}{54}{subsubsection.3.10.1}%
-\contentsline {subsubsection}{\numberline {3.10.2}Test Scene}{54}{subsubsection.3.10.2}%
-\contentsline {subsection}{\numberline {3.11}Dungeon Environment Development}{54}{subsection.3.11}%
-\contentsline {subsubsection}{\numberline {3.11.1}Door}{54}{subsubsection.3.11.1}%
-\contentsline {subsubsection}{\numberline {3.11.2}Chest}{55}{subsubsection.3.11.2}%
-\contentsline {subsection}{\numberline {3.12}Enemy Development}{56}{subsection.3.12}%
-\contentsline {subsubsection}{\numberline {3.12.1}Layout and Structure}{56}{subsubsection.3.12.1}%
-\contentsline {subsubsection}{\numberline {3.12.2}General Script}{56}{subsubsection.3.12.2}%
-\contentsline {subsubsection}{\numberline {3.12.3}\_physics\_process(delta):}{57}{subsubsection.3.12.3}%
-\contentsline {subsubsection}{\numberline {3.12.4}take\_damage(damage, damage\_type):}{57}{subsubsection.3.12.4}%
-\contentsline {subsubsection}{\numberline {3.12.5}Animation}{57}{subsubsection.3.12.5}%
-\contentsline {subsection}{\numberline {3.13}Tutorial Development}{57}{subsection.3.13}%
-\contentsline {subsection}{\numberline {3.14}Stakeholder Feedback 2}{57}{subsection.3.14}%
-\contentsline {subsubsection}{\numberline {3.14.1}Save Menu Feedback}{57}{subsubsection.3.14.1}%
-\contentsline {section}{\numberline {4}References}{58}{section.4}%
-\contentsline {section}{\numberline {5}Code Listings}{59}{section.5}%
+\contentsline {subsubsection}{\numberline {3.10.2}Test Scene}{55}{subsubsection.3.10.2}%
+\contentsline {subsection}{\numberline {3.11}Dungeon Environment Development}{56}{subsection.3.11}%
+\contentsline {subsubsection}{\numberline {3.11.1}Door}{56}{subsubsection.3.11.1}%
+\contentsline {subsubsection}{\numberline {3.11.2}Chest}{57}{subsubsection.3.11.2}%
+\contentsline {subsection}{\numberline {3.12}Projectile Development}{58}{subsection.3.12}%
+\contentsline {subsubsection}{\numberline {3.12.1}Ranged}{58}{subsubsection.3.12.1}%
+\contentsline {subsubsection}{\numberline {3.12.2}Area}{58}{subsubsection.3.12.2}%
+\contentsline {subsection}{\numberline {3.13}Magic Weapon Development}{58}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}Enemy Development}{58}{subsection.3.14}%
+\contentsline {subsubsection}{\numberline {3.14.1}Layout and Structure}{58}{subsubsection.3.14.1}%
+\contentsline {subsubsection}{\numberline {3.14.2}General Script}{59}{subsubsection.3.14.2}%
+\contentsline {subsubsection}{\numberline {3.14.3}\_physics\_process():}{59}{subsubsection.3.14.3}%
+\contentsline {subsubsection}{\numberline {3.14.4}take\_damage(damage, damage\_type):}{60}{subsubsection.3.14.4}%
+\contentsline {subsubsection}{\numberline {3.14.5}Animation}{60}{subsubsection.3.14.5}%
+\contentsline {subsection}{\numberline {3.15}Tutorial Development}{61}{subsection.3.15}%
+\contentsline {subsection}{\numberline {3.16}Stakeholder Feedback 2}{61}{subsection.3.16}%
+\contentsline {subsubsection}{\numberline {3.16.1}Save Menu Feedback}{61}{subsubsection.3.16.1}%
+\contentsline {section}{\numberline {4}References}{62}{section.4}%
+\contentsline {section}{\numberline {5}Code Listings}{63}{section.5}%
+\contentsline {subsection}{\numberline {5.1}resources/scripts}{63}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}scenes}{64}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}game/enemies}{64}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}game/player}{67}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}game/projectiles}{71}{subsubsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.4}game/worlds}{73}{subsubsection.5.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.5}menu}{76}{subsubsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.3}src}{78}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}utils}{84}{subsection.5.4}%
