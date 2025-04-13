@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cvithor0844be" path="res://resources/scripts/weapon.gd" id="1_sgbhs"]
 
 [resource]
-resource_name = "test"
+resource_name = "Wood Sword"
 script = ExtResource("1_sgbhs")
 weapon_type = "melee"
 attack_power = 1

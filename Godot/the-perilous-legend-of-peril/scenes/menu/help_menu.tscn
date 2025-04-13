@@ -6,13 +6,12 @@
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme_override_font_sizes/font_size = 30
-text = "WASD/LStick - Movement
-Q/Y Button - Dash
-LClick/1/B Button - Primary Attack
-RClick/2/A Button - Secondary Attack
-I/X Button - Interact (Doors/Chests)
-H/Menu - Help
-E/Back - Inventory
+text = "WASD - Movement
+Q- Dash
+LClick/1 - Primary Attack
+I - Interact (Doors/Chests)
+H - Help
+E - Inventory
 
 "
 horizontal_alignment = 1

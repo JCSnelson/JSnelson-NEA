@@ -43,4 +43,9 @@ func _ready() -> void:
 			slime.health = floor(2*Global.current_level*log(3*Global.difficulty))
 			slime.damage = floor(Global.current_level*log(3*Global.difficulty))
 			print(slime.health,slime.damage)
+	if $Labels:
+		for label in $Labels.get_children():
+			var k:String = "level 1"
+			label.text = label.text.replace("0", str(Global.current_level))
+			print(label.text)
 		

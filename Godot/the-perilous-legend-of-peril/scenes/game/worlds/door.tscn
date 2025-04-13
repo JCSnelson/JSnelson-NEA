@@ -12,6 +12,11 @@ size = Vector2(68, 20)
 [node name="Door" type="StaticBody2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_xviec")
+change_scene = null
+scene_path = null
+key_path = null
+locked = null
+level = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

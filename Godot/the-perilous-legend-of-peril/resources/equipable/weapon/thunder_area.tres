@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://bh7rl05ds2676"]
+
+[ext_resource type="Script" uid="uid://cvithor0844be" path="res://resources/scripts/weapon.gd" id="1_orksc"]
+
+[resource]
+resource_name = "Zapatron"
+script = ExtResource("1_orksc")
+weapon_type = "area_magic"
+attack_power = 3
+attack_range = 3
+damage_type = "thunder"
+mana_cost = 5
+stat_boosts = {}
+stackable = false
+description = "Zap"

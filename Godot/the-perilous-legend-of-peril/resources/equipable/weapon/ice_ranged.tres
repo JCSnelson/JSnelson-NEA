@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://bi4tb2e4rbsrw"]
+
+[ext_resource type="Script" uid="uid://cvithor0844be" path="res://resources/scripts/weapon.gd" id="1_33wmg"]
+
+[resource]
+resource_name = "Popsicle"
+script = ExtResource("1_33wmg")
+weapon_type = "ranged_magic"
+attack_power = 4
+attack_range = 3
+damage_type = "ice"
+mana_cost = 6
+stat_boosts = {}
+stackable = false
+description = ""

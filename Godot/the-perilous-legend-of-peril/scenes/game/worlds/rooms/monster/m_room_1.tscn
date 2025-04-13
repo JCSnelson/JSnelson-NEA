@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=4 uid="uid://ceb34i7k43r8i"]
+[gd_scene load_steps=5 format=4 uid="uid://ceb34i7k43r8i"]
 
 [ext_resource type="Script" uid="uid://bu2rap174cbib" path="res://scenes/game/worlds/rooms/room.gd" id="1_rdx26"]
 [ext_resource type="PackedScene" uid="uid://cxuyu802r6apc" path="res://scenes/game/worlds/tile_map.tscn" id="2_6finj"]
+[ext_resource type="PackedScene" uid="uid://bgncfnu33yavy" path="res://scenes/game/enemies/default_slime.tscn" id="3_qefmw"]
+[ext_resource type="PackedScene" uid="uid://dyn2myc0ig8xr" path="res://scenes/game/enemies/poison_slime.tscn" id="4_ev26e"]
 
 [node name="Room" type="Node2D"]
 script = ExtResource("1_rdx26")
@@ -20,3 +22,15 @@ position = Vector2(96, 0)
 
 [node name="West" type="Node2D" parent="."]
 position = Vector2(-96, 0)
+
+[node name="DefaultSlime" parent="." instance=ExtResource("3_qefmw")]
+position = Vector2(-72, 40)
+
+[node name="PoisonSlime" parent="." instance=ExtResource("4_ev26e")]
+position = Vector2(72, 40)
+
+[node name="PoisonSlime2" parent="." instance=ExtResource("4_ev26e")]
+position = Vector2(-72, -32)
+
+[node name="DefaultSlime2" parent="." instance=ExtResource("3_qefmw")]
+position = Vector2(40, -8)

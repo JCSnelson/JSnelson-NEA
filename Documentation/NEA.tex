@@ -1431,6 +1431,107 @@ def _on_navigation_timer_timeout() -> void:
 def _on_attack_timer_timeout():
    can_attack = True
         \end{python}
+        \subsection{UI}
+        \subsubsection{Display Strings}
+        In order to allow for better displaying of items I have decided to add a display string function to all items that will return nicely formatted key information about the item that can be displayed.\\
+        \textbf{Weapon:}\\
+        \begin{python}
+def display_string():
+   return f"Weapon\nName: {resource_name}\nType: {weapon_type}\nDamage: {attack_power}\nDamage Type: {damage_type}\n Description: {description}"
+        \end{python}
+        \textbf{Armour:}\\
+        \begin{python}
+def display_string():
+   return f"Armour\nName: {resource_name}\nType: {armour_type}\nDefense: {defense}\n Description: {description}"
+        \end{python}
+        \textbf{Charm:}\\
+        \begin{python}
+def display_string():
+   return f"Charm\nName: {rescource_name}\nType: {charm_type}\n Description: {description}"
+        \end{python}
+        \textbf{Key:}\\
+        \begin{python}
+def display_string():
+   return f"Key\nName: {resource_name}\n Description: {description}"
+        \end{python}
+        \subsubsection{Inventory UI}
+        The Inventory UI will be displayed upon pressing the E key (detected in the global script).\\
+        For the Inventory UI the important things to display are the stored items and the equipped items\\
+        For equipped items I decided to use labels displaying the items display strings.\\
+        For stored items I decided to use a ScrollContainer with a VBoxContainer and then append HBoxContainers with 4 buttons per container to display item display strings to create a 4 wide vertically scrolling system. I would have a selected script variable to be changed when a button is pressed and keep track of the last one pressed aswell as buttons to bin or equip the selected item.\\
+        \subsubsection{Game UI}
+        For the Game UI the important things to display are the player health and magic points aswell as the equipped weapon.\\
+        For the player health and magic points I have decided to use Progress Bars with custom textures to get the correct colours that have their maximum value set on going into the level and update each frame. These will aloow the players to see the percentage of their total health they have left.\\
+        For the weapon I have decided to display the display string in the bottom right corner. I will exclude the description of the weapon as this will take up too much screen space when displayed.\\
+        \subsubsection{Algorithms}
+        \textbf{Inventory UI refresh():}\\
+        This function will be called to setup the ui and refresh the ui every time an item is equipped or binned. It will set up the scrolling inventory aswell as the labells for equipped items.\\
+        \begin{python}
+def refresh():
+   inventory = Database.get_stored_items()
+   item_count = 0
+   for child in ScrollContainer.VBoxContainer.get_children(): #Get rid of existing HBoxContainers
+      child.queue_free()
+   for item in inventory: # Creates a button for each item in inventory with the display string
+      var button = Button.new()
+      if item_count % 4 == 0:
+         hbox = HBoxContainer.new()
+         ScrollContainer.VBoxContainer.add_child(hbox)
+      button.text = load(item["item_id"]).display_string() + f"\nAmount: {item["amount"]}"
+      button.connect("pressed",_select.bind(item["item_id"]))
+      button.custom_minimum_size = Vector2(250,200)
+      hbox.add_child(button)
+      item_count += 1
+                        
+   # Loads the equipped items display strings and displays them
+   if Database.get_slot_value("weapon"):
+      WeaponLabel.text = load(Database.get_slot_value("weapon")).display_string()
+   if Database.get_slot_value("head"):
+      HeadLabel.text = load(Database.get_slot_value("head")).display_string()
+   if Database.get_slot_value("chest"):
+      ChestLabel.text = load(Database.get_slot_value("chest")).display_string()
+   if Database.get_slot_value("legs"):
+      LegsLabel.text = load(Database.get_slot_value("legs")).display_string()
+   if Database.get_slot_value("charm_1"):
+      Charm1Label.text = load(Database.get_slot_value("charm_1")).display_string()
+   if Database.get_slot_value("charm_2"):
+      Charm2Label.text = load(Database.get_slot_value("charm_2")).display_string()
+        \end{python}
+        \textbf{Inventory UI \_select():, equip button and bin button}\\
+        The select and button functions make use of script variables or exisiting inventory functions to perform their purposes.\\
+        \begin{python}
+def _select(item_id):
+   selected = item_id
+        
+def _on_equip_button_pressed():
+   if selected != "":
+      Inventory.equip_item(selected)
+      refresh()
+        
+def _on_bin_button_pressed():
+   if selected != "":
+      Database.remove_stored_item(selected)
+        \end{python}
+        \textbf{Game UI script}\\
+        The Game UI script will consist of a \_ready function that sets the maximum player health and magic points, an update\_ui function that is called in the \_ready function and a \_process function that is called every frame to update the current player health and magic points.\\
+        \begin{python}
+def _ready():
+   player = get_tree().get_first_node_in_group("player")
+   HealthBar.max_value = player.health
+   MagicBar.max_value = player.mana
+   update_ui()
+                
+def _process(delta: float) -> void:
+   player = get_tree().get_first_node_in_group("player")
+   HealthBar.value = player.health
+   MagicBar.value = player.mana
+        
+def update_ui():
+   if Database.get_slot_value("weapon"):
+      weapon = load(Database.get_slot_value("weapon"))
+      WeaponLabel.text = weapon.display_string()
+        \end{python}
+
         \subsection{Procedural Generation Design}
         \subsubsection{Overview}
         \section{Development \& Testing}
@@ -2174,6 +2275,8 @@ def _on_attack_timer_timeout():
                 \caption{get\_animation()}
         \end{figure}
         This is exactly the same as the designed script.
+        \subsection{UI Development}
+
         \subsection{Tutorial Development}
         \subsection{Stakeholder Feedback 2}
         \subsubsection{Save Menu Feedback}

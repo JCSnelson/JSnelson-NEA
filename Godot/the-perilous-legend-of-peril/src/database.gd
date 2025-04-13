@@ -66,8 +66,7 @@ VALUES (?,?,?,?,?);
 
 var _get_save_data = """
 SELECT * FROM save_data
-WHERE user_id = ?
-AND save_id = ?;
+WHERE save_id = ?;
 """
 
 var _get_user_save_data = """
@@ -138,6 +137,12 @@ AND item_id = ?;
 
 var _get_slot_values = """
 SELECT * FROM save_data
+WHERE save_id = ?;
+"""
+
+var _set_level_value = """
+UPDATE save_data
+SET level = ?
 WHERE save_id = ?;
 """
 
@@ -311,10 +316,17 @@ func set_slot_value(slot, item_id):
 		"charm_2":
 			db.query_with_bindings(_set_charm_2_value, [item_id, current_save_id])
 	return db.query_result
+#Function for settig the level value
+func set_level_value(n):
+	db.query_with_bindings(_set_level_value, [n])
+	return db.quer_result
 #Function for getting the save data entries for the current user
 func get_user_save_data():
 	db.query_with_bindings(_get_user_save_data,[current_user_id])
 	print(db.query_result)
+	return db.query_result
+func get_save_data():
+	db.query_with_bindings(_get_save_data,[current_save_id])
 	return db.query_result
 #Function to add a new save file for the current user
 func add_new_save_data(name, difficulty, hardcore):

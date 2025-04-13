@@ -46,7 +46,15 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
 		attack()
-	elif event.is_action_pressed("help"):
+	elif event.is_action_pressed("dash"):
+		if can_dash:
+			speed = 8*speed
+			can_dash = false
+			await get_tree().create_timer(0.05).timeout
+			speed = speed/8
+			await get_tree().create_timer(0.5).timeout
+			can_dash = true
+	if event.is_action_pressed("help"):
 		var help_menu = load("res://scenes/menu/help_menu.tscn").instantiate()
 		add_child(help_menu)
 		get_tree().paused = true
@@ -66,14 +74,6 @@ func _input(event: InputEvent) -> void:
 		inventory_ui.queue_free()
 		$UI.visible = true
 		get_tree().paused = false
-	elif event.is_action_pressed("dash"):
-		if can_dash:
-			speed = 8*speed
-			can_dash = false
-			await get_tree().create_timer(0.05).timeout
-			speed = speed/8
-			await get_tree().create_timer(0.5).timeout
-			can_dash = true
 
 			
 

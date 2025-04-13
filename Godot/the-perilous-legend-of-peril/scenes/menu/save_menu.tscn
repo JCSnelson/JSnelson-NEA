@@ -16,6 +16,11 @@ offset_bottom = 656.0
 layout_mode = 2
 alignment = 1
 
+[node name="SavesScrollerLabel" type="Label" parent="SavesScroller/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Saves"
+
 [node name="NewSaveButton" type="Button" parent="."]
 offset_left = 800.0
 offset_top = 976.0
@@ -63,6 +68,14 @@ offset_right = 1120.0
 offset_bottom = 856.0
 placeholder_text = "Save Name"
 alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 872.0
+offset_top = 704.0
+offset_right = 1049.0
+offset_bottom = 732.0
+theme_override_font_sizes/font_size = 20
+text = "New Save Settings"
 
 [connection signal="pressed" from="NewSaveButton" to="." method="_on_new_save_button_pressed"]
 [connection signal="drag_ended" from="Difficulty" to="." method="_on_difficulty_drag_ended"]

@@ -56,8 +56,8 @@ func unequip_item(slot):
 func equip_item(item_id):
 	var slot: String
 	var item = load(item_id) # Loads the item
-	# Checks if the item is Equipable
-	if not(item is Equipable):
+	# Checks if the item is Equipable and in the inventory
+	if not(item is Equipable) and item_amount(item_id) >= 1:
 		return false
 	# Gets the slot to equip it into
 	if item is Armour:

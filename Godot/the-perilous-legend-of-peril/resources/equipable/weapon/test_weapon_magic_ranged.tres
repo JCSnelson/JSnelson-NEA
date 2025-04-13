@@ -3,12 +3,13 @@
 [ext_resource type="Script" uid="uid://cvithor0844be" path="res://resources/scripts/weapon.gd" id="1_egrup"]
 
 [resource]
-resource_name = "excaliburrr"
+resource_name = "Excalibur"
 script = ExtResource("1_egrup")
 weapon_type = "ranged_magic"
 attack_power = 5
 attack_range = 0
 damage_type = "thunder"
+mana_cost = 0
 stat_boosts = {}
 stackable = false
 description = ""

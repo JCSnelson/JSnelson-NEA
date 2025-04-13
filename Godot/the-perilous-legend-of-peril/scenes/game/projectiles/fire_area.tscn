@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1b4xhgmtsatn" path="res://assets/Fire Effect/Fire Effect 1/Fire Breath SpriteSheet.png" id="2_xhc2p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rcdqg"]
-radius = 15.0
+radius = 7.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_npk22"]
 atlas = ExtResource("2_xhc2p")

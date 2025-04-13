@@ -25,6 +25,7 @@ func _ready() -> void:
 func _on_save_selected(save_data):
 	Database.current_save_id = save_data["save_id"]
 	Global.difficulty = save_data["difficulty"]
+	print(Database.get_save_data())
 	get_tree().change_scene_to_file("res://scenes/game/worlds/tutorial.tscn")
 
 func _on_difficulty_drag_ended(value_changed: bool) -> void:
