@@ -49,7 +49,7 @@ func _ready():
 	graph.add_node(36, 'north', 'end')
 	
 	await graph.gen_dungeon()
-	self.scale = Vector2(0.25,0.25)
-	self.position = Vector2(0,1080/8)
-	#var player = load("res://scenes/game/player/player.tscn").instantiate()
-	#add_child(player)
+	#self.scale = Vector2(0.25,0.25)
+	#self.position = Vector2(0,1080/8)
+	var player = load("res://scenes/game/player/player.tscn").instantiate()
+	add_child(player)

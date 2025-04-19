@@ -15,16 +15,8 @@ var rooms: Dictionary = {'chest':["res://scenes/game/worlds/rooms/monster/room.t
 var opposite_direction = {'north':'south', 'south':'north', 'east':'west', 'west':'east'}
 
 
-func unordered_equal(list_1, list_2):
-	for i in list_1:
-		if not(i in list_2):
-			return false
-	for i in list_2:
-		if not(i in list_1):
-			return false
-	return true
 
-func _init() -> void:
+func _init():
 	root = DungeonGraphNode.new()
 	root.room_type = "start"
 	nodes.append(root)
@@ -36,15 +28,7 @@ func add_node(onto_index, direction, room_type):
 	var new_node = DungeonGraphNode.new()
 	new_node.room_type = room_type
 	onto[direction] = new_node
-	match direction:
-		'north':
-			new_node.south = onto
-		'south':
-			new_node.north = onto
-		'east':
-			new_node.west = onto
-		'west':
-			new_node.east = onto
+	new_node[direction] = onto
 	nodes.append(new_node)
 	return true
 

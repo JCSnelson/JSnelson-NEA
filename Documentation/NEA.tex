@@ -586,6 +586,14 @@
                 \hline
                 Source&Identifier&Data Type&Justification\\
                 \hline
+                global.gd&difficulty&Integer&Needed for deciding enemy health/damage etc.\\
+                \hline
+                global.gd&current\_level&Integer&Needed for deciding enemy health/damage etc.\\
+                \hline
+                database.gd&current\_user\_id&Integer&Used for SQL queries after having logged in.\\
+                \hline
+                database.gd&current\_save\_id&Integer&Used for SQL queries after having selected a save.\\
+                \hline
         \end{tabular}
         \subsubsection{Folder Structure}
         \begin{figure}[H]
@@ -716,7 +724,7 @@
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{update\_save\_data}&\mr{2}{3cm}{updateSave}&\mr{2}{9.5cm}{\texttt{UPDATE save\_data\\SET\\\tab head = ?,\\\tab chest = ?,\\\tab legs = ?,\\\tab weapon = ?,\\\tab charm\_1 = ?,\\\tab charm\_2 = ?,\\\tab level = ?\\WHERE\\\tab user\_id = ?\\AND save\_id = ?;}}\\
+                \mr{2}{3.5cm}{update\_save\_data}&\mr{2}{3cm}{Update's the save data with the new data.}&\mr{2}{9.5cm}{\texttt{UPDATE save\_data\\SET\\\tab head = ?,\\\tab chest = ?,\\\tab legs = ?,\\\tab weapon = ?,\\\tab charm\_1 = ?,\\\tab charm\_2 = ?,\\\tab level = ?\\WHERE\\\tab user\_id = ?\\AND save\_id = ?;}}\\
                 &&\\
                 &&\\
                 &&\\
@@ -984,8 +992,8 @@ def attack(owner: node, direction):
    hitbox_instance.queue_free()
 
         \end{python}
-        Ranged:\\
-        My Bows and ranged magic weapons will shoot out projectiles.
+        Ranged Projectile:\\
+        My Ranged magic weapons will shoot out projectiles.\\
         \begin{python}
 def attack():
    #Load the projectile scene
@@ -994,10 +1002,20 @@ def attack():
    projectile_instance.damage = damage
 
    #Add Child
-   owner.add_child(projectile_instance)
+   owner.add_child(projectile_instance) #add as a child of the parent so that it doesnt move with the enemy/playe
         \end{python}
-        \textbf{display\_string():}
-        Upon designing the Inventory UI I have decided to add a function to output a string describing the item, this would make use of polymorphism to behave differently for each item and display the key stats like the name, stat\_boosts and such.\\
+        Area Of Effect:\\
+        My AOE magic weapons will spawn in area's which affect enemies and players that walk in, damaging them.\\
+        \begin{python}
+def attack():
+   #Load the area scene
+   area_scene = load(area_scene_path)\
+   area_instance = area_scene.instantiate()
+   area_instance.damage = damage
+
+   #Add Child
+   owner.add_child(projectile_instance) #add as a child of the parent so that it doesnt move with the enemy/player
+        \end{python}
         \subsection{Inventory Design}
         My inventory design will cover two main parts the equipped items and the item storage. I will have a maximum inventory size script variable so that we can still display all the items in the inventory and a max stack size for stackable items.\\
         \subsubsection{Stored Items}
@@ -1479,7 +1497,6 @@ def refresh():
          ScrollContainer.VBoxContainer.add_child(hbox)
       button.text = load(item["item_id"]).display_string() + f"\nAmount: {item["amount"]}"
       button.connect("pressed",_select.bind(item["item_id"]))
-      button.custom_minimum_size = Vector2(250,200)
       hbox.add_child(button)
       item_count += 1
                         
@@ -1521,7 +1538,7 @@ def _ready():
    MagicBar.max_value = player.mana
    update_ui()
                 
-def _process(delta: float) -> void:
+def _process(delta):
    player = get_tree().get_first_node_in_group("player")
    HealthBar.value = player.health
    MagicBar.value = player.mana
@@ -1534,6 +1551,128 @@ def update_ui():
 
         \subsection{Procedural Generation Design}
         \subsubsection{Overview}
+        The concept I most liked the idea of for procedural generation came from my research into existing solutions in which I found a dev log on procedural generation in Dead Cells$_{(3)}$. This dev log outlines how they use this idea of smaller handmade 'tiles' that can be peiced together using a skeletal structure of the level represented by a graph where each node is a room or corridor that can be selected randomly from a group of this type. I decided to take a similar approach as this allowed for a more handmade feel with similar lengths from the start to the finish of a level but still having a different level each time.\\
+        \subsubsection{Graph Design}
+        Firstly I needed to design the graph data structure I would use for my level design, I decided that each instance of the DungeonGraphNode class would have entrances/exits on the north, south, east and west of the room and that there would be the oppurtunity for another room to connect to these entrances. Because of this my DungeonGraphNodes will have specific variables to point to the rooms in each of these directions using aliasing. The only other thing needed to be stored in each room/node was the room type which I will store as a string.\\
+        The nodes themselves will not have any methods and I will use a DungeonGraph class to manage the graph for each level and all of the DungeonGraphNode objects associated with it.\\
+        In the DungeonGraph I will have an Array storing all the current nodes aswell as a Dictionary to store a list of rooms for each room type for when generating. I will also have a Dictionary to get the opposite direction of north, south, east and west.\\
+        The setup of the dungeon graph will have a new root node declared with room type "start" and appended to the node list, every node after will have to specify which node in the list of nodes it wants to be put next to, what direction and the room type of that node before being added on.\\
+        The generate dungeon function will perform a pre-order depth first search of the graph generating the rooms when they are processed.\\
+        \subsubsection{Room Design}
+        The Rooms will have Node2D's at each of the entrances to allow the positions to be got easily in order to align them with all the entrances being the same size. Their will be a get\_pos() and set\_pos() function for each of the directions to move the positions of those entrances so that they can line up with each other.\\
+        The rooms will also have a cap function to cap the entrance in a certain direction if there is no room attached there.\\
+        Finally the rooms will also use the \_ready() function to set all the slimes health and damage according to the level.\\
+        \subsubsection{Algorithms}
+        \textbf{DungeonGraphNode Script:}\\
+        \begin{python}
+class_name DungeonGraphNode
+north: DungeonGraphNode
+south: DungeonGraphNode
+east: DungeonGraphNode
+west: DungeonGraphNode
+room_type: str
+        \end{python}
+        \textbf{DungeonGraph \_init():}\\
+        Used to setup the root node.
+        \begin{python}
+def _init():
+   root = DungeonGraphNode.new()
+   root.room_type = "start"
+   nodes.append(root)
+        \end{python}
+        \textbf{DungeonGraph add\_node(onto\_index, direction, room\_type):}\\
+        Used to add a new DungeonGraphNode to the DungeonGraph in the direction specified onto the DungeonGraphNode at the index specified with the room type specified.\\
+        \begin{python}
+def add_node(onto_index, direction, room_type):
+   onto = nodes[onto_index]
+   if onto[direction]:
+      return false
+   new_node = DungeonGraphNode.new()
+   new_node.room_type = room_type
+   onto[direction] = new_node
+   new_node[direction] = onto
+   nodes.append(new_node)
+   return true
+        \end{python}
+        \textbf{DungeonGraph gen\_node(node, previous\_direction, previous):}\\
+        Generates the room associated with the node using the direction it came from to line up its entrance with the previous room and then return the room generated.\\
+        \begin{python}
+def gen_room(node,previous_direction = null, previous = null):
+   room = load(rooms[node.room_type].pick_random()).instantiate() #Picks the random room from the list of that type and instantiates it
+   add_child(room)
+   if previous_direction: #Sets the position to align the entrances if the previous room exists
+      room.set_pos(previous_direction,previous.get_pos(opposite_direction[previous_direction]))
+   for i in ['north', 'south', 'east', 'west']: #Caps the entrances with no rooms attached
+      if node[i] == null:
+         room.cap(i)
+   return room #returns the generated room
+        \end{python}
+        \textbf{DungeonGraph gen\_dungeon(node, previous\_direction, previous, generated):}\\
+        This is a recursive implementation of a depth first search passing the previous\_direction and previous room generated to be used for the gen\_room function and using the generated list to keep track of which nodes have been processed.\\
+        \begin{python}
+def gen_dungeon(node=root, previous_direction = null, previous = null, generated = []):
+   room = await gen_room(node, previous_direction, previous) #Generates current room and stores it
+   generated.append(node) #Adds the node to the generated list
+   for i in ['north', 'south', 'east', 'west']: #Checks each direction from the generated node for ungenerated nodes
+      if node[i] and node[i] not in generated:
+         generated = await gen_dungeon(node[i], opposite_direction[i], room, generated) #Recursive call on ungenerated nodes passing in the list of nodes that have been generated
+   return generated #Returning generated to make sure it stays updated
+        \end{python}
+        \textbf{Room get\_pos(direction):}\\
+        Used to get the global position of the directional Node2D markers.
+        \begin{python}
+def get_pos(direction):
+   match direction:
+      'north':
+         return North.global_position
+      'south':
+         return South.global_position 
+      'east':
+         return East.global_position 
+      'west':
+         return West.global_position
+        \end{python}
+        \textbf{Room set\_pos(direction, global\_pos):}\\
+        Used to set the position of the room such that the Node2D corresponding to the direction is at the global\_pos provided.
+        \begin{python}
+def set_pos(direction, global_pos):
+   match direction:
+      'north':
+         global_position += global_pos - North.global_position
+      'south':
+	 global_position += global_pos - South.global_position 
+      'east':
+	 global_position += global_pos - East.global_position 
+      'west':
+	 global_position += global_pos - West.global_position 
+        \end{python}\
+        \textbf{Room cap(direction):}\\
+        Loads the cap scene for the direction and then adds it to the entrance in that direction, blocking it off.
+        \begin{python}
+def cap(direction):
+   match direction:
+      'north':
+	 north_cap = load(north_cap_scene_path).instantiate()
+	 North.add_child(north_cap)
+      'south':
+	 south_cap = load(south_cap_scene_path).instantiate()
+	 South.add_child(south_cap)
+      'east':
+	 east_cap = load(east_cap_scene_path).instantiate()
+	 East.add_child(east_cap)
+      'west':
+	 west_cap = load(west_cap_scene_path).instantiate()
+	 West.add_child(west_cap)
+        \end{python}
+        \textbf{Room \_ready():}\\
+        Used to set slime health/damage with a logarithmic function of the difficulty so the rate of health./damage increase decreases as difficulty goes up.
+        \begin{python}
+def _ready():
+   if Slimes:
+      for slime in Slimes.get_children():
+	 slime.health = floor(2*Global.current_level*log(3*Global.difficulty))
+	 slime.damage = floor(Global.current_level*log(3*Global.difficulty))
+        \end{python}
         \section{Development \& Testing}
         \subsection{Database Development}
         I used a global autoloaded script database.gd in order to implement all of my functions for handling the database. Upon testing the functions I realised that the reset\_password query was incorrect as it says UPDATE TABLE instead of just update.\\
@@ -2209,8 +2348,51 @@ def update_ui():
         \noindent The chest script is has a couple changes from the design, the addition of a locked flag aswell as making the item list a script variable so that it can be accessed from the input function and constructing the list without the use of pythonic list comprehension. I also switched from directly seeing if the player body overlaps to looping through overlapping bodies again as this wasy easier to implement and works the same.\\
         \subsection{Projectile Development}
         \subsubsection{Ranged}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.9\columnwidth]{images/development/FireProjectile_layout.PNG}
+                \caption{Layout (fire projectile)}
+        \end{figure}
+        This is the layout of the fire ranged projectile the other ranged projectiles followed the same layout with different sprites but the key part is I made the hitbox one way so that the player can't get blocked by the projectile and so projectiles can't get blocked by other projectiles.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.9\columnwidth]{images/development/FireProjectile_script.PNG}
+                \caption{Scipt}
+        \end{figure}
+        This is the script of the ranged projectiles the damage\_type is different depending on wether it is ice, fire or thunder and the damage is set by the script that launches the projectile.\\ 
         \subsubsection{Area}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.9\columnwidth]{images/development/FireArea_layout.PNG}
+                \caption{Layout (fire projectile)}
+        \end{figure}
+        This is the layout of the fire area of effect projectiles the other area of effect projectiles followed the same layout with different sprites.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.9\columnwidth]{images/development/FireArea_script.PNG}
+                \caption{Script}
+        \end{figure}
+        This is the script of the area of effect projectiles the damage\_type is different depending on wether it is ice, fire or thunder and the damage is set by the script that launches the projectile.\\ 
         \subsection{Magic Weapon Development}
+        Due to lack of time for the animations when using magic weapons I have still used the same animation as the melee animation.\\
+        I added if statements in the attack function in the player script to handle if the weapon is either a Ranged Magic Weapon or an Area of Effect Magic Weapon aswell as a statement at the start of the attack function to decrease the mana based on the mana cost of the weapon which I added as a new variable in the weapon script.\\
+        I also set the projectiles to fire in the same direction as the mouse is after feedback from stakeholder Samuel.\\
+        \subsubsection{Ranged}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.9\columnwidth]{images/development/RangedMagic_attack.PNG}
+                \caption{Script}
+        \end{figure}
+        This script follows the same principles of the planned script with a couple changes, first I added a part to spawn the projectile away from the player and make it face the same way as the mouse direction, unfortunately I was not able to add support for controllers with this due to lack of time.\\
+        Aswell as thus I added a timer at the start to account for the time the animation takes to run so it looks more fluid. And there is a part that finds the relevant projectiled file path from the damage type to load it.\\
+        \subsubsection{Area Of Effect}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.9\columnwidth]{images/development/AreaMagic_attack.PNG}
+                \caption{Script}
+        \end{figure}
+        This script follows the same principles of the planned script with a couple changes, first I added a part to spawn the projectile away from the player (further than the ranged to make sure the player cannot accidentally walk into it) and make it face the same way as the mouse direction, unfortunately I was not able to add support for controllers with this due to lack of time.\\
+        Aswell as thus I added a timer at the start to account for the time the animation takes to run so it looks more fluid. And there is a part that finds the relevant projectiled file path from the damage type to load it.\\
         \subsection{Enemy Development}
         I implemented three types of enemies a default and poison slime with melee attacks aswell as a fire slime with ranged attacks.\\
         \subsubsection{Layout and Structure}
@@ -2276,11 +2458,185 @@ def update_ui():
         \end{figure}
         This is exactly the same as the designed script.
         \subsection{UI Development}
-
+        \subsubsection{Inventory UI}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.8\columnwidth]{images/development/InventoryUI_layout.PNG}
+                        \caption{Layout}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.8\columnwidth]{images/development/InventoryUI_structure.PNG}
+                        \caption{Structure}
+                \end{figure}   
+        \end{multicols}
+        The Layout and Structure are as was designed.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/InventoryUI_ready.PNG}
+                \caption{\_ready}
+        \end{figure}
+        I added the ready function as when we pause the tree the buttons wont work unless we set the process\_mode to PROCESS\_MODE\_ALWAYS. It also calls the redresh function to setup the UI.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/InventoryUI_refresh.PNG}
+                \caption{refresh()}
+        \end{figure}
+        The refresh function is as was designed with the added custom minimum size set so that all buttons are the same size for neatness and readability.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/InventoryUI_select.PNG}
+                \caption{select() and \_on\_buttons\_pressed()}
+        \end{figure}
+        These functions are as was designed using pre-existing functions to perform their tasks.\\
+        \subsubsection{Game UI}
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.8\columnwidth]{images/development/GameUI_layout.PNG}
+                        \caption{Layout}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.8\columnwidth]{images/development/GameUI_structure.PNG}
+                        \caption{Structure}
+                \end{figure}   
+        \end{multicols}
+        This layout and structure is as was described with the custom texture colours for the progressbars being set in the editor to colours similar to ones that a majority of other games use so that it is intuitive. The Health Bar is on top of the Magic Bar.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/GameUI_script.PNG}
+                \caption{Script}
+        \end{figure}
+        The GameUI script is as was designed.\\
+        \subsubsection{Help Menu}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/HelpMenu_layout.PNG}
+                \caption{Layout}
+        \end{figure}
+        This is the layout explaining all the controls.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/HelpMenu_script.PNG}
+                \caption{Script}
+        \end{figure}
+        This is in the input script if the help button is pressed it displays the help menu, pauses the tree and waits till the help button is pressed again before getting rid of the help menu and unpausing the tree.\\
         \subsection{Tutorial Development}
+        For the tutorial I tried to introduce all the mechanics I had made in the game to the player in a series of small challenges, guiding them along with labels introducing controls etc.\\
+        \begin{multicols}{2}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.8\columnwidth]{images/development/Tutorial_1.PNG}
+                        \caption{Beggining}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.9\columnwidth]{images/development/Tutorial_3.PNG}
+                        \caption{Main Room}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.6\columnwidth]{images/development/Tutorial_2.PNG}
+                        \caption{First Enemies and Chest}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.6\columnwidth]{images/development/Tutorial_4.PNG}
+                        \caption{Level End and Reward}
+                \end{figure}
+        \end{multicols}
+        The Player progresses getting their first weapon and equipping it.\\
+        Fighting their first enemy and getting their first magic ranged weapon (thunder).\\
+        Fighting different enemy types.\\ 
+        Unlocking the final door and chest using keys gained from the chest in the main room and then trying out a magic Area of Effect weapon (Fire).\\
         \subsection{Stakeholder Feedback 2}
-        \subsubsection{Save Menu Feedback}
-        I got feedback to add names to the saves and display them instead of the save\_id aswell as editing the button text to make it clear it is to create a new save.\\
+        In this stakeholder feedback I showed stakeholders my improvements based on their feedback from last time aswell as the tutorial and features implemented there.\\
+        \subsubsection{Dropped Features}
+        Several Features had to be dropped due to time constraints.\\
+        I removed the secondary attack from the help menu due to the fact it wasnt necessary and couldnt be implemented within time constraints aswell as the fact it confused stakeholders.\\
+        I dropped support for controller controls due to time constraints and it taking to long to fully implement it for projectile attacks aswell as the fact that it being in all the labels confused stakeholders.\\
+        \subsubsection{Tutorial}
+        In the tutorial I forgot to place tiles of the background colour all around so I decided to make the default background colour the same as the tilesets, this will help when I do procedural generation as I wont have overlapping background tiles.\\
+        I also lowered the health of the enemies in the tutorial level as that was commented on and the enemies need to be easier to defeat so that the new players dont get overwhelmed.\\
+        \subsubsection{Weapons}
+        I decreased the size of the Area of Effect's hitboxes so that the player can't take damage from them by accident as easily as this happened to stakeholders in the test.\\
+        I added new magic weapon types (ice projectile and thunder area of effect) to the chest at the end of the tutorial so that the player gets a range of options to choose from as in the tutorial the stakeholders only got to try out 3 weapon types.\\
+        \subsubsection{Menus}
+        Upon Feedback I changed the Save Menu Layout by adding a name feild to the saves in the database and then allowing the user to set that name when creating a new save for more clear labelling of saves and added more labels to the menu. This involved slightly modifying the SQL queries create\_table\_save\_data, add\_new\_save\_data and get\_user\_save\_data for use in the save menu to add in the name field.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/SaveMenu_layout2.PNG}
+                \caption{Save Menu Layout}
+        \end{figure}
+        I also added a confirm password box to the reset password menu which needs to be the same as the password box to properly reset the password to prevent users from mistyping the password.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/ResetPassword_layout2.PNG}
+                \caption{Reset Password Layout}
+        \end{figure}
+        \subsubsection{Inventory}
+        One thing I noticed during the stakeholder feedback was that when Daniel selected an item and equipped it twice the item would first dissappear from the inventory then go back into the inventory the second time, this is because of a lack of checking if the item is in the inventory before equipping it which I fixed with a simple SQL query in the equip\_item() function returning false if none of the item is in the inventory.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/Inventory_script2.PNG}
+                \caption{Script Change}
+        \end{figure}
+        I also added a logout button in the inventory which takes you to the login form as was requested and removed the placeholder text for the equipped item slots as that isnt needed.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/Inventory_layout2.PNG}
+                \caption{Layout Change}
+        \end{figure}
+        \subsection{Procedural Generation Development}
+        \subsubsection{Graph}
+        \textbf{DungeonGraphNode:}\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/DungeonGraphNode_script.PNG}
+                \caption{Script}
+        \end{figure}
+        This script is as described setting default values and outlining class attributes.\\
+        \textbf{DungeonGraph:}\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/DungeonGraph_variables.PNG}
+                \caption{Variables}
+        \end{figure}
+        This is the variables and class\_name of the DungeonGraph you can see the dictionary with the lists of paths to rooms for each different room type.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/DungeonGraph_init.PNG}
+                \caption{\_init() and add\_node()}
+        \end{figure}
+        This is the \_init and add\_node functions implemented as was designed.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/DungeonGraph_gen.PNG}
+                \caption{gen\_room() and gen\_dungeon()}
+        \end{figure}
+        This is the gen\_room() and gen\_dungeon() functions as was described the only extra thing is I had to add the DungeonGraph to a Node2D in order for the script to be able to add the room as a child.\\
+        \subsubsection{Room}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/Room_pos.PNG}
+                \caption{get\_pos() and set\_pos()}
+        \end{figure}
+        This is the get\_pos() and set\_pos() functions implemented as designed with godot's syntax for accessing child nodes.
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/Room_cap.PNG}
+                \caption{cap()}
+        \end{figure}
+        This is the cap() function as was designed using godot's syntax for referencing child nodes.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/Room_ready.PNG}
+                \caption{\_ready()}
+        \end{figure}
+        This is the rooms \_ready() function as was designed with and added bit to change the text in all labels replacing the number 0 with the current level, this helps for the start and end levels where I have added text sayig about the levels.\\
+        \subsubsection{Testing}
 
 \newpage
 \section{References}

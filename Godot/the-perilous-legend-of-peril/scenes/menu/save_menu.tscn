@@ -21,6 +21,54 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Saves"
 
+[node name="Button" type="Button" parent="SavesScroller/VBoxContainer"]
+layout_mode = 2
+text = "Name: My First Game
+Level: 3     Difficulty: 5
+Hardcore: False"
+
+[node name="Button2" type="Button" parent="SavesScroller/VBoxContainer"]
+layout_mode = 2
+text = "Name: My Second game
+Level: 1     Difficulty: 4
+Hardcore: False"
+
+[node name="Button3" type="Button" parent="SavesScroller/VBoxContainer"]
+layout_mode = 2
+text = "Name: My Third Game
+Level: 3     Difficulty: 5
+Hardcore: True"
+
+[node name="Button4" type="Button" parent="SavesScroller/VBoxContainer"]
+layout_mode = 2
+text = "Name: My Fourth Game
+Level: 2     Difficulty: 5
+Hardcore: False"
+
+[node name="Button5" type="Button" parent="SavesScroller/VBoxContainer"]
+layout_mode = 2
+text = "Name: My Fifth Game
+Level: 4     Difficulty: 5
+Hardcore: Trye"
+
+[node name="Button6" type="Button" parent="SavesScroller/VBoxContainer"]
+layout_mode = 2
+text = "Name: My Sixth Game
+Level: 3     Difficulty: 5
+Hardcore: False"
+
+[node name="Button7" type="Button" parent="SavesScroller/VBoxContainer"]
+layout_mode = 2
+text = "Name: My Seventh Game
+Level: 1      Difficulty: 8
+Hardcore: True"
+
+[node name="Button8" type="Button" parent="SavesScroller/VBoxContainer"]
+layout_mode = 2
+text = "Name: My First Game
+Level: 3     Difficulty: 5
+Hardcore: False"
+
 [node name="NewSaveButton" type="Button" parent="."]
 offset_left = 800.0
 offset_top = 976.0

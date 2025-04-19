@@ -34,19 +34,13 @@ position = Vector2(336, 144)
 
 [node name="Door" parent="." instance=ExtResource("4_1lfuq")]
 position = Vector2(312, 208)
-change_scene = null
 scene_path = "res://scenes/menu/login_form.tscn"
-key_path = null
-locked = null
-level = null
 
 [node name="Door2" parent="." instance=ExtResource("4_1lfuq")]
 position = Vector2(312, 136)
-change_scene = null
 scene_path = "res://scenes/menu/login_form.tscn"
 key_path = "res://resources/key/test_key.tres"
 locked = true
-level = null
 
 [node name="Chest" parent="." instance=ExtResource("5_ci4xq")]
 position = Vector2(208, 144)

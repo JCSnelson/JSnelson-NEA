@@ -87,6 +87,7 @@ horizontal_alignment = 1
 
 [node name="DefaultSlime" parent="." instance=ExtResource("4_w2xqw")]
 position = Vector2(295, 75)
+health = 5
 
 [node name="Label" type="Label" parent="DefaultSlime"]
 offset_left = -36.0
@@ -104,21 +105,27 @@ locked = true
 
 [node name="PoisonSlime" parent="." instance=ExtResource("5_5eovl")]
 position = Vector2(281, 141)
+health = 5
 
 [node name="PoisonSlime2" parent="." instance=ExtResource("5_5eovl")]
 position = Vector2(302, 219)
+health = 5
 
 [node name="PoisonSlime3" parent="." instance=ExtResource("5_5eovl")]
 position = Vector2(280, 240)
+health = 5
 
 [node name="FireSlime" parent="." instance=ExtResource("6_fxhuh")]
 position = Vector2(263, 219)
+health = 5
 
 [node name="FireSlime2" parent="." instance=ExtResource("6_fxhuh")]
 position = Vector2(314, 255)
+health = 5
 
 [node name="FireSlime3" parent="." instance=ExtResource("6_fxhuh")]
 position = Vector2(247, 272)
+health = 5
 
 [node name="Player" parent="." instance=ExtResource("2_4kqkl")]
 position = Vector2(14, 113)
