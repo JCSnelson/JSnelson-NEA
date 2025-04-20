@@ -14,13 +14,13 @@ func get_pos(direction):
 func set_pos(direction, global_pos):
 	match direction:
 		'north':
-			position += global_pos - $North.global_position
+			global_position += global_pos - $North.global_position
 		'south':
-			position += global_pos - $South.global_position 
+			global_position += global_pos - $South.global_position 
 		'east':
-			position += global_pos - $East.global_position 
+			global_position += global_pos - $East.global_position 
 		'west':
-			position += global_pos - $West.global_position 
+			global_position += global_pos - $West.global_position 
 
 func cap(direction):
 	match direction:
@@ -37,15 +37,12 @@ func cap(direction):
 			var west_cap = load("res://scenes/game/worlds/rooms/west_cap.tscn").instantiate()
 			$West.add_child(west_cap)
 	
-func _ready() -> void:
+func _ready():
 	if $Slimes:
 		for slime in $Slimes.get_children():
 			slime.health = floor(2*Global.current_level*log(3*Global.difficulty))
 			slime.damage = floor(Global.current_level*log(3*Global.difficulty))
-			print(slime.health,slime.damage)
 	if $Labels:
 		for label in $Labels.get_children():
-			var k:String = "level 1"
 			label.text = label.text.replace("0", str(Global.current_level))
-			print(label.text)
 		

@@ -45,7 +45,6 @@ func gen_room(node,previous_direction = null, previous = null):
 			room.cap(i)
 	return room
 
-
 func gen_dungeon(node=root, previous_direction = null, previous = null, generated = []):
 	var room = await gen_room(node,previous_direction,previous)
 	generated.append(node)
