@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.21)  19 APR 2025 22:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.21)  20 APR 2025 23:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3016,44 +3016,82 @@ Underfull \hbox (badness 10000) in paragraph at lines 2632--2637
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2638--2639
+Underfull \hbox (badness 10000) in paragraph at lines 2638--2641
+
+ []
+
+<images/development/Corridor_1.PNG, id=1642, 535.2497pt x 155.83218pt>
+File: images/development/Corridor_1.PNG Graphic file (type png)
+<use images/development/Corridor_1.PNG>
+Package pdftex.def Info: images/development/Corridor_1.PNG  used on input line 2643.
+(pdftex.def)             Requested size: 152.50262pt x 44.39836pt.
+<images/development/Corridor_2.PNG, id=1643, 146.79843pt x 318.43968pt>
+File: images/development/Corridor_2.PNG Graphic file (type png)
+<use images/development/Corridor_2.PNG>
+Package pdftex.def Info: images/development/Corridor_2.PNG  used on input line 2648.
+(pdftex.def)             Requested size: 61.0001pt x 132.32007pt.
+<images/development/Corridor_3.PNG, id=1644, 234.8775pt x 247.67531pt>
+File: images/development/Corridor_3.PNG Graphic file (type png)
+<use images/development/Corridor_3.PNG>
+Package pdftex.def Info: images/development/Corridor_3.PNG  used on input line 2653.
+(pdftex.def)             Requested size: 137.25142pt x 144.72885pt.
+
+
+[80 <./images/development/Room_cap.PNG> <./images/development/Room_ready.PNG> <./images/development/Corridor_1.PNG> <./images/development/Corridor_2.PNG> <./images/development/Corridor_3.PNG>]
+<images/development/Monster_1.PNG, id=1659, 313.9228pt x 195.73125pt>
+File: images/development/Monster_1.PNG Graphic file (type png)
+<use images/development/Monster_1.PNG>
+Package pdftex.def Info: images/development/Monster_1.PNG  used on input line 2661.
+(pdftex.def)             Requested size: 233.75394pt x 145.74379pt.
+<images/development/Monster_2.PNG, id=1660, 301.8778pt x 234.8775pt>
+File: images/development/Monster_2.PNG Graphic file (type png)
+<use images/development/Monster_2.PNG>
+Package pdftex.def Info: images/development/Monster_2.PNG  used on input line 2666.
+(pdftex.def)             Requested size: 187.00386pt x 145.4971pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2670--2671
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2672--2673
 
  []
 
 
 
-[80 <./images/development/Room_cap.PNG> <./images/development/Room_ready.PNG>]
-Overfull \vbox (12.0pt too high) detected at line 2647
+[81 <./images/development/Monster_1.PNG> <./images/development/Monster_2.PNG>]
+Overfull \vbox (12.0pt too high) detected at line 2680
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 2651
+Overfull \vbox (12.0pt too high) detected at line 2684
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 2658
+Overfull \vbox (12.0pt too high) detected at line 2691
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 2662
+Overfull \vbox (12.0pt too high) detected at line 2695
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 2666
+Overfull \vbox (24.0pt too high) detected at line 2699
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 2666
+Overfull \vbox (24.0pt too high) detected at line 2699
  []
 
 
-Overfull \hbox (7.75319pt too wide) in paragraph at lines 2643--2672
+Overfull \hbox (7.75319pt too wide) in paragraph at lines 2676--2705
 [] 
  []
 
 
 
-[81]
+[82]
 
 Package geometry Warning: `a4paper': not available in `\newgeometry'; skipped.
 
@@ -3101,191 +3139,189 @@ Package geometry Warning: Over-specification in `v'-direction.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2676--2677
+Underfull \hbox (badness 10000) in paragraph at lines 2709--2710
 
  []
 
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 2677.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 2710.
 (../Godot/the-perilous-legend-of-peril/resources/scripts/item.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2678--2679
+Underfull \hbox (badness 10000) in paragraph at lines 2711--2712
 
  []
 
 (../Godot/the-perilous-legend-of-peril/resources/scripts/equipable.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2680--2681
+Underfull \hbox (badness 10000) in paragraph at lines 2713--2714
 
  []
 
 (../Godot/the-perilous-legend-of-peril/resources/scripts/armour.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2682--2683
+Underfull \hbox (badness 10000) in paragraph at lines 2715--2716
 
  []
 
 (../Godot/the-perilous-legend-of-peril/resources/scripts/weapon.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2684--2685
+Underfull \hbox (badness 10000) in paragraph at lines 2717--2718
 
  []
 
 (../Godot/the-perilous-legend-of-peril/resources/scripts/charm.gd)
 
-[82
+[83
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 2687--2688
+Underfull \hbox (badness 10000) in paragraph at lines 2720--2721
 
  []
 
 (../Godot/the-perilous-legend-of-peril/resources/scripts/key.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2691--2692
+Underfull \hbox (badness 10000) in paragraph at lines 2724--2725
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/enemies/default_slime.gd
 
-[83])
-Underfull \hbox (badness 10000) in paragraph at lines 2693--2694
+[84])
+Underfull \hbox (badness 10000) in paragraph at lines 2726--2727
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/enemies/fire_slime.gd
 
-[84])
-Underfull \hbox (badness 10000) in paragraph at lines 2695--2696
+[85])
+Underfull \hbox (badness 10000) in paragraph at lines 2728--2729
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/enemies/poison_slime.gd
 
-[85])
-Underfull \hbox (badness 10000) in paragraph at lines 2698--2699
+[86])
+Underfull \hbox (badness 10000) in paragraph at lines 2731--2732
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/player/player.gd
 
-[86]
+[87]
 
-[87])
-Underfull \hbox (badness 10000) in paragraph at lines 2700--2701
+[88])
+Underfull \hbox (badness 10000) in paragraph at lines 2733--2734
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/player/hurt_box.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2702--2703
+Underfull \hbox (badness 10000) in paragraph at lines 2735--2736
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/player/inventory_ui.gd
 
-[88])
-Underfull \hbox (badness 10000) in paragraph at lines 2704--2705
+[89])
+Underfull \hbox (badness 10000) in paragraph at lines 2737--2738
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/player/ui.gd
 
-[89])
-Underfull \hbox (badness 10000) in paragraph at lines 2707--2708
+[90])
+Underfull \hbox (badness 10000) in paragraph at lines 2740--2741
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/ice_projectile.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2709--2710
+Underfull \hbox (badness 10000) in paragraph at lines 2742--2743
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/fire_projectile.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2711--2712
+Underfull \hbox (badness 10000) in paragraph at lines 2744--2745
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/thunder_projectile.gd
 
-[90])
-Underfull \hbox (badness 10000) in paragraph at lines 2713--2714
+[91])
+Underfull \hbox (badness 10000) in paragraph at lines 2746--2747
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/ice_area.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2715--2716
+Underfull \hbox (badness 10000) in paragraph at lines 2748--2749
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/fire_area.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2717--2718
+Underfull \hbox (badness 10000) in paragraph at lines 2750--2751
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/thunder_area.gd)
 
-[91]
-Underfull \hbox (badness 10000) in paragraph at lines 2720--2721
+[92]
+Underfull \hbox (badness 10000) in paragraph at lines 2753--2754
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/worlds/rooms/graph/dungeon_graph.gd)
-
-[92]
-Underfull \hbox (badness 10000) in paragraph at lines 2722--2723
+Underfull \hbox (badness 10000) in paragraph at lines 2755--2756
 
  []
 
-(../Godot/the-perilous-legend-of-peril/scenes/game/worlds/rooms/graph/dungeon_graph_node.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2724--2725
+
+
+[93] (../Godot/the-perilous-legend-of-peril/scenes/game/worlds/rooms/graph/dungeon_graph_node.gd)
+Underfull \hbox (badness 10000) in paragraph at lines 2757--2758
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/worlds/rooms/room.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2726--2727
+Underfull \hbox (badness 10000) in paragraph at lines 2759--2760
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/worlds/rooms/room_test.gd
 
-[93])
-Underfull \hbox (badness 10000) in paragraph at lines 2728--2729
+[94])
+Underfull \hbox (badness 10000) in paragraph at lines 2761--2762
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/worlds/chest.gd
 
-[94])
-Underfull \hbox (badness 10000) in paragraph at lines 2730--2731
+[95])
+Underfull \hbox (badness 10000) in paragraph at lines 2763--2764
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/worlds/door.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2733--2734
+Underfull \hbox (badness 10000) in paragraph at lines 2766--2767
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/menu/login_form.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2735--2736
+Underfull \hbox (badness 10000) in paragraph at lines 2768--2769
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/menu/create_account_form.gd
 
-[95])
-Underfull \hbox (badness 10000) in paragraph at lines 2737--2738
+[96])
+Underfull \hbox (badness 10000) in paragraph at lines 2770--2771
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/menu/reset_password_form.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2739--2740
+Underfull \hbox (badness 10000) in paragraph at lines 2772--2773
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/menu/save_menu.gd
 
-[96])
-Underfull \hbox (badness 10000) in paragraph at lines 2742--2743
+[97])
+Underfull \hbox (badness 10000) in paragraph at lines 2775--2776
 
  []
 
 (../Godot/the-perilous-legend-of-peril/src/database.gd
-
-[97]
 
 [98]
 
@@ -3294,50 +3330,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 2742--2743
 [100]
 
 [101])
-Underfull \hbox (badness 10000) in paragraph at lines 2744--2745
+
+[102]
+Underfull \hbox (badness 10000) in paragraph at lines 2777--2778
 
  []
 
 (../Godot/the-perilous-legend-of-peril/src/inventory.gd
 
-[102])
-Underfull \hbox (badness 10000) in paragraph at lines 2746--2747
+[103])
+Underfull \hbox (badness 10000) in paragraph at lines 2779--2780
 
  []
 
 (../Godot/the-perilous-legend-of-peril/src/global.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2749--2750
+Underfull \hbox (badness 10000) in paragraph at lines 2782--2783
 
  []
 
 (../Godot/the-perilous-legend-of-peril/utils/dummy.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 2751--2752
+Underfull \hbox (badness 10000) in paragraph at lines 2784--2785
 
  []
 
 (../Godot/the-perilous-legend-of-peril/utils/test.gd
 
-[103])
+[104])
 
-[104] (./NEA.aux)
+[105] (./NEA.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 38870 strings out of 475177
- 909097 string characters out of 5763895
- 1944950 words of memory out of 5000000
- 58807 multiletter control sequences out of 15000+600000
+ 38905 strings out of 475177
+ 910500 string characters out of 5763895
+ 1949950 words of memory out of 5000000
+ 58840 multiletter control sequences out of 15000+600000
  565329 words of font info for 60 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 114i,12n,121p,2040b,2153s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 114i,12n,121p,2040b,2165s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt0800.600pk><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on NEA.pdf (108 pages, 6083677 bytes).
+Output written on NEA.pdf (109 pages, 6127349 bytes).
 PDF statistics:
- 4367 PDF objects out of 5155 (max. 8388607)
- 3924 compressed objects within 40 object streams
- 2438 named destinations out of 2487 (max. 500000)
- 1901 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4384 PDF objects out of 5155 (max. 8388607)
+ 3930 compressed objects within 40 object streams
+ 2440 named destinations out of 2487 (max. 500000)
+ 1926 words of extra memory for PDF output out of 10000 (max. 10000000)
 
