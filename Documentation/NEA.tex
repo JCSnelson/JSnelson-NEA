@@ -2659,17 +2659,48 @@ def _ready():
         \begin{figure}[H]
                 \centering
                 \includegraphics[width = \columnwidth]{images/development/Monster_1.PNG}
-                \caption{monster}
+                \caption{monster\_1}
         \end{figure}
         \begin{figure}[H]
                 \centering
                 \includegraphics[width = 0.8\columnwidth]{images/development/Monster_2.PNG}
-                \caption{monster}
+                \caption{monster\_2}
         \end{figure}                     
         \end{multicols}
         For the room types I decided on monster, corridor, corridor\_along, corridor\_up and corridor\_corner aswell as special room types for the start and end. With the corridors I decided to have a convention of always having the north entrance on the west of the north side, the south entrance on the east of the south side, the east entrance on the north of the east side and the west entrance on the south of the west side. This pattern helped solve the problem of generating levels that dont have overlapping rooms which was a concern. Ontop of that I had to find level structure's such that it wouldnt overlap when generating ever.\\
         \subsubsection{Testing}
-        For Testing I used a room\_test scene in which I tested various graph layouts for generation patterns.\\
+        For Testing I used a room\_test scene in which I tested various graph layouts for generation patterns aswell as testing loading the player sprite in after.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/RoomTest_ready.PNG}
+                \caption{\_ready}
+        \end{figure} 
+        This function generated the dungeon and either instantiated the player or shrunk it to check the generation.\\
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.8\columnwidth]{images/development/RoomTest_dungeon_1.PNG}
+                        \caption{dungeon\_1()}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.8\columnwidth]{images/development/RoomTest_dungeon_2.PNG}
+                        \caption{dungeon\_2()}
+                \end{figure}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width = 0.8\columnwidth]{images/development/RoomTest_dungeon_3.PNG}
+                        \caption{dungeon\_3()}
+                \end{figure} 
+        This is the dungeon generation functions.\\
+        There is video evidence of running the test functions to generate here$^{reference}$ and testing player loading in here$^{reference}$.
+        \subsubsection{Level 1}
+        For Level 1 I combined a bunch of the different techniques I found with the testing into a level and added an end to the level.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/Level1_script.PNG}
+                \caption{Script}
+        \end{figure}
+        There is video evidence of generation in Level 1 and player loading in here$^{reference}$
 
 \newpage
 \section{References}
@@ -2700,6 +2731,13 @@ def _ready():
         &&&&&\\
         &&&&&\\
         &&&&&\\
+        \hline
+\end{tabular}
+\section{Video Evidence Log}
+\begin{tabular}{|c|c|c|c|}
+        \hline
+        REF$\#$&Video Name&What it evidences&Cross reference to document.\\
+        \hline
         \hline
 \end{tabular}
 \newpage

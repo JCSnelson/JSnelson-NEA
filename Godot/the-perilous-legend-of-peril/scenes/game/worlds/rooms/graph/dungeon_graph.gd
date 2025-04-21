@@ -28,7 +28,15 @@ func add_node(onto_index, direction, room_type):
 	var new_node = DungeonGraphNode.new()
 	new_node.room_type = room_type
 	onto[direction] = new_node
-	new_node[direction] = onto
+	match direction:
+		'north':
+			new_node.south = onto
+		'south':
+			new_node.north = onto
+		'east':
+			new_node.west = onto
+		'west':
+			new_node.east = onto
 	nodes.append(new_node)
 	return true
 
