@@ -131,29 +131,32 @@
 \contentsline {subsection}{\numberline {3.15}UI Development}{70}{subsection.3.15}%
 \contentsline {subsubsection}{\numberline {3.15.1}Inventory UI}{70}{subsubsection.3.15.1}%
 \contentsline {subsubsection}{\numberline {3.15.2}Game UI}{72}{subsubsection.3.15.2}%
-\contentsline {subsubsection}{\numberline {3.15.3}Help Menu}{73}{subsubsection.3.15.3}%
+\contentsline {subsubsection}{\numberline {3.15.3}Enemy UI addition}{73}{subsubsection.3.15.3}%
+\contentsline {subsubsection}{\numberline {3.15.4}Help Menu}{74}{subsubsection.3.15.4}%
 \contentsline {subsection}{\numberline {3.16}Tutorial Development}{74}{subsection.3.16}%
 \contentsline {subsection}{\numberline {3.17}Stakeholder Feedback 2}{75}{subsection.3.17}%
 \contentsline {subsubsection}{\numberline {3.17.1}Dropped Features}{75}{subsubsection.3.17.1}%
 \contentsline {subsubsection}{\numberline {3.17.2}Tutorial}{75}{subsubsection.3.17.2}%
-\contentsline {subsubsection}{\numberline {3.17.3}Weapons}{75}{subsubsection.3.17.3}%
-\contentsline {subsubsection}{\numberline {3.17.4}Menus}{75}{subsubsection.3.17.4}%
-\contentsline {subsubsection}{\numberline {3.17.5}Inventory}{76}{subsubsection.3.17.5}%
+\contentsline {subsubsection}{\numberline {3.17.3}Weapons}{76}{subsubsection.3.17.3}%
+\contentsline {subsubsection}{\numberline {3.17.4}Menus}{76}{subsubsection.3.17.4}%
+\contentsline {subsubsection}{\numberline {3.17.5}Inventory}{77}{subsubsection.3.17.5}%
 \contentsline {subsection}{\numberline {3.18}Procedural Generation Development}{77}{subsection.3.18}%
 \contentsline {subsubsection}{\numberline {3.18.1}Graph}{77}{subsubsection.3.18.1}%
-\contentsline {subsubsection}{\numberline {3.18.2}Room}{79}{subsubsection.3.18.2}%
-\contentsline {subsubsection}{\numberline {3.18.3}Testing}{81}{subsubsection.3.18.3}%
-\contentsline {subsubsection}{\numberline {3.18.4}Level 1}{83}{subsubsection.3.18.4}%
-\contentsline {section}{\numberline {4}Evaluation}{85}{section.4}%
-\contentsline {section}{\numberline {5}References}{90}{section.5}%
-\contentsline {section}{\numberline {6}Video Evidence Log}{90}{section.6}%
-\contentsline {section}{\numberline {7}Code Listings}{91}{section.7}%
-\contentsline {subsection}{\numberline {7.1}resources/scripts}{91}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}scenes}{92}{subsection.7.2}%
-\contentsline {subsubsection}{\numberline {7.2.1}game/enemies}{92}{subsubsection.7.2.1}%
-\contentsline {subsubsection}{\numberline {7.2.2}game/player}{95}{subsubsection.7.2.2}%
-\contentsline {subsubsection}{\numberline {7.2.3}game/projectiles}{99}{subsubsection.7.2.3}%
-\contentsline {subsubsection}{\numberline {7.2.4}game/worlds}{101}{subsubsection.7.2.4}%
-\contentsline {subsubsection}{\numberline {7.2.5}menu}{104}{subsubsection.7.2.5}%
-\contentsline {subsection}{\numberline {7.3}src}{106}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}utils}{112}{subsection.7.4}%
+\contentsline {subsubsection}{\numberline {3.18.2}Room}{80}{subsubsection.3.18.2}%
+\contentsline {subsubsection}{\numberline {3.18.3}Testing}{82}{subsubsection.3.18.3}%
+\contentsline {subsubsection}{\numberline {3.18.4}Level 1}{84}{subsubsection.3.18.4}%
+\contentsline {section}{\numberline {4}Evaluation}{86}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Success Criteria}{86}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Stakeholder Feedback 3}{92}{subsection.4.2}%
+\contentsline {section}{\numberline {5}References}{93}{section.5}%
+\contentsline {section}{\numberline {6}Video Evidence Log}{93}{section.6}%
+\contentsline {section}{\numberline {7}Code Listings}{94}{section.7}%
+\contentsline {subsection}{\numberline {7.1}resources/scripts}{94}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}scenes}{95}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}game/enemies}{95}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}game/player}{98}{subsubsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.3}game/projectiles}{102}{subsubsection.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.4}game/worlds}{104}{subsubsection.7.2.4}%
+\contentsline {subsubsection}{\numberline {7.2.5}menu}{107}{subsubsection.7.2.5}%
+\contentsline {subsection}{\numberline {7.3}src}{109}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}utils}{115}{subsection.7.4}%

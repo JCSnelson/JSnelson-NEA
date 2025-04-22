@@ -2586,6 +2586,21 @@ def _ready():
                 \caption{Script}
         \end{figure}
         The GameUI script is as was designed.\\
+        \subsubsection{Enemy UI addition}
+        I used the same concept of a healthbar to add a ProgressBar to the enemies which only shows up when they take damage and displays their health until their take damage animation has finished playing.\\
+        \begin{multicols}{2}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.6\columnwidth]{images/development/Enemy_healthbar.PNG}
+                \caption{Layout}
+        \end{figure}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 1.2\columnwidth]{images/development/Enemy_take_damage2.PNG}
+                \caption{Script}
+        \end{figure}
+        \end{multicols}
+        This shows the new layout with the healthbar shown and the changes made to the take\_damage() function to update and show the healthbar till the animation is finished.\\
         \subsubsection{Help Menu}
         \begin{figure}[H]
                 \centering
@@ -2779,6 +2794,7 @@ def _ready():
         There is video evidence of generation in Level 1 and player loading in here$^{reference}$
         \newpage
         \section{Evaluation}
+        \subsection{Success Criteria}
         \begin{tabular}{|c|c|c|c|}
                 \hline
                 Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
@@ -2819,7 +2835,7 @@ def _ready():
                 \hline
         \end{tabular}
         \textbf{Successfull:}\\
-        The attack system and different weapons aswell as enemies and player taking damage can be seen here$^[2]$.
+        The attack system and different weapons aswell as enemies and player taking damage can be seen here$^{[2]}$.
         2.1 is implemented with the \_input() function in the player script handling inputs
         2.3 is implemented through the weapon resource class as instances and the implementation of the sword swing hurtbox detecting collisions enemies hitboxes.\\
         2.5 is implemented through the weapon resource class as instances and the implementation of the fire, ice and thunder projectiles movement and detecting collisions with enemies or the player. These projectiles are fired in the direction of the player mouse.\\
@@ -2876,6 +2892,18 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
+        \textbf{Successfull:}\\
+        The enemies and player fighting them can be seen here$^{[2]}$.
+        4.1 is implemented through the use of an AnimatedSprite2D node on the different enemy scenes which displays the sprite aswell as different animations relevant to the action the enemy is doing. The animations are triggered in the enemy script.\\
+        4.2 is implemented through the use of Godot's NavigationAgent2D which uses a Mesh A* algorithm on a Navigation Layer I added to all the floor tiles in the TileMap to help the enemies pathfind towards the player, giving the next corner of the journey that I have used to move the moving enemies towards the player in the script, I have also used the same direction for the projectile non-moving enemies so that they can detect which way to fire their projectiles. The delay timer godot offers allows for less lock on pathfinding only updating every few seconds to make it easier to avoid.\\
+        4.3 is implemented through the use of an Area2D node and a circular CollisionShape2D this acts as the detection area for detecting the player and their is conditions in the script that only lets the melee enemies move or the projectile enemies attack when the player is within the range of their Area2D.\\
+        4.4 is implemented through the use of a CollisionShape2D, this allows both the player hurtbox for swords and any projectiles detect wether their is collisions with the enemy or the enemy is within their hurtbox allowing them to call the enemies take damage function which will decrease their health based on the damage and decrease it more if the enemy is weak to the damage type.\\
+        4.5 is implemented through the use of a ProgressBar, using a custom texture to mimic health bars in other games, this HealthBar is set to show up whenever the take damage function is called to remind the player of the enemies remaining health.\\
+        4.6 melee enemies have been implemented using all of the above, they pathfind and move towards the player when in range as controlled by the script and they will attack the player upon colliding with them calling the players take damage function and starting a cooldown in which they cant attack again.\\
+        4.7 projectile enemies have been implemented using the same range magic projectiles used for the players magic weapons, the projectile enemies dont pathfind towards the player instead using the data to aim their projectiles. They fire at a constant rate while the player is within the range however their tracking data from the NavigationAgent2D only updates evry couple seconds and so they dont have full accuracy to reduce difficulty.\\
+        \textbf{Partially/Unsuccessfull:}\\
+        4.8 the implementation of Boss enemies was unsuccessfull due to lack of time and lack of sprites and animations in order to properly implement it.\\
+        If I had more time and the correct animations I would implement the boss using the pathfinding abilities, hitbox, sight range and health tracking mechanics I already use for other enemies. Aswell as that boss enemies would have different attacks and have sequences of attacks they executed when the player was within a closer range (using another Area2D and CollisionShape2D to detect the closer range) the attack pattersn would start off consistent and predictable but when the health tracking reached a certain level the boss enemies would switch to different attack combinations. For the health tracking aswell I would change the healthbar to be a ui element using a CanvasLayer to display it at the top of the screen aswell as the name of the boss, this would put the focus on the boss enemy as the main event. In the bosses take damage function I would add extra code for when it dies to give the player the key to unlock the end of the level, as well as this I would add boss drops similar to the way I implemented chests with the item pool and choosing randomly from the array for each item to give to the player.\\
         \begin{tabular}{|c|c|c|c|}
                 \hline
                 Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
@@ -2890,11 +2918,20 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
+        \textbf{Successfull:}\\
+        The Appearance and animations of the player can be seen in the movement test here$^{[1]}$ and the combat test here$^{[2]}$.\\
+        5.1, 5.2 and 5.4 are all met through the use of the AnimatedSprite2D node on the player, this node allows the spriteframes to be input for each animation aswell as the frames per second of the animation, it is then activated at the relevant times using the code in the players physics process and the attack function.\\
+        5.3 is implemented through the use of 8 directional animations, I used a naming convention in order to simplify the names of the animations and then I wrote a get animation function to get the name of the directional animation for the direction the player is facing of the specified type so that the animation can be played using the script.\\
+        \textbf{Partially/Unsuccessfull:}\\
+        5.5 is not implemented due to lack of magic animation spritesheets for the animation.\\
+        If I had more time I would have been able to find or commision the relevant spritesheets for the animation and get all the directional animations set up using the AnimatedSprite2D and then set the animation to play when magic attacks happen instead of playing the melee animation.\\
+        5.5 is not implemented due to lack of dash animation spritesheets for the animation.\\
+        If I had more time I would have been able to find or commision the relevant spritesheets for the animation and get all the directional animations set up using the AnimatedSprite2D and get the animating to play when the dash key is pressed.\\
         \begin{tabular}{|c|c|c|c|}
                 \hline
                 Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
                 \hline
-                6&\mr{2}{2cm}{Login System}&\mr{2}{6cm}{6.1 Password Hashing Algorithm\\6.2 SQL Table to store username and hashed password pairs\\6.3 Ability to create a new account with unique username\\6.4 Validation of Usernames (1$\le$chars$<$15)\\6.5 Input Sanitisation (Removing any escape chars for SQL before sending the command)\\6.6 Ability to log in with an exisiting account and correct password\\6.7 Ability to reset password (With challenge question)\\6.8 A general login form which links the other forms.\\6.9 Ability to delete an account.\\}&\mr{2}{6cm}{6.1 \f\\6.2 \f\\6.3 \f\\6.4 \p\\6.5 \f\\6.6 \f\\6.7 \f\\6.8 \f\\6.9 \n}\\
+                6&\mr{2}{2cm}{Login System}&\mr{2}{6cm}{6.1 Password Hashing Algorithm\\6.2 SQL Table to store username and hashed password pairs\\6.3 Ability to create a new account with unique username\\6.4 Validation of Usernames (1$\le$chars$<$15)\\6.5 Input Sanitisation (Removing any escape chars for SQL before sending the command)\\6.6 Ability to log in with an exisiting account and correct password\\6.7 Ability to reset password (With challenge question)\\6.8 A general login form which links the other forms.\\6.9 Ability to delete an account.\\}&\mr{2}{6cm}{6.1 \f\\6.2 \f\\6.3 \f\\6.4 \n\\6.5 \f\\6.6 \f\\6.7 \f\\6.8 \f\\6.9 \p}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -2913,6 +2950,19 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
+        \textbf{Successfull:}\\
+        The Database and functions part of the Login System is evidenced through my testing plan for the Database and the forms is evidenced through the video testing here$^{[3]}$.\\
+        6.1 is implemented using the j\_hash function and the gen\_salt function to store unique salt for every user and use that to hash the passwords, the j\_hash uses a combination of sha256 and md5 to hash the password while sprinkling the salt throughout by adding it onto the end making sure the hash will always end up the same length.\\
+        6.2 is implemented with the users table in the SQL database, this table stores the usernames, passwords, salt and challenge question answer, there is also several SQL queries to store and fetch data from the users table.\\
+        6.3 is implemented with the create\_account function which validates unique usernames, this function is used with the create account form which provides a user input form to input the username, password, challenge question answer and confirm the password to create the account while displaying errors. The challenge question was chosen to be "what was name of your first school?" as this will most likely have an answer for a majority of people playing the game.\\
+        6.5 is implemented through the use of godot's query\_with\_bindings this takes in bindings for the SQL query and sanitises them first to stop escape chars from getting through.\\
+        6.6 is implemented through the login function in the database script which checks the username and if it is valid will hash the password with the salt and check if it matches the stored password hash before logging the user in if it is correct or returning a relevant error if it fails any of the checks. This login function is used within a login form which provides inputs for all the fields necessary to login aswell as a button to attempt it.\\
+        6.7 is implemented through the use of a reset\_password function in the database script which checks the username and if it is valid will hash the challenge answer with the salt and check if it matches the stored password hash before checking if the passwords match and changing the password if they do and returning relevant errors if it fails any of the checks. This reset\_password function is used within a reset password form which provides the fields necessary to reset the password aswell as a button to attempt it.\\
+        6.8 is implemented through buttons on the login form and the other forms in order to navigate to the other forms and back to the login form.\\
+        \textbf{Partially/Unsuccessfull:}\\
+        6.4 is not met as I realised there is no need for this as the usernames will just be truncated due to the SQL library I am using and even if you input the shortened username it wont allow you to create a new account with that so it doesnt matter.\\
+        6.9 is partially met as I implemented the delete\_user function which checks the username, hashes the password and checks it matches and if so would delete the user from the database, deleting all their save data with cascading deletes, however due to a lack of time I wasnt able to include this in its own form or in the login form or save menu scene.\\
+        If I had more time I probably would have added a form you can go to from the login form in order to delete the user where you would need to input the username and password of the account before you could delete it.\\
         \begin{tabular}{|c|c|c|c|}
                 \hline
                 Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
@@ -2926,6 +2976,12 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
+        All the UI elements where implemented using godot's CanvasLayer so that they dont move when the camera moves. The UI is evidenced through the video testing here$^{[4]}$\\
+        7.1 is implemented through the use of a ProgressBar with a custom texture (red background green fill) to show the percentage of health left. The maximum value of the bar is set to the player health in the \_ready() function of the UI scene and then the current value is updated in the \_process function every frame to match the players current health.\\
+        7.2 is implemented through the use of a ProgressBar with a custom texture (navy background purple fill) to show the percentage of magic left. The maximum value of the bar is set to the player magic points in the \_ready() function of the UI scene and then the current value is updated in the \_process function every frame to match the players current magic points.\\
+        7.3 is implemented through creating a display string function for every item that displays the key information about it (damage, type, etc) and then taking this display string and displaying it in a label in the UI scene.\\
+        7.4 is implemented through the use of a ProgressBar with a custom texture (red background green fill) to show the percentage of enemy health left, this is hidden by default. The maximum value of the bar is set to the enemy health in the \_ready() function of the UI scene and then the current value is updated in the take\_damage function aswell as showing the healthbar above the enemies head till their damage taking animation finishes.\\
+        7.5 is implemented through the success criteria for the inventory system (12)\\
         \begin{tabular}{|c|c|c|c|}
                 \hline
                 Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
@@ -2941,6 +2997,15 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
+        8.1 was partially met in that I had many different styles of magic and ranged weapons (with the different projectile and area of effect types). This can be seen through the video testing of the combat system and enemies here$^{[2]}$.\\
+        If I had extra time I would have added bows aswell as different shorter and longer ranged melee weapons by creating different sized hurtboxes and through the methods I detailed in my evaluation of criteria 2.4.\\ 
+        8.2 was not met due to bosses not being implemented however I already detailed how I would implement boss drops in a similar style to the chests item pool in my evaluation of criteria 4.8.\\
+        8.3 was not met due to a lack of time and due to it being only a desireable feature so I implemented other stuff first.\\
+        If I had the extra time I would have implemented it in two parts, first part is in creating an npc that wonders the dungeons they npc would not get attacked by monsters unless a projectile fired hits them, the npc would have an Area2D node to detect when the player is close and then the player could open up the shop menu. The shop menu is the second part that I would implement it would allow the player to sell their gathered items for gold and use that gold to buy from a randomized selection of goods, I would use a CanvasLayer and similar techniques to the Inventory UI in pausing the game. I would use a ScrollContainer and a VBoxContainer to contain the buttons corresponding to the items the player can buy linking them to a function to purchase them. I would make it so the player can buy back the last item they sold to the shop npc (for a higher price of course) this will be added as a button at the bottom of the other items.\\
+        8.4 was not met due to a lack of time and due to it being only a desireable feature so it was not the priority.\\
+        I have detailed how I might implement charged attacks for the different weapon types in my evaluation of criteria 2.2.\\
+        8.5 was not met due to a lack of time and due to it being only a desireable feature so I didnt get onto it.\\
+        If I were to get more time to get onto implementing 8.5 I would implement special attacks as a more powerful version of the main attack with more damage and a larger hitbox/projectile than the standard version, this would be useful for clearing large hordes of enemies but would have a longer cooldown timer so that it cannot just be spammed I would have to find another keybind in order to allow players to use this attack.\\
         \begin{tabular}{|c|c|c|c|}
                 \hline
                 Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
@@ -2958,6 +3023,13 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
+        The whole of 9 was not met sadly even though it was highly requested by stakeholders, this is because it would not add as much to the finished product for the workload and I ran out of time although it would have been the next set of criteria I would work on if I had more time.\\
+        9.1 If I had more time I would implement this UI menu by researching and using a tree visualisation algorithm on the skill tree to display the tree in a nice neat format with all the skills as buttons that are linked to a function to try and unlock them the button texture would change to show the locked skills, alternatively I could manually make the tree structure if the implementation of the tree visualisation algorithm proved to be too hard.\\
+        9.2 If I had more time I would implement this by seperating the skill tree into 4 different trees for displaying it using a graph traversal to build them, one for each skill type, however if skills might need skills from multiple trees as prerequesites then the skills from the tree it doesnt belong too will be shown in the button.\\
+        9.3.1 If I had more time I would implement this by changing the enemies take damage function to add experience to the global variable to keep track of it when they die, the amount of experience would depend on the difficulty, level and type of enemy with bosses giving considerably more experience.\\
+        9.3.2 If I had more time I would implement this through my implementation of the graph data structure for the skill tree, this data structure would allow each node to have a list of children (skills it is needed for) and a list of parents (prerequesites), the skills purchase function would check if the experience meets the requirements before deducting that amount of experience from the player.\\
+        9.4 If I had more time I would implement this by making it so that you can unlock skills through the skill tree UI menu by pressing on a locked skills button, this will call the unlock skill function which will check if all the prerequesites are unlocked and the player has enough experience before deducting the experience and unlocking the skill.\\
+        9.5 If I had more time I would implement this through adding a button to the UI menu which will reset the graph structure for the skill tree and update the UI aswell as give the player back the experience they spent on unlocking skills so that they can spend it again.\\
         \begin{tabular}{|c|c|c|c|}
                 \hline
                 Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
@@ -3044,6 +3116,7 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
+        \subsection{Stakeholder Feedback 3}
 \newpage
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -3080,6 +3153,9 @@ def _ready():
         \hline
         REF$\#$&Video Name&What it evidences&Cross reference to document.\\
         \hline
+        1&&Movement Testing&\\
+        2&&Player Attack System and Enemies that damage the player&\\
+
         \hline
 \end{tabular}
 \newpage
