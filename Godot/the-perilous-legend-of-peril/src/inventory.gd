@@ -76,7 +76,3 @@ func equip_item(item_id):
 		return "FullInventoryError"
 	Database.set_slot_value(slot, item_id) # Equips the item
 	return true
-
-
-func _ready() -> void:
-	equip_item("res://resources/equipable/weapon/test_weapon_magic_area.tres")

@@ -10,9 +10,10 @@ func _ready() -> void:
 func refresh():
 	var inventory = Database.get_stored_items()
 	var item_count = 0
+	#Gets rid of existing children
 	for child in $ScrollContainer/VBoxContainer.get_children():
 		child.queue_free()
-	for item in inventory:
+	for item in inventory: #Creates a button to select an item that displays key info about the item
 		var button = Button.new()
 		if item_count % 4 == 0:
 			hbox = HBoxContainer.new()
@@ -23,6 +24,7 @@ func refresh():
 		button.custom_minimum_size = Vector2(250,200)
 		hbox.add_child(button)
 		item_count += 1
+	#Creates labels for all the equipped items
 	if Database.get_slot_value("weapon"):
 		$WeaponLabel.text = load(Database.get_slot_value("weapon")).display_string()
 	if Database.get_slot_value("head"):
@@ -36,16 +38,17 @@ func refresh():
 	if Database.get_slot_value("charm_2"):
 		$Charm2Label.text = load(Database.get_slot_value("charm_2")).display_string()
 
+#Changes selected item
 func _select(item_id):
 	selected = item_id
 
-
+#Equips selected item if selected
 func _on_equip_button_pressed() -> void:
 	if selected != "":
 		Inventory.equip_item(selected)
 		refresh()
 
-
+#Removes selected item if selected
 func _on_bin_button_pressed() -> void:
 	if selected != "":
 		Database.remove_stored_item(selected)

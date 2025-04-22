@@ -29,10 +29,12 @@ func _ready():
 	$HealthBar.value=health
 
 func _physics_process(delta: float) -> void:
+	# If player in range sets move to true
 	var move = false
-	for body in $Area2D.get_overlapping_bodies():
+	for body in $Area2D.get_overlapping_bodies(): 
 		if body.name == "Player":
 			move = true
+	#Moves or idles if not animating
 	if not animating:
 		if move:
 			direction = to_local($NavigationAgent2D.get_next_path_position()).normalized()
@@ -44,6 +46,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		move_and_slide()
 	
+	#Attacks plauer if collides with them and can attack
 	if can_attack:
 		for i in range(get_slide_collision_count()):
 			var collision = get_slide_collision(i)
@@ -56,20 +59,20 @@ func _physics_process(delta: float) -> void:
 func take_damage(damage, damage_type):
 	var player = get_tree().get_first_node_in_group("player")
 	animating = true
-	if damage_type in weaknesses:
+	if damage_type in weaknesses: #Takes more damage from weaknesses
 		health -= 2*damage
 	else:
 		health -= damage
-	velocity = - 25 * to_local(player.global_position).normalized()
+	velocity = - 25 * to_local(player.global_position).normalized() #takes knockback by changing velocity
 	$HealthBar.value=health
 	$HealthBar.visible = true
-	if health <= 0:
+	if health <= 0: #dies if health is low
 		queue_free()
 	else:
 		$AnimatedSprite2D.play(get_animation("hurt"))
 	await $AnimatedSprite2D.animation_finished
 	animating = false
-	velocity = Vector2(0,0)
+	velocity = Vector2(0,0) #Removes knockback velocity
 	$HealthBar.visible = false
 
 func _on_navigation_timer_timeout() -> void:

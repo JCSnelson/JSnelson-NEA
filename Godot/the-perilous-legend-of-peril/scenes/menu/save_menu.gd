@@ -2,10 +2,11 @@ extends Node2D
 
 #Function to load the list
 func _load_list():
+	#Deleting existing children
 	for child in $SavesScroller/VBoxContainer.get_children():
 		child.queue_free()
 	var save_data_list = Database.get_user_save_data()
-	for save_data in save_data_list:
+	for save_data in save_data_list: #Iterates through save data for the user creating a button for each one
 		var button = Button.new()
 		var hardcore
 		if save_data["hardcore"] == 1:
@@ -21,22 +22,22 @@ func _load_list():
 func _ready() -> void:
 	_load_list()
 
-
+#Sets the global difficulty and current save id before changing scene
 func _on_save_selected(save_data):
 	Database.current_save_id = save_data["save_id"]
 	Global.difficulty = save_data["difficulty"]
-	print(Database.get_save_data())
 	get_tree().change_scene_to_file("res://scenes/game/worlds/tutorial.tscn")
 
+#Changes the difficulty label
 func _on_difficulty_drag_ended(value_changed: bool) -> void:
 	$Difficulty/DifficultyLabel.text = "Difficulty: " + str($Difficulty.value)
 
-
+#Adds a new save with the parameters given
 func _on_new_save_button_pressed() -> void:
 	Database.add_new_save_data($Name.text,$Difficulty.value,$HardcoreButton.button_pressed)
 	_load_list()
 
 
-
+#Changes scene to login form
 func _on_log_out_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu/login_form.tscn")

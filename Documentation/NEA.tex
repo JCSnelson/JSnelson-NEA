@@ -40,6 +40,7 @@
 \usepackage{multicol}
 \usepackage{pythonhighlight}
 \usepackage{color}
+\usepackage{xcolor}
 \usepackage{bookmark}
 \usepackage[a4paper, total={150mm, 210mm}, margin=60pt]{geometry}
 \usepackage{hyperref}
@@ -52,6 +53,12 @@
 }
 %command for creating spaces
 \newcommand\tab[1][0.5cm]{\hspace*{#1}}
+\newcommand{\red}[1]{\colorbox{red}{#1}}
+\newcommand{\yellow}[1]{\colorbox{yellow}{#1}}
+\newcommand{\green}[1]{\colorbox{green}{#1}}
+\newcommand{\n}[0]{\red{Not Met}}
+\newcommand{\p}[0]{\yellow{Partially Met}}
+\newcommand{\f}[0]{\green{Fully Met}}
 
 \newcommand{\mr}[3]{\multirow{#1}{#2}{#3}}
 \title{\textbf{NEA}}
@@ -577,6 +584,75 @@
         \end{tabular}
         \newpage
         \subsection{Computational Methods}
+        \begin{tabular}[pos]{|c|c|c|}
+                \hline
+                \textbf{Method} & \textbf{Description} & \textbf{Application to My Project} \\
+                \hline
+                \mr{1}{3.5cm}{Thinking Abstractly} & \mr{1}{3.5cm}{Removing unnecessary detail to focus on what's important} & \mr{1}{8cm}{I will make general classes for items/enemies to reduce repeated code. I will use godot which automatically abstracts away the complexity behind all of the node types so that you get the functionality without dealing with the complexity. I will be using prexisting libraries for sha256 and md5 algorithms within my hashing for the passwords and challenge question answers.} \\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{1}{3.5cm}{Thinking Ahead} & \mr{1}{3.5cm}{Planning for future stages or needs} & \mr{1}{8cm}{I will design systems that can be expanded later, like adding new weapons. I will also preload scripts for quicker access when I need them.} \\
+                &&\\
+                &&\\
+                \hline
+                \mr{1}{3.5cm}{Thinking Procedurally} & \mr{1}{3.5cm}{Breaking tasks into clear steps} & \mr{1}{8cm}{I will write algorithms to manage the combat system including taking damage and managing hitboxes and hurtboxes. I will write algorithms for the database to make sure all the data is handled and stored securely. I will bind specific inputs to specific functions such as attacking, moving the player, pulling up menus etc.} \\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{1}{3.5cm}{Thinking Logically} & \mr{1}{3.5cm}{Using reasoning to control program flow} & \mr{1}{8cm}{I will use event signals and that will be handled in order to get movement directions. I will be using loops throughout my hashing and salting in order to add complexity and reduce the chance of reverse engineering. } \\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{1}{3.5cm}{Thinking Concurrently} & \mr{1}{3.5cm}{Running multiple processes at once} & \mr{1}{8cm}{Player and enemy movement will happen at the same time using Godot nodes aswell as being able to pause certain threads and keep some active for a pause menu. The physics processes within godot will run on seperate threads to the rendering. The \_ready() method is used as an initializer before the physics process loop which both run seperately from the rendering.} \\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{1}{3.5cm}{Problem Recognition} & \mr{1}{3.5cm}{Identifying key criteria of my solution} & \mr{1}{8cm}{I noticed replayability is poor in dungeon crawler games so I will use procedural generation to help fix this. I also recognise that some dungeon crawlers arent as accessible to new players and so I will aim to solve this. I also recognise that by representing rooms as nodes and using graph theory to for level structure we can use existing algorithms such as depth first search to help with procedural generation.} \\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{1}{3.5cm}{Backtracking} & \mr{1}{3.5cm}{Returning to previous states/function calls to aid algorithms or find another solution} & \mr{1}{8cm}{I will use backtracking in graph traversals for procedural generation in order to fully proccess all nodes in the graph even when reaching a dead end.} \\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{1}{3.5cm}{Heuristics} & \mr{1}{3.5cm}{Using rules of thumb to guide decisions} & \mr{1}{8cm}{In the pathfinding for enemies I will use godot's implementation of mesh A* which uses heuristics to speed up pathfinding by guiding it in the right direction.\\} \\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{1}{3.5cm}{Visualisation} & \mr{1}{3.5cm}{Representing information graphically} & \mr{1}{8cm}{I will use visualisation to visualise my classes and algorithms aswell as data flow within my design of the solution. Godot uses visualisation in order to help place all the different nodes throughout the scene and visualise the completed scene and how it will look.} \\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+        \end{tabular}
 \newpage
 \section{Design \& Plan}
         \subsection{Overview}
@@ -2701,7 +2777,273 @@ def _ready():
                 \caption{Script}
         \end{figure}
         There is video evidence of generation in Level 1 and player loading in here$^{reference}$
-
+        \newpage
+        \section{Evaluation}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
+                \hline
+                1&\mr{2}{2cm}{Players to be able to control and move the player using both the WASD keys and a controller.}&\mr{2}{6cm}{1.1 W key - Forward\\1.2 A key - Left\\1.3 S key - Backward\\1.4 D key - Right\\1.5 Q key - Dash\\1.6 Left Control Stick directional movement corresponds to player movement.}&\mr{2}{6cm}{1.1 \f\\1.2 \f\\1.3 \f\\1.4 \f\\1.5 \f\\1.6 \f}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        This criteria is fully met and can be seen through the video evidence here$^{[1]}$. Both the WASD controls and the controller controls work fully as implemented through the players physics process although the controller controls have been removed from help menu and tutorial tips because not all the controller controls where able to be implemented.\\
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
+                \hline
+                2&\mr{2}{2cm}{Players to be able to have different weapons and attack with them.}&\mr{2}{6cm}{2.1 mouse-1/1 key/X button - Primary Attack\\2.2 mouse-2/2 key/Y button - Secondary Attack\\2.3 Add a basic melee sword\\2.4 Add a basic ranged bow and projectiles\\2.5 Add a basic magic staff and projectiles\\2.6 Add a basic magic staff with area of effect attacks\\2.7 Add a hitbox for the player\\2.8 Add a health bar for the player\\2.9 Make sure all attacks go in the direction the player is facing}&\mr{2}{6cm}{2.1 \f\\2.2 \n\\2.3 \f\\2.4 \n\\2.5 \f\\2.6 \f\\2.7 \f\\2.8 \f\\2.9 \p}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \textbf{Successfull:}\\
+        The attack system and different weapons aswell as enemies and player taking damage can be seen here$^[2]$.
+        2.1 is implemented with the \_input() function in the player script handling inputs
+        2.3 is implemented through the weapon resource class as instances and the implementation of the sword swing hurtbox detecting collisions enemies hitboxes.\\
+        2.5 is implemented through the weapon resource class as instances and the implementation of the fire, ice and thunder projectiles movement and detecting collisions with enemies or the player. These projectiles are fired in the direction of the player mouse.\\
+        2.6 is implemented through the weapon resource class as instances and the implementation of the fire, ice and thunder area of effects including them lasting a specific time and detecting when enemies or the player are within the harm radius. These areas are spawned in the direction of the player mouse\\
+        2.7 is met through the usage of a CollisionShape2D node in the player structure and the take\_damage function that can get triggered by projectiles or enemies when they collide with the player.\\
+        \textbf{Partially/Unsuccessfull:}\\
+        2.2 is not met due to lack of time to add extra attacks.
+        If I were to have more time I would implement 2.2 as a secondary charged attack using a ProgressBar to measure the charge of the attack and then when released for melee attacks and magic area of effect attacks the attack would do damage proportional to the charge of the bar for magic ranges it would shoot out multi directional projectiles and for magic area of effect attacks the area would be scaled up. I would add a charging animation to be activated when charging the attack.\\
+        2.4 is not met due to lack of sprites and animations aswell as lack of extra time.\\
+        If I were to have the sprites I would make the primary attack a rapid fire that rapidly charges the bow firing arrow projectiles at the enemies in the direction of the player mouse. For the secondary attack I would have a slower charging animation to release an arrow dealing greater damage.\\
+        2.9 is only partially met as with projectiles I make them fire the direction of the mouse from the player however with controller controls this does not work as there is no way to move the mouse so I ended up not implementing it due to overcomplicatedness and lack of time.\\
+        If I had the extra time I would try to make it so you can use the right control stick in order to aim the projectiles directions either by moving the mouse or storing the last direction of it and then using that direction the same way I used the mouse direction.\\
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
+                \hline
+                3&\mr{2}{2cm}{A Dungeon environment for the character to walk around and different rooms}&\mr{2}{6cm}{3.1 Walls that you cannot walk through\\3.2 Floor of the Dungeon\\3.3 Interactive chests for loot\\3.4 Seperate Boss, Chest and Monster Rooms\\3.5 A room Door that only opens on a certain condition\\3.6 A Dungeon Environment built out of the rooms and corridors}&\mr{2}{6cm}{3.1 \f\\3.2 \f\\3.3 \f\\3.4 \p\\3.5 \f\\3.6 \f}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \textbf{Successfull:}\\
+        The Dungeon Environment and different rooms can be seen through the procedural generation tests here$^{reference}$. The Doors and Chests can be seen through their tests here$^{reference}$
+        3.1 and 3.2 are implemented through the use of a dungeon tileset that I have used to make a tilemap with physics layers on the walls so that you cannot walk through them and floor tiles for the floor.\\
+        3.3 is implemented through the chest scene and script, with a dictionary to represent the item pool of the chest along with the ratios of chances of getting each item being used to construct an array from which a random item is chosed for each item to be given to the player when they player is within range of the chest and presses interact (I Key, X Button) from the chest and then the items are added to the player inventory.\\
+        3.5 is implemented through the door scene and script, the door has an area2d node to detect when the player is close enough to open it, then when the player presses interact (I Key, X Button) the door will check if it is locked and the player inventory has the correct key or it is unlocked in both cases it will dissappear or optionally can change the scene. If the player does not have the key and the door is locked then the door will not react.\\
+        3.6 is implemented both in the tutorial through the handmade environment and also through the procedural generation where individual rooms and corridors are peiced together with the graph script in order to make the level environments.\\
+        \textbf{Partially/Unsuccessfull:}\\
+        3.4 is only partially successful as I have implemented seperate monster rooms and corridors as can be seen in the procedural generation tests. I have however not implemented chest or boss rooms due to lack of time to create these rooms.\\
+        For the chest rooms I would make it so some chest rooms would contain keys in the chests that are needed to unlock the chests in other chest rooms throughout the dungeon I would add the chest scene to existing monster rooms to create them and have default item pools aswell as special chest rooms with more rare item pools. For the boss rooms I would add rooms designed around the specific implemented bosses with areas to hide from the bosses attacks as it chases you aswell as placing the boss scenes in different places within the rooms.\\
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
+                \hline
+                4&\mr{2}{2cm}{Different Enemies for the player to face including bosses}&\mr{2}{6cm}{4.1 Enemy Sprites\\4.2 Enemy Pathfinding Abilities\\4.3 Enemy sight range\\4.4 Enemy hitbox\\4.5 Enemy health tracking\\4.6 Melee Enemies\\4.7 Projectile Enemies\\4.8 Boss Enemies with different attack combinations}&\mr{2}{6cm}{4.1 \f\\4.2 \f\\4.3 \f\\4.4 \f\\4.5 \f\\4.6 \f\\4.7 \f\\4.8 \n}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
+                \hline
+                \mr{2}{0.6cm}{}5\mr{2}{0.6cm}{}&\mr{2}{2cm}{Appearance and Animations of the Player}&\mr{2}{6cm}{5.1 Player Sprite\\5.2 Walking Animation\\5.3 Player sprite turns to face the direction of movement\\5.4 Melee Animation\\5.5 Magic Animation\\5.6 Dash Animation}&\mr{2}{6cm}{5.1 \f\\5.2 \f\\5.3 \f\\5.4 \f\\5.5 \n\\5.6 \n}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
+                \hline
+                6&\mr{2}{2cm}{Login System}&\mr{2}{6cm}{6.1 Password Hashing Algorithm\\6.2 SQL Table to store username and hashed password pairs\\6.3 Ability to create a new account with unique username\\6.4 Validation of Usernames (1$\le$chars$<$15)\\6.5 Input Sanitisation (Removing any escape chars for SQL before sending the command)\\6.6 Ability to log in with an exisiting account and correct password\\6.7 Ability to reset password (With challenge question)\\6.8 A general login form which links the other forms.\\6.9 Ability to delete an account.\\}&\mr{2}{6cm}{6.1 \f\\6.2 \f\\6.3 \f\\6.4 \p\\6.5 \f\\6.6 \f\\6.7 \f\\6.8 \f\\6.9 \n}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
+                \hline
+                7&\mr{2}{2cm}{User Interface}&\mr{2}{6cm}{7.1 Health Bar\\7.2 Magic Points Bar\\7.3 Display of the weapon being used\\7.4 Popup display with enemy health over their head when they get damaged\\7.5 ability to switch between weapons}&\mr{2}{6cm}{7.1 \f\\7.2 \f\\7.3 \f\\7.4 \f\\7.5 \f}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
+                \hline
+                \mr{2}{0.6cm}{}8\mr{2}{0.6cm}{}&\mr{2}{2cm}{Weapons And a More Advanced Combat System}&\mr{2}{6cm}{8.1 Different Styles of melee, magic and ranged weapons\\8.2 Boss Drops\\8.3 Shop System that appears throughout levels\\8.4 Charged Attacks (based on how long you hold down)\\8.5 Special attacks}&\mr{2}{6cm}{8.1 \p\\8.2 \n\\8.3 \n\\8.4 \n\\8.5 \n}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
+                \hline
+                \mr{2}{0.6cm}{}9\mr{2}{0.6cm}{}&\mr{2}{2cm}{Skill Tree}&\mr{2}{6cm}{9.1 UI Menu for the skill tree (Some skills required before others unlocked).\\9.2 Different Branches (Melee, Ranged, Magic, Defense)\\ 9.3 Experience system.\\\tab 9.3.1 Experience gained after \tab killing enemies/bosses\\ \tab 9.3.2 Different experience amounts \tab required for different skills\\9.4 Ability to unlock skills\\9.5 Ability to reset your skill tree}&\mr{2}{6cm}{9.1 \n\\9.2 \n\\9.3 \n\\9.4 \n\\9.5 \n}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
+                \hline
+                10&\mr{2}{2cm}{Procedurally Generated Dungeons}&\mr{2}{6cm}{10.1 Creating requirements for each level to satisfy\\10.2 Creating different room sections/rooms to peice together\\10.3 Creating the algorithm to generate which room sections are slotted together where.\\10.4 Create an algorithm to peice the sections together to create a fully playable level.\\\tab 10.4.1 Level's generated satisfy \tab length requirements\\\tab 10.4.2 Level's generated contain all \tab the special rooms needed (chest \tab room, secret rooms, etc.)}&\mr{2}{6cm}{10.1 \f\\10.2 \p\\10.3 \f\\10.4.1 \f\\ 10.4.2 \p}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
+                \hline
+                11&\mr{2}{2cm}{Hidden Areas}&\mr{2}{6cm}{11.1 Add mechanics to get into the secret rooms (breakable walls, climbing vines, keys, etc.)\\\tab 11.1.1 Add a hammer to break \tab walls with\\\tab 11.1.2 Add climbing gloves which \tab you need in order to climb vines\\11.2 Add secret Boss and Treasure rooms for behind these obstacles.}&\mr{2}{6cm}{11.1 \n\\11.2 \n\\}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
+                \hline
+                12&\mr{2}{2cm}{Inventory System}&\mr{2}{6cm}{12.1 UI for Inventory\\12.2 Storage of Extra weapons and key items (keys, armour, charms, etc)\\12.3 E key to open up the inventory\\12.4 Ability to switch out what Weapons, Armour and charms are equipped.\\12.5 Ability to add or remove items from the inventory.\\12.6 SQL table to store inventory contents}&\mr{2}{6cm}{12.1 \f\\12.2\f\\12.3 \f\\12.4 \f\\12.5 \f\\12.6 \f\\}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
+                \hline
+                \mr{2}{0.6cm}{}13\mr{2}{0.6cm}{}&\mr{2}{2cm}{Settings and Volume Control}&\mr{2}{6cm}{13.1 Settings UI with buttons for each setting\\13.2 Ability to control the volume\\13.3 Ability to control the vibrancy of colours in the game.}&\mr{2}{6cm}{13.1 \n\\13.2 \n\\13.3 \n}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
+        \begin{tabular}{|c|c|c|c|}
+                \hline
+                Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
+                \hline
+                14&\mr{2}{2cm}{Difficulty Levels and Hardcore Mode}&\mr{2}{6cm}{14.1 A slider for difficulty in create save\\14.2 Increasing difficulty based on the slider\\\tab 14.2.1 Increasing enemy health\\\tab 14.2.2 Decreasing player health\\\tab 14.2.3 Increasing number of \tab enemies\\14.3 A Hardcore mode at maximum difficulty with a seperate save state to the normal game.\\\tab 14.3.1 roguelike features \tab (permadeath, resource \tab management, etc)\\14.4 SQL table to store different saves}&\mr{2}{6cm}{14.1 \f\\14.2.1 \f\\14.2.2 \n\\14.2.3 \f\\14.3 \n\\14.4 \f\\}\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                &&&\\
+                \hline
+        \end{tabular}
 \newpage
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}

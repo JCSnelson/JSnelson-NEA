@@ -30,10 +30,12 @@ func _ready():
 	$HealthBar.value=health
 
 func _physics_process(delta: float) -> void:
+	# If player in range sets detected to true
 	var player_detected = false
 	for body in $Area2D.get_overlapping_bodies():
 		if body.name == "Player":
 			player_detected = true
+	#Attacks if not animating and can attack
 	if not animating:
 		$AnimatedSprite2D.play(get_animation("idle"))
 		if player_detected and can_attack:
@@ -50,20 +52,20 @@ func _physics_process(delta: float) -> void:
 func take_damage(damage, damage_type):
 	var player = get_tree().get_first_node_in_group("player")
 	animating = true
-	if damage_type in weaknesses:
+	if damage_type in weaknesses: #Takes more damage from weaknesses
 		health -= 2*damage
 	else:
 		health -= damage
-	velocity = - 25 * to_local(player.global_position).normalized()
-	$HealthBar.value = health
+	velocity = - 25 * to_local(player.global_position).normalized() #takes knockback by changing velocity
+	$HealthBar.value=health
 	$HealthBar.visible = true
-	if health <= 0:
+	if health <= 0: #dies if health is low
 		queue_free()
 	else:
 		$AnimatedSprite2D.play(get_animation("hurt"))
 	await $AnimatedSprite2D.animation_finished
-	velocity = Vector2(0,0)
 	animating = false
+	velocity = Vector2(0,0) #Removes knockback velocity
 	$HealthBar.visible = false
 	
 

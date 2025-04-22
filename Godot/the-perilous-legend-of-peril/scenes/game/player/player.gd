@@ -13,6 +13,7 @@ func _ready():
 	add_to_group("player")
 	add_child(ui.instantiate())
 
+#Function to return the directional name of the animation in the direction player ois facing
 func get_animation(animation_type: String):
 	var anim = animation_type + "_"
 	if last_direction.x:
@@ -33,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	var direction = Vector2(Input.get_axis("left", "right"),Input.get_axis("up","down"))
 	# Velocity
 	velocity = direction.normalized() * speed
-	#Mocing/Idling if its not already animating
+	#Moving or Idling if its not already animating
 	if not animating:
 		if direction:
 			last_direction = direction
@@ -42,19 +43,19 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play(get_animation("idle"))
 		move_and_slide()
 
-
+#Handles different input types
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
 		attack()
 	elif event.is_action_pressed("dash"):
-		if can_dash:
+		if can_dash: # Increases speed momentarily if you can dash
 			speed = 8*speed
 			can_dash = false
 			await get_tree().create_timer(0.05).timeout
 			speed = speed/8
 			await get_tree().create_timer(0.5).timeout
 			can_dash = true
-	if event.is_action_pressed("help"):
+	if event.is_action_pressed("help"): #Loads help emnu and pauses till key pressed again
 		var help_menu = load("res://scenes/menu/help_menu.tscn").instantiate()
 		add_child(help_menu)
 		get_tree().paused = true
@@ -63,7 +64,7 @@ func _input(event: InputEvent) -> void:
 			await get_tree().process_frame
 		help_menu.queue_free()
 		get_tree().paused = false
-	elif event.is_action_pressed("inventory"):
+	elif event.is_action_pressed("inventory"): #Loads Inventory and pauses till key pressed again
 		var inventory_ui = load("res://scenes/game/player/inventory_ui.tscn").instantiate()
 		$UI.visible = false
 		add_child(inventory_ui)
@@ -79,6 +80,7 @@ func _input(event: InputEvent) -> void:
 
 
 func attack():
+	#Gets weapon and attacks if it isnt animating and you have the mana
 	if Database.get_slot_value("weapon"):
 		weapon = load(Database.get_slot_value("weapon"))
 		if not animating and mana >= weapon.mana_cost:
@@ -124,15 +126,7 @@ func attack():
 
 
 
-func take_damage(damage, damage_type):
-	if damage_type == "poison":
-		print("yes")
-		for x in range(damage):
-			health -= 1
-			if health <= 0:
-				get_tree().change_scene_to_file("res://scenes/menu/save_menu.tscn")
-			await get_tree().create_timer(1).timeout
-	else:
-		health -= damage
-		if health <= 0:
-			get_tree().change_scene_to_file("res://scenes/menu/save_menu.tscn")
+func take_damage(damage, damage_type): #Removes the amount of health for the damage
+	health -= damage
+	if health <= 0:
+		get_tree().change_scene_to_file("res://scenes/menu/save_menu.tscn")

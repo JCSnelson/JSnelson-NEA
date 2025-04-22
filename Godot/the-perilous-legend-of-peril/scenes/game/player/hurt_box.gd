@@ -6,5 +6,5 @@ var range: int
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemies"): # If its an enemy damages it
+	if body.is_in_group("enemies"): # If an enemy enters damages it
 		body.take_damage(damage, damage_type)

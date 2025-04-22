@@ -7,11 +7,12 @@ var attacking = false
 
 
 func _physics_process(delta: float) -> void:
+	#Gets movement vector
 	velocity.x = speed * cos(rotation)
 	velocity.y = speed * sin(rotation)
 	if not attacking:
 		move_and_slide()
-	#Collisions
+	#Damages player or enemy if collides with them
 	for i in range(get_slide_collision_count()):
 		if not attacking:
 			attacking = true

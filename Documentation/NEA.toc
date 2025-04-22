@@ -144,15 +144,16 @@
 \contentsline {subsubsection}{\numberline {3.18.2}Room}{79}{subsubsection.3.18.2}%
 \contentsline {subsubsection}{\numberline {3.18.3}Testing}{81}{subsubsection.3.18.3}%
 \contentsline {subsubsection}{\numberline {3.18.4}Level 1}{83}{subsubsection.3.18.4}%
-\contentsline {section}{\numberline {4}References}{85}{section.4}%
-\contentsline {section}{\numberline {5}Video Evidence Log}{85}{section.5}%
-\contentsline {section}{\numberline {6}Code Listings}{86}{section.6}%
-\contentsline {subsection}{\numberline {6.1}resources/scripts}{86}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}scenes}{87}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {6.2.1}game/enemies}{87}{subsubsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.2}game/player}{90}{subsubsection.6.2.2}%
-\contentsline {subsubsection}{\numberline {6.2.3}game/projectiles}{94}{subsubsection.6.2.3}%
-\contentsline {subsubsection}{\numberline {6.2.4}game/worlds}{96}{subsubsection.6.2.4}%
-\contentsline {subsubsection}{\numberline {6.2.5}menu}{99}{subsubsection.6.2.5}%
-\contentsline {subsection}{\numberline {6.3}src}{101}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}utils}{107}{subsection.6.4}%
+\contentsline {section}{\numberline {4}Evaluation}{85}{section.4}%
+\contentsline {section}{\numberline {5}References}{90}{section.5}%
+\contentsline {section}{\numberline {6}Video Evidence Log}{90}{section.6}%
+\contentsline {section}{\numberline {7}Code Listings}{91}{section.7}%
+\contentsline {subsection}{\numberline {7.1}resources/scripts}{91}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}scenes}{92}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}game/enemies}{92}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}game/player}{95}{subsubsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.3}game/projectiles}{99}{subsubsection.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.4}game/worlds}{101}{subsubsection.7.2.4}%
+\contentsline {subsubsection}{\numberline {7.2.5}menu}{104}{subsubsection.7.2.5}%
+\contentsline {subsection}{\numberline {7.3}src}{106}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}utils}{112}{subsection.7.4}%

@@ -20,15 +20,16 @@ func _init():
 	root = DungeonGraphNode.new()
 	root.room_type = "start"
 	nodes.append(root)
-
-func add_node(onto_index, direction, room_type):
+#Adds node onto the node at the onto index of the type
+func add_node(onto_index, direction, room_type): 
 	var onto = nodes[onto_index]
-	if onto[direction]:
+	if onto[direction]: # returns false if their is already a node in the place we are trying to place a new one
 		return false
 	var new_node = DungeonGraphNode.new()
-	new_node.room_type = room_type
+	new_node.room_type = room_type 
+	#Sets up connections
 	onto[direction] = new_node
-	match direction:
+	match direction: 
 		'north':
 			new_node.south = onto
 		'south':
@@ -42,24 +43,22 @@ func add_node(onto_index, direction, room_type):
 
 
 func gen_room(node,previous_direction = null, previous = null):
-	var room = load(rooms[node.room_type].pick_random()).instantiate()
+	var room = load(rooms[node.room_type].pick_random()).instantiate() #instantiates random room of specified type
 	add_child(room)
-	if previous_direction:
+	if previous_direction: #sets psoition to match entrances 
 		room.set_pos(previous_direction,previous.get_pos(opposite_direction[previous_direction]))
-	else:
-		room.position = Vector2(0,0)
-	for i in ['north', 'south', 'east', 'west']:
+	for i in ['north', 'south', 'east', 'west']: #Caps entrances with no neighbour
 		if node[i] == null:
 			room.cap(i)
 	return room
 
 func gen_dungeon(node=root, previous_direction = null, previous = null, generated = []):
-	var room = await gen_room(node,previous_direction,previous)
-	generated.append(node)
-	for i in ['north', 'south', 'east', 'west']:
+	var room = await gen_room(node,previous_direction,previous) #Generates room
+	generated.append(node) #Adds to generated list
+	for i in ['north', 'south', 'east', 'west']: #recursive call on any neighbour nodes that havent been generated
 		if node[i] and node[i] not in generated:
 			generated = await gen_dungeon(node[i], opposite_direction[i], room, generated)
-	return generated
+	return generated #returns generated to update list
 	
 	
 

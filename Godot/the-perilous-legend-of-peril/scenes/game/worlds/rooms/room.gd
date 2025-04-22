@@ -1,7 +1,8 @@
 extends Node2D
 
+#Gets position of entrance in direction
 func get_pos(direction):
-	match direction:
+	match direction: 
 		'north':
 			return $North.global_position
 		'south':
@@ -11,6 +12,7 @@ func get_pos(direction):
 		'west':
 			return $West.global_position 
 
+#sets the position so that the entrance in the direction is at the position provided
 func set_pos(direction, global_pos):
 	match direction:
 		'north':
@@ -22,6 +24,7 @@ func set_pos(direction, global_pos):
 		'west':
 			global_position += global_pos - $West.global_position 
 
+#adds a caps scene onto the direction specified
 func cap(direction):
 	match direction:
 		'north':
@@ -37,12 +40,13 @@ func cap(direction):
 			var west_cap = load("res://scenes/game/worlds/rooms/west_cap.tscn").instantiate()
 			$West.add_child(west_cap)
 	
+
 func _ready():
-	if $Slimes:
+	if $Slimes: #Sets enemy health
 		for slime in $Slimes.get_children():
 			slime.health = floor(2*Global.current_level*log(3*Global.difficulty))
 			slime.damage = floor(Global.current_level*log(3*Global.difficulty))
-	if $Labels:
+	if $Labels: #Updates Label text so levels match
 		for label in $Labels.get_children():
 			label.text = label.text.replace("0", str(Global.current_level))
 		

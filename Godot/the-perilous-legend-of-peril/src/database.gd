@@ -211,8 +211,9 @@ func test() -> void:
 func gen_salt() -> String:
 	var salt = "string"
 	var x = randi_range(5,10)
+	#Hashing a random amount of times with random salt each time
 	for i in range(2**x):
-		salt = j_hash(salt,str(i*randi_range(1,10)))
+		salt = j_hash(salt,str(i*randi_range(1,10))) 
 	return salt
 
 #Function for hashing a password or challenge answer
@@ -340,6 +341,7 @@ func add_new_save_data(name, difficulty, hardcore):
 func setup(path):
 	db.path = path
 	db.open_db()
+	#Creating Tables if they do not exist
 	if not db.query(_create_table_users):
 		print("Error: users table unable to be created")
 		return
