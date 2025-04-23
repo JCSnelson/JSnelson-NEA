@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.21)  22 APR 2025 22:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.21)  23 APR 2025 09:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3321,117 +3321,78 @@ Overfull \vbox (54.44443pt too high) detected at line 3037
  []
 
 
-Overfull \vbox (84.0pt too high) detected at line 3058
+Overfull \vbox (84.0pt too high) detected at line 3068
  []
 
 
-Overfull \vbox (15.8667pt too high) detected at line 3058
+Overfull \vbox (15.8667pt too high) detected at line 3068
  []
 
 
-Overfull \vbox (108.0pt too high) detected at line 3073
+Overfull \vbox (108.0pt too high) detected at line 3087
  []
 
 
-Overfull \vbox (83.33331pt too high) detected at line 3073
+Overfull \vbox (83.33331pt too high) detected at line 3087
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 3090
- []
-
-
-Overfull \vbox (36.0pt too high) detected at line 3090
- []
-
-
-Overfull \vbox (17.70001pt too high) detected at line 3090
- []
-
-
-Overfull \vbox (24.0pt too high) detected at line 3102
- []
-
-
-Overfull \vbox (156.0pt too high) detected at line 3102
- []
-
-
-Overfull \vbox (79.22217pt too high) detected at line 3102
- []
-
-
-Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3119
+Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3100
 []
  []
 
 
-Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3119
+Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3100
 []
  []
 
 
-Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3119
+Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3100
 []
  []
 
 
-Overfull \hbox (6.89368pt too wide) in paragraph at lines 2798--3119
-\OT1/cmr/m/n/10 The Dun-geon En-vi-ron-ment and dif-fer-ent rooms can be seen through the pro-ce-du-ral gen-er-a-tion tests here$[]$.
- []
-
-
-Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3119
+Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3100
 []
  []
 
 
-Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3119
+Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3100
 []
  []
 
 
-Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3119
+Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3100
 []
  []
 
 
-Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3119
+Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3100
 []
  []
 
 
-Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3119
+Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3100
 []
  []
 
 
-Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3119
+Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3100
 []
  []
 
 
-Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3119
+Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3100
 []
  []
 
 
-Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3119
+Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3100
 []
  []
 
 
-Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3119
-[]
- []
-
-
-Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3119
-[]
- []
-
-
-Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3119
+Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3100
 [] 
  []
 
@@ -3450,42 +3411,77 @@ Overfull \hbox (16.4419pt too wide) in paragraph at lines 2798--3119
 [91]
 
 [92]
-Overfull \vbox (12.0pt too high) detected at line 3126
+Overfull \vbox (12.0pt too high) detected at line 3105
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 3130
+Overfull \vbox (36.0pt too high) detected at line 3105
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 3137
+Overfull \vbox (17.70001pt too high) detected at line 3105
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 3141
+Overfull \vbox (24.0pt too high) detected at line 3117
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 3145
+Overfull \vbox (156.0pt too high) detected at line 3117
  []
 
 
-Overfull \vbox (24.0pt too high) detected at line 3145
+Overfull \vbox (79.22217pt too high) detected at line 3117
  []
 
 
-Overfull \hbox (7.75319pt too wide) in paragraph at lines 3122--3151
-[] 
+Overfull \hbox (16.4419pt too wide) in paragraph at lines 3101--3134
+[][]
  []
 
 
-Overfull \hbox (42.15965pt too wide) in paragraph at lines 3152--3161
+Overfull \hbox (16.4419pt too wide) in paragraph at lines 3101--3134
 [] 
  []
 
 
 
 [93]
+Overfull \vbox (12.0pt too high) detected at line 3141
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 3145
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 3152
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 3156
+ []
+
+
+Overfull \vbox (24.0pt too high) detected at line 3160
+ []
+
+
+Overfull \vbox (24.0pt too high) detected at line 3160
+ []
+
+
+Overfull \hbox (7.75319pt too wide) in paragraph at lines 3137--3166
+[] 
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 3173
+ []
+
+
+
+[94]
 
 Package geometry Warning: `a4paper': not available in `\newgeometry'; skipped.
 
@@ -3533,191 +3529,189 @@ Package geometry Warning: Over-specification in `v'-direction.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3165--3166
+Underfull \hbox (badness 10000) in paragraph at lines 3195--3196
 
  []
 
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 3166.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 3196.
 (../Godot/the-perilous-legend-of-peril/resources/scripts/item.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3167--3168
+Underfull \hbox (badness 10000) in paragraph at lines 3197--3198
 
  []
 
 (../Godot/the-perilous-legend-of-peril/resources/scripts/equipable.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3169--3170
+Underfull \hbox (badness 10000) in paragraph at lines 3199--3200
 
  []
 
 (../Godot/the-perilous-legend-of-peril/resources/scripts/armour.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3171--3172
+Underfull \hbox (badness 10000) in paragraph at lines 3201--3202
 
  []
 
 (../Godot/the-perilous-legend-of-peril/resources/scripts/weapon.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3173--3174
+Underfull \hbox (badness 10000) in paragraph at lines 3203--3204
 
  []
 
 (../Godot/the-perilous-legend-of-peril/resources/scripts/charm.gd)
 
-[94
+[95
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 3176--3177
+Underfull \hbox (badness 10000) in paragraph at lines 3206--3207
 
  []
 
 (../Godot/the-perilous-legend-of-peril/resources/scripts/key.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3180--3181
+Underfull \hbox (badness 10000) in paragraph at lines 3210--3211
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/enemies/default_slime.gd
 
-[95])
-Underfull \hbox (badness 10000) in paragraph at lines 3182--3183
+[96])
+Underfull \hbox (badness 10000) in paragraph at lines 3212--3213
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/enemies/fire_slime.gd
 
-[96])
-Underfull \hbox (badness 10000) in paragraph at lines 3184--3185
+[97])
+Underfull \hbox (badness 10000) in paragraph at lines 3214--3215
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/enemies/poison_slime.gd
 
-[97])
-Underfull \hbox (badness 10000) in paragraph at lines 3187--3188
+[98])
+Underfull \hbox (badness 10000) in paragraph at lines 3217--3218
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/player/player.gd
 
-[98]
+[99]
 
-[99])
-Underfull \hbox (badness 10000) in paragraph at lines 3189--3190
+[100])
+Underfull \hbox (badness 10000) in paragraph at lines 3219--3220
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/player/hurt_box.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3191--3192
+Underfull \hbox (badness 10000) in paragraph at lines 3221--3222
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/player/inventory_ui.gd
 
-[100])
-Underfull \hbox (badness 10000) in paragraph at lines 3193--3194
+[101])
+Underfull \hbox (badness 10000) in paragraph at lines 3223--3224
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/player/ui.gd
 
-[101])
-Underfull \hbox (badness 10000) in paragraph at lines 3196--3197
+[102])
+Underfull \hbox (badness 10000) in paragraph at lines 3226--3227
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/ice_projectile.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3198--3199
+Underfull \hbox (badness 10000) in paragraph at lines 3228--3229
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/fire_projectile.gd
 
-[102])
-Underfull \hbox (badness 10000) in paragraph at lines 3200--3201
+[103])
+Underfull \hbox (badness 10000) in paragraph at lines 3230--3231
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/thunder_projectile.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3202--3203
+Underfull \hbox (badness 10000) in paragraph at lines 3232--3233
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/ice_area.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3204--3205
+Underfull \hbox (badness 10000) in paragraph at lines 3234--3235
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/fire_area.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3206--3207
+Underfull \hbox (badness 10000) in paragraph at lines 3236--3237
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/projectiles/thunder_area.gd
 
-[103])
-Underfull \hbox (badness 10000) in paragraph at lines 3209--3210
+[104])
+Underfull \hbox (badness 10000) in paragraph at lines 3239--3240
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/worlds/rooms/graph/dungeon_graph.gd
 
-[104])
-Underfull \hbox (badness 10000) in paragraph at lines 3211--3212
+[105])
+Underfull \hbox (badness 10000) in paragraph at lines 3241--3242
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/worlds/rooms/graph/dungeon_graph_node.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3213--3214
+Underfull \hbox (badness 10000) in paragraph at lines 3243--3244
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/worlds/rooms/room.gd
 
-[105])
-Underfull \hbox (badness 10000) in paragraph at lines 3215--3216
+[106])
+Underfull \hbox (badness 10000) in paragraph at lines 3245--3246
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/worlds/rooms/room_test.gd
 
-[106])
-Underfull \hbox (badness 10000) in paragraph at lines 3217--3218
+[107])
+Underfull \hbox (badness 10000) in paragraph at lines 3247--3248
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/worlds/chest.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3219--3220
+Underfull \hbox (badness 10000) in paragraph at lines 3249--3250
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/game/worlds/door.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3222--3223
+Underfull \hbox (badness 10000) in paragraph at lines 3252--3253
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/menu/login_form.gd
 
-[107])
-Underfull \hbox (badness 10000) in paragraph at lines 3224--3225
+[108])
+Underfull \hbox (badness 10000) in paragraph at lines 3254--3255
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/menu/create_account_form.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3226--3227
+Underfull \hbox (badness 10000) in paragraph at lines 3256--3257
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/menu/reset_password_form.gd
 
-[108])
-Underfull \hbox (badness 10000) in paragraph at lines 3228--3229
+[109])
+Underfull \hbox (badness 10000) in paragraph at lines 3258--3259
 
  []
 
 (../Godot/the-perilous-legend-of-peril/scenes/menu/save_menu.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3231--3232
+Underfull \hbox (badness 10000) in paragraph at lines 3261--3262
 
  []
 
 (../Godot/the-perilous-legend-of-peril/src/database.gd
-
-[109]
 
 [110]
 
@@ -3725,53 +3719,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 3231--3232
 
 [112]
 
-[113])
-Underfull \hbox (badness 10000) in paragraph at lines 3233--3234
+[113]
+
+[114])
+Underfull \hbox (badness 10000) in paragraph at lines 3263--3264
 
  []
 
 (../Godot/the-perilous-legend-of-peril/src/inventory.gd
 
-[114])
-Underfull \hbox (badness 10000) in paragraph at lines 3235--3236
+[115])
+Underfull \hbox (badness 10000) in paragraph at lines 3265--3266
 
  []
 
 (../Godot/the-perilous-legend-of-peril/src/global.gd)
-Underfull \hbox (badness 10000) in paragraph at lines 3238--3239
+Underfull \hbox (badness 10000) in paragraph at lines 3268--3269
 
  []
 
 (../Godot/the-perilous-legend-of-peril/utils/dummy.gd
 
-[115])
-Underfull \hbox (badness 10000) in paragraph at lines 3240--3241
+[116])
+Underfull \hbox (badness 10000) in paragraph at lines 3270--3271
 
  []
 
 (../Godot/the-perilous-legend-of-peril/utils/test.gd
 
-[116])
+[117])
 
-[117] (./NEA.aux)
+[118] (./NEA.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 39014 strings out of 475177
- 913525 string characters out of 5763895
+ 39015 strings out of 475177
+ 913533 string characters out of 5763895
  1956892 words of memory out of 5000000
  58900 multiletter control sequences out of 15000+600000
  565329 words of font info for 60 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  114i,12n,121p,2040b,2153s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt0800.600pk><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/Users/JSnelson/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on NEA.pdf (121 pages, 6611072 bytes).
+Output written on NEA.pdf (122 pages, 6615409 bytes).
 PDF statistics:
- 4525 PDF objects out of 5155 (max. 8388607)
- 4042 compressed objects within 41 object streams
- 2489 named destinations out of 2984 (max. 500000)
+ 4529 PDF objects out of 5155 (max. 8388607)
+ 4045 compressed objects within 41 object streams
+ 2490 named destinations out of 2984 (max. 500000)
  2009 words of extra memory for PDF output out of 10000 (max. 10000000)
 

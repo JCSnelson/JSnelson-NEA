@@ -2865,7 +2865,7 @@ def _ready():
                 \hline
         \end{tabular}
         \textbf{Successfull:}\\
-        The Dungeon Environment and different rooms can be seen through the procedural generation tests here$^{reference}$. The Doors and Chests can be seen through their tests here$^{reference}$
+        The Dungeon Environment and different rooms can be seen through the procedural generation tests here$^{[6]}$. The Doors and Chests can be seen through their tests here$^{[4]}$
         3.1 and 3.2 are implemented through the use of a dungeon tileset that I have used to make a tilemap with physics layers on the walls so that you cannot walk through them and floor tiles for the floor.\\
         3.3 is implemented through the chest scene and script, with a dictionary to represent the item pool of the chest along with the ratios of chances of getting each item being used to construct an array from which a random item is chosed for each item to be given to the player when they player is within range of the chest and presses interact (I Key, X Button) from the chest and then the items are added to the player inventory.\\
         3.5 is implemented through the door scene and script, the door has an area2d node to detect when the player is close enough to open it, then when the player presses interact (I Key, X Button) the door will check if it is locked and the player inventory has the correct key or it is unlocked in both cases it will dissappear or optionally can change the scene. If the player does not have the key and the door is locked then the door will not react.\\
@@ -2976,7 +2976,7 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
-        All the UI elements where implemented using godot's CanvasLayer so that they dont move when the camera moves. The UI is evidenced through the video testing here$^{[4]}$\\
+        All the UI elements where implemented using godot's CanvasLayer so that they dont move when the camera moves. The UI is evidenced through the video testing here$^{[5]}$\\
         7.1 is implemented through the use of a ProgressBar with a custom texture (red background green fill) to show the percentage of health left. The maximum value of the bar is set to the player health in the \_ready() function of the UI scene and then the current value is updated in the \_process function every frame to match the players current health.\\
         7.2 is implemented through the use of a ProgressBar with a custom texture (navy background purple fill) to show the percentage of magic left. The maximum value of the bar is set to the player magic points in the \_ready() function of the UI scene and then the current value is updated in the \_process function every frame to match the players current magic points.\\
         7.3 is implemented through creating a display string function for every item that displays the key information about it (damage, type, etc) and then taking this display string and displaying it in a label in the UI scene.\\
@@ -3051,6 +3051,16 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
+        \textbf{Successfull:}\\
+        The procedural generation of the dungeons is evidenced through the testing here$^{[6]}$
+        10.1 I implemented a custom graph structure where each room/corridor is a node, these nodes have variables to store the rooms in each of the cardinal directions through aliasing, they also have a variable to store the room type, this allows me to create level requirements by creating a graph structure with all the rooms I want to be a requirement as they will have to be included every time.\\
+        10.3 I implemented the algorithm in two parts, firstly in each room I designed I added nodes to mark the entrances in the cardinal directions I created functions to cap the entrances aswell as ones to get the global position and set the position of the room such that the position of an entrance lines up with a certain position, this allows me to line up entrances of rooms through getting ones position and setting anothers to line up with that position. The second part was in traversing the graph and generating the rooms, I used a recursive implementation of a depth first search to iterate through each node in the graph picking a random room of the specified type and instantiating it into the scene lining it up with the previous room in the tree.\\
+        10.4.1 I implemented this by making each of the rooms of the same type be roughly the same length, this means that whenever a level is generated the length will only be between a maximum and minimum length.\\
+        \textbf{Partially/Unsuccessfull:}\\
+        10.2 I partially met this requirement as I didnt make chest rooms or many different shaped rooms due to a lack of time.\\
+        If I had extra time I would remedy this by making chest and boss rooms as detailed in my evaluation of criteria 3.4. I would also make more interesting shaped rooms by taking the standard rectangle shape and keeping the footprint adding obstacles or corridors winding through them which would allow for more variation in levels generated.\\
+        10.4.2 I partially met this requirement as I didnt make all of the rooms I would have liked including secret rooms. However out of the rooms I made the levels will always contain the rooms required.\\
+        If I had more time after I made more rooms I would add them in at different points in the level to create more incentive to explore different areas.\\
         \begin{tabular}{|c|c|c|c|}
                 \hline
                 Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
@@ -3066,6 +3076,10 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
+        For 11 I didnt get onto this as it was onyl a desireable feature and I ran out of time to keep implementing them.\\
+        11.1.1 To add a hammer I would use my existing item class hierarchy adding in a new class for tools and a child class for hammers, the hammer tool would be a tool that when in your inventory would allow you to walk up to specially made slightly ruined walls and get detected with an Area2D node, this would allow you to interact with the wall and if you have the hammer to knock it down revealing a part of the level previously hidden to you. I could also implement a hardness feature which means that certain hammers would only be able to knock down weaker walls whereas other ones that are obtained later could knock down stronger ones.\\
+        11.1.2 To add climbing gloves I would again use a child class of the tools class for a climbing gloves class, I would need to implement a climbing animation for use when the player tries to traverse up vines which would only activate if the player had the climbing gloves, The vines would change the scene to a hidden level scene. I could again add different levels of climbing gloves or perhaps other climbing gear to allow the player to climb harder walls/vines.\\
+        11.2 To implement secret boss and treasure rooms for behind these obstacles I would use seperate scenes from the procedural generated rooms using the TileMap to create the environment, I would not instantiate these scenes into the level until the player conquered the obstacles. The boss and treasure rooms would include bosses and chests with unique loot pools often containing special items that you might not usuaully be able to obtain at that level and they would be structured similarily to how I detailed in my evaluation of criteria 3.4.\\
         \begin{tabular}{|c|c|c|c|}
                 \hline
                 Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
@@ -3083,6 +3097,7 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
+
         \begin{tabular}{|c|c|c|c|}
                 \hline
                 Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
@@ -3154,8 +3169,23 @@ def _ready():
         REF$\#$&Video Name&What it evidences&Cross reference to document.\\
         \hline
         1&&Movement Testing&\\
-        2&&Player Attack System and Enemies that damage the player&\\
-
+        \hline
+        2&&\mr{1}{5cm}{Player Attack System and Enemies that damage the player}&\\
+        &&&\\
+        \hline
+        3&&Login Forms Testing&\\
+        \hline
+        4&&Chest and Door Testing&\\
+        \hline
+        5&&UI testing&\\
+        \hline
+        6&&Procedural Generation Testing&\\
+        \hline
+        7&&Stakeholder Feedback 1&\\
+        \hline
+        8&&Stakeholder Feedback 2&\\
+        \hline
+        9&&Stakeholder Feedback 3&\\
         \hline
 \end{tabular}
 \newpage
