@@ -2953,7 +2953,7 @@ def _ready():
         \textbf{Successfull:}\\
         The Database and functions part of the Login System is evidenced through my testing plan for the Database and the forms is evidenced through the video testing here$^{[3]}$.\\
         6.1 is implemented using the j\_hash function and the gen\_salt function to store unique salt for every user and use that to hash the passwords, the j\_hash uses a combination of sha256 and md5 to hash the password while sprinkling the salt throughout by adding it onto the end making sure the hash will always end up the same length.\\
-        6.2 is implemented with the users table in the SQL database, this table stores the usernames, passwords, salt and challenge question answer, there is also several SQL queries to store and fetch data from the users table.\\
+        6.2 is implemented with the users table in the SQL database, this table stores the usernames, passwords, salt and challenge question answer, there is also several SQL queries to store and fetch data from the users table the SQL table is automatically created if it does not exist on the game starting up.\\
         6.3 is implemented with the create\_account function which validates unique usernames, this function is used with the create account form which provides a user input form to input the username, password, challenge question answer and confirm the password to create the account while displaying errors. The challenge question was chosen to be "what was name of your first school?" as this will most likely have an answer for a majority of people playing the game.\\
         6.5 is implemented through the use of godot's query\_with\_bindings this takes in bindings for the SQL query and sanitises them first to stop escape chars from getting through.\\
         6.6 is implemented through the login function in the database script which checks the username and if it is valid will hash the password with the salt and check if it matches the stored password hash before logging the user in if it is correct or returning a relevant error if it fails any of the checks. This login function is used within a login form which provides inputs for all the fields necessary to login aswell as a button to attempt it.\\
@@ -3097,7 +3097,13 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
-
+        Most of the inventory functions are in the inventory.gd and the database.gd script which is tested through my testing plan there and the UI of it is evidenced in the UI testing here$^{[5]}$.\\
+        12.1 is implemented similarily to the other UI, there is a canvas layer that pops up and paused the proccess scripts of all the enemies and player upon pressing the inventory key, this layer contains a ScrollContainer for the inventory items aswell as buttons for binning an item, equipping an item and logging out (requested by stakeholders). The ScrollContainer is set up using the list of items from the get\_stored\_items function it then uses their display strings in order to display them all on buttons 4 across (using a HBoxContainer) and scrolling down (using a VBoxContainer) this creates a scrollable inventory to view all the items.\\
+        12.2 is implemented through fulfilling 12.6 and through storing the paths to the item resource file in the SQL table so that you can fetch all the information about the resource from loading it from the path.\\
+        12.3 is implemented through the use of godot's \_input function it catches when the inventory action (E key) is pressed and then pauses the other scripts and instantiates the InventoryUI scene.\\
+        12.4 is implemented through the use of the equip\_item function which uses SQL queries to change the equipped item in a slot in the save\_data SQL table aswell as the unequip\_item function to add the previously equipped item back into the stored\_items SQL table. It also removes the item equipped from the stored items table using the remove\_stored\_item function. These functions are attatched to the equip item button in the InventoryUI scene which will take the last selected item button and equip it using the function.\\
+        12.5 is implemented through the database.gd file, specifically the get\_stored\_items function (Gets an array of the stored items for the save) the get\_stored\_item\_amount function which is used in the remove\_stored\_item function to see if there is enough of the item to remove. There is also the add\_stored\_item function. These functions interact with the stored\_items SQL table in order to update the items stored there.\\
+        12.6 is implemented through the stored\_items and save\_data SQL tables, these tables are created using SQL queries to store all the stored\_items and equipped\_items respectively and store them through the use of storing the path to the item resource. These tables are automatically created if they do not exist on the game startup\\
         \begin{tabular}{|c|c|c|c|}
                 \hline
                 Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
@@ -3110,11 +3116,15 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
+        Criteria 13 was a desireable criteria and so was not implemented due to lack of time and due to the fact that there wasn't any sounds implemented in the game yet to control the volume of.\\
+        13.1 If I had the time 13.1 would be implemented through a UI menu similar to the InventoryUI based on a CanvasLayer that would pause the game processes when they key to open it is pressed. I would use godot's sliders for toggling difficulty, add a button for toggling hardcore which would use SQL queries to update the save\_data table and a button to quit to the save menu.\\
+        13.2 If I had the time and implemented audio I would make sure I implemented the audio by using godot's AudioServer to manage the AudioBuses for the different types of audio (music, sound effects etc) which allows me to control the volumes seperately. I would then add a slide for each audio bus to the settings UI and make it so upon the slider value being set it would change the volume value of the relevant bus on the AudioServer.\\
+        13.3 If I had the time I would add a dropdown menu with different settings for the colours of the game, I would add a tint setting through the use of a CanvasItemShader on a CanvasLayer then use godot's shader coding in order to code a shader that shifts the colour of the pixels towards the relevant colour. I could also add a vibrancy slider through another shader that keeps the ratio's of colours RGB values but decreases the values overall to create less vibrant colours.\\
         \begin{tabular}{|c|c|c|c|}
                 \hline
                 Criteria \# & Abstraction & Success Criteria &\red{Not}/\yellow{Partially}/\green{Fully} Met\\
                 \hline
-                14&\mr{2}{2cm}{Difficulty Levels and Hardcore Mode}&\mr{2}{6cm}{14.1 A slider for difficulty in create save\\14.2 Increasing difficulty based on the slider\\\tab 14.2.1 Increasing enemy health\\\tab 14.2.2 Decreasing player health\\\tab 14.2.3 Increasing number of \tab enemies\\14.3 A Hardcore mode at maximum difficulty with a seperate save state to the normal game.\\\tab 14.3.1 roguelike features \tab (permadeath, resource \tab management, etc)\\14.4 SQL table to store different saves}&\mr{2}{6cm}{14.1 \f\\14.2.1 \f\\14.2.2 \n\\14.2.3 \f\\14.3 \n\\14.4 \f\\}\\
+                14&\mr{2}{2cm}{Difficulty Levels and Hardcore Mode}&\mr{2}{6cm}{14.1 A slider for difficulty in create save\\14.2 Increasing difficulty based on the slider\\\tab 14.2.1 Increasing enemy health\\\tab 14.2.2 Decreasing player health\\\tab 14.2.3 Increasing number of \tab enemies\\14.3 A Hardcore mode at maximum difficulty with a seperate save state to the normal game.\\\tab 14.3.1 roguelike features \tab (permadeath, resource \tab management, etc)\\14.4 SQL table to store different saves}&\mr{2}{6cm}{14.1 \f\\14.2.1 \f\\14.2.2 \n\\14.2.3 \p\\14.3 \n\\14.4 \f\\}\\
                 &&&\\
                 &&&\\
                 &&&\\
@@ -3131,7 +3141,15 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
+        \textbf{Successfull:}\\
+        My evidence of setting difficulty levels and hardcore mode can be seen in the login forms testing here$^{[3]}$.\\
+        14.1 is implemented through Godot's slider in the save menu scene used to set the difficulty from which the value is saved in the save\_data table for use when creating a new save.\\
+        14.2.1 is implemented through the \_ready function in the room scripts which sets all the enemies in a room to have a health that increases as the level and difficulty increase.\\
+        14.4 is implemented through the save\_data table which stores the save\_id, user\_id, difficulty, equipped\_items and wether the save is hardcore. This table is automatically created in the database if it does not exist on startup.\\
+        \textbf{Partially/Unsuccessfull:}\\
+        14.2.2 was not met due to lack of time however it would have been reasonably easy to implement through setting the players health to decrease based on the difficulty but never end up at zero with a function like $\text{health} = \frac{100}{\sqrt{\text{difficulty}}}$ running on the player being loaded in to set the health.\\
         \subsection{Stakeholder Feedback 3}
+        \subsection{Final Evaluation}
 \newpage
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
