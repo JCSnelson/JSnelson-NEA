@@ -52,6 +52,7 @@ func _on_equip_button_pressed() -> void:
 func _on_bin_button_pressed() -> void:
 	if selected != "":
 		Database.remove_stored_item(selected)
+		refresh()
 
 
 func _on_log_out_button_pressed() -> void:

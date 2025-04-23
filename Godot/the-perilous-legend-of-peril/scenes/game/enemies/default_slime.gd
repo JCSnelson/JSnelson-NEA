@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		move_and_slide()
 	
-	#Attacks plauer if collides with them and can attack
+	#Attacks player if collides with them and can attack
 	if can_attack:
 		for i in range(get_slide_collision_count()):
 			var collision = get_slide_collision(i)

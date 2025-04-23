@@ -1986,6 +1986,15 @@ def _ready():
         \end{figure}
         This script is similar to pseudocode with the string formatting changed to work in godot and the code to load the save list moved to another function so the save list can be reloaded every time a new save is added aswell as a function linked to the Difficulty slider to update the Difficulty label.\\
         \newpage
+        \subsection{Video Testing (Login Forms)}
+        I initially tested the login forms and save menu in the video here$^{[2]}$.
+        The Login Forms did their function perfectly however the save menu kept the previous save data in the list when calling the \_load\_list function for the second time. To fix this I added a loop at the start of the function to get rid of all the children of the VBoxContainer.\\
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/SaveMenu_fix.PNG}
+                \caption{Script Fix}
+        \end{figure}
+        I then tested the save menu again here$^{[3]}$ and it worked just fine.\\
         \subsection{Item Development}
         I will use resource scripts in order to implement the item classes and I will export the variables so that when I create new resources I can set the values.\\
         In order to export the armour\_type, body\_part, charm\_type, weapon\_type and damage\_type I will use an enum as it can only take one of the values in the list. This means the variables will take the form of an integer instead of a string.\\
@@ -2335,6 +2344,11 @@ def _ready():
                 \caption{Physics Layer on TileMap}
         \end{figure}
         I added a TileMap using Godot's TileMap node and a free dungeon tileset painting a physics layer on the walls so that the player and enemies will collide with them. I can add this as a child to any scene and use it to place individual tiles and build level/room structures. I only added physics layers to the wall and floor tiles as I will only use them.\\
+        \subsection{Video Testing (Movement and TileMap)}
+        In the video here$^{[1]}$ I have documented my testing of the player movement, moving and idle animations aswell as the TileMap within a square test level I made using the tilemap.\\
+        The Player movement was a consistent speed, smooth and worked in all 8 directions the movement direction corresponded to the keybinds accurately (1.1-1.4).\\
+        The Player animation was updated correctly depending on wether I was walking or idle and the direction I was facing.\\
+        The TileMap tiles displayed correctly and the walls correctly blocked the player movement through them even in the corners.\\
         \subsection{Dummy Development}
         \begin{multicols}{3}
                 \begin{figure}[H]
@@ -2381,6 +2395,13 @@ def _ready():
                 \includegraphics[width = 0.6\columnwidth]{images/development/Player_attack2.PNG}
                 \caption{Updated Player Attack Function}
         \end{figure}
+        \subsection{Dash Development}
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.8\columnwidth]{images/development/Dash_script.PNG}
+                \caption{Updated Player Attack Function}
+        \end{figure}
+        For the dash development I added a clause to the input function to check for the dash input (Q Key) and then if the player could dash I would increase the player speed aswell as setting can\_dash to false momentarily before decreasing the speed it and waiting half a second for the dash cooldown before setting can\_dash to true.\\
         \subsection{Dungeon Environment Development}
         \subsubsection{Door}
         \begin{multicols}{2}
@@ -2422,6 +2443,9 @@ def _ready():
                 \caption{Script}
         \end{figure}
         \noindent The chest script is has a couple changes from the design, the addition of a locked flag aswell as making the item list a script variable so that it can be accessed from the input function and constructing the list without the use of pythonic list comprehension. I also switched from directly seeing if the player body overlaps to looping through overlapping bodies again as this wasy easier to implement and works the same.\\
+        \subsection{Video Testing (Chests and Doors)}
+        I set up my testing environment with two doors, a unlocked door and a locked one aswell as a chest that should give me the necessary key in order to unlock the door, the video can be found here$^{[5]}$.\\
+        The testing ended up as expected with the unlocked door able to unlock on the interact action (I key) the locked door would not open before I opened the chest using the interact action and then it would open.\\
         \subsection{Projectile Development}
         \subsubsection{Ranged}
         \begin{figure}[H]
@@ -2533,6 +2557,9 @@ def _ready():
                 \caption{get\_animation()}
         \end{figure}
         This is exactly the same as the designed script.
+        \subsection{Video Testing (Player Attacks and Enemies)}
+        I created a test scene with a couple enemies aswell as the player and made it so the player has automatically got an item equipped to test the player attacks and enemies in the evidence here$^{[4]}$.\\
+        The Testing was a success, the player directional attacks, different weapons all functioned as intended and the enemies attacked and tracked the player firing projectiles and moving as expected.\\
         \subsection{UI Development}
         \subsubsection{Inventory UI}
         \begin{multicols}{2}
@@ -2835,7 +2862,7 @@ def _ready():
                 \hline
         \end{tabular}
         \textbf{Successfull:}\\
-        The attack system and different weapons aswell as enemies and player taking damage can be seen here$^{[2]}$.
+        The attack system and different weapons aswell as enemies and player taking damage can be seen here$^{[4]}$.
         2.1 is implemented with the \_input() function in the player script handling inputs
         2.3 is implemented through the weapon resource class as instances and the implementation of the sword swing hurtbox detecting collisions enemies hitboxes.\\
         2.5 is implemented through the weapon resource class as instances and the implementation of the fire, ice and thunder projectiles movement and detecting collisions with enemies or the player. These projectiles are fired in the direction of the player mouse.\\
@@ -2865,7 +2892,7 @@ def _ready():
                 \hline
         \end{tabular}
         \textbf{Successfull:}\\
-        The Dungeon Environment and different rooms can be seen through the procedural generation tests here$^{[6]}$. The Doors and Chests can be seen through their tests here$^{[4]}$
+        The Dungeon Environment and different rooms can be seen through the procedural generation tests here$^{[15]}$. The Doors and Chests can be seen through their tests here$^{[13]}$
         3.1 and 3.2 are implemented through the use of a dungeon tileset that I have used to make a tilemap with physics layers on the walls so that you cannot walk through them and floor tiles for the floor.\\
         3.3 is implemented through the chest scene and script, with a dictionary to represent the item pool of the chest along with the ratios of chances of getting each item being used to construct an array from which a random item is chosed for each item to be given to the player when they player is within range of the chest and presses interact (I Key, X Button) from the chest and then the items are added to the player inventory.\\
         3.5 is implemented through the door scene and script, the door has an area2d node to detect when the player is close enough to open it, then when the player presses interact (I Key, X Button) the door will check if it is locked and the player inventory has the correct key or it is unlocked in both cases it will dissappear or optionally can change the scene. If the player does not have the key and the door is locked then the door will not react.\\
@@ -2893,7 +2920,7 @@ def _ready():
                 \hline
         \end{tabular}
         \textbf{Successfull:}\\
-        The enemies and player fighting them can be seen here$^{[2]}$.
+        The enemies and player fighting them can be seen here$^{[4]}$.
         4.1 is implemented through the use of an AnimatedSprite2D node on the different enemy scenes which displays the sprite aswell as different animations relevant to the action the enemy is doing. The animations are triggered in the enemy script.\\
         4.2 is implemented through the use of Godot's NavigationAgent2D which uses a Mesh A* algorithm on a Navigation Layer I added to all the floor tiles in the TileMap to help the enemies pathfind towards the player, giving the next corner of the journey that I have used to move the moving enemies towards the player in the script, I have also used the same direction for the projectile non-moving enemies so that they can detect which way to fire their projectiles. The delay timer godot offers allows for less lock on pathfinding only updating every few seconds to make it easier to avoid.\\
         4.3 is implemented through the use of an Area2D node and a circular CollisionShape2D this acts as the detection area for detecting the player and their is conditions in the script that only lets the melee enemies move or the projectile enemies attack when the player is within the range of their Area2D.\\
@@ -2919,7 +2946,7 @@ def _ready():
                 \hline
         \end{tabular}
         \textbf{Successfull:}\\
-        The Appearance and animations of the player can be seen in the movement test here$^{[1]}$ and the combat test here$^{[2]}$.\\
+        The Appearance and animations of the player can be seen in the movement test here$^{[1]}$ and the combat test here$^{[4]}$.\\
         5.1, 5.2 and 5.4 are all met through the use of the AnimatedSprite2D node on the player, this node allows the spriteframes to be input for each animation aswell as the frames per second of the animation, it is then activated at the relevant times using the code in the players physics process and the attack function.\\
         5.3 is implemented through the use of 8 directional animations, I used a naming convention in order to simplify the names of the animations and then I wrote a get animation function to get the name of the directional animation for the direction the player is facing of the specified type so that the animation can be played using the script.\\
         \textbf{Partially/Unsuccessfull:}\\
@@ -2951,7 +2978,7 @@ def _ready():
                 \hline
         \end{tabular}
         \textbf{Successfull:}\\
-        The Database and functions part of the Login System is evidenced through my testing plan for the Database and the forms is evidenced through the video testing here$^{[3]}$.\\
+        The Database and functions part of the Login System is evidenced through my testing plan for the Database and the forms is evidenced through the video testing here$^{[2]}$.\\
         6.1 is implemented using the j\_hash function and the gen\_salt function to store unique salt for every user and use that to hash the passwords, the j\_hash uses a combination of sha256 and md5 to hash the password while sprinkling the salt throughout by adding it onto the end making sure the hash will always end up the same length.\\
         6.2 is implemented with the users table in the SQL database, this table stores the usernames, passwords, salt and challenge question answer, there is also several SQL queries to store and fetch data from the users table the SQL table is automatically created if it does not exist on the game starting up.\\
         6.3 is implemented with the create\_account function which validates unique usernames, this function is used with the create account form which provides a user input form to input the username, password, challenge question answer and confirm the password to create the account while displaying errors. The challenge question was chosen to be "what was name of your first school?" as this will most likely have an answer for a majority of people playing the game.\\
@@ -2976,7 +3003,7 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
-        All the UI elements where implemented using godot's CanvasLayer so that they dont move when the camera moves. The UI is evidenced through the video testing here$^{[5]}$\\
+        All the UI elements where implemented using godot's CanvasLayer so that they dont move when the camera moves. The UI is evidenced through the video testing here$^{[14]}$\\
         7.1 is implemented through the use of a ProgressBar with a custom texture (red background green fill) to show the percentage of health left. The maximum value of the bar is set to the player health in the \_ready() function of the UI scene and then the current value is updated in the \_process function every frame to match the players current health.\\
         7.2 is implemented through the use of a ProgressBar with a custom texture (navy background purple fill) to show the percentage of magic left. The maximum value of the bar is set to the player magic points in the \_ready() function of the UI scene and then the current value is updated in the \_process function every frame to match the players current magic points.\\
         7.3 is implemented through creating a display string function for every item that displays the key information about it (damage, type, etc) and then taking this display string and displaying it in a label in the UI scene.\\
@@ -2997,7 +3024,7 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
-        8.1 was partially met in that I had many different styles of magic and ranged weapons (with the different projectile and area of effect types). This can be seen through the video testing of the combat system and enemies here$^{[2]}$.\\
+        8.1 was partially met in that I had many different styles of magic and ranged weapons (with the different projectile and area of effect types). This can be seen through the video testing of the combat system and enemies here$^{[4]}$.\\
         If I had extra time I would have added bows aswell as different shorter and longer ranged melee weapons by creating different sized hurtboxes and through the methods I detailed in my evaluation of criteria 2.4.\\ 
         8.2 was not met due to bosses not being implemented however I already detailed how I would implement boss drops in a similar style to the chests item pool in my evaluation of criteria 4.8.\\
         8.3 was not met due to a lack of time and due to it being only a desireable feature so I implemented other stuff first.\\
@@ -3052,7 +3079,7 @@ def _ready():
                 \hline
         \end{tabular}
         \textbf{Successfull:}\\
-        The procedural generation of the dungeons is evidenced through the testing here$^{[6]}$
+        The procedural generation of the dungeons is evidenced through the testing here$^{[15]}$
         10.1 I implemented a custom graph structure where each room/corridor is a node, these nodes have variables to store the rooms in each of the cardinal directions through aliasing, they also have a variable to store the room type, this allows me to create level requirements by creating a graph structure with all the rooms I want to be a requirement as they will have to be included every time.\\
         10.3 I implemented the algorithm in two parts, firstly in each room I designed I added nodes to mark the entrances in the cardinal directions I created functions to cap the entrances aswell as ones to get the global position and set the position of the room such that the position of an entrance lines up with a certain position, this allows me to line up entrances of rooms through getting ones position and setting anothers to line up with that position. The second part was in traversing the graph and generating the rooms, I used a recursive implementation of a depth first search to iterate through each node in the graph picking a random room of the specified type and instantiating it into the scene lining it up with the previous room in the tree.\\
         10.4.1 I implemented this by making each of the rooms of the same type be roughly the same length, this means that whenever a level is generated the length will only be between a maximum and minimum length.\\
@@ -3097,7 +3124,7 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
-        Most of the inventory functions are in the inventory.gd and the database.gd script which is tested through my testing plan there and the UI of it is evidenced in the UI testing here$^{[5]}$.\\
+        Most of the inventory functions are in the inventory.gd and the database.gd script which is tested through my testing plan there and the UI of it is evidenced in the UI testing here$^{[14]}$.\\
         12.1 is implemented similarily to the other UI, there is a canvas layer that pops up and paused the proccess scripts of all the enemies and player upon pressing the inventory key, this layer contains a ScrollContainer for the inventory items aswell as buttons for binning an item, equipping an item and logging out (requested by stakeholders). The ScrollContainer is set up using the list of items from the get\_stored\_items function it then uses their display strings in order to display them all on buttons 4 across (using a HBoxContainer) and scrolling down (using a VBoxContainer) this creates a scrollable inventory to view all the items.\\
         12.2 is implemented through fulfilling 12.6 and through storing the paths to the item resource file in the SQL table so that you can fetch all the information about the resource from loading it from the path.\\
         12.3 is implemented through the use of godot's \_input function it catches when the inventory action (E key) is pressed and then pauses the other scripts and instantiates the InventoryUI scene.\\
@@ -3142,14 +3169,25 @@ def _ready():
                 \hline
         \end{tabular}
         \textbf{Successfull:}\\
-        My evidence of setting difficulty levels and hardcore mode can be seen in the login forms testing here$^{[3]}$.\\
+        My evidence of setting difficulty levels and hardcore mode can be seen in the login forms testing here$^{[2]}$.\\
         14.1 is implemented through Godot's slider in the save menu scene used to set the difficulty from which the value is saved in the save\_data table for use when creating a new save.\\
         14.2.1 is implemented through the \_ready function in the room scripts which sets all the enemies in a room to have a health that increases as the level and difficulty increase.\\
         14.4 is implemented through the save\_data table which stores the save\_id, user\_id, difficulty, equipped\_items and wether the save is hardcore. This table is automatically created in the database if it does not exist on startup.\\
         \textbf{Partially/Unsuccessfull:}\\
-        14.2.2 was not met due to lack of time however it would have been reasonably easy to implement through setting the players health to decrease based on the difficulty but never end up at zero with a function like $\text{health} = \frac{100}{\sqrt{\text{difficulty}}}$ running on the player being loaded in to set the health.\\
+        14.2.2 was not met due to lack of time however it could have been implemented through setting the players health to decrease based on the difficulty but never end up at zero with a function like $\text{health} = \frac{100}{\sqrt{\text{difficulty}}}$ running on the player being loaded in to set the health.\\
+        14.2.3 was not partially met as instead of increasing the number of enemies I increased enemy damage which can have a similar effect and was easier to implement with the lack of time.\\
+        If I had more time I could have implemented 14.2.3 by making it so enemies had a chance to duplicate by instantiating another enemy scene upon being loaded in, this chance would be small but would increase as the difficulty increases.\\
+        14.3 was not implemented due to it being a fairly large criteria to implement for not as much benefit to stakeholders aswell as a lack of time.\\
+        I could implement several roguelike features if I had more time. Permadeath could be implemented through either deletion of the save when the player dies through an SQL query or by resetting the player back to the first level but letting them keep certain stuff such as the skill tree or certain unlockable items which would not get deleted.\\
         \subsection{Stakeholder Feedback 3}
+        Considered Maintenance issues and limitations
         \subsection{Final Evaluation}
+        Overall I feel like the NEA project was a partial success, I met most of my basic success criteria and created some amount of playable game content with features that my stakeholders where happy with in the final feedback. I did however fall short of my own expectations both in terms of implementing some of the more problem solving focused elements of the criteria aswell as ending up with a final project that felt like it had enough content and replayability in order to make it a worthwhile investment compared to alternatives my stakeholder's might consider. I feel as though I had most of the core features and building blocks set up in order to, with little extra effort, provide a more content heavy experience that could fully satisfy my stakeholder's requirements for both replayability and general intuitiveness and accessibility to new players and players with special requirements.\\
+        I do feel as though I have developed my skills, both in fluency with the concept of a long form coding project with specific requirements to fulfill and in various coding concepts both within and outside of the A level spec. I have solidified my theoretical and practical knowledge in a variety of skills within the OCR specification. Object Oriented Programming through the direct approach with my item classes using inheritance and polymorphism and the indirect ways it came into play with godot's node structure of encapsulation where nodes can contain other nodes to add functionality. Software Development life cycles, although I didnt follow a specific life cycle choosing instead to follow a mostly waterfall approach with some agile components the project helped me learn about the practical application including benifits and drawbacks of the different approaches within a stakeholder driven development process, it also helped me realise that the specific approaches are not as clear cut and many different approaches can be made through adapting elements of the specific approaches. I learn about the uses and practical implementations of alot of the common data structures and algorithms taught in Computer Science, including how the A* algorithm can be adapted to work using a general area through the use of a mesh rather than a manual graph structure which cannot support pathfinding to points inbetween the nodes. I learnt about SQL databases including many practical applications and commands need to make tables viable aswell as the different considerations to make when considering the database structure (how data needs to be accessed, normal forms, etc).\\
+
+        
+
+
 \newpage
 \section{References}
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -3186,24 +3224,30 @@ def _ready():
         \hline
         REF$\#$&Video Name&What it evidences&Cross reference to document.\\
         \hline
-        1&&Movement Testing&\\
+        1&&Movement and TileMap Testing&\\
         \hline
-        2&&\mr{1}{5cm}{Player Attack System and Enemies that damage the player}&\\
+        2&&Login Forms Testing&\\
+        \hline
+        3&&Save Menu Test 2&\\
+        \hline
+        4&&\mr{1}{5cm}{Player Attack System and Enemies that damage the player}&\\
         &&&\\
         \hline
-        3&&Login Forms Testing&\\
+        5&&Chest and Door Testing&\\
         \hline
-        4&&Chest and Door Testing&\\
+        14&&UI testing&\\
         \hline
-        5&&UI testing&\\
+        15&&Procedural Generation Testing&\\
         \hline
-        6&&Procedural Generation Testing&\\
+        16&&Player Instancing in Level Testing&\\
         \hline
-        7&&Stakeholder Feedback 1&\\
+        17&&Level 1 Testing&\\
         \hline
-        8&&Stakeholder Feedback 2&\\
+        18&&Stakeholder Feedback 1&\\
         \hline
-        9&&Stakeholder Feedback 3&\\
+        19&&Stakeholder Feedback 2&\\
+        \hline
+        20&&Stakeholder Feedback 3&\\
         \hline
 \end{tabular}
 \newpage
