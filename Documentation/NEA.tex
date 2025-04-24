@@ -2369,7 +2369,7 @@ def _ready():
         \end{multicols}
         As part of my developmental testing I decided to create a simple dummy to test weapons on. The dummy consists of a StaticBody2D with a CollisionShape2D and a Sprite2D it also has a simple script for taking damage which I have set to print damage type and damage to the console.\\
         \subsection{Stakeholder Feedback 1}
-        I got my first stakeholder feedback on 02/03/25 from Stakeholders Daniel and Samuel. I showed them my Login System and Save Select System aswell as player movement and 
+        I got my first stakeholder feedback on 02/03/25 from Stakeholders Daniel and Samuel. I showed them my Login System and Save Select System aswell as player movement and got their feedback. The video can be found here$^{[10]}$.
         \subsubsection{Login System and Save Menu}
         During the Demo of the Login System and Save Menu Samuel got stuck on the Save Menu and had to restart to log out, to fix this I added a simple Logout Button to the Save Menu which switches the scene back to the login page to allow login as another account.\\
         \begin{figure}[H]
@@ -2641,6 +2641,9 @@ def _ready():
                 \caption{Script}
         \end{figure}
         This is in the input script if the help button is pressed it displays the help menu, pauses the tree and waits till the help button is pressed again before getting rid of the help menu and unpausing the tree.\\
+        \subsection{Video Testing (UI)}
+        For the UI testing I set up an environment where the player can gain items to test all the functions of the Inventory UI I made it so I was able to equip magic weapons to use up magic points and so I could take damage and deal damage to an enemy to view both HealthBars.\\
+        The UI testing can be found here$^{[6]}$ and overall went well with all the individual parts of the UI functioning as expected.\\
         \subsection{Tutorial Development}
         For the tutorial I tried to introduce all the mechanics I had made in the game to the player in a series of small challenges, guiding them along with labels introducing controls etc.\\
         \begin{multicols}{2}
@@ -2670,7 +2673,7 @@ def _ready():
         Fighting different enemy types.\\ 
         Unlocking the final door and chest using keys gained from the chest in the main room and then trying out a magic Area of Effect weapon (Fire).\\
         \subsection{Stakeholder Feedback 2}
-        In this stakeholder feedback I showed stakeholders my improvements based on their feedback from last time aswell as the tutorial and features implemented there.\\
+        In this stakeholder feedback I showed stakeholders my improvements based on their feedback from last time aswell as the tutorial and features implemented there. The video can be found here$^{[11]}$\\
         \subsubsection{Dropped Features}
         Several Features had to be dropped due to time constraints.\\
         I removed the secondary attack from the help menu due to the fact it wasnt necessary and couldnt be implemented within time constraints aswell as the fact it confused stakeholders.\\
@@ -2810,7 +2813,7 @@ def _ready():
                         \caption{dungeon\_3()}
                 \end{figure} 
         This is the dungeon generation functions.\\
-        There is video evidence of running the test functions to generate here$^{reference}$ and testing player loading in here$^{reference}$.
+        There is video evidence of running the test functions to generate here$^{[7]}$ and testing player loading in here$^{[8]}$.
         \subsubsection{Level 1}
         For Level 1 I combined a bunch of the different techniques I found with the testing into a level and added an end to the level.\\
         \begin{figure}[H]
@@ -2818,7 +2821,7 @@ def _ready():
                 \includegraphics[width = 0.8\columnwidth]{images/development/Level1_script.PNG}
                 \caption{Script}
         \end{figure}
-        There is video evidence of generation in Level 1 and player loading in here$^{reference}$
+        There is video evidence of generation in Level 1 and player loading in here$^{[9]}$
         \newpage
         \section{Evaluation}
         \subsection{Success Criteria}
@@ -2892,7 +2895,7 @@ def _ready():
                 \hline
         \end{tabular}
         \textbf{Successfull:}\\
-        The Dungeon Environment and different rooms can be seen through the procedural generation tests here$^{[15]}$. The Doors and Chests can be seen through their tests here$^{[13]}$
+        The Dungeon Environment and different rooms can be seen through the procedural generation tests here$^{[7]}$, here$^{[8]}$ and here$^{[9]}$. The Doors and Chests can be seen through their tests here$^{[13]}$
         3.1 and 3.2 are implemented through the use of a dungeon tileset that I have used to make a tilemap with physics layers on the walls so that you cannot walk through them and floor tiles for the floor.\\
         3.3 is implemented through the chest scene and script, with a dictionary to represent the item pool of the chest along with the ratios of chances of getting each item being used to construct an array from which a random item is chosed for each item to be given to the player when they player is within range of the chest and presses interact (I Key, X Button) from the chest and then the items are added to the player inventory.\\
         3.5 is implemented through the door scene and script, the door has an area2d node to detect when the player is close enough to open it, then when the player presses interact (I Key, X Button) the door will check if it is locked and the player inventory has the correct key or it is unlocked in both cases it will dissappear or optionally can change the scene. If the player does not have the key and the door is locked then the door will not react.\\
@@ -3003,7 +3006,7 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
-        All the UI elements where implemented using godot's CanvasLayer so that they dont move when the camera moves. The UI is evidenced through the video testing here$^{[14]}$\\
+        All the UI elements where implemented using godot's CanvasLayer so that they dont move when the camera moves. The UI is evidenced through the video testing here$^{[6]}$\\
         7.1 is implemented through the use of a ProgressBar with a custom texture (red background green fill) to show the percentage of health left. The maximum value of the bar is set to the player health in the \_ready() function of the UI scene and then the current value is updated in the \_process function every frame to match the players current health.\\
         7.2 is implemented through the use of a ProgressBar with a custom texture (navy background purple fill) to show the percentage of magic left. The maximum value of the bar is set to the player magic points in the \_ready() function of the UI scene and then the current value is updated in the \_process function every frame to match the players current magic points.\\
         7.3 is implemented through creating a display string function for every item that displays the key information about it (damage, type, etc) and then taking this display string and displaying it in a label in the UI scene.\\
@@ -3079,7 +3082,7 @@ def _ready():
                 \hline
         \end{tabular}
         \textbf{Successfull:}\\
-        The procedural generation of the dungeons is evidenced through the testing here$^{[15]}$
+        The procedural generation of the dungeons is evidenced through the testing here$^{[7]}$
         10.1 I implemented a custom graph structure where each room/corridor is a node, these nodes have variables to store the rooms in each of the cardinal directions through aliasing, they also have a variable to store the room type, this allows me to create level requirements by creating a graph structure with all the rooms I want to be a requirement as they will have to be included every time.\\
         10.3 I implemented the algorithm in two parts, firstly in each room I designed I added nodes to mark the entrances in the cardinal directions I created functions to cap the entrances aswell as ones to get the global position and set the position of the room such that the position of an entrance lines up with a certain position, this allows me to line up entrances of rooms through getting ones position and setting anothers to line up with that position. The second part was in traversing the graph and generating the rooms, I used a recursive implementation of a depth first search to iterate through each node in the graph picking a random room of the specified type and instantiating it into the scene lining it up with the previous room in the tree.\\
         10.4.1 I implemented this by making each of the rooms of the same type be roughly the same length, this means that whenever a level is generated the length will only be between a maximum and minimum length.\\
@@ -3124,7 +3127,7 @@ def _ready():
                 &&&\\
                 \hline
         \end{tabular}
-        Most of the inventory functions are in the inventory.gd and the database.gd script which is tested through my testing plan there and the UI of it is evidenced in the UI testing here$^{[14]}$.\\
+        Most of the inventory functions are in the inventory.gd and the database.gd script which is tested through my testing plan there and the UI of it is evidenced in the UI testing here$^{[6]}$.\\
         12.1 is implemented similarily to the other UI, there is a canvas layer that pops up and paused the proccess scripts of all the enemies and player upon pressing the inventory key, this layer contains a ScrollContainer for the inventory items aswell as buttons for binning an item, equipping an item and logging out (requested by stakeholders). The ScrollContainer is set up using the list of items from the get\_stored\_items function it then uses their display strings in order to display them all on buttons 4 across (using a HBoxContainer) and scrolling down (using a VBoxContainer) this creates a scrollable inventory to view all the items.\\
         12.2 is implemented through fulfilling 12.6 and through storing the paths to the item resource file in the SQL table so that you can fetch all the information about the resource from loading it from the path.\\
         12.3 is implemented through the use of godot's \_input function it catches when the inventory action (E key) is pressed and then pauses the other scripts and instantiates the InventoryUI scene.\\
@@ -3235,19 +3238,19 @@ def _ready():
         \hline
         5&&Chest and Door Testing&\\
         \hline
-        14&&UI testing&\\
+        6&&UI testing&\\
         \hline
-        15&&Procedural Generation Testing&\\
+        7&&Procedural Generation Testing&\\
         \hline
-        16&&Player Instancing in Level Testing&\\
+        8&&Player Instancing in Level Testing&\\
         \hline
-        17&&Level 1 Testing&\\
+        9&&Level 1 Testing&\\
         \hline
-        18&&Stakeholder Feedback 1&\\
+        10&&Stakeholder Feedback 1&\\
         \hline
-        19&&Stakeholder Feedback 2&\\
+        11&&Stakeholder Feedback 2&\\
         \hline
-        20&&Stakeholder Feedback 3&\\
+        12&&Stakeholder Feedback 3&\\
         \hline
 \end{tabular}
 \newpage
