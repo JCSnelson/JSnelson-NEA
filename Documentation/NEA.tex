@@ -657,14 +657,14 @@
 \section{Design \& Plan}
         \subsection{Overview}
         \subsubsection{Global Variables}
-        I have a couple of main global variable scripts Global, Inventory, Database etc.\\
+        I have a couple of main global scripts global.gd, inventory.gd and databse.gd, this is because they will provide key functions that will be needed in throughout different of parts of the game. These scripts will be automatically loaded at the start of the game using godot's autoload feature. The global variables are the variables within the scripts that will be used throughout the game by external scripts.\\
         \begin{tabular}{|c|c|c|c|}
                 \hline
                 Source&Identifier&Data Type&Justification\\
                 \hline
-                global.gd&difficulty&Integer&Needed for deciding enemy health/damage etc.\\
+                global.gd&difficulty&Integer&Needed for deciding enemy health/damage .\\
                 \hline
-                global.gd&current\_level&Integer&Needed for deciding enemy health/damage etc.\\
+                global.gd&current\_level&Integer&Needed for deciding enemy health/damage.\\
                 \hline
                 database.gd&current\_user\_id&Integer&Used for SQL queries after having logged in.\\
                 \hline
@@ -677,14 +677,14 @@
                 \includegraphics[width = 0.3\textwidth]{images/design/File_System.PNG}
                 \caption{Folder Structure}
         \end{figure}
-        I chose this folder structure as it will allow me to clearly define where all the different parts of the game are aswell as easily being able to access the closely related parts.\\
+        I chose this folder structure as it will allow me to clearly define where all the different parts of the game are aswell as easily being able to access the closely related parts. This will aid in the development process as the different parts will be easily navigable and findable.\\
         The assets folder will contain all of the external assets, sprites, spritesheets and audio.\\
         The resources folder will contain all of the items (weapons, armour, keys and charms) that I will make to be included in the game.\\
         The scenes folder will contain all the scenes for the menu and the game sorted into their respective folders.\\
         The src folder will contain all of the preloaded scripts for the game.\\
         the utils folder will contain any testing or debugging scripts/scenes to help with the development process.\\
         \subsubsection{Naming Convention}
-        For naming I conventions I will adopt the naming conventions already used in godot for ease of integration, readability and consistency with documentation.\\
+        For naming I conventions I will adopt the naming conventions already used in godot for ease of integration, readability and consistency with documentation. This will allow for a more seamless development integrating my features and godot's features without getting confused.\\
         The naming conventions are as follows.\\
         \begin{tabular}{|c|c|c|}
                 \hline
@@ -705,9 +705,8 @@
                 Constants&CONSTANT\_CASE&\\
                 \hline
         \end{tabular}
-        \newpage
         \subsection{Database Design}
-        I will be using an SQL Database in order to store the data about my users.\\
+        I will be using an SQL Database in order to store the data about my users and their game saves.\\
         \subsubsection{ERD}
         \begin{figure}[H]
                 \centering
@@ -717,7 +716,7 @@
         Figure 2 shows the Database Design:\\
         The users table will be the main table containing all the login details.\\
         Each user will be able to have multiple save instances which will be stored in save data.\\
-        Upon designing the inventory I have decided that I will split the inventory into the stored items which I will use a seperate table to store with the item\_id (the path to the item resources location in the game files) as a primary composite key with the save \_id aswell as storing the equipped items in the save\_data table. I have also decided to split the composite key in the save\_data table and just have the save\_id as the primary key autoincrementing. This will help keep the inventory more accessible and prevent the need for a BLOB decoder.\\
+        Upon designing the inventory system I have decided that I will split the inventory into the stored items which I will use a seperate table to store with the item\_id (the path to the item resources location in the game files) as a primary composite key with the save \_id aswell as storing the equipped items in the save\_data table. I have also decided to split the composite key in the save\_data table and just have the save\_id as the primary key autoincrementing. This will help keep the inventory more accessible and prevent the need for a BLOB decoder to decode the inventory components allowing ease of access to all the stored and equipped items.\\
         \begin{figure}[H]
                 \centering
                 \includegraphics[width=\textwidth, trim = 0 525 0 25, clip]{images/design/Database_Design_Second.pdf}
@@ -730,7 +729,7 @@
                 Abstract&Convention&Examples&Justification\\
                 \hline\
                 &&&\\
-                Tables&Plural snake\_case&users,save\_data&\mr{7}{4cm}{SQL is case insensitive so with CamelCase it cann't tell the difference between undervalue and underValue}\\
+                Tables&Plural snake\_case&users,save\_data&\mr{7}{4cm}{SQL is case insensitive so with CamelCase it can't tell the difference between undervalue and underValue thereofre I use the underscores to distinguish words.}\\
                 &&&\\
                 \cline{1-3}
                 &&&\\
@@ -743,12 +742,12 @@
                 \hline
         \end{tabular}       
         \subsubsection{SQL Queries}
-        I have to write Queries for each of the actions I want to do.\\
+        I have to write Queries for each of the actions I want to do. These queries are necesary for the login system criteria aswell as the Inventory system as they will allow me to read, write and store user data.\\
         \begin{tabular}{|c|c|c|}
                 \hline
                 Name&Description/Justification&SQL\\
                 \hline
-                \mr{2}{3.5cm}{create\_table\_users}&\mr{2}{3cm}{Create's a table for users if it does not exist.}&\mr{2}{9.5cm}{\texttt{CREATE TABLE IF NOT EXISTS users (\\\tab user\_id INTEGER PRIMARY KEY AUTOINCREMENT,\\\tab username VARCHAR(15) NOT NULL,\\\tab password VARCHAR(64) UNIQUE NOT NULL,\\\tab salt VARCHAR(64) NOT NULL,\\\tab answer VARCHAR(64) NOT NULL\\);}}\\
+                \mr{2}{3.5cm}{create\_table\_users}&\mr{2}{3cm}{Create's a table for users if it does not exist. Necessary for creating the table for criteria 6.2.}&\mr{2}{9.5cm}{\texttt{CREATE TABLE IF NOT EXISTS users (\\\tab user\_id INTEGER PRIMARY KEY AUTOINCREMENT,\\\tab username VARCHAR(15) NOT NULL,\\\tab password VARCHAR(64) UNIQUE NOT NULL,\\\tab salt VARCHAR(64) NOT NULL,\\\tab answer VARCHAR(64) NOT NULL\\);}}\\
                 &&\\
                 &&\\
                 &&\\
@@ -757,24 +756,7 @@
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{get\_user\_data}&\mr{2}{3cm}{Returns the user data assuming it exists. If it doesnt it will return null.}&\mr{2}{9.5cm}{\texttt{SELECT * FROM users\\WHERE username = ?;}}\\
-                &&\\
-                &&\\
-                &&\\
-                \hline
-                \mr{2}{3.5cm}{add\_new\_user}&\mr{1}{3cm}{Inserts a new user into users with username, password, challenge question answer and salt}&\mr{2}{9.5cm}{\texttt{--Assume hashed password and answer\\INSERT INTO\\users(username,password,answer,salt)\\VALUES (?,?,?,?);}}\\
-                &&\\
-                &&\\
-                &&\\
-                &&\\
-                &&\\
-                \hline
-                \mr{2}{3.5cm}{reset\_password}&\mr{2}{3cm}{Changes a users password}&\mr{2}{9.5cm}{\texttt{--Assume hashed password and answer\\UPDATE TABLE users\\SET password = ?\\WHERE username = ?}}\\
-                &&\\
-                &&\\
-                &&\\
-                \hline
-                \mr{3}{3.5cm}{create\_table\_save\_data}&\mr{2}{3cm}{Create's a table for save\_data if it does not exist.}&\mr{2}{9.5cm}{\texttt{CREATE TABLE IF NOT EXISTS save\_data (\\\tab save\_id INTEGER AUTOINCREMENT,\\\tab FOREIGN KEY (user\_id) REFERENCES users(user\_id),\\\tab difficulty INTEGER,\\\tab hardcore INTEGER,\\\tab level INTEGER,\\\tab head VARCHAR(32),\\\tab chest VARCHAR(32),\\\tab legs VARCHAR(32),\\\tab weapon VARCHAR(32),\\\tab charm\_1 VARCHAR(32),\\\tab charm\_2 VARCHAR(32)\\);\\}}\\
+                \mr{2}{3.5cm}{get\_user\_data}&\mr{2}{3cm}{Returns the user data assuming it exists. If it doesnt it will return null. Necessary for getting the hashed password to check login credentials for criteria 6.6 aswell as getting the hashed challenge answer for criteria 6.7.}&\mr{2}{9.5cm}{\texttt{SELECT * FROM users\\WHERE username = ?;}}\\
                 &&\\
                 &&\\
                 &&\\
@@ -788,19 +770,89 @@
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{add\_new\_save\_data}&\mr{2}{3cm}{Adds new save data for a user.}&\mr{2}{9.5cm}{\texttt{INSERT INTO\\save\_data(user\_id,difficulty,hardcore,level)\\VALUES (?,?,?,?);}}\\
+                \mr{2}{3.5cm}{add\_new\_user}&\mr{1}{3cm}{Inserts a new user into users with username, password, challenge question answer and salt. Necessary for creating a new user for criteria 6.3}&\mr{2}{9.5cm}{\texttt{--Assume hashed password and answer\\INSERT INTO\\users(username,password,answer,salt)\\VALUES (?,?,?,?);}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{get\_save\_data}&\mr{2}{3cm}{Get's the save data with a specific user\_id and save\_id}&\mr{2}{9.5cm}{\texttt{SELECT * FROM save\_data\\WHERE user\_id = ?\\AND save\_id = ?;}}\\
+                \mr{2}{3.5cm}{reset\_password}&\mr{2}{3cm}{Changes a users password. Necessary for criteria 6.7.}&\mr{2}{9.5cm}{\texttt{--Assume hashed password and answer\\UPDATE TABLE users\\SET password = ?\\WHERE username = ?}}\\
                 &&\\
-                &&\\
-                \hline
-                \mr{2}{3.5cm}{get\_user\_save\_data}&\mr{2}{3cm}{Get's the save data for all entries with a specific user\_id}&\mr{2}{9.5cm}{\texttt{SELECT level, hardcore FROM save\_data\\WHERE user\_id = ?;}}\\
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{3.5cm}{update\_save\_data}&\mr{2}{3cm}{Update's the save data with the new data.}&\mr{2}{9.5cm}{\texttt{UPDATE save\_data\\SET\\\tab head = ?,\\\tab chest = ?,\\\tab legs = ?,\\\tab weapon = ?,\\\tab charm\_1 = ?,\\\tab charm\_2 = ?,\\\tab level = ?\\WHERE\\\tab user\_id = ?\\AND save\_id = ?;}}\\
+                \mr{3}{3.5cm}{create\_table\_save\_data}&\mr{2}{3cm}{Create's a table for save\_data if it does not exist. Necessary for creating the table for criteria 14.4 and part one of the two tables for criteria 12.6 (storing equipped items).}&\mr{2}{9.5cm}{\texttt{CREATE TABLE IF NOT EXISTS save\_data (\\\tab save\_id INTEGER AUTOINCREMENT,\\\tab FOREIGN KEY (user\_id) REFERENCES users(user\_id),\\\tab difficulty INTEGER,\\\tab hardcore INTEGER,\\\tab level INTEGER,\\\tab head VARCHAR(32),\\\tab chest VARCHAR(32),\\\tab legs VARCHAR(32),\\\tab weapon VARCHAR(32),\\\tab charm\_1 VARCHAR(32),\\\tab charm\_2 VARCHAR(32)\\);\\}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3.5cm}{add\_new\_save\_data}&\mr{2}{3cm}{Adds new save data for a user. Necessary for criteria 14.4\\}&\mr{2}{9.5cm}{\texttt{INSERT INTO\\save\_data(user\_id,difficulty,hardcore,level)\\VALUES (?,?,?,?);}}\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+        \end{tabular}
+        \newpage
+        \[\]
+        \begin{tabular}{|c|c|c|}
+                \hline
+                Name&Description/Justification&SQL\\
+                \hline
+                \mr{2}{3.5cm}{get\_save\_data}&\mr{2}{3cm}{Get's the save data with a specific user\_id and save\_id. Necessary for fetching difficulty for criteria 14.2.}&\mr{2}{9.5cm}{\texttt{SELECT * FROM save\_data\\WHERE user\_id = ?\\AND save\_id = ?;}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3.5cm}{get\_user\_save\_data}&\mr{2}{3cm}{Get's the save data for all entries with a specific user\_id. Necessary for getting the data of all the saves to display in the save selection/creation menu.}&\mr{2}{9.5cm}{\texttt{SELECT level, hardcore FROM save\_data\\WHERE user\_id = ?;}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{3.5cm}{update\_save\_data}&\mr{2}{3cm}{Update's the save data with the new data. Necessary to change save difficulty if needed.}&\mr{2}{9.5cm}{\texttt{UPDATE save\_data\\SET\\\tab head = ?,\\\tab chest = ?,\\\tab legs = ?,\\\tab weapon = ?,\\\tab charm\_1 = ?,\\\tab charm\_2 = ?,\\\tab level = ?\\WHERE\\\tab user\_id = ?\\AND save\_id = ?;}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{4.2cm}{create\_table\_stored\_items}&\mr{2}{2.5cm}{Create's a table for stored\_items if it does not exist. Necessary as the second table for criteria 12.6.}&\mr{2}{9.3cm}{\texttt{CREATE TABLE IF NOT EXISTS stored\_items (\\item\_id INTEGER NOT NULL,\\save\_id INTEGER NOT NULL,\\PRIMARY KEY(item\_id,save\_id),\\FOREIGN KEY(save\_id) REFERENCES save\_data(save\_id)\\);}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{4.2cm}{update\_stored\_item\_amount}&\mr{2}{2.5cm}{Update's a specific person's stored items to increase the amount of something stored (assumes it is stored). Necessary for adding items if the player already has some of that item for criteria 12.5.}&\mr{2}{9.3cm}{\texttt{UPDATE stored\_items\\SET amount = amount + ?\\WHERE item\_id = ?\\AND save\_id = ?;\\}}\\
+                &&\\
+                &&\\
+                &&\\
                 &&\\
                 &&\\
                 &&\\
@@ -820,14 +872,9 @@
                 \hline
                 Name&Description/Justification&SQL\\
                 \hline
-                \mr{2}{4.2cm}{create\_table\_stored\_items}&\mr{2}{2.5cm}{Create's a table for stored\_items if it does not exist.}&\mr{2}{9.3cm}{\texttt{CREATE TABLE IF NOT EXISTS stored\_items (\\item\_id INTEGER NOT NULL,\\save\_id INTEGER NOT NULL,\\PRIMARY KEY(item\_id,save\_id),\\FOREIGN KEY(save\_id) REFERENCES save\_data(save\_id)\\);}}\\
+                \mr{2}{4.2cm}{get\_stored\_item\_amount}&\mr{2}{2.5cm}{Get's the amount of an item being stored. Necessary to know wether you can remove an item from the inventory for criteria 12.5.}&\mr{2}{9.3cm}{\texttt{SELECT amount FROM stored\_items\\WHERE save\_id = ?\\AND item\_id = ?;}}\\
                 &&\\
                 &&\\
-                &&\\
-                &&\\
-                &&\\
-                \hline
-                \mr{2}{4.2cm}{update\_stored\_item\_amount}&\mr{2}{2.5cm}{Update's a specific person's stored items to increase the amount of something stored (assumes it is stored)}&\mr{2}{9.3cm}{\texttt{UPDATE stored\_items\\SET amount = amount + ?\\WHERE item\_id = ?\\AND save\_id = ?;\\}}\\
                 &&\\
                 &&\\
                 &&\\
@@ -836,42 +883,58 @@
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{4.2cm}{get\_stored\_item\_amount}&\mr{2}{2.5cm}{Get's the amount of an item being stored}&\mr{2}{9.3cm}{\texttt{SELECT amount FROM stored\_items\\WHERE save\_id = ?\\AND item\_id = ?;}}\\
+                \mr{2}{4.2cm}{add\_stored\_item}&\mr{2}{2.5cm}{Adds an item to the stored\_items. Necessary for adding an item the player doesnt already have in their inventory for criteria 12.5.}&\mr{2}{9.3cm}{\texttt{INSERT INTO\\stored\_items(save\_id,item\_id,amount)\\VALUES (?,?,?);}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                \hline
+                \mr{2}{4.2cm}{count\_stored\_items}&\mr{2}{2.5cm}{Count's the number of items stored for a save\_id. Necessary if I implement a maximum item limit for the inventory.}&\mr{2}{9.3cm}{\texttt{SELECT COUNT(*)\\FROM stored\_items\\WHERE save\_id = ?;}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
                 &&\\
                 &&\\
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{4.2cm}{add\_stored\_item}&\mr{2}{2.5cm}{Adds an item to the stored\_items}&\mr{2}{9.3cm}{\texttt{INSERT INTO\\stored\_items(save\_id,item\_id,amount)\\VALUES (?,?,?);}}\\
-                &&\\
-                &&\\
-                \hline
-                \mr{2}{4.2cm}{count\_stored\_items}&\mr{2}{2.5cm}{Count's the number of items stored for a save\_id}&\mr{2}{9.3cm}{\texttt{SELECT COUNT(*)\\FROM stored\_items\\WHERE save\_id = ?;}}\\
+                \mr{2}{4.2cm}{remove\_stored\_item}&\mr{2}{2.5cm}{Removes an item from stored\_items. Necessary for if you remove all of an item for criteria 12.5.}&\mr{2}{9.3cm}{\texttt{DELETE * FROM stored\_items\\WHERE save\_id = ?\\AND item\_id = ?;}}\\
                 &&\\
                 &&\\
                 &&\\
-                \hline
-                \mr{2}{4.2cm}{remove\_stored\_item}&\mr{2}{2.5cm}{Removes an item from stored\_items}&\mr{2}{9.3cm}{\texttt{DELETE * FROM stored\_items\\WHERE save\_id = ?\\AND item\_id = ?;}}\\
-                &&\\
-                &&\\
-                \hline
-                \mr{2}{4.2cm}{get\_slot\_value}&\mr{2}{2.5cm}{Gets the file path of the item equipped in the slot}&\mr{2}{9.3cm}{\texttt{SELECT ? FROM save\_data\\WHERE save\_id = ?;}}\\
                 &&\\
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{4.2cm}{set\_slot\_value}&\mr{2}{2.5cm}{Sets the value of the slot to the file path}&\mr{2}{9.3cm}{\texttt{UPDATE save\_data\\ SET ? = ?\\WHERE save\_id = ?;}}\\
+                \mr{2}{4.2cm}{get\_slot\_value}&\mr{2}{2.5cm}{Gets the file path of the item equipped in the slot. Necessary for 12.4 and for making sure the player knows what weapon to attack with.}&\mr{2}{9.3cm}{\texttt{SELECT ? FROM save\_data\\WHERE save\_id = ?;}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
                 &&\\
                 &&\\
                 \hline
-                \mr{2}{4.2cm}{}&\mr{2}{2.5cm}{}&\mr{2}{9.3cm}{\texttt{}}\\
+                \mr{2}{4.2cm}{set\_slot\_value}&\mr{2}{2.5cm}{Sets the value of the slot to the file path given. Necessary for equipping stuff for criteria 12.4}&\mr{2}{9.3cm}{\texttt{UPDATE save\_data\\ SET ? = ?\\WHERE save\_id = ?;}}\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
+                &&\\
                 &&\\
                 \hline
         \end{tabular}
-        I will use godot's $query\_with\_bindings()$ function in order to substitute in the bindings for the ?s in the queries. This is useful as it automatically performs input sanitisation so that the system isn't vulnerable to SQL injection.\\
+        I will use godot's $query\_with\_bindings()$ function in order to substitute in the bindings for the ?s in the queries. This is useful as it automatically performs input sanitisation so that the database isn't vulnerable to SQL injection that could lose user data preventing proper storage and criteria 6.2, 12.6 and 14.4.\\
         \subsubsection{Algorithms}
         \textbf{login():}\\
-        The login function will be used to find if the user exists and then check the hashed password if it does. This will help fulfill criteria 6.6.\\
+        The login function will be used to find if the user exists and then check the hashed password if it does. This is necessary as it will help fulfill criteria 6.6 along with the login form.\\
         \begin{python}
 def login(username,password):
    query_result = get_user_data(username) #Getting user data
@@ -882,7 +945,7 @@ def login(username,password):
    return "IncorrectPasswordError" #If password doesnt match
         \end{python}
         \textbf{add\_user():}\\
-        The add\_user function will be used to generate salt for the user check if the username is unique and add the user. This will help fulfill criteria 6.3\\
+        The add\_user function will be used to generate salt for the user check if the username is unique and add the user. This is necessary as it will help fulfill criteria 6.3 along with the create account form.\\
         \begin{python}
 def add_user(username, password, answer):
    salt = gen_salt() #Generating new salt
@@ -893,7 +956,7 @@ def add_user(username, password, answer):
    return True
         \end{python}
         \textbf{reset\_password():}\\
-        The reset\_password function will be used to check if the username is valid, fetch the user data and then check if the hashed answer is the same as the stored answer before updating the stored password. This will help fulfill criteria 6.7.\\
+        The reset\_password function will be used to check if the username is valid, fetch the user data and then check if the hashed answer is the same as the stored answer before updating the stored password. This is necessary as it will help fulfill criteria 6.7 along with the reset password form.\\
         \begin{python}
 def reset_password(username, answer, password):
    query_result = get_user_data(username) #Getting user data
@@ -933,8 +996,8 @@ def reset_password(username, answer, password):
                 6.6.3&login()&"Hyrule", "Password"&\mr{2}{6cm}{"IncorrectPasswordError"}\\
                 &&&\\
                 \hline
-        \end{tabular}
-        These tests will be used to evaluate to what extent I have met the criteria and allow me to identify and fix any issues in my code.\\
+        \end{tabular}\\
+        These tests will be used to evaluate to what extent I have met the criteria to which they are indexed and allow me to specifically identify where any issues in my code are and fix them. The test data is used such that users can already exist in the database with the username and such that we test logging in with the correct and incorrect password and ressetting the password with the correct and incorrect challenge question answer.\\
         \subsection{Login System}
         \subsubsection{Activity Diagram}
         \begin{figure}[H]
@@ -944,7 +1007,7 @@ def reset_password(username, answer, password):
                 
         \end{figure}
         The login form will allow users to create accounts aswell as login with an existing account and reset a password.\\
-        Upon successful login the user will be redirected to the GAME system. This login form along with the database functions provides all the necessary UI and algorithmic elements to fulfill criteria 6.\\
+        Upon successful login the user will be redirected to the GAME system. This login form along with the database functions provides all the necessary UI and algorithms to fulfill criteria 6.\\
         \subsubsection{Algorithms}
 
         \textbf{hash():}\\
@@ -1008,14 +1071,15 @@ def gen_salt():
                         \caption{Reset Password Form}
                 \end{figure}
         \end{multicols}\[\]
-        These forms would be used in order to create an account, reset your password and login, Helping fulfill criteria 6.3, 6.6, 6.7 and 6.8.\\
+        These forms would be used in order to create an account, reset your password and login, Helping fulfill criteria 6.3, 6.6, 6.7 and 6.8 alongside the algorithms.\\
         The Password and Challenge question entries would be hidden/starred for privacy.\\
         \newpage
         \subsection{Save Select System}
-        I will implement the save select system as an additional menu for the login system in order to improve replayability to help  using a ScrollContainer with a VBoxContainer inside to create a list of scrollable items. I will get the list of saves for a given user\_id and then display them and when the button for that save is pressed the current\_save\_id will be set and the scene will be switched to the current level.\\
+        I will implement the save select system as an additional menu for the login system in order to improve replayability to help  using a ScrollContainer with a VBoxContainer inside to create a list of scrollable items. I will get the list of saves for a given user\_id and then display them and when the button for that save is pressed the current\_save\_id will be set and the scene will be switched to the current level. This will be used to fulfill criteria 14.1 aswell as creating and storing saves for criteria 14.4.\\
         In order to add new save's I will add a button for hardcore and a slider for difficulty as well as an add save button which will add the save and update the list.\\
         \subsubsection{Algorithms}
         \textbf{\_ready():}
+        This function is designed to add buttons for each save the user has to the scene in order to allow the player to select and play that save. This is necessary for the fulfillment of criteria 14.1.\\
         \begin{python}
 def _ready():
    save_data_list = get_user_save_data(current_user_id)
@@ -1034,7 +1098,7 @@ def _on_save_selected(save_data):
         \subsection{Item Design}
         I will implement the different item types using Godot's resource system. This will allow me to define properties that all items of the same type will share and I can use inheritance to allow classes to derive from a parent class.\\
         The resource system is useful as it is reusable throughout scenes and scripts and it can easily be saved and loaded from disk.\\
-        The types of items I will aim to implement will be different weapon types, charms/trinkets/amulets, armour and keys.\\
+        The types of items I will aim to implement will be different weapon types, charms/trinkets/amulets, armour and keys. This is necessary to fulfill criteria 2.3, 2.4 and 2.5 for the weapons, aswell as providing the elements of a more complex combat system and the keys will help making doors and chests that only open when you have the keys helping with criteria 3.3 and 3.5.\\
         \subsubsection{Class Diagram}
         \begin{figure}[H]
                 \centering
@@ -1043,7 +1107,7 @@ def _on_save_selected(save_data):
         \end{figure}
         \subsubsection{Algorithms}
         \textbf{attack():}\\
-        I will have a number of different weapon types that will have different attacks.\\
+        I will have a number of different weapon types that will have different attacks. These attack functions are necesarry for fulfilling the weapon criteria (2.3,2.4 and 2.5) aswell as criteria 2.1.\\
         I will implement the attack cooldown through the use of a CooldownTimer(timer node) attached to the player.\\
         Melee:\\
         I will implement the melee attack by creating a variable size hitbox(area2D) scene that can be instantiated as a child of the player in order to detect enemies that would be attacked in the range specified in the resource.\\
@@ -1099,6 +1163,7 @@ def attack():
         Upon further thought I have decided it is best to use SQL tables instead of dictionaries and use SQL queries to manage the inventory.\\
         \subsubsection{Algorithms}
         \textbf{add\_item():}\\
+        This uses the SQL query to add items to the users stored items in the stored\_items SQL table. This is necessary for criteria 12.5.\\
         \begin{python}
 def add_item(item_id: file_path, amount):
    if get_stored_item_amount(save_id, item_id) and item.stackable: #Checks if you can stack the item
@@ -1110,6 +1175,7 @@ def add_item(item_id: file_path, amount):
    return True
         \end{python}
         \textbf{remove\_item():}\\
+        This uses the SQL query to remove items from the users stored items in the stored\_items SQL table. This is necessary for criteria 12.5.\\
         \begin{python}
 def remove_item(item_id: Resource, amount: int = 1):
    if get_stored_item_amount(save_id, item_id): #If the item is in the database
@@ -1124,6 +1190,7 @@ def remove_item(item_id: Resource, amount: int = 1):
         
         \end{python}
         \textbf{unequip\_item():}\\
+        This uses the SQL query to unequip items from the users equipped item slots in the save\_data SQL table. This is necessary for criteria 12.4.\\
         \begin{python}
 def unequip_item(slot: str):
    #Checks if there is an item to unequip
@@ -1136,6 +1203,7 @@ def unequip_item(slot: str):
    return True #If not item in slot it is unequipped
         \end{python}
         \textbf{equip\_item():}\\
+        This uses the SQL query to equip items to the users equipped item slots in the save\_data SQL table. This is necessary for criteria 12.4.\\
         \begin{python}
 def equip_item(item: Resource):
         #Checks if the item is Equipable
@@ -1211,7 +1279,8 @@ def equip_item(item: Resource):
                 &&&\mr{2}{6cm}{}\\
                 &&&\\
                 \hline
-        \end{tabular}
+        \end{tabular}\\
+        These tests will be used to evaluate to what extent I have met the criteria to which they are indexed and allow me to specifically identify where any issues in my code are and fix them. The test data is chosen such that the inventory will end up full at certain points due to the testing environments custom max inventory size aswell as testing wether removing all of an item correctly removes its entry from the database. It also is chosen to test the equipping and unequipping of items in the correct slots.\\
         \newpage
         \subsection{Player Character}
         This is my design for the physical player character and sprite.\\
@@ -1230,7 +1299,7 @@ def equip_item(item: Resource):
         I have decided to add a simple Help Screen in order to allow the user to check the controls when they want a reminder. I will implement this by creating a seperate scene with a label and then when the help button is pressed I will pause the tree and instance the scene before waiting for the help button to be pressed again to unpause the scene tree and queue\_free the label.\\
         \subsubsection{Algorithms}
         \textbf{\_ready():}\\
-        The \_ready() function gets called whenever the player is instantiated in a scene and so it will be used to setup variables and the environment based on existing stuff.\\
+        The \_ready() function gets called whenever the player is instantiated in a scene and so it will be used to setup variables and the environment based on existing stuff. It is necesarry for setting up key parts of the combat system and movement system.\\
         \begin{python}
 def _ready():
         #Inventory calculates the speed based on any modifiers equipped.
@@ -1239,7 +1308,7 @@ def _ready():
         health = Global.calc_health()
         \end{python}
         \textbf{\_physics\_process(delta):}\\
-        The \_physics\_process(delta) function gets called every frame where delta is the time since the last fram and is usually used to deal with movement and physics processes.\\
+        The \_physics\_process(delta) function gets called every frame where delta is the time since the last frame and is usually used to deal with movement and physics processes. This is necesarry for handling criteria 5.2 aswell as movement of the player.\\
         \begin{python}
 def _physics_process(delta):
    direction = Input.get_vector("left", "right", "up", "down")
@@ -1252,6 +1321,7 @@ def _physics_process(delta):
    move_and_slide()
         \end{python}
         \textbf{\_input(event):}\\
+        This function handles all interrupts from player inputs I use it to call the attack function if the attack action is pressed aswell as loading the help scene and waiting till the key is pressed to deload it.\\ 
         \begin{python}
 def _input(event):
    if event.is_action_pressed('attack'):
@@ -1265,13 +1335,15 @@ def _input(event):
       help_scene.queue_free()
       get_tree().paused = false
         \end{python}
-        \textbf{attack():}
+        \textbf{attack():}\\
+        This handles the attack animation for criteria 5.4 aswell as calling the weapons attack function.\\
         \begin{python}
 def attack():
    anim_player.play(get_animation("melee"))
    Inventory.get_weapon().attack(last_direction)
         \end{python}
-        \textbf{get\_animation():}
+        \textbf{get\_animation():}\\
+        This is used to get the animation fo the type corresponding to the direction the player is facing. This is necesarry for criteria 5.3\\
         \begin{python}
 def get_animation(animation_type):
    anim = animation_type + "_"
@@ -1290,8 +1362,8 @@ def get_animation(animation_type):
         \subsection{Weapon Hurtbox}
         I will use an Area2D node with a capsule shape CollisionShape2D node attached oriented in order to encompass the sword swing area and then I will rotate it around the player dependent on the direction of attack. It will have variables for the damage and damage\_type\\
         \subsubsection{Algorithms}
-        \textbf{\_ready():}
-        This script is used to get the bodies overlapping and if they are enemies call their take\_damage function using polymorphism to decide the effect this will have on the specific enemy.\\ 
+        \textbf{\_ready():}\\
+        This script is used to get the bodies overlapping and if they are enemies call their take\_damage function using polymorphism to decide the effect this will have on the specific enemy. This is necesarry for handling attack collisions and enemies being able to track their health for criteria 4.5.\\ 
         \begin{python}
 def _ready():
    bodies = self.get_overlapping_bodies() #Get bodies in the area
@@ -1303,9 +1375,9 @@ def _ready():
         \subsubsection{Generic Tiles}
         I will use a TileMap node as that will allow me to import a spritesheet for a tilemap and define the properties of the tiles such as hitboxes and place them down easily. This will be used for criteria 3.1 and 3.2.\\
         \subsubsection{Chests}
-        I will implement Chests, the basic structure of the chest will be a StaticBody2D with a circular area2D node to tell if the player is within range to open the chest aswell as the chest sprite. Each chest will have a key path for the key needed to unlock it. The chests will have a loot pool given by a dictionary where the key is the item path and the value relates to the ratio of getting it. There will also be a variable for the amount of items given by the chest and upon opening the chest will give that many items.\\
+        I will implement Chests, the basic structure of the chest will be a StaticBody2D with a circular area2D node to tell if the player is within range to open the chest aswell as the chest sprite. Each chest will have a key path for the key needed to unlock it. The chests will have a loot pool given by a dictionary where the key is the item path and the value relates to the ratio of getting it. There will also be a variable for the amount of items given by the chest and upon opening the chest will give that many items. This is necesarry as it comes together with the key item to fulfull all of criteria 3.3.\\
         \subsubsection{Doors}
-        I will implement doors, the basic structure of the door will be using a StaticBody2D with an Area2D Node to detect if the player is infront of the door. If the player is infront of the door and if the I key is pressed the door will either dissappear revealing another room or switch the scene to another room depending on the purpose. I will export the variables for the scene to go to and wether it just dissappears or changes scene. This would fulfill all of criteria 3.5\\
+        I will implement doors, the basic structure of the door will be using a StaticBody2D with an Area2D Node to detect if the player is infront of the door. Each door will have a key path for the key needed to unlock it. If the player is infront of the door and if the I key is pressed the door will either dissappear revealing another room or switch the scene to another room depending on the purpose. I will export the variables for the scene to go to and wether it just dissappears or changes scene. This is all necesarry as it comes together with the key item to fulfill all of criteria 3.5\\
         \subsubsection{Algorithms}
         \textbf{Chest Script:}\\
         This will consist of the exported variables aswell as an input function that checks if the requirements to unlock the chest are met before generating the random items based on their probabilities which will be set up using an array and after the chest is opened then it will dissappear.\\
@@ -1329,7 +1401,7 @@ def _input(event):
    
         \end{python}
         \textbf{Door Script:}\\
-        This consists of the variables and input function that checks if they right key is pressed then it checks if the player is in the Area2D Node and if so will check if the player has the correct key perform the right action\\
+        This consists of the variables and input function that checks if they right key is pressed then it checks if the player is in the Area2D Node and if so will check if the player has the correct key and then either dissappear or load another scene. This is the algorithm to allow criteria 3.5 to be fulfilled.\\
         \begin{python}
 @export change_scene: bool
 @export scene_path: string
@@ -1355,7 +1427,7 @@ def _input(event):
         The \_on\_body\_entered function will be linked from the Area2D and will deal damage if the body is an enemy or the player.\\
         \subsubsection{Algorithms}
         \textbf{\_physics\_process(delta):}\\
-        For the ranged projectile to handle movement in rotation direction and collisions.\\
+        For the ranged projectile this will handle movement in the direction of rotation aswell as collisions. This is necessary for the ranged bow and magic staff projectiles for criteria 2.4 and 2.5.\\
         \begin{python}
 def _physics_process(delta):
    #Rotated Movement
@@ -1377,14 +1449,14 @@ def _physics_process(delta):
          queue_free()
         \end{python}
         \textbf{\_ready():}\\
-        Will set the area of effect to dissappear after a certain time
+        Will set the area of effect to dissappear after a certain time which is necessary for the area of affect attacks for criteria 2.6.
         \begin{python}
 def _ready():
    await get_tree().create_timer(time).timeout
    queue_free()
         \end{python}
         \textbf{\_on\_body\_entered(body):}\\
-        This is called by the Area2D node upon a body entering it with that body passed as a parameter so we can make it take damage if it needs to.\\
+        This is called by the Area2D node upon a body entering it with that body passed as a parameter so we can make it take damage if it needs to. This is necesarry so that the area of effect attacks properly allow the player and enemies to track their health for fulfilling criteria 2.6, 4.5 and 2.8.\\
         \begin{python}
 def _on_body_entered(body):
    if body.is_in_group("enemies") or body.is_in_group("player"): # If its an enemy or player it will damage It
@@ -1397,7 +1469,7 @@ def _on_body_entered(body):
         \subsubsection{Overview}
         For my basic enemies I have decided to go with different types of slimes representing different elements. The slimes will have animations and collisions aswell as a radius that they will detect the player and navigate towards them dealing damage upon impact. Each unique slime will deal a different damage type and have a different look.\\
         \subsubsection{Composition}
-        The root node of the slimes will be a CharacterBody2D node to allow for a physics body that can be easily moved via the script. I will then have a CollisionShape2D for collision detection aswell as an Area2D node for detecting the player. It will contain an AnimatedSprite2D for the animations.\\
+        The root node of the slimes will be a CharacterBody2D node to allow for a physics body that can be easily moved via the script. I will then have a CollisionShape2D (criteria 4.4) for collision detection aswell as an Area2D node for detecting the player. It will contain an AnimatedSprite2D for the animations.\\
         \begin{tabular}{|c|c|c|}
                 \hline
                 Identifier&Data Type&Justification\\
@@ -1416,12 +1488,12 @@ def _on_body_entered(body):
                 \hline
         \end{tabular}
         \subsubsection{Navigation}
-        Upon researching I found the godot documentation on 2D navigation$_{(6)}$ and decided to use the NavigationAgent2D node to utilise the A* algorithm, this means that I would need to add a navigation layer to my tileset to show the areas that the navigation agent can use. I decided to use a Timer node that autostarts and repeats and update the navigation path on the timeout so that the player can evade the slimes to a certain extent.\\
+        Upon researching I found the godot documentation on 2D navigation$_{(6)}$ and decided to use the NavigationAgent2D node to utilise the A* algorithm for criteria 4.2, this means that I would need to add a navigation layer to my tileset to show the areas that the navigation agent can use. I decided to use a Timer node that autostarts and repeats and update the navigation path on the timeout so that the player can evade the slimes to a certain extent.\\
         Ontop of this I used a circular CollisionShape2D with and Area2D node to detect when the player is within a certain range and pathfind towards them.\\
         \subsubsection{Animation}
-        I decided to add idle animations for all of the 4 cardinal directions aswell as idle and hurt animations. I used a get\_animation() function to get the relevant animation based on the direction.
+        I decided to add idle animations for all of the 4 cardinal directions aswell as idle and hurt animations. I used a get\_animation() function to get the relevant animation based on the direction. These animations are necesarry for the player to be able to tell what the enemy is doing aswell as seing them as part of criteria 4.1.\\
         \subsubsection{Projectile Enemies}
-        There will be some enemies that will shoot a projectile instead of navigating in the direction given by the NavigationAgent2D so that the targetting would only update every couple seconds. These enemies will be non moving enemies.\\
+        There will be some enemies that will shoot a projectile instead of navigating in the direction given by the NavigationAgent2D so that the targetting would only update every couple seconds. These enemies will be non moving enemies and are necesarry for criteria 4.7.\\
         \subsubsection{Algorithms}
         \textbf{get\_animation(animation\_type):}\\
         This gets the animation based on the type and direction.\\
@@ -1439,14 +1511,14 @@ def get_animation(animation_type: String):
 			return animation_type + "_u"
         \end{python}
         \textbf{\_ready():}\\
-        This is ran on addition to the scene tree to add the slime to the enemies group.\\
+        This is ran on the enemies addition to the scene tree to add the slime to the enemies group. This will allow the enemies to take damage from the players attack helping fulfill criteria 4.4 and 4.6.\\
         \begin{python}
 def _ready():
    add_to_group("enemies")
         \end{python}
         \textbf{\_physics\_process(delta):}\\
         Melee Enemies:\\
-        This checks if the player is within the detection range and if so moves towards them aswell as handling animations and detecting if the slime collides with the player so that the player will be damaged.\\
+        This checks if the player is within the detection range and if so moves towards them aswell as handling animations and detecting if the slime collides with the player so that the player will be damaged. This script is necessary for the movement, detection and melee attack of the enemies helping fulfill criteria 4.2, 4.3 and 4.6.\\
         \begin{python}
 def _physics_process(delta):
    move = false
@@ -1472,7 +1544,7 @@ def _physics_process(delta):
                AttackTimer.start() #Starts attack cooldown
         \end{python}
         Ranged Enemies:\\
-        This checks if the player is within detection range and if so will fire a projectile towards them.\\
+        This checks if the player is within detection range and if so will fire a projectile towards them. This is necesarry for Enemy sight range and ranged attacks aswell as the pathfinding for aiming at the player helping fulfill criteria 4.2, 4.3 and 4.7.\\
         \begin{python}
 def _physics_process(delta):
    var player_detected = false
@@ -1492,7 +1564,7 @@ def _physics_process(delta):
          AttackTimer.start() #Starts the attack cooldown
         \end{python}
         \textbf{take\_damage(damage, damage\_type):}\\
-        The take damage function will allow the enemies to take more or less damage based on weaknesses and update their health aswell as applying knockback and checking to see if the enemy should die.\\
+        The take damage function will allow the enemies to take more or less damage based on weaknesses and update their health aswell as applying knockback and checking to see if the enemy should die. This is necesarry for criteria 4.5.\\
         \begin{python}
 def take_damage(damage, damage_type):
    player = get_tree().get_first_node_in_group("player")
@@ -1510,21 +1582,21 @@ def take_damage(damage, damage_type):
       animating = false
         \end{python}
         \textbf{\_on\_navigation\_timer\_timeout():}\\
-        This will run when the navigation timer runs out and only update the navigation then to allow the enemies to not have perfect tracking so the player can avoid them easier.\\
+        This will run when the navigation timer runs out and only update the navigation then to allow the enemies to not have perfect tracking so the player can avoid them easier. This is necesarry for updating the pathfinding for criteria 4.2.\\
         \begin{python}
 def _on_navigation_timer_timeout() -> void:
    player = get_tree().get_first_node_in_group("player")
    NavigationAgent2D.set_target_position(player.global_position)
         \end{python}
         \textbf{\_on\_attack\_timer\_timeout():}\\
-        Thus function will run when the attack timer ends (1 second after an attack) to allow the enemy to attack again.\\
+        Thus function will run when the attack timer ends (1 second after an attack) to allow the enemy to attack again. This is necesarry to not allow the enemies to continously attack the player which would make the game unplayable.\\
         \begin{python}
 def _on_attack_timer_timeout():
    can_attack = True
         \end{python}
         \subsection{UI}
         \subsubsection{Display Strings}
-        In order to allow for better displaying of items I have decided to add a display string function to all items that will return nicely formatted key information about the item that can be displayed.\\
+        In order to allow for better displaying of items I have decided to add a display string function to all items that will return nicely formatted key information about the item that can be displayed. This will help with displaying items for criteria 7.3 and 12.1.\\
         \textbf{Weapon:}\\
         \begin{python}
 def display_string():
@@ -1556,7 +1628,7 @@ def display_string():
         For the weapon I have decided to display the display string in the bottom right corner. I will exclude the description of the weapon as this will take up too much screen space when displayed.\\
         \subsubsection{Algorithms}
         \textbf{Inventory UI refresh():}\\
-        This function will be called to setup the ui and refresh the ui every time an item is equipped or binned. It will set up the scrolling inventory aswell as the labells for equipped items.\\
+        This function will be called to setup the ui and refresh the ui every time an item is equipped or binned. It will set up the scrolling inventory aswell as the labells for equipped items. This is necesarry to see the stored items to remove for criteria 12.5 aswell as criteria 12.1.\\
         \begin{python}
 def refresh():
    inventory = Database.get_stored_items()
@@ -1588,7 +1660,7 @@ def refresh():
       Charm2Label.text = load(Database.get_slot_value("charm_2")).display_string()
         \end{python}
         \textbf{Inventory UI \_select():, equip button and bin button}\\
-        The select and button functions make use of script variables or exisiting inventory functions to perform their purposes.\\
+        The select and button functions make use of script variables or exisiting inventory functions to perform their purposes. These are necesarry for equipping and removing items for criteria 7.5, 12.4 and 12.5.\\
         \begin{python}
 def _select(item_id):
    selected = item_id
@@ -1603,7 +1675,7 @@ def _on_bin_button_pressed():
       Database.remove_stored_item(selected)
         \end{python}
         \textbf{Game UI script}\\
-        The Game UI script will consist of a \_ready function that sets the maximum player health and magic points, an update\_ui function that is called in the \_ready function and a \_process function that is called every frame to update the current player health and magic points.\\
+        The Game UI script will consist of a \_ready function that sets the maximum player health and magic points, an update\_ui function that is called in the \_ready function and a \_process function that is called every frame to update the current player health and magic points. This is necesarry for displaying and updating the healthbar, magic points bar and display of the weapon being used for criteria 7.1, 7.2 and 7.3.\\
         \begin{python}
 def _ready():
    player = get_tree().get_first_node_in_group("player")
@@ -1637,6 +1709,7 @@ def update_ui():
         Finally the rooms will also use the \_ready() function to set all the slimes health and damage according to the level.\\
         \subsubsection{Algorithms}
         \textbf{DungeonGraphNode Script:}\\
+        This sets up the necesarry variables.\\
         \begin{python}
 class_name DungeonGraphNode
 north: DungeonGraphNode
@@ -1646,7 +1719,7 @@ west: DungeonGraphNode
 room_type: str
         \end{python}
         \textbf{DungeonGraph \_init():}\\
-        Used to setup the root node.
+        Used to setup the root node. Necessary so that the Dungeon has a defined start.\\
         \begin{python}
 def _init():
    root = DungeonGraphNode.new()
@@ -1654,7 +1727,7 @@ def _init():
    nodes.append(root)
         \end{python}
         \textbf{DungeonGraph add\_node(onto\_index, direction, room\_type):}\\
-        Used to add a new DungeonGraphNode to the DungeonGraph in the direction specified onto the DungeonGraphNode at the index specified with the room type specified.\\
+        Used to add a new DungeonGraphNode to the DungeonGraph in the direction specified onto the DungeonGraphNode at the index specified with the room type specified. Is necesarry for building level structure and requirements for criteria 10.1 and 10.4.1.\\
         \begin{python}
 def add_node(onto_index, direction, room_type):
    onto = nodes[onto_index]
@@ -1668,7 +1741,7 @@ def add_node(onto_index, direction, room_type):
    return true
         \end{python}
         \textbf{DungeonGraph gen\_node(node, previous\_direction, previous):}\\
-        Generates the room associated with the node using the direction it came from to line up its entrance with the previous room and then return the room generated.\\
+        Generates the room associated with the node using the direction it came from to line up its entrance with the previous room and then return the room generated. This is necesarry for the generation of each room of the dungeon from the graph for criteria 10.3.\\
         \begin{python}
 def gen_room(node,previous_direction = null, previous = null):
    room = load(rooms[node.room_type].pick_random()).instantiate() #Picks the random room from the list of that type and instantiates it
@@ -1681,7 +1754,7 @@ def gen_room(node,previous_direction = null, previous = null):
    return room #returns the generated room
         \end{python}
         \textbf{DungeonGraph gen\_dungeon(node, previous\_direction, previous, generated):}\\
-        This is a recursive implementation of a depth first search passing the previous\_direction and previous room generated to be used for the gen\_room function and using the generated list to keep track of which nodes have been processed.\\
+        This is a recursive implementation of a depth first search passing the previous\_direction and previous room generated to be used for the gen\_room function and using the generated list to keep track of which nodes have been processed. This is necesarry to traverse the graph structure getting each room to generate into the dungeon and where to generate it for criteria 10.3.\\
         \begin{python}
 def gen_dungeon(node=root, previous_direction = null, previous = null, generated = []):
    room = await gen_room(node, previous_direction, previous) #Generates current room and stores it
@@ -1692,7 +1765,7 @@ def gen_dungeon(node=root, previous_direction = null, previous = null, generated
    return generated #Returning generated to make sure it stays updated
         \end{python}
         \textbf{Room get\_pos(direction):}\\
-        Used to get the global position of the directional Node2D markers.
+        Used to get the global position of the directional Node2D markers. This is necesarry for the generation of the rooms and peicing together for criteria 10.3 and 10.2.\\
         \begin{python}
 def get_pos(direction):
    match direction:
@@ -1706,7 +1779,7 @@ def get_pos(direction):
          return West.global_position
         \end{python}
         \textbf{Room set\_pos(direction, global\_pos):}\\
-        Used to set the position of the room such that the Node2D corresponding to the direction is at the global\_pos provided.
+        Used to set the position of the room such that the Node2D corresponding to the direction is at the global\_pos provided. This is necesarry for the generation of the rooms and peicing together for criteria 10.3 and 10.2.\\
         \begin{python}
 def set_pos(direction, global_pos):
    match direction:
@@ -1720,7 +1793,7 @@ def set_pos(direction, global_pos):
 	 global_position += global_pos - West.global_position 
         \end{python}\
         \textbf{Room cap(direction):}\\
-        Loads the cap scene for the direction and then adds it to the entrance in that direction, blocking it off.
+        Loads the cap scene for the direction and then adds it to the entrance in that direction, blocking it off. This is necesarry when generating the level to make sure there is no entrances leading nowhere for criteria 10.3.\\
         \begin{python}
 def cap(direction):
    match direction:
@@ -1738,7 +1811,7 @@ def cap(direction):
 	 West.add_child(west_cap)
         \end{python}
         \textbf{Room \_ready():}\\
-        Used to set slime health/damage with a logarithmic function of the difficulty so the rate of health./damage increase decreases as difficulty goes up.
+        Used to set slime health/damage with a logarithmic function of the difficulty so the rate of health./damage increase decreases as difficulty goes up. This is necesarry for increasing difficulty for criteria 14.2.1.\\
         \begin{python}
 def _ready():
    if Slimes:
